@@ -143,3 +143,17 @@ much of the error overlap causes), and contribution to DER (error in overlap
 **R4. Differences between conventions use a paired bootstrap.** The same
 resampled meetings are used for both terms, so "error concealed by the
 forgiving convention" (full DER minus forgiving DER) gets a proper interval.
+
+**F7. The 0.25 s collar removes about half of all overlap from scoring
+[Jensen].** Reference-only property (identical for every system), AMI test,
+`only_words`: 50.4% [40.7, 56.4] of overlap speaker time survives the collar
+(run c52c63421a, `results/decomp_synthetic/headline.csv`,
+`overlap_time_kept_by_collar`). So the "Fair" convention, which nominally
+scores overlap, scores only half of it.
+
+**F8. "Excluding overlap" does not by itself lower DER.** It removes error
+and denominator together. It conceals error only to the extent a system is
+worse in overlap than outside it. Synthetic check: `swap` (uniform confusion)
+loses nothing (-0.02 pp [-0.70, 0.66]); `exclusive` (perfect except in
+overlap) goes from 14.55% to 0.00%. The headline claim should be stated per
+system with this paired interval, not as a general offset.

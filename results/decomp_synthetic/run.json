@@ -1,0 +1,155 @@
+{
+  "experiment": "decomp_synthetic",
+  "config_hash": "c52c63421a3907a3e5dcc1ba9eef1c8afe8d103e175891d126fca2b927cb3902",
+  "config": {
+    "experiment": {
+      "experiment": "decomp_synthetic",
+      "frame_step": 0.001,
+      "collars": [
+        0.0,
+        0.25
+      ],
+      "exclude_overlap": [
+        false,
+        true
+      ],
+      "datasets": [
+        {
+          "config": "configs/data/ami.yaml",
+          "annotation": "only_words",
+          "partitions": [
+            "dev",
+            "test"
+          ]
+        },
+        {
+          "config": "configs/data/scotus_oyez.yaml",
+          "annotation": "oyez",
+          "partitions": [
+            "all"
+          ]
+        }
+      ],
+      "synthetic_source": "configs/validation/scorer.yaml",
+      "systems": {
+        "relabel": {
+          "synthetic": "relabel"
+        },
+        "jitter": {
+          "synthetic": "jitter"
+        },
+        "exclusive": {
+          "synthetic": "exclusive"
+        },
+        "swap": {
+          "synthetic": "swap"
+        },
+        "combined": {
+          "synthetic": "combined"
+        }
+      },
+      "conventions": {
+        "full": {
+          "collar": 0.0,
+          "exclude_overlap": false
+        },
+        "fair": {
+          "collar": 0.25,
+          "exclude_overlap": false
+        },
+        "forgiving": {
+          "collar": 0.25,
+          "exclude_overlap": true
+        },
+        "collar0_no_overlap": {
+          "collar": 0.0,
+          "exclude_overlap": true
+        }
+      },
+      "bootstrap": {
+        "n_resamples": 10000,
+        "ci_level": 0.95,
+        "seed": 20261002
+      },
+      "partition_tol_seconds": 1e-06,
+      "out_dir": "results/decomp_synthetic"
+    },
+    "synthetic": {
+      "experiment": "scorer_validation",
+      "frame_step": 0.001,
+      "tol_seconds": 0.001,
+      "collars": [
+        0.0,
+        0.25
+      ],
+      "exclude_overlap": [
+        false,
+        true
+      ],
+      "datasets": [
+        {
+          "config": "configs/data/ami.yaml",
+          "annotation": "only_words",
+          "partitions": [
+            "dev",
+            "test"
+          ]
+        },
+        {
+          "config": "configs/data/scotus_oyez.yaml",
+          "annotation": "oyez",
+          "partitions": [
+            "all"
+          ]
+        }
+      ],
+      "seed": 20261002,
+      "systems": {
+        "relabel": {},
+        "jitter": {
+          "boundary_sd": 0.15
+        },
+        "swap": {
+          "frac": 0.2
+        },
+        "miss_fa": {
+          "drop_frac": 0.15,
+          "add_frac": 0.1,
+          "add_min": 0.3,
+          "add_max": 3.0
+        },
+        "merge_split": {},
+        "exclusive": {},
+        "combined": {
+          "boundary_sd": 0.15,
+          "frac": 0.2,
+          "drop_frac": 0.15,
+          "add_frac": 0.1,
+          "add_min": 0.3,
+          "add_max": 3.0
+        }
+      },
+      "work_dir": "work/scorer_validation",
+      "out_dir": "results/scorer_validation"
+    }
+  },
+  "seed": 20261002,
+  "git": {
+    "commit": "e3549cee444e64f6f58cec8a4d7ca70669258e3e",
+    "code_dirty": false
+  },
+  "versions": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "PyYAML": "6.0.1"
+  },
+  "argv": [
+    "scripts/decompose.py"
+  ],
+  "started_utc": "2026-10-02T15:01:08+00:00",
+  "wall_seconds": 67.193,
+  "n_rows": 2800,
+  "max_partition_residual_s": 9.094947017729282e-13,
+  "off_grid_total": 0
+}
