@@ -42,3 +42,10 @@ def test_timeline_covers_uem_exactly_with_split_uem():
     segs = [S(0, 10, "A")]
     tl = count_timeline(segs, [(0, 2), (5, 6)])
     assert tl == [(0, 2, 1), (5, 6, 1)]
+
+
+def test_subtract():
+    from diarisation.intervals import subtract
+    assert subtract([(0, 10)], [(2, 3), (5, 6)]) == [(0, 2), (3, 5), (6, 10)]
+    assert subtract([(0, 2), (4, 6)], [(1, 5)]) == [(0, 1), (5, 6)]
+    assert subtract([(0, 1)], []) == [(0, 1)]

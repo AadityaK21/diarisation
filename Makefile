@@ -2,9 +2,9 @@
 # references to final tables; audio download is separate because it is large.
 PY ?= python3
 
-.PHONY: all test prepare prepare-ami prepare-scotus overlap-stats audio-ihm audio-sdm
+.PHONY: all test prepare prepare-ami prepare-scotus overlap-stats validate-scorer audio-ihm audio-sdm
 
-all: test prepare overlap-stats
+all: test prepare overlap-stats validate-scorer
 
 test:
 	$(PY) -m pytest -q
@@ -26,3 +26,6 @@ audio-ihm:
 
 audio-sdm:
 	$(PY) scripts/download_ami_audio.py --condition sdm --partitions dev test
+
+validate-scorer:
+	$(PY) scripts/validate_scorer.py

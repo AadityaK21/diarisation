@@ -101,3 +101,22 @@ def outside_uem(segments: Sequence[Segment], uem: Sequence[Region]) -> float:
         inside = sum(e - s for s, e in intersect(regions, uem))
         total += sum(e - s for s, e in regions) - inside
     return total
+
+
+def subtract(a: Sequence[Region], b: Sequence[Region]) -> List[Region]:
+    """a minus b, both sorted and internally disjoint."""
+    out: List[Region] = []
+    j = 0
+    for lo, hi in a:
+        cur = lo
+        while j < len(b) and b[j][1] <= cur:
+            j += 1
+        k = j
+        while k < len(b) and b[k][0] < hi:
+            if b[k][0] > cur:
+                out.append((cur, b[k][0]))
+            cur = max(cur, b[k][1])
+            k += 1
+        if cur < hi:
+            out.append((cur, hi))
+    return out
