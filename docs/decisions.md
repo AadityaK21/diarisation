@@ -89,3 +89,23 @@ annotation. Quote the measured figure with its annotation.
 ([10.1, 19.1]%) for this reason, and any test-set DER aggregate will be
 driven disproportionately by EN2002. Per-meeting results must be read
 alongside the pooled number.
+
+## Scorer (step 3)
+
+**C1. md-eval semantics, reproduced exactly.** See `third_party/README.md`
+for the source lines. In particular the speaker mapping is computed before
+collars and overlap exclusion, so the mapping does not change between the
+four cells of the collar x overlap grid. pyannote.metrics and dscore make
+the same choice for the mapping, but pyannote.metrics merges and handles
+collars differently; md-eval is the reference here because the brief names it.
+
+**C2. 1 ms frames, exact on a millisecond grid.** All RTTMs this repo writes
+are at ms precision, so every boundary is a frame edge. The scorer counts
+boundaries that are not on the grid and the validation requires zero.
+
+**C3. Pass criterion pre-registered** in `configs/validation/scorer.yaml`
+(<= 0.001 s per component per file, committed before the comparison ran).
+
+**C4. Self-overlapping speakers are an error, not merged.** md-eval aborts on
+them; silently merging would make our scorer accept inputs the reference
+rejects.

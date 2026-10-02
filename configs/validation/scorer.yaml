@@ -1,0 +1,40 @@
+# Step 3: validate scoring/der.py against md-eval-22.pl.
+#
+# PRE-REGISTERED (committed before the full comparison was run):
+#   Pass  <=>  for every (file, system, collar, overlap mode), each of the four
+#              component times (scored speaker, missed, false alarm, confusion)
+#              differs from md-eval by at most `tol_seconds`, AND the scorer
+#              reported zero off-grid boundaries.
+#   tol_seconds = 0.001 is one frame. Inputs are written at millisecond
+#   precision, so with 1 ms frames the only expected differences are float
+#   noise and md-eval's 6-decimal printout. Any failure is investigated and
+#   reported; the tolerance is not widened after seeing results.
+
+experiment: scorer_validation
+
+frame_step: 0.001
+tol_seconds: 0.001
+
+collars: [0.0, 0.25]
+exclude_overlap: [false, true]
+
+# Reference sets scored. AMI dev+test is where every reported number lives;
+# the Oyez file adds a 10-speaker case (exercises the optimal mapping beyond 8).
+datasets:
+  - {config: configs/data/ami.yaml, annotation: only_words, partitions: [dev, test]}
+  - {config: configs/data/scotus_oyez.yaml, annotation: oyez, partitions: [all]}
+
+# Synthetic systems: corrupted copies of the reference. Each is seeded per
+# (file, system) from `seed`, so every hypothesis is reproducible.
+seed: 20261002
+systems:
+  relabel: {}                                   # exact copy, renamed -> DER 0
+  jitter: {boundary_sd: 0.15}                   # Gaussian boundary noise (s)
+  swap: {frac: 0.2}                             # segments given another speaker's label
+  miss_fa: {drop_frac: 0.15, add_frac: 0.10, add_min: 0.3, add_max: 3.0}
+  merge_split: {}                               # 2 speakers merged, 1 split in half
+  exclusive: {}                                 # overlap given to one speaker only
+  combined: {boundary_sd: 0.15, frac: 0.2, drop_frac: 0.15, add_frac: 0.10, add_min: 0.3, add_max: 3.0}
+
+work_dir: work/scorer_validation               # generated hypotheses (git-ignored)
+out_dir: results/scorer_validation
