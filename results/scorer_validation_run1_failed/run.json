@@ -1,0 +1,82 @@
+{
+  "experiment": "scorer_validation",
+  "config_hash": "1e77d1128dd2df2e1ac3f6f42d351e928dbc3a8e40f21299ccb0d16658f4e9ad",
+  "config": {
+    "experiment": "scorer_validation",
+    "frame_step": 0.001,
+    "tol_seconds": 0.001,
+    "collars": [
+      0.0,
+      0.25
+    ],
+    "exclude_overlap": [
+      false,
+      true
+    ],
+    "datasets": [
+      {
+        "config": "configs/data/ami.yaml",
+        "annotation": "only_words",
+        "partitions": [
+          "dev",
+          "test"
+        ]
+      },
+      {
+        "config": "configs/data/scotus_oyez.yaml",
+        "annotation": "oyez",
+        "partitions": [
+          "all"
+        ]
+      }
+    ],
+    "seed": 20261002,
+    "systems": {
+      "relabel": {},
+      "jitter": {
+        "boundary_sd": 0.15
+      },
+      "swap": {
+        "frac": 0.2
+      },
+      "miss_fa": {
+        "drop_frac": 0.15,
+        "add_frac": 0.1,
+        "add_min": 0.3,
+        "add_max": 3.0
+      },
+      "merge_split": {},
+      "exclusive": {},
+      "combined": {
+        "boundary_sd": 0.15,
+        "frac": 0.2,
+        "drop_frac": 0.15,
+        "add_frac": 0.1,
+        "add_min": 0.3,
+        "add_max": 3.0
+      }
+    },
+    "work_dir": "work/scorer_validation",
+    "out_dir": "results/scorer_validation"
+  },
+  "seed": 20261002,
+  "git": {
+    "commit": "e00efc86ece2d7777fded0980d380943e20fdcdd",
+    "code_dirty": false
+  },
+  "versions": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "PyYAML": "6.0.1"
+  },
+  "argv": [
+    "scripts/validate_scorer.py"
+  ],
+  "started_utc": "2026-10-02T14:54:39+00:00",
+  "wall_seconds": 66.215,
+  "n_comparisons": 980,
+  "max_abs_component_diff_s": 0.000375,
+  "failing_groups": 28,
+  "tol_seconds": 0.001
+}

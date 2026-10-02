@@ -109,3 +109,12 @@ boundaries that are not on the grid and the validation requires zero.
 **C4. Self-overlapping speakers are an error, not merged.** md-eval aborts on
 them; silently merging would make our scorer accept inputs the reference
 rejects.
+
+**C5. Validation run 1 failed the pre-registered criterion; kept on record.**
+`results/scorer_validation_run1_failed/` (config 1e77d1128d): all 980
+comparisons were within 0.000375 s of md-eval, but the criterion also requires
+zero off-grid boundaries and 21 were reported. Cause: 21 of 34 dev+test UEMs
+end at sample precision (e.g. EN2002a 2142.709375 s), which the scorer snapped
+to the nearest ms; every non-zero difference equals the dropped part of a
+final frame. Fix: frames cut by a UEM boundary are weighted by the fraction
+inside the UEM, so the scorer is exact. The tolerance was not changed.

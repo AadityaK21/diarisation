@@ -1,9 +1,12 @@
 """Frame-level DER with md-eval semantics.
 
 The timeline is cut into frames of `frame_step` seconds. With RTTM times at
-millisecond precision and a 1 ms step, every boundary falls exactly on a frame
-edge, so frame counting is exact rather than an approximation; times that are
-not on the grid are counted and reported, never silently rounded away.
+millisecond precision and a 1 ms step, every speaker boundary falls exactly on
+a frame edge, so frame counting is exact rather than an approximation; speaker
+boundaries that are not on the grid are counted and reported, never silently
+rounded away. UEM boundaries need not be on the grid (AMI UEMs end at sample
+precision): a frame cut by a UEM boundary is weighted by the fraction of it
+inside the UEM, which keeps the result exact.
 
 Semantics follow md-eval-22.pl (see third_party/README.md):
 
@@ -32,6 +35,7 @@ from typing import Dict, List, Sequence, Tuple
 import numpy as np
 from scipy.optimize import linear_sum_assignment
 
+from ..intervals import merge_regions
 from ..io.rttm import Segment
 from ..io.uem import Region
 
@@ -48,8 +52,9 @@ class FrameArrays:
     n_ref: np.ndarray        # int16 per frame
     n_hyp: np.ndarray
     n_correct: np.ndarray
-    eval_mask: np.ndarray    # inside UEM
+    eval_mask: np.ndarray    # any part of the frame inside UEM
     score_mask: np.ndarray   # eval minus collars minus (optionally) overlap
+    weight: np.ndarray       # fraction of each frame inside UEM (1.0 almost everywhere)
     mapping: Dict[str, str]  # ref -> hyp
     off_grid: int            # boundaries not on the frame grid
 
@@ -103,16 +108,35 @@ def _activity(segs: Sequence[Segment], grid: _Grid) -> Dict[str, np.ndarray]:
     return out
 
 
+def _uem_weight(uem: Sequence[Region], step: float, n: int) -> np.ndarray:
+    """Fraction of each frame inside the UEM, exact for off-grid boundaries."""
+    w = np.zeros(n, dtype=np.float64)
+    for lo, hi in merge_regions(uem):
+        x0, x1 = lo / step, hi / step
+        k0, k1 = int(np.floor(x0 + GRID_TOL)), int(np.floor(x1 + GRID_TOL))
+        if k0 == k1:
+            w[k0] += x1 - x0
+            continue
+        w[k0] += (k0 + 1) - x0
+        w[k0 + 1:k1] += 1.0
+        if k1 < n:
+            w[k1] += x1 - k1
+    np.clip(w, 0.0, 1.0, out=w)
+    w[np.abs(w) < GRID_TOL] = 0.0
+    w[np.abs(w - 1.0) < GRID_TOL] = 1.0
+    return w
+
+
 def _optimal_mapping(ref: Dict[str, np.ndarray], hyp: Dict[str, np.ndarray],
-                     eval_mask: np.ndarray) -> Dict[str, str]:
+                     weight: np.ndarray) -> Dict[str, str]:
     if not ref or not hyp:
         return {}
     r_names, h_names = sorted(ref), sorted(hyp)
-    overlap = np.zeros((len(r_names), len(h_names)), dtype=np.int64)
+    overlap = np.zeros((len(r_names), len(h_names)), dtype=np.float64)
     for i, r in enumerate(r_names):
-        rm = ref[r] & eval_mask
+        rw = np.where(ref[r], weight, 0.0)
         for j, h in enumerate(h_names):
-            overlap[i, j] = np.count_nonzero(rm & hyp[h])
+            overlap[i, j] = rw[hyp[h]].sum()
     rows, cols = linear_sum_assignment(overlap, maximize=True)
     # Pairs with zero overlap contribute nothing; md-eval leaves them unmapped.
     return {r_names[i]: h_names[j] for i, j in zip(rows, cols) if overlap[i, j] > 0}
@@ -126,9 +150,8 @@ def frame_arrays(ref_segs: Sequence[Segment], hyp_segs: Sequence[Segment], uem: 
     end = max([e for _, e in uem] + [s.end for s in ref_segs] + [s.end for s in hyp_segs] + [0.0])
     grid = _Grid(step, int(np.ceil(end / step - GRID_TOL)) + 1)
 
-    eval_mask = np.zeros(grid.n, dtype=bool)
-    for lo, hi in uem:
-        eval_mask[grid.idx(lo):grid.idx(hi)] = True
+    weight = _uem_weight(uem, step, grid.n)
+    eval_mask = weight > 0
 
     ref = _activity(ref_segs, grid)
     hyp = _activity(hyp_segs, grid)
@@ -136,7 +159,7 @@ def frame_arrays(ref_segs: Sequence[Segment], hyp_segs: Sequence[Segment], uem: 
     n_ref = sum((a.astype(np.int16) for a in ref.values()), zeros.copy())
     n_hyp = sum((a.astype(np.int16) for a in hyp.values()), zeros.copy())
 
-    mapping = _optimal_mapping(ref, hyp, eval_mask)
+    mapping = _optimal_mapping(ref, hyp, weight)
     n_correct = zeros.copy()
     for r, h in mapping.items():
         n_correct += (ref[r] & hyp[h]).astype(np.int16)
@@ -151,20 +174,21 @@ def frame_arrays(ref_segs: Sequence[Segment], hyp_segs: Sequence[Segment], uem: 
     if exclude_overlap:
         score_mask &= n_ref < 2
 
-    return FrameArrays(step, n_ref, n_hyp, n_correct, eval_mask, score_mask, mapping, grid.off_grid)
+    return FrameArrays(step, n_ref, n_hyp, n_correct, eval_mask, score_mask, weight, mapping, grid.off_grid)
 
 
 def components(fa: FrameArrays, mask: np.ndarray | None = None) -> DERResult:
     """Sum the DER components over `mask` (default: the score mask)."""
     m = fa.score_mask if mask is None else (fa.score_mask & mask)
+    w = fa.weight[m] * fa.step
     nr = fa.n_ref[m].astype(np.int64)
     nh = fa.n_hyp[m].astype(np.int64)
     nc = fa.n_correct[m].astype(np.int64)
     return DERResult(
-        scored_speaker_s=float(nr.sum()) * fa.step,
-        missed_s=float(np.maximum(nr - nh, 0).sum()) * fa.step,
-        false_alarm_s=float(np.maximum(nh - nr, 0).sum()) * fa.step,
-        confusion_s=float((np.minimum(nr, nh) - nc).sum()) * fa.step,
+        scored_speaker_s=float((nr * w).sum()),
+        missed_s=float((np.maximum(nr - nh, 0) * w).sum()),
+        false_alarm_s=float((np.maximum(nh - nr, 0) * w).sum()),
+        confusion_s=float(((np.minimum(nr, nh) - nc) * w).sum()),
         off_grid=fa.off_grid,
     )
 

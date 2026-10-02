@@ -72,3 +72,13 @@ def test_matches_mdeval_on_hand_case(tmp_path, collar, excl):
     ref_impl = mdeval.run(tmp_path / "r.rttm", tmp_path / "h.rttm", tmp_path / "u.uem", collar, excl)
     for k in ("scored_speaker_s", "missed_s", "false_alarm_s", "confusion_s"):
         assert abs(getattr(ours, k) - getattr(ref_impl, k)) < 1e-6, k
+
+
+def test_off_grid_uem_end_is_exact_and_not_flagged():
+    # UEM ends mid-frame at 5.0004: the last 0.4 ms of A must count exactly.
+    ref = [S(0, 6, "A")]
+    r = score(ref, [], [(0.0, 5.0004)], 0.0, False, STEP)
+    assert abs(r.scored_speaker_s - 5.0004) < 1e-9 and abs(r.missed_s - 5.0004) < 1e-9
+    assert r.off_grid == 0
+    r = score(ref, [], [(0.0004, 0.0007)], 0.0, False, STEP)   # inside one frame
+    assert abs(r.scored_speaker_s - 0.0003) < 1e-12
