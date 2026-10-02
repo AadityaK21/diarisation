@@ -67,3 +67,28 @@ def mean(x: Sequence[float], n_resamples: int, ci_level: float, seed: int) -> Es
     idx = _indices(len(x_a), n_resamples, seed)
     lo, hi = _interval(x_a[idx].mean(axis=1), ci_level)
     return Estimate(point, lo, hi, len(x_a), n_resamples, ci_level, seed)
+
+
+def of_sums(columns: dict, fn, n_resamples: int, ci_level: float, seed: int) -> Estimate:
+    """Any statistic that is a function of per-file column sums.
+
+    `fn` receives {name: sum} and must work on numpy arrays as well as floats,
+    so all resamples are evaluated at once. Every column is resampled with the
+    SAME meeting indices, which makes differences between statistics (e.g.
+    DER under two conventions) properly paired.
+    """
+    cols = {k: np.asarray(v, float) for k, v in columns.items()}
+    n = len(next(iter(cols.values())))
+    if n == 0 or any(len(v) != n for v in cols.values()):
+        raise ValueError("columns must be non-empty and equal length")
+    with np.errstate(invalid="ignore", divide="ignore"):
+        point = float(fn({k: v.sum() for k, v in cols.items()}))
+        if n == 1:
+            return Estimate(point, float("nan"), float("nan"), 1, 0, ci_level, seed)
+        idx = _indices(n, n_resamples, seed)
+        samples = np.asarray(fn({k: v[idx].sum(axis=1) for k, v in cols.items()}), float)
+    samples = samples[np.isfinite(samples)]
+    if samples.size == 0:
+        return Estimate(point, float("nan"), float("nan"), n, n_resamples, ci_level, seed)
+    lo, hi = _interval(samples, ci_level)
+    return Estimate(point, lo, hi, n, n_resamples, ci_level, seed)

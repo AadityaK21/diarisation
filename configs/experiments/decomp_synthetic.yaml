@@ -1,0 +1,37 @@
+# Step 4: overlap-conditioned decomposition on the step-3 synthetic systems.
+# These are corrupted references, not real diarisation systems; the purpose
+# is to exercise the decomposition end to end before step 5.
+
+experiment: decomp_synthetic
+
+frame_step: 0.001
+collars: [0.0, 0.25]
+exclude_overlap: [false, true]
+
+datasets:
+  - {config: configs/data/ami.yaml, annotation: only_words, partitions: [dev, test]}
+  - {config: configs/data/scotus_oyez.yaml, annotation: oyez, partitions: [all]}
+
+# Either {synthetic: <name>} (rebuilt from configs/validation/scorer.yaml with
+# its seed) or {hyp_dir: <dir containing <uri>.rttm>} for real systems.
+synthetic_source: configs/validation/scorer.yaml
+systems:
+  relabel: {synthetic: relabel}
+  jitter: {synthetic: jitter}
+  exclusive: {synthetic: exclusive}
+  swap: {synthetic: swap}
+  combined: {synthetic: combined}
+
+# Named scoring conventions (Landini et al. 2022 naming) used in the headline.
+conventions:
+  full: {collar: 0.0, exclude_overlap: false}
+  fair: {collar: 0.25, exclude_overlap: false}
+  forgiving: {collar: 0.25, exclude_overlap: true}
+  collar0_no_overlap: {collar: 0.0, exclude_overlap: true}
+
+bootstrap: {n_resamples: 10000, ci_level: 0.95, seed: 20261002}
+
+# |total - sum of regions| must stay below this (seconds) or the run aborts.
+partition_tol_seconds: 1.0e-6
+
+out_dir: results/decomp_synthetic

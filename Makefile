@@ -2,9 +2,9 @@
 # references to final tables; audio download is separate because it is large.
 PY ?= python3
 
-.PHONY: all test prepare prepare-ami prepare-scotus overlap-stats validate-scorer audio-ihm audio-sdm
+.PHONY: all test prepare prepare-ami prepare-scotus overlap-stats validate-scorer decompose-synthetic audio-ihm audio-sdm
 
-all: test prepare overlap-stats validate-scorer
+all: test prepare overlap-stats validate-scorer decompose-synthetic
 
 test:
 	$(PY) -m pytest -q
@@ -29,3 +29,6 @@ audio-sdm:
 
 validate-scorer:
 	$(PY) scripts/validate_scorer.py
+
+decompose-synthetic:
+	$(PY) scripts/decompose.py --config configs/experiments/decomp_synthetic.yaml

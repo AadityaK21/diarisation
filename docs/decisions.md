@@ -118,3 +118,28 @@ end at sample precision (e.g. EN2002a 2142.709375 s), which the scorer snapped
 to the nearest ms; every non-zero difference equals the dropped part of a
 final frame. Fix: frames cut by a UEM boundary are weighted by the fraction
 inside the UEM, so the scorer is exact. The tolerance was not changed.
+
+## Decomposition (step 4)
+
+**R1. Regions are defined by the reference speaker count, before collars.**
+nonspeech (0), single (1), overlap (>= 2). A hypothesis that puts two
+speakers where the reference has one is charged as false alarm in the
+*single* region; system-side overlap does not define a region. Collars and
+overlap exclusion then remove frames within each region, so the regions
+partition exactly the frames total DER scores; every run checks that the
+three regions sum to the total within 1e-6 s or aborts.
+
+**R2. The 2x2x2 grid has structurally empty cells.** With overlap excluded,
+the overlap region scores nothing; it is reported as NA, never as 0%. False
+alarm in non-speech has no within-region rate (no reference speaker time);
+it is reported in seconds and as a contribution to total DER.
+
+**R3. Three ways to normalise a region's error, all reported:**
+within-region rate (error in overlap / speaker time in overlap: how bad the
+system is there), share of total error (error in overlap / all error: how
+much of the error overlap causes), and contribution to DER (error in overlap
+/ all scored speaker time: these sum to DER across regions).
+
+**R4. Differences between conventions use a paired bootstrap.** The same
+resampled meetings are used for both terms, so "error concealed by the
+forgiving convention" (full DER minus forgiving DER) gets a proper interval.
