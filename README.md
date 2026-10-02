@@ -10,7 +10,7 @@ Audio Analysis Lab, Aalborg University (October–November 2026).
 |---|---|---|
 | 1 | Repo layout | done |
 | 2 | AMI + Supreme Court reference prep, per-meeting overlap table | done (`results/overlap_stats/`) |
-| 3 | Frame-level scorer validated against md-eval.pl | not started |
+| 3 | Frame-level scorer validated against md-eval.pl | done (`results/scorer_validation/`) |
 | 4 | Overlap-conditioned decomposition | not started |
 | 5 | pyannote 3.1 baseline (+ optional NeMo), full grid | not started |
 | 6 | ASR, word alignment, cpWER and fixed-mapping attribution | not started |
@@ -20,7 +20,7 @@ Audio Analysis Lab, Aalborg University (October–November 2026).
 ```bash
 pip install -e ".[dev]"
 cp configs/paths.example.yaml configs/paths.yaml   # edit audio_root, cache_root
-make all          # tests -> reference prep -> overlap table
+make all          # tests -> reference prep -> overlap table -> scorer validation
 ```
 
 Audio is only needed from step 5: `make audio-ihm audio-sdm`. It is written to
