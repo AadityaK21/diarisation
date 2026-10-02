@@ -9,7 +9,7 @@ Audio Analysis Lab, Aalborg University (October–November 2026).
 | Step | What | State |
 |---|---|---|
 | 1 | Repo layout | done |
-| 2 | AMI + Supreme Court reference prep, per-meeting overlap table | done |
+| 2 | AMI + Supreme Court reference prep, per-meeting overlap table | done (`results/overlap_stats/`) |
 | 3 | Frame-level scorer validated against md-eval.pl | not started |
 | 4 | Overlap-conditioned decomposition | not started |
 | 5 | pyannote 3.1 baseline (+ optional NeMo), full grid | not started |

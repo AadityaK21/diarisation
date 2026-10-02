@@ -1,0 +1,86 @@
+{
+  "experiment": "overlap_stats",
+  "config_hash": "2eaaa1a309ef419ad6a6dfc55c35f20ac9171896c313a70d1062728c696437f8",
+  "config": {
+    "stats": {
+      "experiment": "overlap_stats",
+      "datasets": [
+        {
+          "config": "configs/data/ami.yaml",
+          "annotation": "only_words"
+        },
+        {
+          "config": "configs/data/ami.yaml",
+          "annotation": "word_and_vocalsounds"
+        },
+        {
+          "config": "configs/data/scotus_oyez.yaml",
+          "annotation": "oyez"
+        }
+      ],
+      "bootstrap": {
+        "n_resamples": 10000,
+        "ci_level": 0.95,
+        "seed": 20261002
+      },
+      "out_dir": "results/overlap_stats"
+    },
+    "datasets": {
+      "configs/data/ami.yaml": {
+        "name": "ami",
+        "source": {
+          "repo": "https://github.com/pyannote/AMI-diarization-setup",
+          "commit": "67c2d539286e89f68952d5dcf83912bd9f01dfae"
+        },
+        "annotations": [
+          "only_words",
+          "word_and_vocalsounds"
+        ],
+        "primary_annotation": "only_words",
+        "partitions": [
+          "train",
+          "dev",
+          "test"
+        ],
+        "expected_meetings": {
+          "train": 136,
+          "dev": 18,
+          "test": 16
+        },
+        "conditions": {
+          "ihm_mix": "Mix-Headset",
+          "sdm": "Array1-01"
+        },
+        "audio_url": "https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus/{uri}/audio/{uri}.{stream}.wav",
+        "out_dir": "data/ami"
+      },
+      "configs/data/scotus_oyez.yaml": {
+        "name": "scotus_oyez",
+        "source": {
+          "api": "https://api.oyez.org",
+          "cases": [
+            "2019/18-280"
+          ]
+        },
+        "speaker_space_replacement": "_",
+        "out_dir": "data/scotus_oyez"
+      }
+    }
+  },
+  "seed": 20261002,
+  "git": {
+    "commit": "5166051ddf46b55d64142d82b1899451cb934a6c",
+    "code_dirty": false
+  },
+  "versions": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "PyYAML": "6.0.1"
+  },
+  "argv": [
+    "scripts/overlap_stats.py"
+  ],
+  "started_utc": "2026-10-02T14:40:10+00:00",
+  "wall_seconds": 0.91,
+  "n_files": 341
+}

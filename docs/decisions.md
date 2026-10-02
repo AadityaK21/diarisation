@@ -78,3 +78,14 @@ SA-WER (Kanda et al. 2020, uses known identities), MeetEval tcpWER/ORC-WER.
 `speaker-diarization-community-1` by default (3.1 as fallback), and the
 manuscript does not state which produced 7.92%. This repo uses 3.1 per the
 brief.
+
+**F5. "AMI has roughly 15–20% overlap."** Measured (run `2eaaa1a309`):
+`only_words` gives 13.4% (train), 14.1% (dev), 14.6% (test) of speech time;
+15–20% matches `word_and_vocalsounds` (15.7–16.5%), not the primary
+annotation. Quote the measured figure with its annotation.
+
+**F6. AMI test overlap is bimodal.** The four EN2002 meetings sit at
+24–30% overlap; TS3003a–c and IS1009c sit at 4–5%. The test CI is wide
+([10.1, 19.1]%) for this reason, and any test-set DER aggregate will be
+driven disproportionately by EN2002. Per-meeting results must be read
+alongside the pooled number.

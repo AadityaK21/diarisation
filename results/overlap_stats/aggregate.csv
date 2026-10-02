@@ -1,0 +1,8 @@
+dataset,annotation,partition,n_files,hours_uem,hours_speech,overlap_time_frac,overlap_time_frac_lo,overlap_time_frac_hi,overlap_spk_time_frac,overlap_spk_time_frac_lo,overlap_spk_time_frac_hi,mean_file_overlap_time_frac,mean_file_lo,mean_file_hi,min_file_overlap_time_frac,max_file_overlap_time_frac,n_resamples,ci_level,seed
+ami,only_words,train,136,80.6728,66.0360,0.1339,0.1229,0.1449,0.2451,0.2270,0.2629,0.1268,0.1171,0.1366,0.0274,0.3054,10000,0.9500,20261002
+ami,only_words,dev,18,9.6672,7.5868,0.1413,0.1209,0.1597,0.2568,0.2238,0.2857,0.1355,0.1133,0.1579,0.0403,0.2546,10000,0.9500,20261002
+ami,only_words,test,16,9.0622,7.2902,0.1458,0.1014,0.1912,0.2701,0.1930,0.3417,0.1396,0.1007,0.1820,0.0428,0.3002,10000,0.9500,20261002
+ami,word_and_vocalsounds,train,136,80.6728,66.6382,0.1570,0.1451,0.1692,0.2868,0.2674,0.3061,0.1533,0.1426,0.1647,0.0388,0.4059,10000,0.9500,20261002
+ami,word_and_vocalsounds,dev,18,9.6672,7.6526,0.1649,0.1435,0.1841,0.2989,0.2650,0.3283,0.1598,0.1356,0.1827,0.0471,0.2792,10000,0.9500,20261002
+ami,word_and_vocalsounds,test,16,9.0622,7.3362,0.1616,0.1164,0.2082,0.2995,0.2211,0.3722,0.1568,0.1180,0.1997,0.0526,0.3258,10000,0.9500,20261002
+scotus_oyez,oyez,all,1,1.0397,1.0397,0.0000,nan,nan,0.0000,nan,nan,0.0000,nan,nan,0.0000,0.0000,10000,0.9500,20261002
