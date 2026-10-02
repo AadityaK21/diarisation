@@ -66,7 +66,7 @@ def prepare(cfg: Dict[str, Any], cache_root: Path) -> Dict[str, Any]:
     repl = cfg["speaker_space_replacement"]
     uris = []
     summary = {}
-    for case in cfg["cases"]:
+    for case in cfg["source"]["cases"]:
         term, docket = case.split("/", 1)
         detail = _get(f"{cfg['source']['api']}/cases/{term}/{docket}")
         args = detail.get("oral_argument_audio") or []

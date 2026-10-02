@@ -13,6 +13,12 @@ the overlap table for comparison only; upstream notes annotator
 inconsistency in vocal sounds. Files are copied byte-for-byte and checksummed
 in `data/ami/MANIFEST.json`.
 
+Validation on copy: every listed meeting has an RTTM and UEM naming that
+meeting; dev and test have 0.0 s of reference outside the UEM. Train has
+5.75 speaker-seconds outside, all in TS3007c, whose UEM ends at 2420.0 s while
+the reference runs to 2430.16 s. Left as published (outside-UEM time is never
+scored, and train is not scored).
+
 **D2. One reference for both microphone conditions.** IHM-Mix and SDM share
 the same RTTM and UEM; only the audio differs. Upstream UEMs span each whole
 recording. Whether SDM audio length matches the UEM exactly is checked when

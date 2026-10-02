@@ -1,0 +1,17 @@
+{
+  "source": {
+    "api": "https://api.oyez.org",
+    "cases": [
+      "2019/18-280"
+    ]
+  },
+  "files": {
+    "2019_18-280": {
+      "case": "2019/18-280",
+      "case_name": "New York State Rifle & Pistol Association Inc. v. City of New York",
+      "turns": 248,
+      "speakers": 10
+    }
+  },
+  "note": "Raw Oyez turn timings, not hand-corrected."
+}
