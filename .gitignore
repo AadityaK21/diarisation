@@ -1,0 +1,18 @@
+# Audio never enters git. It lives under audio_root in configs/paths.yaml.
+*.wav
+*.flac
+*.mp3
+*.ogg
+*.sph
+amicorpus/
+
+# Per-machine paths
+configs/paths.yaml
+
+# Python
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.venv/
+build/
+dist/

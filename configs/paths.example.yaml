@@ -1,0 +1,8 @@
+# Copy to configs/paths.yaml (git-ignored) and edit for this machine.
+# Nothing under these paths is ever committed.
+
+# Root for downloaded audio. AMI lands in <audio_root>/amicorpus/<uri>/audio/.
+audio_root: /data/audio
+
+# Scratch for cloned upstream repos and API responses.
+cache_root: ~/.cache/diarisation

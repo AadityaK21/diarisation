@@ -1,0 +1,19 @@
+# Step 2: reference overlap statistics, before any model runs.
+
+experiment: overlap_stats
+
+datasets:
+  - config: configs/data/ami.yaml
+    annotation: only_words
+  - config: configs/data/ami.yaml
+    annotation: word_and_vocalsounds
+  - config: configs/data/scotus_oyez.yaml
+    annotation: oyez
+
+bootstrap:
+  # Resampling unit is the file (meeting). Percentile intervals.
+  n_resamples: 10000
+  ci_level: 0.95
+  seed: 20261002
+
+out_dir: results/overlap_stats

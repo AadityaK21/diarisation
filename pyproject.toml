@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "diarisation"
+version = "0.1.0"
+description = "Overlap-conditioned diarisation error and speaker attribution (AAU Audio Analysis Lab internship, remote phase)"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "PyYAML>=6.0",
+    "requests>=2.31",
+]
+
+[project.optional-dependencies]
+# Step 5. pyannote/speaker-diarization-3.1 is gated on Hugging Face.
+diar = ["pyannote.audio>=3.1"]
+# Step 5, optional second baseline. Heavy install; the repo runs without it.
+nemo = ["nemo_toolkit[asr]"]
+# Step 6.
+asr = ["faster-whisper>=1.1.0", "whisperx"]
+dev = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

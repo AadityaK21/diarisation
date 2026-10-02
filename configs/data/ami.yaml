@@ -1,0 +1,31 @@
+# AMI Meeting Corpus, BUT/pyannote diarisation setup.
+#
+# References are derived from the AMI manual word annotations v1.6.2 with
+# same-speaker adjacent words merged (see upstream README). They are the
+# corrected references the brief asks for, not the raw NXT segments.
+
+name: ami
+
+source:
+  repo: https://github.com/pyannote/AMI-diarization-setup
+  # Pinned. Changing this changes every reference RTTM downstream.
+  commit: 67c2d539286e89f68952d5dcf83912bd9f01dfae
+
+# only_words is primary (the pyannote / VBx benchmark convention).
+# word_and_vocalsounds is prepared for the appendix only.
+annotations: [only_words, word_and_vocalsounds]
+primary_annotation: only_words
+
+# Full-corpus-ASR partition.
+partitions: [train, dev, test]
+expected_meetings: {train: 136, dev: 18, test: 16}
+
+# The reference is microphone-independent; conditions differ only in audio.
+conditions:
+  ihm_mix: Mix-Headset
+  sdm: Array1-01
+
+audio_url: https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus/{uri}/audio/{uri}.{stream}.wav
+
+# Committed copy of the references, relative to the repo root.
+out_dir: data/ami

@@ -1,0 +1,15 @@
+# US Supreme Court oral argument, reference built from Oyez per-turn timings
+# exactly as lausanne/src/eval/fetch_oyez.py did. This is NOT the
+# hand-corrected set the brief describes; it is the reference the earlier
+# 7.92% DER was scored against, prepared here so its properties can be seen.
+
+name: scotus_oyez
+
+source:
+  api: https://api.oyez.org
+  cases: ["2019/18-280"]
+
+# Oyez speaker names contain spaces; RTTM fields cannot.
+speaker_space_replacement: "_"
+
+out_dir: data/scotus_oyez
