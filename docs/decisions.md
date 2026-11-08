@@ -566,4 +566,11 @@ this changes in the findings:
   them to the forced-alignment labels is a question for Jensen. Word-level
   scores (cpWER, the attribution measures) depend much less on the convention
   than DER: across the two references the cpWER ranking of the systems does
-  not change.
+  not change in any region. With the forced-alignment labels defining the
+  regions too (`results/wer_decomposition_fa_regions/`; 15,237 overlapped
+  reference words instead of 22,105), Sortformer's cpWER in overlap is still
+  lower than pyannote's: 71.21% vs 78.23% (paired -7.02 [-9.24, -3.83];
+  distant 72.26% vs 81.75%, -9.48 [-11.75, -5.99]), and lower than with the
+  forced-alignment turns themselves (73.35%; part -2.15 [-3.19, -0.69]),
+  consistent with Sortformer showing the dominant talker, the one Whisper
+  transcribes.
