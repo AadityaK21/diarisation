@@ -409,4 +409,10 @@ segments, so words are regrouped at gaps longer than 1 s (segments at most
 sentence data (punkt_tab) was fetched from the NLTK data repository by hand,
 since NLTK's downloader refuses to run through this environment's proxy.
 The decomposition (X2) is then recomputed on both timings
-(`configs/experiments/wer_decomposition_wxalign.yaml`).
+(`configs/experiments/wer_decomposition_wxalign.yaml`). A first run aligned
+all segments of a meeting in one call and stopped at EN2002b, where WhisperX
+failed on a one-word segment ("Cool.": "backtrack failed, resorting to
+original") and returned one word fewer; the script now aligns one segment at
+a time and keeps the original timings of a segment WhisperX cannot align,
+counting such segments (`n_segments_failed` in timing.csv). All 16 meetings
+were rerun this way.

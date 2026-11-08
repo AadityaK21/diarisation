@@ -73,21 +73,29 @@ def main() -> int:
                 wav = audio_root / uri / "audio" / f"{uri}.{stream}.wav"
                 audio = whisperx.load_audio(str(wav))
                 t0 = time.perf_counter()
-                res = whisperx.align([{"text": " ".join(w["word"] for w in s), "start": s[0]["start"], "end": s[-1]["end"]}
-                                      for s in segs], model, meta, audio, cfg["device"],
-                                     interpolate_method=cfg["interpolate_method"], return_char_alignments=False)
+                # one segment at a time, so a segment WhisperX cannot align
+                # (it then returns a different number of words) keeps its
+                # original timings without shifting the words of other segments
+                rows, kept, failed = [], 0, 0
+                for seg in segs:
+                    res = whisperx.align([{"text": " ".join(w["word"] for w in seg), "start": seg[0]["start"],
+                                           "end": seg[-1]["end"]}], model, meta, audio, cfg["device"],
+                                         interpolate_method=cfg["interpolate_method"], return_char_alignments=False)
+                    got = [w for sg in res["segments"] for w in sg.get("words", [])]
+                    if len(got) != len(seg) or any(a["word"] != w["word"] for a, w in zip(got, seg)):
+                        failed += 1
+                        kept += len(seg)
+                        rows += [(w["start"], w["end"], w["word"], w["probability"]) for w in seg]
+                        continue
+                    for a, w in zip(got, seg):
+                        st, en = a.get("start"), a.get("end")
+                        if st is None or en is None or not (en >= st):
+                            st, en, kept = w["start"], w["end"], kept + 1
+                        rows.append((st, en, w["word"], w["probability"]))
                 wall = time.perf_counter() - t0
-                aligned = [w for seg in res["segments"] for w in seg.get("words", [])]
-                if len(aligned) != len(words) or any(a["word"] != w["word"] for a, w in zip(aligned, words)):
-                    print(f"ABORT {uri}: aligned words ({len(aligned)}) differ from input ({len(words)})", file=sys.stderr)
+                if len(rows) != len(words):
+                    print(f"ABORT {uri}: {len(rows)} output words for {len(words)} input words", file=sys.stderr)
                     return 2
-                kept = 0
-                rows = []
-                for a, w in zip(aligned, words):
-                    s, e = a.get("start"), a.get("end")
-                    if s is None or e is None or not (e >= s):
-                        s, e, kept = w["start"], w["end"], kept + 1
-                    rows.append((s, e, w["word"], w["probability"]))
                 tmp = tsv.with_suffix(".tmp")
                 with open(tmp, "w", newline="", encoding="utf-8") as fh:
                     wr = csv.writer(fh, delimiter="\t", lineterminator="\n")
@@ -97,12 +105,13 @@ def main() -> int:
                 tmp.replace(tsv)
                 dur = len(audio) / 16000
                 timing = [r for r in timing if r["uri"] != uri] + [{"uri": uri, "audio_s": f"{dur:.3f}", "wall_s": f"{wall:.1f}",
-                          "rtf": f"{wall / dur:.4f}", "n_words": len(words), "n_segments": len(segs), "n_kept_original_time": kept}]
+                          "rtf": f"{wall / dur:.4f}", "n_words": len(words), "n_segments": len(segs),
+                          "n_segments_failed": failed, "n_kept_original_time": kept}]
                 with open(timing_p, "w", newline="") as fh:
                     wr = csv.DictWriter(fh, fieldnames=list(timing[0]))
                     wr.writeheader(); wr.writerows(timing)
                 print(f"[{cond}/{part}] {uri}: {len(words)} words in {len(segs)} segments, {wall:.0f} s "
-                      f"(RTF {wall / dur:.3f}), {kept} kept original time", flush=True)
+                      f"(RTF {wall / dur:.3f}), {failed} segments failed, {kept} words kept original time", flush=True)
             (out / "run.json").write_text(json.dumps({
                 "experiment": f"align_{cfg['system']}", "config": cfg, "condition": cond, "partition": part,
                 "git_commit": commit, "git_dirty": dirty, "n_files": len(timing),
