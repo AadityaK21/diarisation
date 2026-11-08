@@ -231,8 +231,10 @@ large-v3-turbo runs at 0.32-0.40x. The CPU run uses large-v3-turbo; on the
 
 **W2. Word timestamps come from faster-whisper's cross-attention alignment**
 (the method of openai-whisper and whisper-timestamped), not WhisperX forced
-alignment. The brief names WhisperX or whisper-timestamped; WhisperX is not
-used yet.
+alignment. The brief names WhisperX or whisper-timestamped. WhisperX forced
+alignment was later run on all 16 headset-mix meetings as a check (X8); it
+changes the decomposition by less than half a point, so the main results keep
+Whisper's own timestamps.
 
 **W3. Text normalisation.** Whisper's EnglishTextNormalizer, applied per word
 to reference and output alike (fillers removed, contractions expanded).
@@ -450,4 +452,27 @@ failed on a one-word segment ("Cool.": "backtrack failed, resorting to
 original") and returned one word fewer; the script now aligns one segment at
 a time and keeps the original timings of a segment WhisperX cannot align,
 counting such segments (`n_segments_failed` in timing.csv). All 16 meetings
-were rerun this way.
+were rerun this way: 2,451 of 2,453 segments aligned (68,879 words); the two
+that failed are one-word segments in EN2002b and EN2002c.
+
+Result (run c1e3610f8a, `results/wer_decomposition_wxalign/`; differences are
+WhisperX minus Whisper's own timestamps, paired bootstrap over the 16
+meetings, `contrasts.csv`; headset mix, pyannote 3.1):
+
+| | all words | single-speaker | overlap |
+|---|---|---|---|
+| word-assignment part | -0.13 [-0.40, 0.09] | -0.29 [-0.54, -0.06] | +0.36 [-0.08, 0.69] |
+| diarisation part | +0.43 [0.22, 0.65] | +0.18 [0.05, 0.32] | +1.19 [0.60, 1.95] |
+| cpWER, pyannote | +0.24 [0.04, 0.44] | -0.09 [-0.26, 0.06] | +1.27 [0.69, 1.99] |
+
+With WhisperX timings the split is 24.1 + 7.2 + 2.4 = 33.7 (Whisper's
+timings: 24.2 + 7.3 + 2.0 = 33.4). Better word timing helps the word rule
+only outside overlap (0.3 points); in overlap, where its cost sits (22.6
+points), it does nothing, which shows that cost comes from giving each word
+to one speaker, not from imprecise word times. With pyannote, WhisperX timing
+is slightly worse overall (+0.24; worse in 8 meetings, better in 6, equal in
+2) and clearly worse in overlap (+1.27, worse in 14 of 16); the diarisation
+part grows in 14 of 16. Why is not established here; one possibility is that
+Whisper's own, smoother word times sit better inside pyannote's turns. Either
+way the deviation from the brief's alignment step (W2) does not change any
+finding.
