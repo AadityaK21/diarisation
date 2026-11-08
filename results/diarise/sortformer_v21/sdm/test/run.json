@@ -1,0 +1,60 @@
+{
+  "experiment": "diarise_sortformer_v21",
+  "config_hash": "b913b87155bfc65470219c9a39bcd8d3091a0660b753d1108611c607ed79a9a9",
+  "config": {
+    "system": {
+      "system": "sortformer_v21",
+      "backend": "nemo_sortformer",
+      "model": "nvidia/diar_streaming_sortformer_4spk-v2.1",
+      "nemo_file": "diar_streaming_sortformer_4spk-v2.1.nemo",
+      "revision": "cd03eee90fbec18297ac31b8c21546e596b7f71c",
+      "streaming": {
+        "chunk_len": 340,
+        "chunk_right_context": 40,
+        "fifo_len": 40,
+        "spkcache_update_period": 300,
+        "spkcache_len": 188
+      },
+      "device": "cpu",
+      "cpu_threads": 4,
+      "seed": 20261002,
+      "rttm_decimals": 3,
+      "dataset": "configs/data/ami.yaml",
+      "conditions": [
+        "ihm_mix",
+        "sdm"
+      ],
+      "partitions": [
+        "test"
+      ],
+      "out_dir": "results/diarise/sortformer_v21"
+    },
+    "condition": "sdm",
+    "partition": "test"
+  },
+  "seed": 20261002,
+  "git": {
+    "commit": "89e7bebd4b4eb7483fd0c6ee394d1dc2f21abc20",
+    "code_dirty": false
+  },
+  "versions": {
+    "python": "3.11.18",
+    "nemo_toolkit": "2.7.3",
+    "torch": "2.8.0+cpu",
+    "torchaudio": "2.8.0+cpu",
+    "numpy": "2.4.6",
+    "huggingface_hub": "0.36.2"
+  },
+  "argv": [
+    "scripts/diarise.py",
+    "--config",
+    "configs/systems/sortformer_v21.yaml"
+  ],
+  "started_utc": "2026-11-08T22:46:49+00:00",
+  "wall_seconds": 1391.17,
+  "model": "nvidia/diar_streaming_sortformer_4spk-v2.1",
+  "model_revision": "cd03eee90fbec18297ac31b8c21546e596b7f71c",
+  "device": "cpu",
+  "n_files": 16,
+  "cpu_max_rss_mb": 3533.6
+}
