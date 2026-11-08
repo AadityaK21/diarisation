@@ -84,6 +84,24 @@ def main() -> int:
         claims.append(("transcription-only error (DI-cpWER) in overlap > outside", cond,
                        {u: (f("di_cpwer", "overlap", u), f("di_cpwer", "single", u)) for u in uris}))
 
+    ow = load(src["overlap_words"])
+    below, above = ("[-inf,-10)", "[-10,-5)", "[-5,0)"), ("[0,5)", "[5,10)", "[10,inf)")
+    for cond in sorted({r["condition"] for r in ow if r["analysis"] == "asr"}):
+        sel = [r for r in ow if r["analysis"] == "asr" and r["condition"] == cond]
+        uris = sorted({r["uri"] for r in sel})
+        def rate(u, gtype, groups):
+            rr = [r for r in sel if r["uri"] == u and r["group_type"] == gtype and r["group"] in groups]
+            n = sum(int(r["n"]) for r in rr)
+            return sum(int(r["n_bad"]) for r in rr) / n if n else float("nan")
+        claims.append(("Whisper deletes more overlapped words below 0 dB than above", cond,
+                       {u: (rate(u, "level", below), rate(u, "level", above)) for u in uris}))
+        claims.append(("Whisper deletes more overlapped words of the second talker than the first", cond,
+                       {u: (rate(u, "role", ("second",)), rate(u, "role", ("first",))) for u in uris}))
+    dom = load(src["dominance"])
+    for system in sorted({r["system"] for r in dom}):
+        claims.append(("pyannote shows the louder of two talkers more often than the quieter", system,
+                       {r["uri"]: (int(r["louder"]), int(r["quieter"])) for r in dom if r["system"] == system}))
+
     rows = []
     for claim, subject, pairs in claims:
         holds = sum(a > b for a, b in pairs.values())

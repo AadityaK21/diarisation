@@ -9,5 +9,7 @@ sources:
   attribution: results/attr_oracle_pyannote31/per_file.csv
   asr: results/attr_asr_whisper_turbo/per_file.csv
   decomposition: results/wer_decomposition_whisper_turbo/per_file.csv
+  overlap_words: results/overlap_words_whisper_turbo/per_file.csv
+  dominance: results/overlap_dominance_pyannote31/per_file.csv
 
 out_dir: results/consistency
