@@ -1,0 +1,7 @@
+run,region,n_files,n_ref_tokens,cpwer,cpwer_lo,cpwer_hi,fixed_wer,fixed_wer_lo,fixed_wer_hi,fixed_minus_cp,fixed_minus_cp_lo,fixed_minus_cp_hi,cp_sub,cp_sub_lo,cp_sub_hi,cp_del,cp_del_lo,cp_del_hi,cp_ins,cp_ins_lo,cp_ins_hi
+oracle_diarisation_ihm_mix,all,1,1962,0.275739,nan,nan,0.275739,nan,nan,0.000000,nan,nan,0.060143,nan,nan,0.169725,nan,nan,0.045872,nan,nan
+oracle_diarisation_ihm_mix,single,1,1489,0.141706,nan,nan,0.141706,nan,nan,0.000000,nan,nan,0.032908,nan,nan,0.074547,nan,nan,0.034251,nan,nan
+oracle_diarisation_ihm_mix,overlap,1,473,0.697674,nan,nan,0.697674,nan,nan,0.000000,nan,nan,0.145877,nan,nan,0.469345,nan,nan,0.082452,nan,nan
+pyannote31_ihm_mix,all,1,1962,0.321611,nan,nan,0.308359,nan,nan,-0.013252,nan,nan,0.051988,nan,nan,0.196738,nan,nan,0.072885,nan,nan
+pyannote31_ihm_mix,single,1,1489,0.193418,nan,nan,0.183345,nan,nan,-0.010074,nan,nan,0.040296,nan,nan,0.094023,nan,nan,0.059100,nan,nan
+pyannote31_ihm_mix,overlap,1,473,0.725159,nan,nan,0.701903,nan,nan,-0.023256,nan,nan,0.088795,nan,nan,0.520085,nan,nan,0.116279,nan,nan

@@ -213,3 +213,26 @@ outcome under the one-to-one mapping: 3.2% of words IHM, 5.1% SDM). Overall
 attribution error is 1.4 points (IHM) and 2.4 points (SDM) LOWER under
 metric B; in overlap 4.0 and 5.8 points lower. Reported as measured; the
 claim that a fixed mapping reveals hidden error is not supported here.
+
+## Attribution with real ASR (step 6b)
+
+**W1. ASR model deviates from the brief [Jensen].** large-v3 int8 on this
+machine's 4 CPU cores runs at 1.61x real time (about 15 h per condition);
+large-v3-turbo runs at 0.32-0.40x. The CPU run uses large-v3-turbo; on the
+8 GB GPU the config switches to large-v3 int8_float16 in one line.
+
+**W2. Word timestamps come from faster-whisper's cross-attention alignment**
+(the method of openai-whisper and whisper-timestamped), not WhisperX forced
+alignment. The brief names WhisperX or whisper-timestamped; WhisperX is not
+used yet.
+
+**W3. Text normalisation.** Whisper's EnglishTextNormalizer, applied per word
+to reference and output alike (fillers removed, contractions expanded).
+Per-word application does not join number words; it affects every compared
+system equally.
+
+**W4. cpWER is computed in-house and checked against MeetEval 0.4.3** on every
+file (errors and reference length must match exactly, else the run aborts).
+The in-house version is needed to assign each error to a region: deletions
+and substitutions to the region of the reference word, insertions to the
+region at the output word's midpoint.

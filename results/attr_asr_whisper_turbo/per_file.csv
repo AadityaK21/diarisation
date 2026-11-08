@@ -1,0 +1,13 @@
+run,uri,assignment,region,n_ref,sub,del,ins
+oracle_diarisation_ihm_mix,IS1009a,cp,all,1962,118,333,90
+oracle_diarisation_ihm_mix,IS1009a,cp,single,1489,49,111,51
+oracle_diarisation_ihm_mix,IS1009a,cp,overlap,473,69,222,39
+oracle_diarisation_ihm_mix,IS1009a,fixed,all,1962,118,333,90
+oracle_diarisation_ihm_mix,IS1009a,fixed,single,1489,49,111,51
+oracle_diarisation_ihm_mix,IS1009a,fixed,overlap,473,69,222,39
+pyannote31_ihm_mix,IS1009a,cp,all,1962,102,386,143
+pyannote31_ihm_mix,IS1009a,cp,single,1489,60,140,88
+pyannote31_ihm_mix,IS1009a,cp,overlap,473,42,246,55
+pyannote31_ihm_mix,IS1009a,fixed,all,1962,94,377,134
+pyannote31_ihm_mix,IS1009a,fixed,single,1489,56,136,81
+pyannote31_ihm_mix,IS1009a,fixed,overlap,473,38,241,53

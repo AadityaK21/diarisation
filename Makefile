@@ -2,7 +2,7 @@
 # references to final tables; audio download is separate because it is large.
 PY ?= python3
 
-.PHONY: all test prepare prepare-ami prepare-scotus overlap-stats validate-scorer decompose-synthetic diarise validate-scorer-real decompose-pyannote31 compare-mappings prepare-words attribution-oracle audio-ihm audio-sdm
+.PHONY: all test prepare prepare-ami prepare-scotus overlap-stats validate-scorer decompose-synthetic diarise validate-scorer-real decompose-pyannote31 compare-mappings prepare-words attribution-oracle attribution-asr audio-ihm audio-sdm
 
 all: test prepare overlap-stats validate-scorer decompose-synthetic validate-scorer-real decompose-pyannote31 compare-mappings attribution-oracle
 
@@ -52,3 +52,6 @@ prepare-words:
 
 attribution-oracle:
 	$(PY) scripts/attribution_oracle.py
+
+attribution-asr:
+	$(PY) scripts/attribution_asr.py

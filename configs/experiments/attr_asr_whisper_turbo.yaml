@@ -1,0 +1,30 @@
+# Step 6b: speaker-attributed WER of the real pipeline (Whisper words given to
+# speakers by a diarisation output), split by reference region.
+#   cp     = cpWER, the permutation-invariant standard (best one-to-one
+#            pairing of system streams with reference speakers)
+#   fixed  = the brief's metric B at transcript level: system speakers mapped
+#            once by majority overlap on single-speaker frames (many-to-one),
+#            no search over permutations
+# The oracle-diarisation rows give the same ASR words to speakers using the
+# reference RTTM, isolating the cost of diarisation from ASR and the
+# one-speaker-per-word rule.
+
+experiment: attr_asr_whisper_turbo
+
+frame_step: 0.001
+dataset: configs/data/ami.yaml
+words: configs/data/ami_words.yaml
+annotation: only_words
+partition: test
+
+runs:
+  - {name: oracle_diarisation_ihm_mix, asr_dir: results/asr/whisper_turbo_cpu/ihm_mix/test, hyp_dir: data/ami/only_words/rttm/test}
+  - {name: pyannote31_ihm_mix, asr_dir: results/asr/whisper_turbo_cpu/ihm_mix/test, hyp_dir: results/diarise/pyannote31_published/ihm_mix/test}
+  - {name: oracle_diarisation_sdm, asr_dir: results/asr/whisper_turbo_cpu/sdm/test, hyp_dir: data/ami/only_words/rttm/test}
+  - {name: pyannote31_sdm, asr_dir: results/asr/whisper_turbo_cpu/sdm/test, hyp_dir: results/diarise/pyannote31_published/sdm/test}
+
+# Our cpWER must equal MeetEval's on every file (errors and reference length).
+validate_against_meeteval: true
+
+bootstrap: {n_resamples: 10000, ci_level: 0.95, seed: 20261002}
+out_dir: results/attr_asr_whisper_turbo
