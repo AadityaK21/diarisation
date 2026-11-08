@@ -1,0 +1,17 @@
+system,statistic,n_files,point,lo,hi,n_resamples,seed
+oracle_diarisation,share_of_words_in_overlap,16,0.245868,0.185444,0.299198,10000,20261002
+oracle_diarisation,share_of_errors_in_overlap_optimal,16,0.999806,0.999285,1.000000,10000,20261002
+oracle_diarisation,gap_majority_minus_optimal_all,16,0.000000,0.000000,0.000000,10000,20261002
+oracle_diarisation,gap_majority_minus_optimal_overlap,16,0.000000,0.000000,0.000000,10000,20261002
+oracle_diarisation,gap_majority_minus_optimal_single,16,0.000000,0.000000,0.000000,10000,20261002
+oracle_diarisation,gap_onetoone_minus_optimal_all,16,0.000000,0.000000,0.000000,10000,20261002
+oracle_diarisation,gap_onetoone_minus_optimal_single,16,0.000000,0.000000,0.000000,10000,20261002
+oracle_diarisation,gap_onetoone_minus_optimal_overlap,16,0.000000,0.000000,0.000000,10000,20261002
+fa_reference_turns,share_of_words_in_overlap,16,0.245868,0.185444,0.299198,10000,20261002
+fa_reference_turns,share_of_errors_in_overlap_optimal,16,0.924213,0.907177,0.934645,10000,20261002
+fa_reference_turns,gap_majority_minus_optimal_all,16,0.000000,0.000000,0.000000,10000,20261002
+fa_reference_turns,gap_majority_minus_optimal_overlap,16,0.000000,0.000000,0.000000,10000,20261002
+fa_reference_turns,gap_majority_minus_optimal_single,16,0.000000,0.000000,0.000000,10000,20261002
+fa_reference_turns,gap_onetoone_minus_optimal_all,16,0.000000,0.000000,0.000000,10000,20261002
+fa_reference_turns,gap_onetoone_minus_optimal_single,16,0.000000,0.000000,0.000000,10000,20261002
+fa_reference_turns,gap_onetoone_minus_optimal_overlap,16,0.000000,0.000000,0.000000,10000,20261002

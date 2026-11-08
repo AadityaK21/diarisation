@@ -1,0 +1,18 @@
+{
+  "source": {
+    "repo": "https://github.com/nttcslab-sp/diar-forced-alignment",
+    "commit": "9527b7c64846fb38316a610f32e9d3466bd6d8b7",
+    "path": "AMI/{partition}/{uri}.rttm",
+    "licence": "CC BY 4.0",
+    "citation": "Horiguchi, Tawara, Ashihara, Ando, Delcroix, IEEE ASRU 2025"
+  },
+  "summary": {
+    "test": {
+      "meetings": 16,
+      "segments": 17441,
+      "speaker_s": 23930.536,
+      "only_words_speaker_s": 30713.924,
+      "ratio": 0.7791
+    }
+  }
+}

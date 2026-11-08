@@ -1,0 +1,22 @@
+# Alternative AMI diarisation reference (decisions S2): forced-alignment
+# labels from Horiguchi et al., "Can We Really Repurpose Multi-Speaker ASR
+# Corpus for Speaker Diarization?", IEEE ASRU 2025 (arXiv:2507.09226).
+# Same full-corpus ASR partition and same only_words setup as our reference,
+# with word boundaries re-timed by Montreal Forced Aligner (tight boundaries).
+# Used only as a robustness check; the brief's reference stays only_words.
+# AMI labels: CC BY 4.0 (the repository's LICENSE).
+
+name: ami_fa
+source:
+  repo: https://github.com/nttcslab-sp/diar-forced-alignment
+  commit: 9527b7c64846fb38316a610f32e9d3466bd6d8b7
+  path: AMI/{partition}/{uri}.rttm
+  licence: CC BY 4.0
+  citation: Horiguchi, Tawara, Ashihara, Ando, Delcroix, IEEE ASRU 2025
+local_clone: /home/user/nttcslab-sp/diar-forced-alignment   # git clone of the repo at that commit
+partitions: [test]
+lists_from: configs/data/ami.yaml
+words: configs/data/ami_words.yaml      # for the speaker relabelling (meetings.xml)
+# Speaker labels <uri>.<letter> are renamed to AMI global participant ids,
+# as in the only_words reference, via corpusResources/meetings.xml.
+out_dir: data/ami/forced_alignment/rttm   # <out_dir>/<partition>/<uri>.rttm

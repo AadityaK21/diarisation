@@ -1,0 +1,22 @@
+# Robustness check (decisions S2) of step 6a: the same true words (AMI manual
+# words and times), given to speakers by the word rule using the
+# forced-alignment reference turns as a second "perfect diarisation".
+# Regions (single / overlap) stay defined by the only_words reference, so the
+# 21,840 overlapped words are the same as in attr_oracle_pyannote31.
+
+experiment: attr_oracle_fa_reference
+
+frame_step: 0.001
+dataset: configs/data/ami.yaml
+words: configs/data/ami_words.yaml
+annotation: only_words
+partition: test
+
+systems:
+  oracle_diarisation: {hyp_dir: data/ami/only_words/rttm/test}
+  fa_reference_turns: {hyp_dir: data/ami/forced_alignment/rttm/test}
+
+mappings: [optimal, majority_single, onetoone_single]
+
+bootstrap: {n_resamples: 10000, ci_level: 0.95, seed: 20261002}
+out_dir: results/attr_oracle_fa_reference
