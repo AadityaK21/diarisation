@@ -97,7 +97,7 @@ def main() -> int:
     audio = paths["audio_root"] / "amicorpus"
     short = cfg["short_turn_max_words"]
 
-    units_rows, counts, missing_audio = [], [], []
+    units_rows, counts, missing_audio, single_levels = [], [], [], []
     for uri in uris:
         ref = read_rttm(REPO_ROOT / ami["out_dir"] / cfg["annotation"] / "rttm" / part / f"{uri}.rttm")[uri]
         uem = read_uem(REPO_ROOT / ami["out_dir"] / "uem" / part / f"{uri}.uem")[uri]
@@ -115,6 +115,17 @@ def main() -> int:
                 energies[spk] = Energy(p)
             else:
                 missing_audio.append(str(p))
+
+        # calibration: the same level measure on single-speaker words, against
+        # all other headsets (which then carry only crosstalk and noise)
+        if len(energies) == len(chans[uri]):
+            for w in words:
+                if w.end - w.start >= cfg["min_word_seconds"] and \
+                        region(Token(w.text, w.start, w.end)) == "single" and w.speaker in energies:
+                    e_own = energies[w.speaker](w.start, w.end)
+                    e_oth = sum(e(w.start, w.end) for s, e in energies.items() if s != w.speaker)
+                    if e_own > 0 and e_oth > 0:
+                        single_levels.append(10 * math.log10(e_own / e_oth))
 
         # attribution with perfect diarisation, per overlapped reference word
         labels = assign(words, ref)
@@ -207,7 +218,10 @@ def main() -> int:
     with open(out / "aggregate.csv", "w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=list(agg[0]))
         w.writeheader(); w.writerows(agg)
-    log.finish(out, missing_audio=missing_audio)
+    q = np.percentile(single_levels, [10, 50, 90]).round(2).tolist() if single_levels else None
+    log.finish(out, missing_audio=missing_audio,
+               single_speaker_word_level_db_p10_p50_p90=q, n_single_speaker_words_levelled=len(single_levels))
+    print(f"single-speaker words: level p10/p50/p90 = {q} dB (n={len(single_levels)})")
     print(f"run {log.short_hash} -> {cfg['out_dir']}/ ({len(missing_audio)} headset files missing)")
     return 0
 
