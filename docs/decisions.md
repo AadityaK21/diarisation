@@ -201,10 +201,11 @@ are active at its midpoint. Ties in overlap duration go to the label sorting
 first, which is what any one-speaker-per-word rule must do in some way.
 
 **A3. The one-speaker-per-word rule is itself a large error source [Jensen].**
-With the reference RTTM as the "system", 48.1% [46.2, 49.9] of overlapped
+With the reference RTTM as the "system", 47.2% [45.2, 49.0] of overlapped
 words are credited to the other talker: a coin flip. This bounds every
-timestamp-based word attribution (WhisperX-style) on AMI at about 11.8% of
-all words before any diarisation error (run 837370d52e).
+timestamp-based word attribution (WhisperX-style) on AMI at about 11.6% of
+all words before any diarisation error (run 8095f4fd05; see A6 for the
+earlier 48.1% / 11.8%).
 
 **A4. The brief's metric B is more lenient than the permutation-invariant
 score, not stricter [Jensen].** Majority mapping on single-speaker frames is
@@ -277,7 +278,17 @@ a permutation search changes nothing. Paired cpWER contrasts (pyannote minus
 oracle diarisation, same ASR words) are in `contrasts.csv`.
 
 **A5. The coin-flip result is robust to the tie-break.** Overlapped-word
-attribution error with perfect diarisation: 48.1% (label order, default),
+attribution error with perfect diarisation: 47.2% (label order, default),
 52.1% (credit the speaker whose turn started first), 38.6% (credit the one
 whose turn started last). pyannote 3.1: 54.1-59.7% across the three rules
-and both conditions (runs 837370d52e, 7e0f98a7a4, c80a92aca6).
+and both conditions (runs 8095f4fd05, 7e0f98a7a4, c80a92aca6).
+
+**A6. Correction: the default tie-break run was stale.** The first 6a run
+(837370d52e) used exact floating-point equality to detect ties in overlap
+duration, so two speakers covering a word equally could be split by rounding
+noise. The tie-break commit (d5d85cf) changed this to a 1e-9 s tolerance,
+and the two tie-break variant runs used it, but the default run was not
+redone. Rerun with the current code (8095f4fd05, which also adds the
+one-to-one variant, W7): oracle-diarisation overlap attribution error 48.12%
+-> 47.22%, all words 11.83% -> 11.61%; every pyannote number moves by less
+than 0.01 points. The three tie-break rules are now on the same code.

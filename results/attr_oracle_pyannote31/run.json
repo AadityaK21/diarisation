@@ -1,6 +1,6 @@
 {
   "experiment": "attr_oracle_pyannote31",
-  "config_hash": "837370d52eb9ff7767454fe7fb68388d5751bd81a9954ce2adf97788a51ac558",
+  "config_hash": "8095f4fd05e60508f09572336e630004d9b5fbae5a8208ebdea4b6d617e6e120",
   "config": {
     "experiment": {
       "experiment": "attr_oracle_pyannote31",
@@ -22,7 +22,8 @@
       },
       "mappings": [
         "optimal",
-        "majority_single"
+        "majority_single",
+        "onetoone_single"
       ],
       "bootstrap": {
         "n_resamples": 10000,
@@ -76,7 +77,7 @@
   },
   "seed": 20261002,
   "git": {
-    "commit": "04b8ca1802398394b06e56d4b0fd469eedbc5f98",
+    "commit": "745ee0ee0e222aefd29de65bb57dc531cc28e792",
     "code_dirty": false
   },
   "versions": {
@@ -86,9 +87,11 @@
     "PyYAML": "6.0.3"
   },
   "argv": [
-    "scripts/attribution_oracle.py"
+    "scripts/attribution_oracle.py",
+    "--config",
+    "configs/experiments/attr_oracle_pyannote31.yaml"
   ],
-  "started_utc": "2026-11-08T12:11:13+00:00",
-  "wall_seconds": 19.174,
-  "n_rows": 288
+  "started_utc": "2026-11-08T16:46:29+00:00",
+  "wall_seconds": 32.172,
+  "n_rows": 432
 }
