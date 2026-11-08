@@ -13,3 +13,13 @@ source:
 speaker_space_replacement: "_"
 
 out_dir: data/scotus_oyez
+
+# Audio (step 6 extra, decisions.md X5): the Oyez delivery mp3 of the argument,
+# converted to 16 kHz mono 16-bit WAV with ffmpeg; never committed.
+audio:
+  url: https://s3.amazonaws.com/oyez.case-media.mp3/case_data/2019/18-280/18-280_20191202-argument.delivery.mp3
+  sha256: 68faa37fdea7359c1143bbbdf60da9f43ec61cb010fe81f37ec5856de91a907d
+  ffmpeg_args: ["-ar", "16000", "-ac", "1", "-c:a", "pcm_s16le"]
+# path under audio_root (configs/paths.yaml); used by diarise.py / transcribe.py
+audio_path: "scotus/{uri}.wav"
+conditions: {oyez: wav16k}

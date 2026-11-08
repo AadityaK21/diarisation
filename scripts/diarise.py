@@ -21,18 +21,31 @@ from diarisation.runlog import RunLog
 from diarisation.systems import pyannote_sys
 
 
+def audio_jobs(ds, cond, part, audio_root):
+    """[(uri, wav path)]: AMI files from the corpus layout, or local files when
+    the dataset config gives `audio_path` (e.g. the Supreme Court set)."""
+    if "audio_path" in ds:
+        uris = (REPO_ROOT / ds["out_dir"] / "lists" / f"{part}.txt").read_text().split()
+        return [(u, audio_root / ds["audio_path"].format(uri=u)) for u in uris]
+    return [(uri, audio_root / "amicorpus" / uri / "audio" / url.rsplit("/", 1)[1])
+            for uri, url in audio_urls(ds, cond, [part])]
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--config", required=True)
     ap.add_argument("--conditions", nargs="+")
+    ap.add_argument("--dataset", help="override the system config's dataset (e.g. configs/data/scotus_oyez.yaml)")
     ap.add_argument("--partitions", nargs="+")
     ap.add_argument("--limit", type=int, default=None, help="first N meetings only (smoke test)")
     ap.add_argument("--force", action="store_true")
     args = ap.parse_args()
 
     cfg = load_yaml(args.config)
+    if args.dataset:
+        cfg["dataset"] = args.dataset
     ds = load_yaml(cfg["dataset"])
-    audio_root = load_paths()["audio_root"] / "amicorpus"
+    audio_root = load_paths()["audio_root"]
 
     import numpy as np
     import torch
@@ -47,16 +60,15 @@ def main() -> int:
             out = REPO_ROOT / cfg["out_dir"] / cond / part
             log = RunLog(f"diarise_{cfg['system']}", {"system": cfg, "condition": cond, "partition": part},
                          seed=cfg["seed"], packages=("pyannote.audio", "torch", "torchaudio", "numpy", "scipy"))
-            jobs = audio_urls(ds, cond, [part])[: args.limit]
+            jobs = audio_jobs(ds, cond, part, audio_root)[: args.limit]
             timing_p = out / "timing.csv"
             out.mkdir(parents=True, exist_ok=True)
             rows = list(csv.DictReader(open(timing_p))) if timing_p.exists() else []
             done = {r["uri"] for r in rows}
-            for i, (uri, url) in enumerate(jobs, 1):
+            for i, (uri, wav) in enumerate(jobs, 1):
                 rttm = out / f"{uri}.rttm"
                 if rttm.exists() and uri in done and not args.force:
                     continue
-                wav = audio_root / uri / "audio" / url.rsplit("/", 1)[1]
                 if not wav.exists():
                     print(f"missing audio {wav}; run scripts/download_ami_audio.py", file=sys.stderr)
                     return 1

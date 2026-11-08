@@ -36,15 +36,21 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--config", required=True)
     ap.add_argument("--conditions", nargs="+")
+    ap.add_argument("--dataset", help="override the system config's dataset (e.g. configs/data/scotus_oyez.yaml)")
+    ap.add_argument("--partitions", nargs="+")
     ap.add_argument("--limit", type=int)
     ap.add_argument("--uris", nargs="+", help="only these meetings (e.g. to check one file)")
     ap.add_argument("--out-dir", help="override cfg out_dir (e.g. a scratch check)")
     ap.add_argument("--force", action="store_true")
     args = ap.parse_args()
     cfg = yaml.safe_load(open(REPO / args.config))
+    if args.dataset:
+        cfg["dataset"] = args.dataset
+    if args.partitions:
+        cfg["partitions"] = args.partitions
     ds = yaml.safe_load(open(REPO / cfg["dataset"]))
     paths = yaml.safe_load(open(REPO / "configs" / "paths.yaml"))
-    audio_root = Path(paths["audio_root"]).expanduser() / "amicorpus"
+    audio_root = Path(paths["audio_root"]).expanduser()
 
     import ctranslate2
     from faster_whisper import WhisperModel
@@ -55,6 +61,7 @@ def main() -> int:
 
     for cond in args.conditions or cfg["conditions"]:
         stream = ds["conditions"][cond]
+        local = ds.get("audio_path")   # local files (e.g. the Supreme Court set)
         for part in cfg["partitions"]:
             out = Path(args.out_dir or REPO / cfg["out_dir"]) / cond / part
             out.mkdir(parents=True, exist_ok=True)
@@ -66,7 +73,8 @@ def main() -> int:
                 tsv = out / f"{uri}.words.tsv"
                 if tsv.exists() and not args.force:
                     continue
-                wav = audio_root / uri / "audio" / f"{uri}.{stream}.wav"
+                wav = (audio_root / local.format(uri=uri)) if local else \
+                    (audio_root / "amicorpus" / uri / "audio" / f"{uri}.{stream}.wav")
                 t0 = time.perf_counter()
                 segs, info = model.transcribe(
                     str(wav), language=cfg["language"], beam_size=cfg["beam_size"],
