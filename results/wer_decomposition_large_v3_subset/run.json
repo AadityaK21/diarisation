@@ -1,0 +1,71 @@
+{
+  "experiment": "wer_decomposition_large_v3_subset",
+  "config_hash": "4d07a47080f65eb5910eeed6836b53c038744db5a9988787c131f99fc03b0730",
+  "config": {
+    "experiment": {
+      "experiment": "wer_decomposition_large_v3_subset",
+      "frame_step": 0.001,
+      "dataset": "configs/data/ami.yaml",
+      "words": "configs/data/ami_words.yaml",
+      "annotation": "only_words",
+      "partition": "test",
+      "uris": [
+        "IS1009a",
+        "ES2004a"
+      ],
+      "conditions": {
+        "ihm_mix_large_v3": {
+          "asr_dir": "results/asr/whisper_large_v3_cpu/ihm_mix/test",
+          "pyannote_dir": "results/diarise/pyannote31_published/ihm_mix/test"
+        },
+        "ihm_mix_turbo": {
+          "asr_dir": "results/asr/whisper_turbo_cpu/ihm_mix/test",
+          "pyannote_dir": "results/diarise/pyannote31_published/ihm_mix/test"
+        }
+      },
+      "tcp_collar": 5.0,
+      "bootstrap": {
+        "n_resamples": 10000,
+        "ci_level": 0.95,
+        "seed": 20261002
+      },
+      "out_dir": "results/wer_decomposition_large_v3_subset"
+    }
+  },
+  "seed": 20261002,
+  "git": {
+    "commit": "bd930a7d526a0e7432498eda1b5aa1248c3c2c33",
+    "code_dirty": false
+  },
+  "versions": {
+    "python": "3.11.18",
+    "numpy": "1.26.4",
+    "scipy": "1.14.1",
+    "rapidfuzz": "3.10.1",
+    "meeteval": "0.4.3",
+    "whisper-normalizer": "0.0.10"
+  },
+  "argv": [
+    "scripts/wer_decomposition.py",
+    "--config",
+    "configs/experiments/wer_decomposition_large_v3_subset.yaml"
+  ],
+  "started_utc": "2026-11-08T22:04:21+00:00",
+  "wall_seconds": 6.933,
+  "meetings_included": {
+    "ihm_mix_large_v3": [
+      "IS1009a",
+      "ES2004a"
+    ],
+    "ihm_mix_turbo": [
+      "IS1009a",
+      "ES2004a"
+    ]
+  },
+  "di_cpwer_best_start": {
+    "ihm_mix_large_v3/IS1009a": "oracle",
+    "ihm_mix_large_v3/ES2004a": "oracle",
+    "ihm_mix_turbo/IS1009a": "oracle",
+    "ihm_mix_turbo/ES2004a": "oracle"
+  }
+}

@@ -385,7 +385,35 @@ with one cluster per person there is nothing for many-to-one to absorb.
 with exactly the turbo run's decoding settings, on CPU for a subset of test
 meetings (IS1009a, ES2004a; headset mix), compared with turbo on the same
 meetings. A subset check only: it bounds the size of the effect, it does not
-replace a full large-v3 run.
+replace a full large-v3 run. Result (run 4d07a47080,
+`results/wer_decomposition_large_v3_subset/`; 4,647 reference words, 1,102
+in overlap; pooled over the two meetings, turbo -> large-v3):
+
+| measure | turbo | large-v3 |
+|---|---|---|
+| DI-cpWER (transcription) | 21.67 | 20.79 |
+| cpWER, oracle diarisation | 27.61 | 27.61 |
+| cpWER, pyannote 3.1 | 29.93 | 29.57 |
+| word-assignment part | 5.94 | 6.82 |
+| diarisation part | 2.32 | 1.96 |
+| DI-cpWER in overlap | 51.00 | 48.55 |
+| word-assignment part in overlap | 17.70 | 18.60 |
+
+The equal oracle cpWER is a coincidence of totals (1,283 errors each); per
+meeting the two models differ in opposite directions: on IS1009a large-v3 is
+worse (cpWER pyannote 30.27 vs 29.91, oracle 27.21 vs 25.98), on ES2004a
+better (29.06 vs 29.95, oracle 27.90 vs 28.79). Over all words no
+per-meeting difference exceeds 2.2 points (largest: ES2004a DI-cpWER, 23.74
+vs 21.61); inside overlap, with 473 and 629 words per meeting, differences
+reach 4.0 points (ES2004a DI-cpWER, 51.83 vs 47.85) and again go both ways
+(pyannote cpWER in overlap: IS1009a +2.5, ES2004a -2.9). The shape of the
+decomposition is the same for both models: word assignment costs more than
+diarisation, most of all in overlap.
+With n = 2 the bootstrap intervals in `aggregate.csv` mean little; the claim
+is only that the turbo deviation does not change the picture on these two
+meetings. large-v3 ran at RTF 0.82-0.86 on 4 CPU cores against turbo's
+0.19-0.20 on the same meetings; the large-v3 run shared the CPU with the
+alignment job (X8), so its time is an upper bound.
 
 **X7. Which talker pyannote shows when it shows one.** Sampled every 0.1 s
 inside two-speaker reference overlap; system speakers mapped to people with
