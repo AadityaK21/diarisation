@@ -2,7 +2,7 @@
 # references to final tables; audio download is separate because it is large.
 PY ?= python3
 
-.PHONY: all test prepare prepare-ami prepare-scotus overlap-stats validate-scorer decompose-synthetic diarise validate-scorer-real decompose-pyannote31 compare-mappings prepare-words attribution-oracle attribution-asr audio-ihm audio-sdm audio-headsets audio-scotus transcribe asr-diagnostics overlap-detection wer-decomposition overlap-words consistency scotus reproduction-check sortformer sortformer-eval extra
+.PHONY: all test prepare prepare-ami prepare-scotus overlap-stats validate-scorer decompose-synthetic diarise validate-scorer-real decompose-pyannote31 compare-mappings prepare-words attribution-oracle attribution-asr audio-ihm audio-sdm audio-headsets audio-scotus transcribe asr-diagnostics overlap-detection wer-decomposition overlap-words consistency scotus reproduction-check sortformer sortformer-eval fa-reference extra
 
 all: test prepare overlap-stats validate-scorer decompose-synthetic validate-scorer-real decompose-pyannote31 compare-mappings attribution-oracle attribution-asr asr-diagnostics overlap-detection wer-decomposition consistency
 
@@ -111,5 +111,13 @@ sortformer-eval:
 	$(PY) scripts/overlap_dominance.py --config configs/experiments/overlap_dominance_sortformer_v21.yaml
 	$(PY) scripts/miss_by_word.py
 	$(PY) scripts/compare_systems.py
+
+# Robustness to the reference's boundary convention (decisions S2); needs a
+# clone of github.com/nttcslab-sp/diar-forced-alignment (configs/data/ami_fa.yaml).
+fa-reference:
+	$(PY) scripts/prepare_ami_fa_reference.py
+	$(PY) scripts/decompose.py --config configs/experiments/decomp_fa_reference.yaml
+	$(PY) scripts/attribution_oracle.py --config configs/experiments/attr_oracle_fa_reference.yaml
+	$(PY) scripts/wer_decomposition.py --config configs/experiments/wer_decomposition_fa_regions.yaml
 
 extra: overlap-detection wer-decomposition overlap-words consistency
