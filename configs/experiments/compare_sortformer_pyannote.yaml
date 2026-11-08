@@ -4,6 +4,9 @@
 
 experiment: compare_sortformer_pyannote
 
+dataset: configs/data/ami.yaml
+partition: test
+
 der: results/decomp_sortformer_v21/per_file.csv
 overlap_detection:
   - results/overlap_detection_pyannote31/per_file.csv

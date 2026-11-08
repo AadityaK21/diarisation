@@ -64,6 +64,12 @@ def main() -> int:
     out = REPO_ROOT / cfg["out_dir"]
     out.mkdir(parents=True, exist_ok=True)
 
+    # meetings in the corpus list order, as in every other script, so that the
+    # seeded bootstrap draws the same meetings as theirs
+    ami = load_yaml(cfg["dataset"])
+    order = {u: i for i, u in enumerate((REPO_ROOT / ami["out_dir"] / "lists" / f"{cfg['partition']}.txt").read_text().split())}
+    ordered = lambda us: sorted(us, key=lambda u: order[u])  # noqa: E731
+
     der = defaultdict(dict)   # (system, collar, excl, region) -> {uri: row}
     for r in load(cfg["der"]):
         der[(r["system"], float(r["collar"]), int(r["exclude_overlap"]), r["region"])][r["uri"]] = r
@@ -82,7 +88,7 @@ def main() -> int:
             for region in ("all", "single", "overlap"):
                 kb = (b, float(spec["collar"]), int(spec["exclude_overlap"]), region)
                 kc = (c, float(spec["collar"]), int(spec["exclude_overlap"]), region)
-                uris = sorted(set(der[kb]) & set(der[kc]))
+                uris = ordered(set(der[kb]) & set(der[kc]))
                 if len(uris) != len(der[kb]) or len(uris) != len(der[kc]):
                     print(f"ABORT {p['name']}: the two systems cover different meetings", file=sys.stderr)
                     return 2
@@ -97,7 +103,7 @@ def main() -> int:
                     rows.append({"pair": p["name"], "family": f"der_{conv}", "region": region, "statistic": name,
                                  **compare(cb, cc, uris, f, bs)})
 
-        uris = sorted(set(od[b]) & set(od[c]))
+        uris = ordered(set(od[b]) & set(od[c]))
         keys = [k for k in od[b][uris[0]] if k.startswith("t_ref")]
         cap = max(int(k.split("_sys")[1]) for k in keys)
         col = lambda r, h: f"t_ref{r}_sys{h}"  # noqa: E731
@@ -117,7 +123,7 @@ def main() -> int:
 
         cond, wb, wc = p["wer_condition"], p["wer_baseline"], p["wer_contender"]
         for region in ("all", "single", "overlap"):
-            uris = sorted(wer[(cond, f"cpwer_{wb}", region)])
+            uris = ordered(wer[(cond, f"cpwer_{wb}", region)])
             pick = lambda m: {f"{m}|{k}": [float(wer[(cond, m, region)][u][k]) for u in uris] for k in WER_KEYS}  # noqa: E731
             w = lambda s, m: (s[f"{m}|sub"] + s[f"{m}|del"] + s[f"{m}|ins"]) / s[f"{m}|n_ref"]  # noqa: E731
             base = {**pick(f"cpwer_{wb}"), **pick("cpwer_oracle")}

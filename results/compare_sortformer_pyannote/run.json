@@ -1,9 +1,11 @@
 {
   "experiment": "compare_sortformer_pyannote",
-  "config_hash": "26eb6f7ca3d929a84aeffb51cd07ef507d6c955b71be9234cec86f9fc92bbc27",
+  "config_hash": "b8a0a12ea7a911f4d325d73a8e9a1ff468b230ee606bb2d701603760f4a1fcf3",
   "config": {
     "experiment": {
       "experiment": "compare_sortformer_pyannote",
+      "dataset": "configs/data/ami.yaml",
+      "partition": "test",
       "der": "results/decomp_sortformer_v21/per_file.csv",
       "overlap_detection": [
         "results/overlap_detection_pyannote31/per_file.csv",
@@ -64,19 +66,17 @@
   },
   "seed": 20261002,
   "git": {
-    "commit": "bb6bfb05db1686cb18bf74e12f8544fa9e9e3b7d",
-    "code_dirty": false
+    "commit": "a721cc636cb73ca22dc8e0d87ed5a575ab11b504",
+    "code_dirty": true
   },
   "versions": {
     "python": "3.11.18",
     "numpy": "1.26.4"
   },
   "argv": [
-    "scripts/compare_systems.py",
-    "--config",
-    "configs/experiments/compare_sortformer_pyannote.yaml"
+    "scripts/compare_systems.py"
   ],
-  "started_utc": "2026-11-08T23:31:56+00:00",
-  "wall_seconds": 2.91,
+  "started_utc": "2026-11-08T23:35:00+00:00",
+  "wall_seconds": 2.772,
   "n_rows": 136
 }
