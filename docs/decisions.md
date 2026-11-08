@@ -518,6 +518,20 @@ vs 81.65%, -11.34 [-13.84, -7.22]) and 2-4 points higher outside it. Metric B
 minus cpWER is +0.24 [-0.09, 0.89] and -0.60 [-2.14, 0.49] for Sortformer
 (pyannote -2.09 and -2.93).
 
+Per meeting (`results/compare_sortformer_pyannote/contrasts.csv`, exact sign
+test): Sortformer's cpWER in overlap is lower in 14 of 16 meetings (headset,
+p = 0.004) and 13 of 16 (distant, p = 0.02); its speaker confusion in overlap
+is lower in 14 of 16 on both; its DER against the brief's reference is higher
+in all 16 on both. Overall cpWER is lower in 12 and 10 of 16 (not
+significant). Why it does better in overlap (X7 rerun,
+`results/overlap_dominance_sortformer_v21/`): when it shows one of two
+overlapping talkers it is the louder one 87.2% [85.0, 89.1] of the time
+(headset; distant 84.5% [80.9, 87.6]; pyannote 71.2% and 66.3%), and it shows
+both only 40.6% of the time (pyannote 60.1%). Whisper keeps the louder talker
+(X3), so Sortformer's one speaker is usually the one whose words are in the
+transcript. It also shows three or more speakers for 14.4% of the reference's
+three-or-more-speaker time (pyannote, capped at two: 0.0%).
+
 **S2. The reference's boundary convention [Jensen].** The brief's AMI
 reference (only_words, BUT/pyannote setup) takes speech time from AMI's
 manual word times, which are loose. Horiguchi et al. (IEEE ASRU 2025,
