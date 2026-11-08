@@ -322,7 +322,9 @@ the cpWER assignment of the hypothesis labels; started from a single label
 it stalls far above cpWER (52% vs 26% on IS1009a), so it is run from the
 perfect-diarisation and the pyannote labelling and the lower result kept
 (both are upper bounds on the exact DI-cpWER, so the transcription part may
-be slightly overstated and the assignment part understated). Region-split
+be slightly overstated and the assignment part understated). The two starts
+agree closely: 24.23% vs 24.45% over the headset-mix test set, at most 40
+errors apart in any meeting. Region-split
 counts are checked against MeetEval's totals on every file. tcpWER
 (MeetEval) is reported at a 5 s collar, the collar used to rank CHiME-8 DASR
 (chimechallenge.org/challenges/chime8/task1) and in the MeetEval paper
