@@ -331,6 +331,9 @@ counts are checked against MeetEval's totals on every file. tcpWER
 (arXiv:2307.11394). Headset mix, pyannote: 33.4% cpWER = 24.2 transcription
 + 7.3 word assignment + 2.0 diarisation; in overlap 78.1 = 54.5 + 22.6 + 1.0.
 The word-assignment part exceeds the diarisation part in 16 of 16 meetings.
+Distant mic: 39.8 = 29.9 + 6.3 + 3.5; in overlap 81.7 = 59.2 + 18.5 + 3.9;
+word assignment exceeds diarisation in 13 of 16 meetings (sign test p=0.02).
+tcpWER (5 s) is 1.1 (headset) and 1.2 (distant) points above cpWER.
 
 **X3. Which overlapped words are lost.** Role (whose current turn started
 first), turn length (1-2 words vs longer) and relative level, 10 log10 of
@@ -351,6 +354,9 @@ a by-product of backchannels or turn order: it holds within turns longer
 than two words (deletion 64% below -10 dB, 32% above +10 dB) and for the
 first and the second talker separately (59% to 25%; 70% to 42%); the
 `length|level` and `role|level` groups in aggregate.csv give the intervals.
+Distant mic (Whisper on the far-field channel, level still from the
+headsets): deletion 63.9% below -10 dB and 43.0% above +10 dB, 16.2% outside
+overlap; the below-0 vs above-0 difference holds in 14 of 16 meetings.
 
 **X4. Per-meeting consistency.** For each headline effect, the number of
 the 16 test meetings in which it holds and an exact two-sided sign test
