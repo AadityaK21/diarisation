@@ -12,8 +12,21 @@ Audio Analysis Lab, Aalborg University (October–November 2026).
 | 2 | AMI + Supreme Court reference prep, per-meeting overlap table | done (`results/overlap_stats/`) |
 | 3 | Frame-level scorer validated against md-eval.pl | done (`results/scorer_validation/`) |
 | 4 | Overlap-conditioned decomposition | done on synthetic systems (`results/decomp_synthetic/`) |
-| 5 | pyannote 3.1 baseline, full grid on AMI test | done on published outputs (`results/decomp_pyannote31/`); own CPU run in progress |
-| 6 | ASR, word alignment, cpWER and fixed-mapping attribution | not started |
+| 5 | pyannote 3.1 baseline, full grid on AMI test | done on published outputs (`results/decomp_pyannote31/`); own CPU reproduction queued |
+| 6a | Word attribution with true words, fixed vs optimal mapping | done (`results/attr_oracle_pyannote31/`) |
+| 6b | Whisper ASR, cpWER vs fixed mappings by region (MeetEval-checked) | done (`results/attr_asr_whisper_turbo/`) |
+
+Extra analyses (`docs/decisions.md` X1-X7; none replaces a step):
+
+| | What | Where |
+|---|---|---|
+| X1 | Overlap detection by pyannote (speaker-count confusion) | `results/overlap_detection_pyannote31/` |
+| X2 | Word error = transcription + word assignment + diarisation (DI-cpWER, cpWER, tcpWER) | `results/wer_decomposition_whisper_turbo/` |
+| X3 | Which overlapped words are lost: role, turn length, level from headsets | `results/overlap_words_whisper_turbo/` |
+| X4 | Per-meeting consistency of every headline effect (sign test) | `results/consistency/` |
+| X5 | Supreme Court argument through the full pipeline | `results/scotus_pyannote31_whisper/` |
+| X6 | large-v3 vs large-v3-turbo on a subset | `results/wer_decomposition_large_v3_subset/` |
+| X7 | Which talker pyannote shows in two-speaker overlap | `results/overlap_dominance_pyannote31/` |
 
 ## Quick start
 
