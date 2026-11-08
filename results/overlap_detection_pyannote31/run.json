@@ -1,0 +1,42 @@
+{
+  "experiment": "overlap_detection_pyannote31",
+  "config_hash": "eb69408a87f2a240b09d9eef53e4f4b4f01ead1ddb71fab21c4caa1267bb7005",
+  "config": {
+    "experiment": {
+      "experiment": "overlap_detection_pyannote31",
+      "dataset": "configs/data/ami.yaml",
+      "annotation": "only_words",
+      "partition": "test",
+      "count_cap": 3,
+      "systems": {
+        "pyannote31_ihm_mix": {
+          "hyp_dir": "results/diarise/pyannote31_published/ihm_mix/test"
+        },
+        "pyannote31_sdm": {
+          "hyp_dir": "results/diarise/pyannote31_published/sdm/test"
+        }
+      },
+      "bootstrap": {
+        "n_resamples": 10000,
+        "ci_level": 0.95,
+        "seed": 20261002
+      },
+      "out_dir": "results/overlap_detection_pyannote31"
+    }
+  },
+  "seed": 20261002,
+  "git": {
+    "commit": "1c810ffd2daedb2a162ded6f523d9d37641a3072",
+    "code_dirty": false
+  },
+  "versions": {
+    "python": "3.11.18",
+    "numpy": "1.26.4"
+  },
+  "argv": [
+    "scripts/overlap_detection.py"
+  ],
+  "started_utc": "2026-11-08T17:19:34+00:00",
+  "wall_seconds": 0.222,
+  "n_rows": 32
+}
