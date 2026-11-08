@@ -27,6 +27,12 @@ REGIONS = ("all", "single", "overlap")
 KEYS = ("n_ref", "sub", "del", "ins")
 
 
+def systems_of(c):
+    """{name: rttm dir} of the diarisation systems of a condition. A config with
+    one `pyannote_dir` (the original form) means {"pyannote": that dir}."""
+    return dict(c["systems"]) if "systems" in c else {"pyannote": c["pyannote_dir"]}
+
+
 def totals(acc):
     tot = {k: sum(acc[r][k] for r in acc) for k in KEYS}
     return {"all": tot, "single": acc["single"], "overlap": acc["overlap"]}
@@ -68,19 +74,19 @@ def main() -> int:
             words = asr_words(asr_p)
             ref_sl = seglst(ref_streams, uri)
 
-            # label the words two ways (perfect diarisation, pyannote) with the word rule
+            # label the words with the word rule: perfect diarisation, then each system
             labelled = {}
-            for run, hyp_dir in (("oracle", REPO_ROOT / ami["out_dir"] / cfg["annotation"] / "rttm" / part),
-                                 ("pyannote", REPO_ROOT / c["pyannote_dir"])):
+            runs = [("oracle", REPO_ROOT / ami["out_dir"] / cfg["annotation"] / "rttm" / part)] + \
+                [(name, REPO_ROOT / d) for name, d in systems_of(c).items()]
+            for run, hyp_dir in runs:
                 hyp = read_rttm(hyp_dir / f"{uri}.rttm")[uri]
                 hs = {}
                 for w, lab in zip(words, assign(words, hyp)):
                     hs.setdefault(lab if lab is not None else "__unassigned__", []).append((w.text, w.start, w.end))
                 labelled[run] = {k: tokens(v) for k, v in hs.items()}
 
-            # transcription only: DI-cpWER from both labellings, lowest kept
-            di_s, di, di_start = di_streams(ref_streams, [("oracle", labelled["oracle"]),
-                                                          ("pyannote", labelled["pyannote"])], uri)
+            # transcription only: DI-cpWER from every labelling, lowest kept
+            di_s, di, di_start = di_streams(ref_streams, [(r, labelled[r]) for r, _ in runs], uri)
             acc = score_assignment(ref_streams, di_s, {r: r for r in ref_streams}, region)
             ours = sum(a["sub"] + a["del"] + a["ins"] for a in acc.values())
             if ours != di.errors:
@@ -89,7 +95,7 @@ def main() -> int:
             di_start_by[(cond, uri)] = di_start
             measures = {"di_cpwer": totals(acc)}
 
-            for run in ("oracle", "pyannote"):
+            for run, _ in runs:
                 hyp_streams = labelled[run]
                 acc = score_assignment(ref_streams, hyp_streams, cp_assignment(ref_streams, hyp_streams), region)
                 me = cp_word_error_rate(ref_sl, seglst(hyp_streams, uri))
@@ -117,18 +123,27 @@ def main() -> int:
         us = included[cond]
         if not us:
             continue
+        systems = list(systems_of(cfg["conditions"][cond]))
         for reg in REGIONS:
-            ms = ["di_cpwer", "cpwer_oracle", "cpwer_pyannote"] + (["tcpwer_oracle", "tcpwer_pyannote"] if reg == "all" else [])
+            runs = ["oracle"] + systems
+            ms = ["di_cpwer"] + [f"cpwer_{r}" for r in runs] + ([f"tcpwer_{r}" for r in runs] if reg == "all" else [])
             cols = {f"{m}|{k}": [float(idx[(cond, m, reg, u)][k]) for u in us] for m in ms for k in KEYS}
             wer = lambda s, m: (s[f"{m}|sub"] + s[f"{m}|del"] + s[f"{m}|ins"]) / s[f"{m}|n_ref"]  # noqa: E731
             stats = {m: (lambda m: lambda s: wer(s, m))(m) for m in ms}
             stats["part_transcription"] = lambda s: wer(s, "di_cpwer")
             stats["part_word_rule"] = lambda s: wer(s, "cpwer_oracle") - wer(s, "di_cpwer")
-            stats["part_diarisation"] = lambda s: wer(s, "cpwer_pyannote") - wer(s, "cpwer_oracle")
+            # one system: "part_diarisation" as before; several: one per system,
+            # and each later system's cpWER minus the first's (paired over meetings)
+            for sy in systems:
+                name = "part_diarisation" if len(systems) == 1 else f"part_diarisation_{sy}"
+                stats[name] = (lambda sy: lambda s: wer(s, f"cpwer_{sy}") - wer(s, "cpwer_oracle"))(sy)
+            for sy in systems[1:]:
+                stats[f"cpwer_{sy}_minus_{systems[0]}"] = (
+                    lambda sy: lambda s: wer(s, f"cpwer_{sy}") - wer(s, f"cpwer_{systems[0]}"))(sy)
             stats["di_del"] = lambda s: s["di_cpwer|del"] / s["di_cpwer|n_ref"]
             if reg == "all":
-                stats["tcp_minus_cp_oracle"] = lambda s: wer(s, "tcpwer_oracle") - wer(s, "cpwer_oracle")
-                stats["tcp_minus_cp_pyannote"] = lambda s: wer(s, "tcpwer_pyannote") - wer(s, "cpwer_pyannote")
+                for r in runs:
+                    stats[f"tcp_minus_cp_{r}"] = (lambda r: lambda s: wer(s, f"tcpwer_{r}") - wer(s, f"cpwer_{r}"))(r)
             for name, f in stats.items():
                 e = of_sums(cols, f, bs["n_resamples"], bs["ci_level"], bs["seed"])
                 agg.append({"condition": cond, "region": reg, "statistic": name, "n_files": len(us),
@@ -137,6 +152,38 @@ def main() -> int:
     with open(out / "aggregate.csv", "w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=list(agg[0]))
         w.writeheader(); w.writerows(agg)
+
+    # Optional paired contrasts between two conditions on the same meetings
+    # (e.g. the same words with two timings): statistic(b) - statistic(a),
+    # bootstrapped over meetings, and the number of meetings where it is < 0.
+    con = []
+    for a, b in cfg.get("contrasts", []):
+        us = [u for u in included[a] if u in included[b]]
+        sy_a, sy_b = list(systems_of(cfg["conditions"][a])), list(systems_of(cfg["conditions"][b]))
+        if sy_a != sy_b:
+            print(f"ABORT contrast {a} vs {b}: different systems", file=sys.stderr)
+            return 2
+        for reg in REGIONS:
+            ms = ["di_cpwer"] + [f"cpwer_{r}" for r in ["oracle"] + sy_a]
+            cols = {f"{c}|{m}|{k}": [float(idx[(c, m, reg, u)][k]) for u in us]
+                    for c in (a, b) for m in ms for k in KEYS}
+            wer = lambda s, c, m: (s[f"{c}|{m}|sub"] + s[f"{c}|{m}|del"] + s[f"{c}|{m}|ins"]) / s[f"{c}|{m}|n_ref"]  # noqa: E731
+            parts = {m: (lambda m: lambda s, c: wer(s, c, m))(m) for m in ms}
+            parts["part_word_rule"] = lambda s, c: wer(s, c, "cpwer_oracle") - wer(s, c, "di_cpwer")
+            for sy in sy_a:
+                name = "part_diarisation" if len(sy_a) == 1 else f"part_diarisation_{sy}"
+                parts[name] = (lambda sy: lambda s, c: wer(s, c, f"cpwer_{sy}") - wer(s, c, "cpwer_oracle"))(sy)
+            for name, f in parts.items():
+                d = lambda s, f=f: f(s, b) - f(s, a)  # noqa: E731
+                e = of_sums(cols, d, bs["n_resamples"], bs["ci_level"], bs["seed"])
+                per = [d({k: v[i] for k, v in cols.items()}) for i in range(len(us))]
+                con.append({"a": a, "b": b, "region": reg, "statistic": f"{name}_b_minus_a", "n_files": len(us),
+                            "point": f"{e.point:.6f}", "lo": f"{e.lo:.6f}", "hi": f"{e.hi:.6f}",
+                            "n_files_below_zero": sum(x < 0 for x in per)})
+    if con:
+        with open(out / "contrasts.csv", "w", newline="") as fh:
+            w = csv.DictWriter(fh, fieldnames=list(con[0]))
+            w.writeheader(); w.writerows(con)
     log.finish(out, meetings_included=included,
                di_cpwer_best_start={f"{c}/{u}": r for (c, u), r in di_start_by.items()})
     print(f"run {log.short_hash}: DI-cpWER and cpWER match MeetEval on every file -> {cfg['out_dir']}/")

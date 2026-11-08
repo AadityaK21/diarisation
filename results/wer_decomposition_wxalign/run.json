@@ -1,0 +1,129 @@
+{
+  "experiment": "wer_decomposition_wxalign",
+  "config_hash": "c1e3610f8ad8c4dd39d8a80a634fe4439a80e20da7a16a214cfcb82742caac8a",
+  "config": {
+    "experiment": {
+      "experiment": "wer_decomposition_wxalign",
+      "frame_step": 0.001,
+      "dataset": "configs/data/ami.yaml",
+      "words": "configs/data/ami_words.yaml",
+      "annotation": "only_words",
+      "partition": "test",
+      "conditions": {
+        "ihm_mix": {
+          "asr_dir": "results/asr/whisper_turbo_cpu/ihm_mix/test",
+          "pyannote_dir": "results/diarise/pyannote31_published/ihm_mix/test"
+        },
+        "ihm_mix_wxalign": {
+          "asr_dir": "results/asr/whisper_turbo_cpu_wxalign/ihm_mix/test",
+          "pyannote_dir": "results/diarise/pyannote31_published/ihm_mix/test"
+        }
+      },
+      "contrasts": [
+        [
+          "ihm_mix",
+          "ihm_mix_wxalign"
+        ]
+      ],
+      "tcp_collar": 5.0,
+      "bootstrap": {
+        "n_resamples": 10000,
+        "ci_level": 0.95,
+        "seed": 20261002
+      },
+      "out_dir": "results/wer_decomposition_wxalign"
+    }
+  },
+  "seed": 20261002,
+  "git": {
+    "commit": "ca22d1ef0251cb92570a220ab0d80bfcfc4feaaf",
+    "code_dirty": true
+  },
+  "versions": {
+    "python": "3.11.18",
+    "numpy": "1.26.4",
+    "scipy": "1.14.1",
+    "rapidfuzz": "3.10.1",
+    "meeteval": "0.4.3",
+    "whisper-normalizer": "0.0.10"
+  },
+  "argv": [
+    "scripts/wer_decomposition.py",
+    "--config",
+    "configs/experiments/wer_decomposition_wxalign.yaml"
+  ],
+  "started_utc": "2026-11-08T22:20:57+00:00",
+  "wall_seconds": 169.787,
+  "meetings_included": {
+    "ihm_mix": [
+      "IS1009a",
+      "IS1009b",
+      "IS1009c",
+      "IS1009d",
+      "ES2004a",
+      "ES2004b",
+      "ES2004c",
+      "ES2004d",
+      "TS3003a",
+      "TS3003b",
+      "TS3003c",
+      "TS3003d",
+      "EN2002a",
+      "EN2002b",
+      "EN2002c",
+      "EN2002d"
+    ],
+    "ihm_mix_wxalign": [
+      "IS1009a",
+      "IS1009b",
+      "IS1009c",
+      "IS1009d",
+      "ES2004a",
+      "ES2004b",
+      "ES2004c",
+      "ES2004d",
+      "TS3003a",
+      "TS3003b",
+      "TS3003c",
+      "TS3003d",
+      "EN2002a",
+      "EN2002b",
+      "EN2002c",
+      "EN2002d"
+    ]
+  },
+  "di_cpwer_best_start": {
+    "ihm_mix/IS1009a": "oracle",
+    "ihm_mix/IS1009b": "oracle",
+    "ihm_mix/IS1009c": "pyannote",
+    "ihm_mix/IS1009d": "oracle",
+    "ihm_mix/ES2004a": "oracle",
+    "ihm_mix/ES2004b": "pyannote",
+    "ihm_mix/ES2004c": "pyannote",
+    "ihm_mix/ES2004d": "oracle",
+    "ihm_mix/TS3003a": "oracle",
+    "ihm_mix/TS3003b": "oracle",
+    "ihm_mix/TS3003c": "oracle",
+    "ihm_mix/TS3003d": "oracle",
+    "ihm_mix/EN2002a": "oracle",
+    "ihm_mix/EN2002b": "pyannote",
+    "ihm_mix/EN2002c": "oracle",
+    "ihm_mix/EN2002d": "oracle",
+    "ihm_mix_wxalign/IS1009a": "oracle",
+    "ihm_mix_wxalign/IS1009b": "oracle",
+    "ihm_mix_wxalign/IS1009c": "oracle",
+    "ihm_mix_wxalign/IS1009d": "oracle",
+    "ihm_mix_wxalign/ES2004a": "pyannote",
+    "ihm_mix_wxalign/ES2004b": "pyannote",
+    "ihm_mix_wxalign/ES2004c": "pyannote",
+    "ihm_mix_wxalign/ES2004d": "oracle",
+    "ihm_mix_wxalign/TS3003a": "oracle",
+    "ihm_mix_wxalign/TS3003b": "oracle",
+    "ihm_mix_wxalign/TS3003c": "oracle",
+    "ihm_mix_wxalign/TS3003d": "oracle",
+    "ihm_mix_wxalign/EN2002a": "pyannote",
+    "ihm_mix_wxalign/EN2002b": "pyannote",
+    "ihm_mix_wxalign/EN2002c": "oracle",
+    "ihm_mix_wxalign/EN2002d": "oracle"
+  }
+}

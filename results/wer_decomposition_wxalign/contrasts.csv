@@ -1,0 +1,16 @@
+a,b,region,statistic,n_files,point,lo,hi,n_files_below_zero
+ihm_mix,ihm_mix_wxalign,all,di_cpwer_b_minus_a,16,-0.000570,-0.001234,0.000052,9
+ihm_mix,ihm_mix_wxalign,all,cpwer_oracle_b_minus_a,16,-0.001834,-0.004585,0.000391,11
+ihm_mix,ihm_mix_wxalign,all,cpwer_pyannote_b_minus_a,16,0.002437,0.000390,0.004355,6
+ihm_mix,ihm_mix_wxalign,all,part_word_rule_b_minus_a,16,-0.001263,-0.004001,0.000918,10
+ihm_mix,ihm_mix_wxalign,all,part_diarisation_b_minus_a,16,0.004271,0.002208,0.006479,2
+ihm_mix,ihm_mix_wxalign,single,di_cpwer_b_minus_a,16,0.000149,-0.000571,0.000863,6
+ihm_mix,ihm_mix_wxalign,single,cpwer_oracle_b_minus_a,16,-0.002703,-0.005224,-0.000363,12
+ihm_mix,ihm_mix_wxalign,single,cpwer_pyannote_b_minus_a,16,-0.000936,-0.002646,0.000565,10
+ihm_mix,ihm_mix_wxalign,single,part_word_rule_b_minus_a,16,-0.002851,-0.005403,-0.000561,10
+ihm_mix,ihm_mix_wxalign,single,part_diarisation_b_minus_a,16,0.001767,0.000482,0.003248,4
+ihm_mix,ihm_mix_wxalign,overlap,di_cpwer_b_minus_a,16,-0.002760,-0.005244,-0.000146,8
+ihm_mix,ihm_mix_wxalign,overlap,cpwer_oracle_b_minus_a,16,0.000814,-0.002871,0.003843,7
+ihm_mix,ihm_mix_wxalign,overlap,cpwer_pyannote_b_minus_a,16,0.012712,0.006944,0.019935,2
+ihm_mix,ihm_mix_wxalign,overlap,part_word_rule_b_minus_a,16,0.003574,-0.000839,0.006854,6
+ihm_mix,ihm_mix_wxalign,overlap,part_diarisation_b_minus_a,16,0.011898,0.005951,0.019486,1
