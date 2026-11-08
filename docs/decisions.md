@@ -296,3 +296,70 @@ redone. Rerun with the current code (8095f4fd05, which also adds the
 one-to-one variant, W7): oracle-diarisation overlap attribution error 48.12%
 -> 47.22%, all words 11.83% -> 11.61%; every pyannote number moves by less
 than 0.01 points. The three tie-break rules are now on the same code.
+
+## Extra analyses (beyond the brief's steps; none replaces a step)
+
+**X1. Overlap detection by pyannote 3.1.** Speaker-count confusion between
+reference and system, seconds of UEM time, no collar
+(`scripts/overlap_detection.py`). Headset mix: the system shows two speakers
+for 63.7% [59.4, 66.6] of the reference overlap time (recall) and 86.4% of
+its own two-speaker time is real overlap (precision); 35.3% of overlap time
+is shown as one speaker. Distant mic: recall 58.7%, precision 85.0%. By
+design the segmentation model outputs at most 2 speakers per frame and 3 per
+10 s chunk (model card, huggingface.co/pyannote/segmentation-3.0:
+`max_speakers_per_chunk, max_speakers_per_frame = 3, 2`); 600 s of the
+3,827 s of reference overlap (headset mix) has 3 or more people talking and
+can at best be shown as 2.
+
+**X2. Where speaker-attributed word errors come from.** Three nested scores
+on the same Whisper words (`scripts/wer_decomposition.py`): DI-cpWER
+(MeetEval's diarisation-invariant cpWER, greedy; every output word may go to
+whichever person minimises the error), so it is transcription only; cpWER
+with the word rule on the reference turns (perfect diarisation); cpWER with
+pyannote's turns. Differences give the word-assignment part and the
+diarisation part, paired per meeting. MeetEval's greedy search starts from
+the cpWER assignment of the hypothesis labels; started from a single label
+it stalls far above cpWER (52% vs 26% on IS1009a), so it is run from the
+perfect-diarisation and the pyannote labelling and the lower result kept
+(both are upper bounds on the exact DI-cpWER, so the transcription part may
+be slightly overstated and the assignment part understated). Region-split
+counts are checked against MeetEval's totals on every file. tcpWER
+(MeetEval) is reported at a 5 s collar, the collar used to rank CHiME-8 DASR
+(chimechallenge.org/challenges/chime8/task1) and in the MeetEval paper
+(arXiv:2307.11394). Headset mix, pyannote: 33.4% cpWER = 24.2 transcription
++ 7.3 word assignment + 2.0 diarisation; in overlap 78.1 = 54.5 + 22.6 + 1.0.
+The word-assignment part exceeds the diarisation part in 16 of 16 meetings.
+
+**X3. Which overlapped words are lost.** Role (whose current turn started
+first), turn length (1-2 words vs longer) and relative level, 10 log10 of
+the speaker's own headset energy over the summed headset energy of the other
+active speakers during the word (`scripts/overlap_words.py`). Headset
+channels per speaker come from AMI's meetings.xml; the 63 headset files of
+the test meetings are downloaded outside the repository
+(`scripts/download_ami_headsets.py`). Crosstalk limits the measure: on
+single-speaker words the same ratio (against all other headsets) has median
++20.7 dB (10th-90th percentile 6.2 to 29.2 dB), so levels above about +20 dB
+are not resolved. Outcomes: deletion under the DI-cpWER alignment (per
+token) and attribution with perfect diarisation (per word, as step 6a).
+
+**X4. Per-meeting consistency.** For each headline effect, the number of
+the 16 test meetings in which it holds and an exact two-sided sign test
+(`scripts/consistency.py`, `results/consistency/claims.csv`).
+
+**X5. Supreme Court set through the full pipeline.** Audio: the Oyez
+delivery mp3 of the 2 December 2019 argument in 2019/18-280 (sha256
+pinned in configs/data/scotus_oyez.yaml), converted with ffmpeg to 16 kHz
+mono WAV under audio_root. Reference: the existing raw Oyez turns (no
+overlap, no silence between turns, not hand-corrected; unchanged, and
+re-parsed from today's Oyez JSON they are identical) and reference words
+from the Oyez text blocks with pseudo timings (each word an equal share of
+its block; one block with stop 0 takes its turn's times). DER is therefore
+for orientation only and the overlap split does not apply; the point is
+speaker attribution with 10 speakers, where a merged pair of people cannot be
+undone by a many-to-one mapping. Same pyannote and Whisper settings as AMI.
+
+**X6. Effect of the turbo deviation (W1).** large-v3, the brief's model,
+with exactly the turbo run's decoding settings, on CPU for a subset of test
+meetings (IS1009a, ES2004a; headset mix), compared with turbo on the same
+meetings. A subset check only: it bounds the size of the effect, it does not
+replace a full large-v3 run.
