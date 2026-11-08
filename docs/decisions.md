@@ -476,3 +476,94 @@ part grows in 14 of 16. Why is not established here; one possibility is that
 Whisper's own, smoother word times sit better inside pyannote's turns. Either
 way the deviation from the brief's alignment step (W2) does not change any
 finding.
+
+## Second system and second reference
+
+**S1. NeMo streaming Sortformer, the brief's optional NeMo system.**
+`nvidia/diar_streaming_sortformer_4spk-v2.1` (NeMo 2.7.3, CPU, Hugging Face
+revision cd03eee), an end-to-end model with up to 4 speakers per frame
+(AMI test meetings have 3-4 people), run as published: the model card's
+30.4 s streaming setting, the model's default post-processing, nothing tuned
+on AMI (`configs/systems/sortformer_v21.yaml`). Chosen over NeMo's older
+clustering + MSDD pipeline as NeMo's current diariser; flag if the brief meant
+MSDD. Frame probabilities are saved, so NVIDIA's published post-processing for
+this model family (tuned on DIHARD III dev; none exists for AMI) is applied as
+a sensitivity variant: it changes speaker time by about 2%, lowers Full DER
+by 1.1-1.6 points in every region and changes cpWER by less than 0.5. RTF 0.03-0.04 on 4 cores; 4 speakers found in
+every meeting. Not run on the Supreme Court argument (10 speakers > 4).
+
+Against the brief's reference (only_words), Full DER is 29.42% [26.09, 32.46]
+(headset mix) and 32.05% (distant mic), against pyannote's 18.80% and 22.45%;
+nearly all of the gap is missed speech outside overlap (20.5% of
+single-speaker time vs 3.8%). Speaker confusion is lower than pyannote's
+(2.8% vs 5.7% of speaker time; in overlap 2.8% vs 13.9%). Sortformer detects
+less overlap than pyannote (recall 42.6% vs 63.7%, precision 89.4% vs 86.4%),
+so it is not more overlap-aware on AMI in practice. Its missed speech
+concentrates in reference words longer than 0.8 s (51.9% of their time vs
+10.7% for pyannote), which AMI's manual word times stretch over pauses; see
+S2.
+
+With the true words (step 6a), Sortformer credits 45.3% [43.5, 47.3] of
+overlapped words to the wrong person on the headset mix (pyannote 57.4%,
+perfect diarisation 47.2%) and 47.3% on the distant mic (pyannote 59.7%). The
+fixed many-to-one mapping (metric B) is lenient only by 0.1 points [0.0,
+0.4] (headset) and 0.9 [0.0, 2.1] (distant) for Sortformer, against 1.4
+[0.7, 2.2] and 2.4 [1.3, 3.5] for pyannote: a system
+that cannot over-cluster leaves little to forgive, as on the Supreme Court
+argument (X5). With Whisper's words (step 6b), cpWER is 32.66% (headset) and
+39.74% (distant) against pyannote's 33.44% and 39.79%: no difference overall
+(paired -0.78 [-4.55, 4.55] and -0.05 [-4.32, 5.25]), but 10-11 points lower
+in overlap (67.71% vs 78.06%, paired -10.35 [-13.48, -5.67]; distant 70.31%
+vs 81.65%, -11.34 [-13.84, -7.22]) and 2-4 points higher outside it. Metric B
+minus cpWER is +0.24 [-0.09, 0.89] and -0.60 [-2.14, 0.49] for Sortformer
+(pyannote -2.09 and -2.93).
+
+**S2. The reference's boundary convention [Jensen].** The brief's AMI
+reference (only_words, BUT/pyannote setup) takes speech time from AMI's
+manual word times, which are loose. Horiguchi et al. (IEEE ASRU 2025,
+arXiv:2507.09226) show that such loose boundaries change DER and that models
+learn the looseness of their training references; they publish
+forced-alignment (MFA) labels for the same AMI only_words setup, which is
+what Sortformer is trained and evaluated on. Those labels (CC BY 4.0;
+`data/ami/forced_alignment/`, `configs/data/ami_fa.yaml`) are used here as a
+second reference, for checks only: same 16 meetings, same words, same UEM.
+They have 22% less speaker time (23,931 s vs 30,714 s) and 44% less
+overlapped speaker time (4,628 s, 19.3% of speaker time, vs 8,296 s, 27.0%);
+three-or-more-speaker time falls from 6.0% to 3.1% of speaker time.
+
+Against them the ranking of the two systems flips (Full DER, headset / distant):
+Sortformer 15.94% [13.49, 18.89] / 19.54%, pyannote 36.22% [31.97, 40.32] /
+38.41%. Sortformer's 15.94% matches its model card (15.90% headset; 17.80%
+distant), which checks this run. pyannote's error against them is mostly
+false alarm in the pauses the forced alignment excludes (24.8% of speaker
+time); with the 0.25 s collar it falls to 14.85% (Sortformer 6.94%). What
+this changes in the findings:
+
+- Finding "overlap carries most of the DER" (P1, F-series) holds for the
+  brief's reference only: against forced alignment, 19.3% of pyannote's error
+  is in overlap, its share of the time. DER per second stays far higher in
+  overlap under both references (pyannote 38.9% vs 8.2% only_words; 36.2% vs
+  10.9% forced alignment).
+- The coin flip of the word rule (A3) is robust: with forced-alignment turns
+  as perfect diarisation, 43.3% [41.9, 44.5] of overlapped words are credited
+  to the wrong person (47.2% with the only_words turns;
+  `results/attr_oracle_fa_reference/`).
+- The split of cpWER into word assignment and diarisation (X2) depends on
+  which turns define perfect diarisation. With forced-alignment turns,
+  cpWER is 29.63% (headset) and 34.91% (distant) instead of 31.47% and
+  36.25%, and 67.89% in overlap instead of 77.05%. The headset-mix split
+  becomes 23.8 + 5.8 + 3.8 (transcription, word assignment, diarisation)
+  instead of 23.8 + 7.7 + 2.0 in the same run, and 52.8 + 15.1 + 10.2 in
+  overlap; on the distant mic 29.5 + 5.4 + 4.9. So word assignment still
+  costs more than diarisation, clearly on the headset mix and narrowly on the
+  distant mic, but pyannote's cost in overlap is about 10 points against
+  tight turns, not 1. Sortformer reaches the tight-turn level in overlap
+  (67.71% vs 67.89% headset; 70.31% vs 70.07% distant): its advantage there
+  comes from tight speech activity, not from showing more overlap. (DI-cpWER
+  in this run is the lowest over five labellings, 23.81% headset, slightly
+  below the pyannote-only run's 24.19%.)
+- Main results stay on the brief's reference, as planned; whether to move
+  them to the forced-alignment labels is a question for Jensen. Word-level
+  scores (cpWER, the attribution measures) depend much less on the convention
+  than DER: across the two references the cpWER ranking of the systems does
+  not change.
