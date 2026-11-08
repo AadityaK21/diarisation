@@ -1,0 +1,8 @@
+# venv-nemo: NVIDIA NeMo for the streaming Sortformer diariser (configs/systems/sortformer_v21.yaml)
+#   python3.11 -m venv venv-nemo
+#   pip install torch==2.8.0 torchaudio==2.8.0 --index-url https://download.pytorch.org/whl/cpu
+#   pip install Cython packaging
+#   pip install -r env/requirements-nemo-cpu.txt -c env/constraints-nemo-cpu.txt --extra-index-url https://download.pytorch.org/whl/cpu
+#   pip install -e . --no-deps          # this repo's package, for the RTTM writer and run log
+# CPU only; no GPU or VRAM is needed.
+nemo_toolkit[asr]==2.7.3

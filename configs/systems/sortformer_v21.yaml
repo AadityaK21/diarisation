@@ -1,0 +1,33 @@
+# The brief's optional NeMo system: NVIDIA's streaming Sortformer
+# (nvidia/diar_streaming_sortformer_4spk-v2.1), an end-to-end diarisation
+# model that outputs up to 4 overlapping speakers per frame (AMI test meetings
+# have 3 or 4 people). Run as published: the model's own diarize() with its
+# default post-processing, no oracle speaker count, nothing tuned on AMI.
+# Runs in venv-nemo (env/requirements-nemo-cpu.txt), CPU only.
+
+system: sortformer_v21
+backend: nemo_sortformer
+model: nvidia/diar_streaming_sortformer_4spk-v2.1
+nemo_file: diar_streaming_sortformer_4spk-v2.1.nemo
+revision: cd03eee90fbec18297ac31b8c21546e596b7f71c   # Hugging Face commit, 2026-09-23
+
+# The model card's "very high latency" setting (30.4 s input buffer), the one
+# it reports its AMI test DER for (16.67 IHM / 20.57 SDM at 1.04 s; 15.90 /
+# 17.80 at 30.4 s, against forced-alignment references). In 80 ms frames.
+streaming:
+  chunk_len: 340
+  chunk_right_context: 40
+  fifo_len: 40
+  spkcache_update_period: 300
+  spkcache_len: 188
+
+device: cpu
+cpu_threads: 4
+seed: 20261002
+rttm_decimals: 3
+
+dataset: configs/data/ami.yaml
+conditions: [ihm_mix, sdm]
+partitions: [test]
+
+out_dir: results/diarise/sortformer_v21   # <out_dir>/<condition>/<partition>/<uri>.rttm

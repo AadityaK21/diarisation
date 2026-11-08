@@ -51,15 +51,27 @@ def main() -> int:
     import torch
     random.seed(cfg["seed"]); np.random.seed(cfg["seed"]); torch.manual_seed(cfg["seed"])
 
-    pipe, device = pyannote_sys.load(cfg["model"], cfg["expect_pyannote_major"], cfg["device"], cfg["cpu_threads"])
-    revision = pyannote_sys.model_revision(cfg["model"])
+    backend = cfg.get("backend", "pyannote")
+    if backend == "pyannote":
+        pipe, device = pyannote_sys.load(cfg["model"], cfg["expect_pyannote_major"], cfg["device"], cfg["cpu_threads"])
+        revision = pyannote_sys.model_revision(cfg["model"])
+        run = lambda wav, out, uri: pyannote_sys.diarise(pipe, wav)  # noqa: E731
+        packages = ("pyannote.audio", "torch", "torchaudio", "numpy", "scipy")
+    elif backend == "nemo_sortformer":
+        from diarisation.systems import sortformer_sys
+        model, device, revision = sortformer_sys.load(cfg)
+        run = lambda wav, out, uri: sortformer_sys.diarise(model, wav, out / f"{uri}.probs.npz")  # noqa: E731
+        packages = ("nemo_toolkit", "torch", "torchaudio", "numpy", "huggingface_hub")
+    else:
+        print(f"unknown backend {backend!r}", file=sys.stderr)
+        return 2
     print(f"loaded {cfg['model']} @ {revision[:10]} on {device}", flush=True)
 
     for cond in args.conditions or cfg["conditions"]:
         for part in args.partitions or cfg["partitions"]:
             out = REPO_ROOT / cfg["out_dir"] / cond / part
             log = RunLog(f"diarise_{cfg['system']}", {"system": cfg, "condition": cond, "partition": part},
-                         seed=cfg["seed"], packages=("pyannote.audio", "torch", "torchaudio", "numpy", "scipy"))
+                         seed=cfg["seed"], packages=packages)
             jobs = audio_jobs(ds, cond, part, audio_root)[: args.limit]
             timing_p = out / "timing.csv"
             out.mkdir(parents=True, exist_ok=True)
@@ -75,7 +87,7 @@ def main() -> int:
                 import soundfile as sf
                 dur = sf.info(str(wav)).duration
                 t0 = time.perf_counter()
-                segs = pyannote_sys.diarise(pipe, str(wav))
+                segs = run(str(wav), out, uri)
                 wall = time.perf_counter() - t0
                 segs = pyannote_sys.round_segments(segs, cfg["rttm_decimals"])
                 write_rttm(rttm, uri, segs)
