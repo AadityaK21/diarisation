@@ -99,6 +99,10 @@ def main() -> int:
             "gap_majority_minus_optimal_overlap": lambda s: err(s, "majority_single", "overlap") - err(s, "optimal", "overlap"),
             "gap_majority_minus_optimal_single": lambda s: err(s, "majority_single", "single") - err(s, "optimal", "single"),
         }
+        if "onetoone_single" in cfg["mappings"]:
+            for reg in REGIONS:
+                stats[f"gap_onetoone_minus_optimal_{reg}"] = (
+                    lambda reg: lambda s: err(s, "onetoone_single", reg) - err(s, "optimal", reg))(reg)
         for name, f in stats.items():
             e = of_sums(cols, f, nb, lvl, seed)
             head.append({"system": system, "statistic": name, "n_files": len(uris), "point": f"{e.point:.6f}",
