@@ -16,7 +16,7 @@ Audio Analysis Lab, Aalborg University (October–November 2026).
 | 6a | Word attribution with true words, fixed vs optimal mapping | done (`results/attr_oracle_pyannote31/`) |
 | 6b | Whisper ASR, cpWER vs fixed mappings by region (MeetEval-checked) | done (`results/attr_asr_whisper_turbo/`) |
 
-Extra analyses (`docs/decisions.md` X1-X7; none replaces a step):
+Extra analyses (`docs/decisions.md` X1-X8; none replaces a step):
 
 | | What | Where |
 |---|---|---|
@@ -27,6 +27,7 @@ Extra analyses (`docs/decisions.md` X1-X7; none replaces a step):
 | X5 | Supreme Court argument through the full pipeline | `results/scotus_pyannote31_whisper/` |
 | X6 | large-v3 vs large-v3-turbo on a subset | `results/wer_decomposition_large_v3_subset/` |
 | X7 | Which talker pyannote shows in two-speaker overlap | `results/overlap_dominance_pyannote31/` |
+| X8 | WhisperX forced alignment of the Whisper words (the brief's alignment step) | `results/wer_decomposition_wxalign/` |
 
 ## Quick start
 
