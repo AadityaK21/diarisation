@@ -342,7 +342,11 @@ the test meetings are downloaded outside the repository
 single-speaker words the same ratio (against all other headsets) has median
 +20.7 dB (10th-90th percentile 6.2 to 29.2 dB), so levels above about +20 dB
 are not resolved. Outcomes: deletion under the DI-cpWER alignment (per
-token) and attribution with perfect diarisation (per word, as step 6a).
+token) and attribution with perfect diarisation (per word, as step 6a). In
+overlap, 76% of the words in 1-2-word turns are backchannel-type words
+(yeah 834, mm-hmm 322, okay 241, mm 170, yes 103, hmm 101, right 88, ... of
+2,832); Whisper's normaliser removes the fillers among them (mm-hmm, mm,
+hmm, um, uh), so the ASR outcome covers the rest.
 
 **X4. Per-meeting consistency.** For each headline effect, the number of
 the 16 test meetings in which it holds and an exact two-sided sign test
