@@ -1,0 +1,75 @@
+{
+  "experiment": "sortformer_v21_dihard3pp",
+  "config_hash": "53b108aed66df749323160ac7839a2d4b4727c96eb247c0c026ad0c8267a9f26",
+  "config": {
+    "system": {
+      "system": "sortformer_v21_dihard3pp",
+      "source_system": "configs/systems/sortformer_v21.yaml",
+      "postprocessing": {
+        "onset": 0.56,
+        "offset": 1.0,
+        "pad_onset": 0.063,
+        "pad_offset": 0.002,
+        "min_duration_on": 0.007,
+        "min_duration_off": 0.151
+      },
+      "unit_10ms_frame_count": 8,
+      "conditions": [
+        "ihm_mix",
+        "sdm"
+      ],
+      "partitions": [
+        "test"
+      ],
+      "out_dir": "results/diarise/sortformer_v21_dihard3pp"
+    },
+    "source": {
+      "system": "sortformer_v21",
+      "backend": "nemo_sortformer",
+      "model": "nvidia/diar_streaming_sortformer_4spk-v2.1",
+      "nemo_file": "diar_streaming_sortformer_4spk-v2.1.nemo",
+      "revision": "cd03eee90fbec18297ac31b8c21546e596b7f71c",
+      "streaming": {
+        "chunk_len": 340,
+        "chunk_right_context": 40,
+        "fifo_len": 40,
+        "spkcache_update_period": 300,
+        "spkcache_len": 188
+      },
+      "device": "cpu",
+      "cpu_threads": 4,
+      "seed": 20261002,
+      "rttm_decimals": 3,
+      "dataset": "configs/data/ami.yaml",
+      "conditions": [
+        "ihm_mix",
+        "sdm"
+      ],
+      "partitions": [
+        "test"
+      ],
+      "out_dir": "results/diarise/sortformer_v21"
+    }
+  },
+  "seed": null,
+  "git": {
+    "commit": "6113b26415d4761a51319877c87514691936e9c4",
+    "code_dirty": false
+  },
+  "versions": {
+    "python": "3.11.18",
+    "nemo_toolkit": "2.7.3",
+    "torch": "2.8.0+cpu",
+    "numpy": "2.4.6"
+  },
+  "argv": [
+    "scripts/sortformer_postprocess.py",
+    "--config",
+    "configs/systems/sortformer_v21_dihard3pp.yaml"
+  ],
+  "started_utc": "2026-11-08T23:10:27+00:00",
+  "wall_seconds": 206.461,
+  "condition": "ihm_mix",
+  "partition": "test",
+  "n_files": 16
+}
