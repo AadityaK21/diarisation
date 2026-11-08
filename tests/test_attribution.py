@@ -36,3 +36,11 @@ def test_rule_error_with_perfect_diarisation():
     # both A's and B's turns, and the tie goes to the label sorting first (A).
     c = score_words([W("B", 8.5, 9.0, "b1")], REF, REF, UEM, {"A": "A", "B": "B"})
     assert c["overlap"]["other_active_rule"] == 1
+
+
+def test_tie_break_floor_holder_vs_interrupter():
+    # B's word lies fully inside both A's turn (started 0) and B's turn (started 8).
+    w = [W("B", 8.5, 9.0, "b1")]
+    m = {"A": "A", "B": "B"}
+    assert score_words(w, REF, REF, UEM, m, "earlier_turn")["overlap"]["other_active_rule"] == 1
+    assert score_words(w, REF, REF, UEM, m, "later_turn")["overlap"]["correct"] == 1

@@ -45,7 +45,7 @@ def main() -> int:
             mrows.append({"system": system, "uri": uri,
                           **{m: ";".join(f"{h}>{r}" for h, r in sorted(maps[m].items())) for m in cfg["mappings"]}})
             for m in cfg["mappings"]:
-                counts = score_words(words, ref, hyp, uem, maps[m])
+                counts = score_words(words, ref, hyp, uem, maps[m], cfg.get("tie_break", "label"))
                 for region in REGIONS:
                     c = counts[region]
                     rows.append({"system": system, "uri": uri, "mapping": m, "region": region,

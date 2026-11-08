@@ -54,25 +54,44 @@ def _overlap_with(regions: List[Tuple[float, float]], a: float, b: float) -> flo
     return tot
 
 
-def assign_with_count(words: Sequence[Word], hyp: Sequence[Segment]) -> List[Tuple[Optional[str], int]]:
+def _turn_start(regions: List[Tuple[float, float]], t: float) -> float:
+    i = bisect_right(regions, (t, float("inf"))) - 1
+    return regions[i][0] if i >= 0 else float("inf")
+
+
+def assign_with_count(words: Sequence[Word], hyp: Sequence[Segment],
+                      tie_break: str = "label") -> List[Tuple[Optional[str], int]]:
     """(system speaker, number of system speakers overlapping the word) per word.
 
-    Ties in overlap duration go to the label that sorts first: arbitrary but
-    deterministic, and exactly the choice a one-speaker-per-word rule has to make.
+    Ties in overlap duration are broken by `tie_break`:
+      "label"        the label that sorts first (default; arbitrary but deterministic)
+      "earlier_turn" the speaker whose current turn started first (the floor holder)
+      "later_turn"   the speaker whose current turn started last (the interrupter)
     """
     by = per_speaker_union(hyp)
     out: List[Tuple[Optional[str], int]] = []
     for w in words:
-        best, best_ov, n_cover = None, 0.0, 0
+        mid = 0.5 * (w.start + w.end)
+        cands = []
         for lab in sorted(by):
             if w.end > w.start:
                 ov = _overlap_with(by[lab], w.start, w.end)
             else:
                 ov = 1.0 if _covering(by[lab], w.start) else 0.0
-            n_cover += ov > 0
-            if ov > best_ov:
-                best, best_ov = lab, ov
-        out.append((best, n_cover))
+            if ov > 0:
+                cands.append((ov, lab))
+        if not cands:
+            out.append((None, 0))
+            continue
+        top = max(ov for ov, _ in cands)
+        tied = [lab for ov, lab in cands if ov >= top - 1e-9]
+        if len(tied) == 1 or tie_break == "label":
+            best = tied[0]
+        else:
+            starts = {lab: _turn_start(by[lab], mid) for lab in tied}
+            pick = min if tie_break == "earlier_turn" else max
+            best = pick(tied, key=lambda lab: (starts[lab], lab))
+        out.append((best, len(cands)))
     return out
 
 
@@ -94,12 +113,12 @@ def mappings(ref: Sequence[Segment], hyp: Sequence[Segment], uem: Sequence[Regio
 
 
 def score_words(words: Sequence[Word], ref: Sequence[Segment], hyp: Sequence[Segment],
-                uem: Sequence[Region], mapping: Dict[str, str]) -> Dict[str, Counter]:
+                uem: Sequence[Region], mapping: Dict[str, str], tie_break: str = "label") -> Dict[str, Counter]:
     """Outcome counts per region ('all', 'single', 'overlap') for one mapping."""
     timeline = count_timeline(ref, uem)
     starts = [p[0] for p in timeline]
     ref_by = per_speaker_union(ref)
-    labels = assign_with_count(words, hyp)
+    labels = assign_with_count(words, hyp, tie_break)
     out = {"all": Counter(), "single": Counter(), "overlap": Counter()}
     for w, (lab, n_cover) in zip(words, labels):
         mid = 0.5 * (w.start + w.end)
