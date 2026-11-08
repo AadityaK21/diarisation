@@ -47,6 +47,8 @@ def main() -> int:
     out.mkdir(parents=True, exist_ok=True)
     part = cfg["partition"]
     uris = (REPO_ROOT / ami["out_dir"] / "lists" / f"{part}.txt").read_text().split()
+    if cfg.get("uris"):            # optional subset (e.g. the large-v3 check)
+        uris = [u for u in uris if u in cfg["uris"]]
 
     rows, included, di_start_by = [], {}, {}
     for cond, c in cfg["conditions"].items():
