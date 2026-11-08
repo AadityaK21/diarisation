@@ -1,0 +1,82 @@
+{
+  "experiment": "compare_sortformer_pyannote",
+  "config_hash": "26eb6f7ca3d929a84aeffb51cd07ef507d6c955b71be9234cec86f9fc92bbc27",
+  "config": {
+    "experiment": {
+      "experiment": "compare_sortformer_pyannote",
+      "der": "results/decomp_sortformer_v21/per_file.csv",
+      "overlap_detection": [
+        "results/overlap_detection_pyannote31/per_file.csv",
+        "results/overlap_detection_sortformer_v21/per_file.csv"
+      ],
+      "wer": "results/wer_decomposition_sortformer_v21/per_file.csv",
+      "pairs": [
+        {
+          "name": "ihm_mix",
+          "baseline": "pyannote31_ihm_mix",
+          "contender": "sortformer_v21_ihm_mix",
+          "wer_condition": "ihm_mix",
+          "wer_baseline": "pyannote",
+          "wer_contender": "sortformer"
+        },
+        {
+          "name": "sdm",
+          "baseline": "pyannote31_sdm",
+          "contender": "sortformer_v21_sdm",
+          "wer_condition": "sdm",
+          "wer_baseline": "pyannote",
+          "wer_contender": "sortformer"
+        },
+        {
+          "name": "ihm_mix_dihard3pp",
+          "baseline": "pyannote31_ihm_mix",
+          "contender": "sortformer_v21_dihard3pp_ihm_mix",
+          "wer_condition": "ihm_mix",
+          "wer_baseline": "pyannote",
+          "wer_contender": "sortformer_dihard3pp"
+        },
+        {
+          "name": "sdm_dihard3pp",
+          "baseline": "pyannote31_sdm",
+          "contender": "sortformer_v21_dihard3pp_sdm",
+          "wer_condition": "sdm",
+          "wer_baseline": "pyannote",
+          "wer_contender": "sortformer_dihard3pp"
+        }
+      ],
+      "conventions": {
+        "full": {
+          "collar": 0.0,
+          "exclude_overlap": false
+        },
+        "fair": {
+          "collar": 0.25,
+          "exclude_overlap": false
+        }
+      },
+      "bootstrap": {
+        "n_resamples": 10000,
+        "ci_level": 0.95,
+        "seed": 20261002
+      },
+      "out_dir": "results/compare_sortformer_pyannote"
+    }
+  },
+  "seed": 20261002,
+  "git": {
+    "commit": "bb6bfb05db1686cb18bf74e12f8544fa9e9e3b7d",
+    "code_dirty": false
+  },
+  "versions": {
+    "python": "3.11.18",
+    "numpy": "1.26.4"
+  },
+  "argv": [
+    "scripts/compare_systems.py",
+    "--config",
+    "configs/experiments/compare_sortformer_pyannote.yaml"
+  ],
+  "started_utc": "2026-11-08T23:31:56+00:00",
+  "wall_seconds": 2.91,
+  "n_rows": 136
+}

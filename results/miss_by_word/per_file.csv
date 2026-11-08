@@ -1,0 +1,449 @@
+system,uri,group_type,group,n_words,single_s,missed_s
+pyannote31_ihm_mix,IS1009a,all,all,1561,522.820,18.016
+pyannote31_ihm_mix,IS1009a,duration,0-0.2 s,612,79.780,0.683
+pyannote31_ihm_mix,IS1009a,duration,0.2-0.4 s,503,137.590,0.565
+pyannote31_ihm_mix,IS1009a,duration,0.4-0.8 s,298,150.550,1.857
+pyannote31_ihm_mix,IS1009a,duration,>=0.8 s,148,154.900,14.911
+pyannote31_ihm_mix,IS1009a,turn_length,1-2 words,36,16.360,2.583
+pyannote31_ihm_mix,IS1009a,turn_length,>2 words,1525,506.460,15.433
+pyannote31_sdm,IS1009a,all,all,1561,522.820,16.398
+pyannote31_sdm,IS1009a,duration,0-0.2 s,612,79.780,0.580
+pyannote31_sdm,IS1009a,duration,0.2-0.4 s,503,137.590,0.763
+pyannote31_sdm,IS1009a,duration,0.4-0.8 s,298,150.550,1.533
+pyannote31_sdm,IS1009a,duration,>=0.8 s,148,154.900,13.522
+pyannote31_sdm,IS1009a,turn_length,1-2 words,36,16.360,2.525
+pyannote31_sdm,IS1009a,turn_length,>2 words,1525,506.460,13.873
+sortformer_v21_ihm_mix,IS1009a,all,all,1561,522.820,80.860
+sortformer_v21_ihm_mix,IS1009a,duration,0-0.2 s,612,79.780,3.500
+sortformer_v21_ihm_mix,IS1009a,duration,0.2-0.4 s,503,137.590,5.030
+sortformer_v21_ihm_mix,IS1009a,duration,0.4-0.8 s,298,150.550,11.530
+sortformer_v21_ihm_mix,IS1009a,duration,>=0.8 s,148,154.900,60.800
+sortformer_v21_ihm_mix,IS1009a,turn_length,1-2 words,36,16.360,6.110
+sortformer_v21_ihm_mix,IS1009a,turn_length,>2 words,1525,506.460,74.750
+sortformer_v21_sdm,IS1009a,all,all,1561,522.820,84.220
+sortformer_v21_sdm,IS1009a,duration,0-0.2 s,612,79.780,3.120
+sortformer_v21_sdm,IS1009a,duration,0.2-0.4 s,503,137.590,5.840
+sortformer_v21_sdm,IS1009a,duration,0.4-0.8 s,298,150.550,12.270
+sortformer_v21_sdm,IS1009a,duration,>=0.8 s,148,154.900,62.990
+sortformer_v21_sdm,IS1009a,turn_length,1-2 words,36,16.360,8.240
+sortformer_v21_sdm,IS1009a,turn_length,>2 words,1525,506.460,75.980
+pyannote31_ihm_mix,IS1009b,all,all,5134,1598.520,42.619
+pyannote31_ihm_mix,IS1009b,duration,0-0.2 s,1962,256.760,0.084
+pyannote31_ihm_mix,IS1009b,duration,0.2-0.4 s,1827,502.750,0.959
+pyannote31_ihm_mix,IS1009b,duration,0.4-0.8 s,1018,525.640,6.276
+pyannote31_ihm_mix,IS1009b,duration,>=0.8 s,327,313.370,35.300
+pyannote31_ihm_mix,IS1009b,turn_length,1-2 words,62,20.190,1.531
+pyannote31_ihm_mix,IS1009b,turn_length,>2 words,5072,1578.330,41.088
+pyannote31_sdm,IS1009b,all,all,5134,1598.520,36.887
+pyannote31_sdm,IS1009b,duration,0-0.2 s,1962,256.760,0.503
+pyannote31_sdm,IS1009b,duration,0.2-0.4 s,1827,502.750,1.657
+pyannote31_sdm,IS1009b,duration,0.4-0.8 s,1018,525.640,3.109
+pyannote31_sdm,IS1009b,duration,>=0.8 s,327,313.370,31.618
+pyannote31_sdm,IS1009b,turn_length,1-2 words,62,20.190,1.578
+pyannote31_sdm,IS1009b,turn_length,>2 words,5072,1578.330,35.309
+sortformer_v21_ihm_mix,IS1009b,all,all,5134,1598.520,171.370
+sortformer_v21_ihm_mix,IS1009b,duration,0-0.2 s,1962,256.760,7.260
+sortformer_v21_ihm_mix,IS1009b,duration,0.2-0.4 s,1827,502.750,10.090
+sortformer_v21_ihm_mix,IS1009b,duration,0.4-0.8 s,1018,525.640,49.350
+sortformer_v21_ihm_mix,IS1009b,duration,>=0.8 s,327,313.370,104.670
+sortformer_v21_ihm_mix,IS1009b,turn_length,1-2 words,62,20.190,3.200
+sortformer_v21_ihm_mix,IS1009b,turn_length,>2 words,5072,1578.330,168.170
+sortformer_v21_sdm,IS1009b,all,all,5134,1598.520,177.910
+sortformer_v21_sdm,IS1009b,duration,0-0.2 s,1962,256.760,8.370
+sortformer_v21_sdm,IS1009b,duration,0.2-0.4 s,1827,502.750,12.450
+sortformer_v21_sdm,IS1009b,duration,0.4-0.8 s,1018,525.640,50.810
+sortformer_v21_sdm,IS1009b,duration,>=0.8 s,327,313.370,106.280
+sortformer_v21_sdm,IS1009b,turn_length,1-2 words,62,20.190,5.010
+sortformer_v21_sdm,IS1009b,turn_length,>2 words,5072,1578.330,172.900
+pyannote31_ihm_mix,IS1009c,all,all,4121,1428.050,37.352
+pyannote31_ihm_mix,IS1009c,duration,0-0.2 s,1439,190.340,0.632
+pyannote31_ihm_mix,IS1009c,duration,0.2-0.4 s,1391,385.940,1.493
+pyannote31_ihm_mix,IS1009c,duration,0.4-0.8 s,966,511.110,4.064
+pyannote31_ihm_mix,IS1009c,duration,>=0.8 s,325,340.660,31.163
+pyannote31_ihm_mix,IS1009c,turn_length,1-2 words,75,24.200,3.170
+pyannote31_ihm_mix,IS1009c,turn_length,>2 words,4046,1403.850,34.182
+pyannote31_sdm,IS1009c,all,all,4121,1428.050,40.392
+pyannote31_sdm,IS1009c,duration,0-0.2 s,1439,190.340,0.639
+pyannote31_sdm,IS1009c,duration,0.2-0.4 s,1391,385.940,1.926
+pyannote31_sdm,IS1009c,duration,0.4-0.8 s,966,511.110,4.562
+pyannote31_sdm,IS1009c,duration,>=0.8 s,325,340.660,33.265
+pyannote31_sdm,IS1009c,turn_length,1-2 words,75,24.200,3.010
+pyannote31_sdm,IS1009c,turn_length,>2 words,4046,1403.850,37.382
+sortformer_v21_ihm_mix,IS1009c,all,all,4121,1428.050,162.370
+sortformer_v21_ihm_mix,IS1009c,duration,0-0.2 s,1439,190.340,5.510
+sortformer_v21_ihm_mix,IS1009c,duration,0.2-0.4 s,1391,385.940,9.720
+sortformer_v21_ihm_mix,IS1009c,duration,0.4-0.8 s,966,511.110,36.120
+sortformer_v21_ihm_mix,IS1009c,duration,>=0.8 s,325,340.660,111.020
+sortformer_v21_ihm_mix,IS1009c,turn_length,1-2 words,75,24.200,4.440
+sortformer_v21_ihm_mix,IS1009c,turn_length,>2 words,4046,1403.850,157.930
+sortformer_v21_sdm,IS1009c,all,all,4121,1428.050,168.790
+sortformer_v21_sdm,IS1009c,duration,0-0.2 s,1439,190.340,6.010
+sortformer_v21_sdm,IS1009c,duration,0.2-0.4 s,1391,385.940,11.890
+sortformer_v21_sdm,IS1009c,duration,0.4-0.8 s,966,511.110,38.580
+sortformer_v21_sdm,IS1009c,duration,>=0.8 s,325,340.660,112.310
+sortformer_v21_sdm,IS1009c,turn_length,1-2 words,75,24.200,6.250
+sortformer_v21_sdm,IS1009c,turn_length,>2 words,4046,1403.850,162.540
+pyannote31_ihm_mix,IS1009d,all,all,3983,1385.580,42.072
+pyannote31_ihm_mix,IS1009d,duration,0-0.2 s,1460,187.940,1.864
+pyannote31_ihm_mix,IS1009d,duration,0.2-0.4 s,1278,348.910,1.159
+pyannote31_ihm_mix,IS1009d,duration,0.4-0.8 s,849,438.830,7.591
+pyannote31_ihm_mix,IS1009d,duration,>=0.8 s,396,409.900,31.458
+pyannote31_ihm_mix,IS1009d,turn_length,1-2 words,97,37.700,5.234
+pyannote31_ihm_mix,IS1009d,turn_length,>2 words,3886,1347.880,36.838
+pyannote31_sdm,IS1009d,all,all,3983,1385.580,41.868
+pyannote31_sdm,IS1009d,duration,0-0.2 s,1460,187.940,2.085
+pyannote31_sdm,IS1009d,duration,0.2-0.4 s,1278,348.910,2.449
+pyannote31_sdm,IS1009d,duration,0.4-0.8 s,849,438.830,5.921
+pyannote31_sdm,IS1009d,duration,>=0.8 s,396,409.900,31.413
+pyannote31_sdm,IS1009d,turn_length,1-2 words,97,37.700,4.866
+pyannote31_sdm,IS1009d,turn_length,>2 words,3886,1347.880,37.002
+sortformer_v21_ihm_mix,IS1009d,all,all,3983,1385.580,192.290
+sortformer_v21_ihm_mix,IS1009d,duration,0-0.2 s,1460,187.940,6.240
+sortformer_v21_ihm_mix,IS1009d,duration,0.2-0.4 s,1278,348.910,10.260
+sortformer_v21_ihm_mix,IS1009d,duration,0.4-0.8 s,849,438.830,32.950
+sortformer_v21_ihm_mix,IS1009d,duration,>=0.8 s,396,409.900,142.840
+sortformer_v21_ihm_mix,IS1009d,turn_length,1-2 words,97,37.700,8.720
+sortformer_v21_ihm_mix,IS1009d,turn_length,>2 words,3886,1347.880,183.570
+sortformer_v21_sdm,IS1009d,all,all,3983,1385.580,195.960
+sortformer_v21_sdm,IS1009d,duration,0-0.2 s,1460,187.940,7.240
+sortformer_v21_sdm,IS1009d,duration,0.2-0.4 s,1278,348.910,11.720
+sortformer_v21_sdm,IS1009d,duration,0.4-0.8 s,849,438.830,35.340
+sortformer_v21_sdm,IS1009d,duration,>=0.8 s,396,409.900,141.660
+sortformer_v21_sdm,IS1009d,turn_length,1-2 words,97,37.700,11.600
+sortformer_v21_sdm,IS1009d,turn_length,>2 words,3886,1347.880,184.360
+pyannote31_ihm_mix,ES2004a,all,all,2088,663.020,37.027
+pyannote31_ihm_mix,ES2004a,duration,0-0.2 s,905,108.680,0.961
+pyannote31_ihm_mix,ES2004a,duration,0.2-0.4 s,636,171.580,1.676
+pyannote31_ihm_mix,ES2004a,duration,0.4-0.8 s,334,169.390,6.619
+pyannote31_ihm_mix,ES2004a,duration,>=0.8 s,213,213.370,27.771
+pyannote31_ihm_mix,ES2004a,turn_length,1-2 words,39,18.830,3.812
+pyannote31_ihm_mix,ES2004a,turn_length,>2 words,2049,644.190,33.215
+pyannote31_sdm,ES2004a,all,all,2088,663.020,62.558
+pyannote31_sdm,ES2004a,duration,0-0.2 s,905,108.680,4.999
+pyannote31_sdm,ES2004a,duration,0.2-0.4 s,636,171.580,9.296
+pyannote31_sdm,ES2004a,duration,0.4-0.8 s,334,169.390,10.516
+pyannote31_sdm,ES2004a,duration,>=0.8 s,213,213.370,37.747
+pyannote31_sdm,ES2004a,turn_length,1-2 words,39,18.830,5.453
+pyannote31_sdm,ES2004a,turn_length,>2 words,2049,644.190,57.105
+sortformer_v21_ihm_mix,ES2004a,all,all,2088,663.020,150.160
+sortformer_v21_ihm_mix,ES2004a,duration,0-0.2 s,905,108.680,5.070
+sortformer_v21_ihm_mix,ES2004a,duration,0.2-0.4 s,636,171.580,8.520
+sortformer_v21_ihm_mix,ES2004a,duration,0.4-0.8 s,334,169.390,25.670
+sortformer_v21_ihm_mix,ES2004a,duration,>=0.8 s,213,213.370,110.900
+sortformer_v21_ihm_mix,ES2004a,turn_length,1-2 words,39,18.830,7.370
+sortformer_v21_ihm_mix,ES2004a,turn_length,>2 words,2049,644.190,142.790
+sortformer_v21_sdm,ES2004a,all,all,2088,663.020,156.020
+sortformer_v21_sdm,ES2004a,duration,0-0.2 s,905,108.680,6.930
+sortformer_v21_sdm,ES2004a,duration,0.2-0.4 s,636,171.580,10.790
+sortformer_v21_sdm,ES2004a,duration,0.4-0.8 s,334,169.390,26.650
+sortformer_v21_sdm,ES2004a,duration,>=0.8 s,213,213.370,111.650
+sortformer_v21_sdm,ES2004a,turn_length,1-2 words,39,18.830,7.810
+sortformer_v21_sdm,ES2004a,turn_length,>2 words,2049,644.190,148.210
+pyannote31_ihm_mix,ES2004b,all,all,5756,1811.050,39.519
+pyannote31_ihm_mix,ES2004b,duration,0-0.2 s,2439,297.890,2.100
+pyannote31_ihm_mix,ES2004b,duration,0.2-0.4 s,1846,509.480,2.456
+pyannote31_ihm_mix,ES2004b,duration,0.4-0.8 s,1003,509.890,6.900
+pyannote31_ihm_mix,ES2004b,duration,>=0.8 s,468,493.790,28.063
+pyannote31_ihm_mix,ES2004b,turn_length,1-2 words,75,36.070,11.548
+pyannote31_ihm_mix,ES2004b,turn_length,>2 words,5681,1774.980,27.971
+pyannote31_sdm,ES2004b,all,all,5756,1811.050,47.606
+pyannote31_sdm,ES2004b,duration,0-0.2 s,2439,297.890,2.871
+pyannote31_sdm,ES2004b,duration,0.2-0.4 s,1846,509.480,2.533
+pyannote31_sdm,ES2004b,duration,0.4-0.8 s,1003,509.890,7.736
+pyannote31_sdm,ES2004b,duration,>=0.8 s,468,493.790,34.466
+pyannote31_sdm,ES2004b,turn_length,1-2 words,75,36.070,13.160
+pyannote31_sdm,ES2004b,turn_length,>2 words,5681,1774.980,34.446
+sortformer_v21_ihm_mix,ES2004b,all,all,5756,1811.050,334.200
+sortformer_v21_ihm_mix,ES2004b,duration,0-0.2 s,2439,297.890,14.420
+sortformer_v21_ihm_mix,ES2004b,duration,0.2-0.4 s,1846,509.480,15.470
+sortformer_v21_ihm_mix,ES2004b,duration,0.4-0.8 s,1003,509.890,61.110
+sortformer_v21_ihm_mix,ES2004b,duration,>=0.8 s,468,493.790,243.200
+sortformer_v21_ihm_mix,ES2004b,turn_length,1-2 words,75,36.070,15.990
+sortformer_v21_ihm_mix,ES2004b,turn_length,>2 words,5681,1774.980,318.210
+sortformer_v21_sdm,ES2004b,all,all,5756,1811.050,329.990
+sortformer_v21_sdm,ES2004b,duration,0-0.2 s,2439,297.890,14.120
+sortformer_v21_sdm,ES2004b,duration,0.2-0.4 s,1846,509.480,14.800
+sortformer_v21_sdm,ES2004b,duration,0.4-0.8 s,1003,509.890,59.530
+sortformer_v21_sdm,ES2004b,duration,>=0.8 s,468,493.790,241.540
+sortformer_v21_sdm,ES2004b,turn_length,1-2 words,75,36.070,17.190
+sortformer_v21_sdm,ES2004b,turn_length,>2 words,5681,1774.980,312.800
+pyannote31_ihm_mix,ES2004c,all,all,5846,1797.710,26.440
+pyannote31_ihm_mix,ES2004c,duration,0-0.2 s,2442,295.830,0.635
+pyannote31_ihm_mix,ES2004c,duration,0.2-0.4 s,1960,538.930,3.275
+pyannote31_ihm_mix,ES2004c,duration,0.4-0.8 s,1007,513.880,5.647
+pyannote31_ihm_mix,ES2004c,duration,>=0.8 s,437,449.070,16.883
+pyannote31_ihm_mix,ES2004c,turn_length,1-2 words,72,27.560,2.898
+pyannote31_ihm_mix,ES2004c,turn_length,>2 words,5774,1770.150,23.542
+pyannote31_sdm,ES2004c,all,all,5846,1797.710,28.443
+pyannote31_sdm,ES2004c,duration,0-0.2 s,2442,295.830,0.562
+pyannote31_sdm,ES2004c,duration,0.2-0.4 s,1960,538.930,3.379
+pyannote31_sdm,ES2004c,duration,0.4-0.8 s,1007,513.880,5.180
+pyannote31_sdm,ES2004c,duration,>=0.8 s,437,449.070,19.322
+pyannote31_sdm,ES2004c,turn_length,1-2 words,72,27.560,3.887
+pyannote31_sdm,ES2004c,turn_length,>2 words,5774,1770.150,24.556
+sortformer_v21_ihm_mix,ES2004c,all,all,5846,1797.710,313.770
+sortformer_v21_ihm_mix,ES2004c,duration,0-0.2 s,2442,295.830,10.890
+sortformer_v21_ihm_mix,ES2004c,duration,0.2-0.4 s,1960,538.930,16.200
+sortformer_v21_ihm_mix,ES2004c,duration,0.4-0.8 s,1007,513.880,61.720
+sortformer_v21_ihm_mix,ES2004c,duration,>=0.8 s,437,449.070,224.960
+sortformer_v21_ihm_mix,ES2004c,turn_length,1-2 words,72,27.560,10.430
+sortformer_v21_ihm_mix,ES2004c,turn_length,>2 words,5774,1770.150,303.340
+sortformer_v21_sdm,ES2004c,all,all,5846,1797.710,311.270
+sortformer_v21_sdm,ES2004c,duration,0-0.2 s,2442,295.830,11.410
+sortformer_v21_sdm,ES2004c,duration,0.2-0.4 s,1960,538.930,16.310
+sortformer_v21_sdm,ES2004c,duration,0.4-0.8 s,1007,513.880,58.750
+sortformer_v21_sdm,ES2004c,duration,>=0.8 s,437,449.070,224.800
+sortformer_v21_sdm,ES2004c,turn_length,1-2 words,72,27.560,10.620
+sortformer_v21_sdm,ES2004c,turn_length,>2 words,5774,1770.150,300.650
+pyannote31_ihm_mix,ES2004d,all,all,4752,1459.630,51.028
+pyannote31_ihm_mix,ES2004d,duration,0-0.2 s,1981,238.010,1.072
+pyannote31_ihm_mix,ES2004d,duration,0.2-0.4 s,1537,418.370,3.133
+pyannote31_ihm_mix,ES2004d,duration,0.4-0.8 s,858,428.810,10.189
+pyannote31_ihm_mix,ES2004d,duration,>=0.8 s,376,374.440,36.634
+pyannote31_ihm_mix,ES2004d,turn_length,1-2 words,123,52.820,8.617
+pyannote31_ihm_mix,ES2004d,turn_length,>2 words,4629,1406.810,42.411
+pyannote31_sdm,ES2004d,all,all,4752,1459.630,86.668
+pyannote31_sdm,ES2004d,duration,0-0.2 s,1981,238.010,4.922
+pyannote31_sdm,ES2004d,duration,0.2-0.4 s,1537,418.370,9.557
+pyannote31_sdm,ES2004d,duration,0.4-0.8 s,858,428.810,17.112
+pyannote31_sdm,ES2004d,duration,>=0.8 s,376,374.440,55.077
+pyannote31_sdm,ES2004d,turn_length,1-2 words,123,52.820,10.812
+pyannote31_sdm,ES2004d,turn_length,>2 words,4629,1406.810,75.856
+sortformer_v21_ihm_mix,ES2004d,all,all,4752,1459.630,258.250
+sortformer_v21_ihm_mix,ES2004d,duration,0-0.2 s,1981,238.010,11.070
+sortformer_v21_ihm_mix,ES2004d,duration,0.2-0.4 s,1537,418.370,11.040
+sortformer_v21_ihm_mix,ES2004d,duration,0.4-0.8 s,858,428.810,46.230
+sortformer_v21_ihm_mix,ES2004d,duration,>=0.8 s,376,374.440,189.910
+sortformer_v21_ihm_mix,ES2004d,turn_length,1-2 words,123,52.820,14.840
+sortformer_v21_ihm_mix,ES2004d,turn_length,>2 words,4629,1406.810,243.410
+sortformer_v21_sdm,ES2004d,all,all,4752,1459.630,256.760
+sortformer_v21_sdm,ES2004d,duration,0-0.2 s,1981,238.010,11.700
+sortformer_v21_sdm,ES2004d,duration,0.2-0.4 s,1537,418.370,11.100
+sortformer_v21_sdm,ES2004d,duration,0.4-0.8 s,858,428.810,47.070
+sortformer_v21_sdm,ES2004d,duration,>=0.8 s,376,374.440,186.890
+sortformer_v21_sdm,ES2004d,turn_length,1-2 words,123,52.820,16.090
+sortformer_v21_sdm,ES2004d,turn_length,>2 words,4629,1406.810,240.670
+pyannote31_ihm_mix,TS3003a,all,all,2339,933.344,85.828
+pyannote31_ihm_mix,TS3003a,duration,0-0.2 s,859,108.200,1.455
+pyannote31_ihm_mix,TS3003a,duration,0.2-0.4 s,775,215.880,2.063
+pyannote31_ihm_mix,TS3003a,duration,0.4-0.8 s,392,212.930,6.017
+pyannote31_ihm_mix,TS3003a,duration,>=0.8 s,313,396.334,76.293
+pyannote31_ihm_mix,TS3003a,turn_length,1-2 words,76,32.560,11.092
+pyannote31_ihm_mix,TS3003a,turn_length,>2 words,2263,900.784,74.736
+pyannote31_sdm,TS3003a,all,all,2339,933.344,122.051
+pyannote31_sdm,TS3003a,duration,0-0.2 s,859,108.200,3.545
+pyannote31_sdm,TS3003a,duration,0.2-0.4 s,775,215.880,7.067
+pyannote31_sdm,TS3003a,duration,0.4-0.8 s,392,212.930,13.417
+pyannote31_sdm,TS3003a,duration,>=0.8 s,313,396.334,98.022
+pyannote31_sdm,TS3003a,turn_length,1-2 words,76,32.560,16.374
+pyannote31_sdm,TS3003a,turn_length,>2 words,2263,900.784,105.677
+sortformer_v21_ihm_mix,TS3003a,all,all,2339,933.344,307.184
+sortformer_v21_ihm_mix,TS3003a,duration,0-0.2 s,859,108.200,9.810
+sortformer_v21_ihm_mix,TS3003a,duration,0.2-0.4 s,775,215.880,11.540
+sortformer_v21_ihm_mix,TS3003a,duration,0.4-0.8 s,392,212.930,36.180
+sortformer_v21_ihm_mix,TS3003a,duration,>=0.8 s,313,396.334,249.654
+sortformer_v21_ihm_mix,TS3003a,turn_length,1-2 words,76,32.560,15.640
+sortformer_v21_ihm_mix,TS3003a,turn_length,>2 words,2263,900.784,291.544
+sortformer_v21_sdm,TS3003a,all,all,2339,933.344,320.454
+sortformer_v21_sdm,TS3003a,duration,0-0.2 s,859,108.200,12.060
+sortformer_v21_sdm,TS3003a,duration,0.2-0.4 s,775,215.880,15.160
+sortformer_v21_sdm,TS3003a,duration,0.4-0.8 s,392,212.930,38.570
+sortformer_v21_sdm,TS3003a,duration,>=0.8 s,313,396.334,254.664
+sortformer_v21_sdm,TS3003a,turn_length,1-2 words,76,32.560,16.140
+sortformer_v21_sdm,TS3003a,turn_length,>2 words,2263,900.784,304.314
+pyannote31_ihm_mix,TS3003b,all,all,4459,1664.920,39.554
+pyannote31_ihm_mix,TS3003b,duration,0-0.2 s,1538,194.930,0.900
+pyannote31_ihm_mix,TS3003b,duration,0.2-0.4 s,1553,436.470,2.697
+pyannote31_ihm_mix,TS3003b,duration,0.4-0.8 s,878,463.100,7.314
+pyannote31_ihm_mix,TS3003b,duration,>=0.8 s,490,570.420,28.643
+pyannote31_ihm_mix,TS3003b,turn_length,1-2 words,76,30.190,3.252
+pyannote31_ihm_mix,TS3003b,turn_length,>2 words,4383,1634.730,36.302
+pyannote31_sdm,TS3003b,all,all,4459,1664.920,58.233
+pyannote31_sdm,TS3003b,duration,0-0.2 s,1538,194.930,0.948
+pyannote31_sdm,TS3003b,duration,0.2-0.4 s,1553,436.470,3.657
+pyannote31_sdm,TS3003b,duration,0.4-0.8 s,878,463.100,8.426
+pyannote31_sdm,TS3003b,duration,>=0.8 s,490,570.420,45.202
+pyannote31_sdm,TS3003b,turn_length,1-2 words,76,30.190,5.606
+pyannote31_sdm,TS3003b,turn_length,>2 words,4383,1634.730,52.627
+sortformer_v21_ihm_mix,TS3003b,all,all,4459,1664.920,408.150
+sortformer_v21_ihm_mix,TS3003b,duration,0-0.2 s,1538,194.930,14.200
+sortformer_v21_ihm_mix,TS3003b,duration,0.2-0.4 s,1553,436.470,20.650
+sortformer_v21_ihm_mix,TS3003b,duration,0.4-0.8 s,878,463.100,64.450
+sortformer_v21_ihm_mix,TS3003b,duration,>=0.8 s,490,570.420,308.850
+sortformer_v21_ihm_mix,TS3003b,turn_length,1-2 words,76,30.190,9.180
+sortformer_v21_ihm_mix,TS3003b,turn_length,>2 words,4383,1634.730,398.970
+sortformer_v21_sdm,TS3003b,all,all,4459,1664.920,413.620
+sortformer_v21_sdm,TS3003b,duration,0-0.2 s,1538,194.930,13.560
+sortformer_v21_sdm,TS3003b,duration,0.2-0.4 s,1553,436.470,22.340
+sortformer_v21_sdm,TS3003b,duration,0.4-0.8 s,878,463.100,65.420
+sortformer_v21_sdm,TS3003b,duration,>=0.8 s,490,570.420,312.300
+sortformer_v21_sdm,TS3003b,turn_length,1-2 words,76,30.190,9.330
+sortformer_v21_sdm,TS3003b,turn_length,>2 words,4383,1634.730,404.290
+pyannote31_ihm_mix,TS3003c,all,all,4225,1712.010,89.839
+pyannote31_ihm_mix,TS3003c,duration,0-0.2 s,1290,168.700,0.809
+pyannote31_ihm_mix,TS3003c,duration,0.2-0.4 s,1481,421.240,3.400
+pyannote31_ihm_mix,TS3003c,duration,0.4-0.8 s,912,477.030,9.815
+pyannote31_ihm_mix,TS3003c,duration,>=0.8 s,542,645.040,75.815
+pyannote31_ihm_mix,TS3003c,turn_length,1-2 words,95,38.370,8.977
+pyannote31_ihm_mix,TS3003c,turn_length,>2 words,4130,1673.640,80.862
+pyannote31_sdm,TS3003c,all,all,4225,1712.010,140.609
+pyannote31_sdm,TS3003c,duration,0-0.2 s,1290,168.700,1.899
+pyannote31_sdm,TS3003c,duration,0.2-0.4 s,1481,421.240,6.355
+pyannote31_sdm,TS3003c,duration,0.4-0.8 s,912,477.030,14.233
+pyannote31_sdm,TS3003c,duration,>=0.8 s,542,645.040,118.122
+pyannote31_sdm,TS3003c,turn_length,1-2 words,95,38.370,12.537
+pyannote31_sdm,TS3003c,turn_length,>2 words,4130,1673.640,128.072
+sortformer_v21_ihm_mix,TS3003c,all,all,4225,1712.010,524.850
+sortformer_v21_ihm_mix,TS3003c,duration,0-0.2 s,1290,168.700,17.560
+sortformer_v21_ihm_mix,TS3003c,duration,0.2-0.4 s,1481,421.240,37.070
+sortformer_v21_ihm_mix,TS3003c,duration,0.4-0.8 s,912,477.030,86.630
+sortformer_v21_ihm_mix,TS3003c,duration,>=0.8 s,542,645.040,383.590
+sortformer_v21_ihm_mix,TS3003c,turn_length,1-2 words,95,38.370,15.070
+sortformer_v21_ihm_mix,TS3003c,turn_length,>2 words,4130,1673.640,509.780
+sortformer_v21_sdm,TS3003c,all,all,4225,1712.010,492.440
+sortformer_v21_sdm,TS3003c,duration,0-0.2 s,1290,168.700,13.530
+sortformer_v21_sdm,TS3003c,duration,0.2-0.4 s,1481,421.240,27.970
+sortformer_v21_sdm,TS3003c,duration,0.4-0.8 s,912,477.030,73.420
+sortformer_v21_sdm,TS3003c,duration,>=0.8 s,542,645.040,377.520
+sortformer_v21_sdm,TS3003c,turn_length,1-2 words,95,38.370,16.870
+sortformer_v21_sdm,TS3003c,turn_length,>2 words,4130,1673.640,475.570
+pyannote31_ihm_mix,TS3003d,all,all,4393,1654.810,135.875
+pyannote31_ihm_mix,TS3003d,duration,0-0.2 s,1541,195.440,1.442
+pyannote31_ihm_mix,TS3003d,duration,0.2-0.4 s,1483,407.300,5.607
+pyannote31_ihm_mix,TS3003d,duration,0.4-0.8 s,852,438.860,14.667
+pyannote31_ihm_mix,TS3003d,duration,>=0.8 s,517,613.210,114.159
+pyannote31_ihm_mix,TS3003d,turn_length,1-2 words,175,71.300,14.385
+pyannote31_ihm_mix,TS3003d,turn_length,>2 words,4218,1583.510,121.490
+pyannote31_sdm,TS3003d,all,all,4393,1654.810,200.241
+pyannote31_sdm,TS3003d,duration,0-0.2 s,1541,195.440,2.721
+pyannote31_sdm,TS3003d,duration,0.2-0.4 s,1483,407.300,8.899
+pyannote31_sdm,TS3003d,duration,0.4-0.8 s,852,438.860,20.433
+pyannote31_sdm,TS3003d,duration,>=0.8 s,517,613.210,168.188
+pyannote31_sdm,TS3003d,turn_length,1-2 words,175,71.300,21.941
+pyannote31_sdm,TS3003d,turn_length,>2 words,4218,1583.510,178.300
+sortformer_v21_ihm_mix,TS3003d,all,all,4393,1654.810,493.840
+sortformer_v21_ihm_mix,TS3003d,duration,0-0.2 s,1541,195.440,18.460
+sortformer_v21_ihm_mix,TS3003d,duration,0.2-0.4 s,1483,407.300,23.710
+sortformer_v21_ihm_mix,TS3003d,duration,0.4-0.8 s,852,438.860,73.360
+sortformer_v21_ihm_mix,TS3003d,duration,>=0.8 s,517,613.210,378.310
+sortformer_v21_ihm_mix,TS3003d,turn_length,1-2 words,175,71.300,27.350
+sortformer_v21_ihm_mix,TS3003d,turn_length,>2 words,4218,1583.510,466.490
+sortformer_v21_sdm,TS3003d,all,all,4393,1654.810,506.110
+sortformer_v21_sdm,TS3003d,duration,0-0.2 s,1541,195.440,18.820
+sortformer_v21_sdm,TS3003d,duration,0.2-0.4 s,1483,407.300,26.730
+sortformer_v21_sdm,TS3003d,duration,0.4-0.8 s,852,438.860,77.170
+sortformer_v21_sdm,TS3003d,duration,>=0.8 s,517,613.210,383.390
+sortformer_v21_sdm,TS3003d,turn_length,1-2 words,175,71.300,29.710
+sortformer_v21_sdm,TS3003d,turn_length,>2 words,4218,1583.510,476.400
+pyannote31_ihm_mix,EN2002a,all,all,4779,1375.320,51.718
+pyannote31_ihm_mix,EN2002a,duration,0-0.2 s,2178,267.620,1.181
+pyannote31_ihm_mix,EN2002a,duration,0.2-0.4 s,1438,378.100,5.379
+pyannote31_ihm_mix,EN2002a,duration,0.4-0.8 s,800,389.080,9.883
+pyannote31_ihm_mix,EN2002a,duration,>=0.8 s,363,340.520,35.275
+pyannote31_ihm_mix,EN2002a,turn_length,1-2 words,104,38.160,10.444
+pyannote31_ihm_mix,EN2002a,turn_length,>2 words,4675,1337.160,41.274
+pyannote31_sdm,EN2002a,all,all,4779,1375.320,67.378
+pyannote31_sdm,EN2002a,duration,0-0.2 s,2178,267.620,3.293
+pyannote31_sdm,EN2002a,duration,0.2-0.4 s,1438,378.100,8.382
+pyannote31_sdm,EN2002a,duration,0.4-0.8 s,800,389.080,10.259
+pyannote31_sdm,EN2002a,duration,>=0.8 s,363,340.520,45.444
+pyannote31_sdm,EN2002a,turn_length,1-2 words,104,38.160,10.210
+pyannote31_sdm,EN2002a,turn_length,>2 words,4675,1337.160,57.168
+sortformer_v21_ihm_mix,EN2002a,all,all,4779,1375.320,284.870
+sortformer_v21_ihm_mix,EN2002a,duration,0-0.2 s,2178,267.620,13.630
+sortformer_v21_ihm_mix,EN2002a,duration,0.2-0.4 s,1438,378.100,18.080
+sortformer_v21_ihm_mix,EN2002a,duration,0.4-0.8 s,800,389.080,63.530
+sortformer_v21_ihm_mix,EN2002a,duration,>=0.8 s,363,340.520,189.630
+sortformer_v21_ihm_mix,EN2002a,turn_length,1-2 words,104,38.160,14.190
+sortformer_v21_ihm_mix,EN2002a,turn_length,>2 words,4675,1337.160,270.680
+sortformer_v21_sdm,EN2002a,all,all,4779,1375.320,286.160
+sortformer_v21_sdm,EN2002a,duration,0-0.2 s,2178,267.620,15.050
+sortformer_v21_sdm,EN2002a,duration,0.2-0.4 s,1438,378.100,19.570
+sortformer_v21_sdm,EN2002a,duration,0.4-0.8 s,800,389.080,64.990
+sortformer_v21_sdm,EN2002a,duration,>=0.8 s,363,340.520,186.550
+sortformer_v21_sdm,EN2002a,turn_length,1-2 words,104,38.160,14.020
+sortformer_v21_sdm,EN2002a,turn_length,>2 words,4675,1337.160,272.140
+pyannote31_ihm_mix,EN2002b,all,all,4045,1086.970,32.301
+pyannote31_ihm_mix,EN2002b,duration,0-0.2 s,1957,235.010,1.695
+pyannote31_ihm_mix,EN2002b,duration,0.2-0.4 s,1236,325.210,4.306
+pyannote31_ihm_mix,EN2002b,duration,0.4-0.8 s,612,307.180,7.101
+pyannote31_ihm_mix,EN2002b,duration,>=0.8 s,240,219.570,19.199
+pyannote31_ihm_mix,EN2002b,turn_length,1-2 words,76,30.090,5.368
+pyannote31_ihm_mix,EN2002b,turn_length,>2 words,3969,1056.880,26.933
+pyannote31_sdm,EN2002b,all,all,4045,1086.970,51.447
+pyannote31_sdm,EN2002b,duration,0-0.2 s,1957,235.010,3.798
+pyannote31_sdm,EN2002b,duration,0.2-0.4 s,1236,325.210,7.635
+pyannote31_sdm,EN2002b,duration,0.4-0.8 s,612,307.180,10.581
+pyannote31_sdm,EN2002b,duration,>=0.8 s,240,219.570,29.433
+pyannote31_sdm,EN2002b,turn_length,1-2 words,76,30.090,8.692
+pyannote31_sdm,EN2002b,turn_length,>2 words,3969,1056.880,42.755
+sortformer_v21_ihm_mix,EN2002b,all,all,4045,1086.970,224.410
+sortformer_v21_ihm_mix,EN2002b,duration,0-0.2 s,1957,235.010,11.660
+sortformer_v21_ihm_mix,EN2002b,duration,0.2-0.4 s,1236,325.210,16.380
+sortformer_v21_ihm_mix,EN2002b,duration,0.4-0.8 s,612,307.180,71.280
+sortformer_v21_ihm_mix,EN2002b,duration,>=0.8 s,240,219.570,125.090
+sortformer_v21_ihm_mix,EN2002b,turn_length,1-2 words,76,30.090,12.170
+sortformer_v21_ihm_mix,EN2002b,turn_length,>2 words,3969,1056.880,212.240
+sortformer_v21_sdm,EN2002b,all,all,4045,1086.970,229.330
+sortformer_v21_sdm,EN2002b,duration,0-0.2 s,1957,235.010,12.670
+sortformer_v21_sdm,EN2002b,duration,0.2-0.4 s,1236,325.210,19.740
+sortformer_v21_sdm,EN2002b,duration,0.4-0.8 s,612,307.180,72.880
+sortformer_v21_sdm,EN2002b,duration,>=0.8 s,240,219.570,124.040
+sortformer_v21_sdm,EN2002b,turn_length,1-2 words,76,30.090,14.150
+sortformer_v21_sdm,EN2002b,turn_length,>2 words,3969,1056.880,215.180
+pyannote31_ihm_mix,EN2002c,all,all,7266,1974.470,86.745
+pyannote31_ihm_mix,EN2002c,duration,0-0.2 s,3701,446.820,1.446
+pyannote31_ihm_mix,EN2002c,duration,0.2-0.4 s,2121,565.650,4.500
+pyannote31_ihm_mix,EN2002c,duration,0.4-0.8 s,947,478.800,5.379
+pyannote31_ihm_mix,EN2002c,duration,>=0.8 s,497,483.200,75.420
+pyannote31_ihm_mix,EN2002c,turn_length,1-2 words,68,25.230,6.171
+pyannote31_ihm_mix,EN2002c,turn_length,>2 words,7198,1949.240,80.574
+pyannote31_sdm,EN2002c,all,all,7266,1974.470,97.694
+pyannote31_sdm,EN2002c,duration,0-0.2 s,3701,446.820,2.405
+pyannote31_sdm,EN2002c,duration,0.2-0.4 s,2121,565.650,6.596
+pyannote31_sdm,EN2002c,duration,0.4-0.8 s,947,478.800,5.801
+pyannote31_sdm,EN2002c,duration,>=0.8 s,497,483.200,82.892
+pyannote31_sdm,EN2002c,turn_length,1-2 words,68,25.230,7.369
+pyannote31_sdm,EN2002c,turn_length,>2 words,7198,1949.240,90.325
+sortformer_v21_ihm_mix,EN2002c,all,all,7266,1974.470,421.430
+sortformer_v21_ihm_mix,EN2002c,duration,0-0.2 s,3701,446.820,21.870
+sortformer_v21_ihm_mix,EN2002c,duration,0.2-0.4 s,2121,565.650,23.000
+sortformer_v21_ihm_mix,EN2002c,duration,0.4-0.8 s,947,478.800,91.580
+sortformer_v21_ihm_mix,EN2002c,duration,>=0.8 s,497,483.200,284.980
+sortformer_v21_ihm_mix,EN2002c,turn_length,1-2 words,68,25.230,10.930
+sortformer_v21_ihm_mix,EN2002c,turn_length,>2 words,7198,1949.240,410.500
+sortformer_v21_sdm,EN2002c,all,all,7266,1974.470,421.530
+sortformer_v21_sdm,EN2002c,duration,0-0.2 s,3701,446.820,23.670
+sortformer_v21_sdm,EN2002c,duration,0.2-0.4 s,2121,565.650,23.070
+sortformer_v21_sdm,EN2002c,duration,0.4-0.8 s,947,478.800,91.290
+sortformer_v21_sdm,EN2002c,duration,>=0.8 s,497,483.200,283.500
+sortformer_v21_sdm,EN2002c,turn_length,1-2 words,68,25.230,10.010
+sortformer_v21_sdm,EN2002c,turn_length,>2 words,7198,1949.240,411.520
+pyannote31_ihm_mix,EN2002d,all,all,4964,1349.610,40.250
+pyannote31_ihm_mix,EN2002d,duration,0-0.2 s,2367,289.020,1.623
+pyannote31_ihm_mix,EN2002d,duration,0.2-0.4 s,1524,400.380,4.151
+pyannote31_ihm_mix,EN2002d,duration,0.4-0.8 s,719,352.710,5.697
+pyannote31_ihm_mix,EN2002d,duration,>=0.8 s,354,307.500,28.779
+pyannote31_ihm_mix,EN2002d,turn_length,1-2 words,87,29.110,7.360
+pyannote31_ihm_mix,EN2002d,turn_length,>2 words,4877,1320.500,32.890
+pyannote31_sdm,EN2002d,all,all,4964,1349.610,52.403
+pyannote31_sdm,EN2002d,duration,0-0.2 s,2367,289.020,3.138
+pyannote31_sdm,EN2002d,duration,0.2-0.4 s,1524,400.380,6.560
+pyannote31_sdm,EN2002d,duration,0.4-0.8 s,719,352.710,8.477
+pyannote31_sdm,EN2002d,duration,>=0.8 s,354,307.500,34.228
+pyannote31_sdm,EN2002d,turn_length,1-2 words,87,29.110,10.161
+pyannote31_sdm,EN2002d,turn_length,>2 words,4877,1320.500,42.242
+sortformer_v21_ihm_mix,EN2002d,all,all,4964,1349.610,262.040
+sortformer_v21_ihm_mix,EN2002d,duration,0-0.2 s,2367,289.020,14.440
+sortformer_v21_ihm_mix,EN2002d,duration,0.2-0.4 s,1524,400.380,16.060
+sortformer_v21_ihm_mix,EN2002d,duration,0.4-0.8 s,719,352.710,58.360
+sortformer_v21_ihm_mix,EN2002d,duration,>=0.8 s,354,307.500,173.180
+sortformer_v21_ihm_mix,EN2002d,turn_length,1-2 words,87,29.110,9.010
+sortformer_v21_ihm_mix,EN2002d,turn_length,>2 words,4877,1320.500,253.030
+sortformer_v21_sdm,EN2002d,all,all,4964,1349.610,271.140
+sortformer_v21_sdm,EN2002d,duration,0-0.2 s,2367,289.020,16.520
+sortformer_v21_sdm,EN2002d,duration,0.2-0.4 s,1524,400.380,21.690
+sortformer_v21_sdm,EN2002d,duration,0.4-0.8 s,719,352.710,60.080
+sortformer_v21_sdm,EN2002d,duration,>=0.8 s,354,307.500,172.850
+sortformer_v21_sdm,EN2002d,turn_length,1-2 words,87,29.110,11.450
+sortformer_v21_sdm,EN2002d,turn_length,>2 words,4877,1320.500,259.690
