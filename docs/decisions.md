@@ -174,7 +174,14 @@ RTF 0.78 on 4 cores, about 14 h for both test conditions. On IS1009a (SDM)
 our output scores 21.93% vs the published 23.01%, and the two outputs differ
 on 3.4% of speaker time (mostly cluster labels). Close, not identical:
 different library version and hardware. Remaining meetings run in the
-background and are added as they finish.
+background and are added as they finish; `scripts/reproduction_check.py`
+(`configs/experiments/reproduction_pyannote31.yaml`) scores whichever
+meetings are done. With IS1009a and IS1009b (SDM; run 5152011043): pooled
+Full DER 16.84% ours vs 16.81% published, and the outputs differ on 2.4% of
+the published speaker time, 2.0 points of it speaker confusion (cluster
+labels), 0.2 missed and 0.2 false alarm. Timing is not clean from IS1009b on:
+the run shared the 4 cores with other jobs (and was paused while the
+alignment of X8 finished), so wall times in its timing.csv are upper bounds.
 
 **P3. Fixing the mapping on single-speaker frames changes almost nothing
 [Jensen].** Mapping changed in 1 of 32 file/condition pairs (TS3003a,

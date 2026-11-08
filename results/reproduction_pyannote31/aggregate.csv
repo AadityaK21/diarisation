@@ -1,0 +1,8 @@
+condition,statistic,n_files,n_files_total,point,lo,hi
+sdm,der_ours,2,16,0.168374,0.150503,0.219300
+sdm,der_published,2,16,0.168130,0.146391,0.230076
+sdm,der_ours_minus_published,2,16,0.000244,-0.010776,0.004112
+sdm,disagreement,2,16,0.023880,0.020168,0.034229
+sdm,disagreement_missed,2,16,0.001861,0.001515,0.002827
+sdm,disagreement_false_alarm,2,16,0.001644,0.001322,0.002541
+sdm,disagreement_confusion,2,16,0.020375,0.017331,0.028861

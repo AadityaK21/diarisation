@@ -1,0 +1,3 @@
+condition,uri,n_speakers_ours,n_speakers_published,ours_scored_speaker_s,ours_missed_s,ours_false_alarm_s,ours_confusion_s,published_scored_speaker_s,published_missed_s,published_false_alarm_s,published_confusion_s,ours_vs_published_scored_speaker_s,ours_vs_published_missed_s,ours_vs_published_false_alarm_s,ours_vs_published_confusion_s
+sdm,IS1009a,4,5,695.900000,52.753000,49.314000,50.544000,695.900000,52.695000,49.454000,57.961000,692.659000,1.958000,1.760000,19.991000
+sdm,IS1009b,6,6,1982.970000,117.312000,65.198000,115.932000,1982.970000,117.114000,65.373000,107.802000,1931.229000,2.926000,2.553000,33.470000
