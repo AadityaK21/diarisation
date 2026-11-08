@@ -1,0 +1,38 @@
+{
+  "experiment": "scotus_pyannote31_whisper",
+  "config_hash": "30d658beebd8a262f8e0f6417cc638b059957de6cbc0ad2a8664e884e5da8316",
+  "config": {
+    "experiment": {
+      "experiment": "scotus_pyannote31_whisper",
+      "frame_step": 0.001,
+      "dataset": "configs/data/scotus_oyez.yaml",
+      "partition": "all",
+      "hyp_dir": "results/diarise/pyannote31/oyez/all",
+      "asr_dir": "results/asr/whisper_turbo_cpu/oyez/all",
+      "collars": [
+        0.0,
+        0.25
+      ],
+      "cluster_share_min": 0.1,
+      "out_dir": "results/scotus_pyannote31_whisper"
+    }
+  },
+  "seed": null,
+  "git": {
+    "commit": "1c71c61b6c5a1832c640ba6a5fbf1fd64950387d",
+    "code_dirty": false
+  },
+  "versions": {
+    "python": "3.11.18",
+    "numpy": "1.26.4",
+    "scipy": "1.14.1",
+    "rapidfuzz": "3.10.1",
+    "meeteval": "0.4.3",
+    "whisper-normalizer": "0.0.10"
+  },
+  "argv": [
+    "scripts/scotus_eval.py"
+  ],
+  "started_utc": "2026-11-08T19:45:33+00:00",
+  "wall_seconds": 27.044
+}

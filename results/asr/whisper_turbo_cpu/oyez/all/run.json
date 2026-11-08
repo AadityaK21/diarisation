@@ -1,0 +1,48 @@
+{
+  "experiment": "asr_whisper_turbo_cpu",
+  "config": {
+    "system": "whisper_turbo_cpu",
+    "model": "large-v3-turbo",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": [
+      0.0,
+      0.2,
+      0.4,
+      0.6,
+      0.8,
+      1.0
+    ],
+    "compression_ratio_threshold": 2.4,
+    "log_prob_threshold": -1.0,
+    "no_speech_threshold": 0.6,
+    "condition_on_previous_text": false,
+    "vad_filter": true,
+    "word_timestamps": true,
+    "seed": 20261002,
+    "dataset": "configs/data/scotus_oyez.yaml",
+    "conditions": [
+      "ihm_mix",
+      "sdm"
+    ],
+    "partitions": [
+      "all"
+    ],
+    "out_dir": "results/asr/whisper_turbo_cpu"
+  },
+  "condition": "oyez",
+  "partition": "all",
+  "git_commit": "949dc77e86ce7ee6c450a288c6e291e9cd34fda9",
+  "seed": 20261002,
+  "n_files": 1,
+  "versions": {
+    "python": "3.11.18",
+    "faster-whisper": "1.1.1",
+    "ctranslate2": "4.8.5"
+  },
+  "finished_utc": "2026-11-08T18:54:42+00:00",
+  "wall_seconds_total": 1102.6
+}

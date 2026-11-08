@@ -1,0 +1,11 @@
+uri,system_speaker,seconds,top_person,top_share,people_covered,majority_map,optimal_map,onetoone_single_map
+2019_18-280,SPEAKER_00,105.7,Ruth_Bader_Ginsburg,0.956,Ruth_Bader_Ginsburg,Ruth_Bader_Ginsburg,Ruth_Bader_Ginsburg,Ruth_Bader_Ginsburg
+2019_18-280,SPEAKER_01,129.7,Elena_Kagan,0.954,Elena_Kagan,Elena_Kagan,Elena_Kagan,Elena_Kagan
+2019_18-280,SPEAKER_02,316.9,Sonia_Sotomayor,0.967,Sonia_Sotomayor,Sonia_Sotomayor,Sonia_Sotomayor,Sonia_Sotomayor
+2019_18-280,SPEAKER_03,1121.7,Richard_P._Dearing,0.980,Richard_P._Dearing,Richard_P._Dearing,Richard_P._Dearing,Richard_P._Dearing
+2019_18-280,SPEAKER_04,44.2,"John_G._Roberts,_Jr.",0.941,"John_G._Roberts,_Jr.","John_G._Roberts,_Jr.","John_G._Roberts,_Jr.","John_G._Roberts,_Jr."
+2019_18-280,SPEAKER_05,340.0,Jeffrey_B._Wall,0.981,Jeffrey_B._Wall,Jeffrey_B._Wall,Jeffrey_B._Wall,Jeffrey_B._Wall
+2019_18-280,SPEAKER_06,816.2,Paul_D._Clement,0.980,Paul_D._Clement,Paul_D._Clement,Paul_D._Clement,Paul_D._Clement
+2019_18-280,SPEAKER_07,277.4,"Samuel_A._Alito,_Jr.",0.969,"Samuel_A._Alito,_Jr.","Samuel_A._Alito,_Jr.","Samuel_A._Alito,_Jr.","Samuel_A._Alito,_Jr."
+2019_18-280,SPEAKER_08,120.9,Stephen_G._Breyer,0.967,Stephen_G._Breyer,Stephen_G._Breyer,Stephen_G._Breyer,Stephen_G._Breyer
+2019_18-280,SPEAKER_09,244.4,Neil_Gorsuch,0.948,Neil_Gorsuch,Neil_Gorsuch,Neil_Gorsuch,Neil_Gorsuch
