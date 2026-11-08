@@ -1,0 +1,16 @@
+system,statistic,n_files,point,lo,hi,n_resamples,seed
+oracle_diarisation,share_of_words_in_overlap,16,0.245868,0.185444,0.299198,10000,20261002
+oracle_diarisation,share_of_errors_in_overlap_optimal,16,0.999763,0.999087,1.000000,10000,20261002
+oracle_diarisation,gap_majority_minus_optimal_all,16,0.000000,0.000000,0.000000,10000,20261002
+oracle_diarisation,gap_majority_minus_optimal_overlap,16,0.000000,0.000000,0.000000,10000,20261002
+oracle_diarisation,gap_majority_minus_optimal_single,16,0.000000,0.000000,0.000000,10000,20261002
+pyannote31_ihm_mix,share_of_words_in_overlap,16,0.245868,0.185444,0.299198,10000,20261002
+pyannote31_ihm_mix,share_of_errors_in_overlap_optimal,16,0.836584,0.804307,0.856593,10000,20261002
+pyannote31_ihm_mix,gap_majority_minus_optimal_all,16,-0.012789,-0.020021,-0.006327,10000,20261002
+pyannote31_ihm_mix,gap_majority_minus_optimal_overlap,16,-0.034707,-0.048869,-0.019824,10000,20261002
+pyannote31_ihm_mix,gap_majority_minus_optimal_single,16,-0.005643,-0.009362,-0.002543,10000,20261002
+pyannote31_sdm,share_of_words_in_overlap,16,0.245868,0.185444,0.299198,10000,20261002
+pyannote31_sdm,share_of_errors_in_overlap_optimal,16,0.761676,0.706937,0.796260,10000,20261002
+pyannote31_sdm,gap_majority_minus_optimal_all,16,-0.022178,-0.032154,-0.012410,10000,20261002
+pyannote31_sdm,gap_majority_minus_optimal_overlap,16,-0.050733,-0.066366,-0.029225,10000,20261002
+pyannote31_sdm,gap_majority_minus_optimal_single,16,-0.012868,-0.019668,-0.007354,10000,20261002

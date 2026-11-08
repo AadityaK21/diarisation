@@ -236,3 +236,9 @@ file (errors and reference length must match exactly, else the run aborts).
 The in-house version is needed to assign each error to a region: deletions
 and substitutions to the region of the reference word, insertions to the
 region at the output word's midpoint.
+
+**A5. The coin-flip result is robust to the tie-break.** Overlapped-word
+attribution error with perfect diarisation: 48.1% (label order, default),
+52.1% (credit the speaker whose turn started first), 38.6% (credit the one
+whose turn started last). pyannote 3.1: 54.1-59.7% across the three rules
+and both conditions (runs 837370d52e, 7e0f98a7a4, c80a92aca6).
