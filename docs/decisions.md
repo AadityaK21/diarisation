@@ -346,7 +346,11 @@ token) and attribution with perfect diarisation (per word, as step 6a). In
 overlap, 76% of the words in 1-2-word turns are backchannel-type words
 (yeah 834, mm-hmm 322, okay 241, mm 170, yes 103, hmm 101, right 88, ... of
 2,832); Whisper's normaliser removes the fillers among them (mm-hmm, mm,
-hmm, um, uh), so the ASR outcome covers the rest.
+hmm, um, uh), so the ASR outcome covers the rest. The level effect is not
+a by-product of backchannels or turn order: it holds within turns longer
+than two words (deletion 64% below -10 dB, 32% above +10 dB) and for the
+first and the second talker separately (59% to 25%; 70% to 42%); the
+`length|level` and `role|level` groups in aggregate.csv give the intervals.
 
 **X4. Per-meeting consistency.** For each headline effect, the number of
 the 16 test meetings in which it holds and an exact two-sided sign test

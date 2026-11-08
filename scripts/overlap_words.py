@@ -173,10 +173,10 @@ def main() -> int:
         for (ana, cond) in sorted({(u["analysis"], u["condition"]) for u in units}):
             sel = [u for u in units if u["analysis"] == ana and u["condition"] == cond]
             bad = "other_talker" if ana == "attribution" else "deleted"
-            for gtype in ("all", "role", "length", "level"):
+            for gtype in ("all", "role", "length", "level", "length|level", "role|level"):
                 groups = {}
                 for u in sel:
-                    g = "all" if gtype == "all" else u[gtype]
+                    g = "all" if gtype == "all" else "|".join(u[k] for k in gtype.split("|"))
                     n, b, s = groups.get(g, (0, 0, 0))
                     groups[g] = (n + 1, b + (u["outcome"] == bad), s + (u["outcome"] == "substituted"))
                 for g, (n, b, s) in groups.items():
