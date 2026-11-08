@@ -1,0 +1,46 @@
+{
+  "experiment": "overlap_dominance_pyannote31",
+  "config_hash": "39cb26edc63f650da98fb1fdd1a57ff6d75efbe565d30c0f1235e6768b48764d",
+  "config": {
+    "experiment": {
+      "experiment": "overlap_dominance_pyannote31",
+      "frame_step": 0.001,
+      "dataset": "configs/data/ami.yaml",
+      "words": "configs/data/ami_words.yaml",
+      "annotation": "only_words",
+      "partition": "test",
+      "hop": 0.1,
+      "window": 0.1,
+      "systems": {
+        "pyannote31_ihm_mix": {
+          "hyp_dir": "results/diarise/pyannote31_published/ihm_mix/test"
+        },
+        "pyannote31_sdm": {
+          "hyp_dir": "results/diarise/pyannote31_published/sdm/test"
+        }
+      },
+      "bootstrap": {
+        "n_resamples": 10000,
+        "ci_level": 0.95,
+        "seed": 20261002
+      },
+      "out_dir": "results/overlap_dominance_pyannote31"
+    }
+  },
+  "seed": 20261002,
+  "git": {
+    "commit": "f9f07b78972850ae48e0550adaf9e9b6235ce114",
+    "code_dirty": false
+  },
+  "versions": {
+    "python": "3.11.18",
+    "numpy": "1.26.4",
+    "soundfile": "0.12.1"
+  },
+  "argv": [
+    "scripts/overlap_dominance.py"
+  ],
+  "started_utc": "2026-11-08T17:46:32+00:00",
+  "wall_seconds": 42.894,
+  "n_rows": 32
+}

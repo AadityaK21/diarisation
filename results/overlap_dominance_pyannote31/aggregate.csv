@@ -1,0 +1,9 @@
+system,statistic,n_files,n_samples,point,lo,hi
+pyannote31_ihm_mix,shown_is_louder_given_one_of_pair,16,32265,0.711641,0.688221,0.732703
+pyannote31_ihm_mix,both_shown,16,32265,0.600558,0.564284,0.629285
+pyannote31_ihm_mix,one_shown_of_pair,16,32265,0.359957,0.332105,0.399408
+pyannote31_ihm_mix,other_or_none_shown,16,32265,0.039486,0.028091,0.050584
+pyannote31_sdm,shown_is_louder_given_one_of_pair,16,32265,0.663352,0.623400,0.698474
+pyannote31_sdm,both_shown,16,32265,0.547621,0.506355,0.582296
+pyannote31_sdm,one_shown_of_pair,16,32265,0.386487,0.360844,0.423173
+pyannote31_sdm,other_or_none_shown,16,32265,0.065892,0.048411,0.082183
