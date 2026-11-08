@@ -16,6 +16,7 @@ import sys
 import requests
 
 from diarisation.config import REPO_ROOT, load_paths, load_yaml
+from diarisation.data.ami_words import Word, write_tsv
 from diarisation.data.scotus_oyez import _get
 
 
@@ -69,14 +70,14 @@ def main() -> int:
                 for block in turn.get("text_blocks") or []:
                     ws = (block.get("text") or "").split()
                     s, e = float(block["start"]), float(block["stop"])
+                    if e <= s:  # one Oyez block ("The case is submitted.") has stop 0: use its turn
+                        s, e = float(turn["start"]), float(turn["stop"])
                     d = (e - s) / len(ws) if ws else 0.0
                     rows += [(spk, s + i * d, s + (i + 1) * d, w) for i, w in enumerate(ws)]
         out = REPO_ROOT / cfg["out_dir"] / "words" / f"{uri}.tsv"
         out.parent.mkdir(parents=True, exist_ok=True)
-        with open(out, "w", encoding="utf-8") as fh:
-            fh.write("speaker\tstart\tend\tword\n")
-            for spk, s, e, w in sorted(rows, key=lambda r: (r[1], r[2], r[0])):
-                fh.write(f"{spk}\t{s:.3f}\t{e:.3f}\t{w}\n")
+        # same writer as the AMI words (csv quoting: Oyez text contains quotes)
+        write_tsv(out, [Word(spk, s, e, w) for spk, s, e, w in sorted(rows, key=lambda r: (r[1], r[2], r[0]))])
         print(f"{uri}: {len(rows)} reference words, {len({r[0] for r in rows})} speakers -> {out.relative_to(REPO_ROOT)}")
     return 0
 

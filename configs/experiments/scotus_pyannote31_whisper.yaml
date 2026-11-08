@@ -1,0 +1,19 @@
+# Extra analysis (decisions.md X5): the brief's pipeline on the Supreme Court
+# set (one oral argument, 62 min, 10 speakers). The reference is raw Oyez turn
+# timing (no overlap, no silence between turns, not hand-corrected) and words
+# with pseudo timings, so: DER is reported for orientation only, the region
+# split does not apply, and the interest is speaker attribution with many
+# speakers, where merged speakers (under-clustering) cannot be undone by a
+# many-to-one mapping.
+
+experiment: scotus_pyannote31_whisper
+
+frame_step: 0.001
+dataset: configs/data/scotus_oyez.yaml
+partition: all
+hyp_dir: results/diarise/pyannote31/oyez/all
+asr_dir: results/asr/whisper_turbo_cpu/oyez/all
+collars: [0.0, 0.25]
+cluster_share_min: 0.1     # a system speaker "covers" a person if >= 10% of its time is theirs
+
+out_dir: results/scotus_pyannote31_whisper
