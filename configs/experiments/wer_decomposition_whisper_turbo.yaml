@@ -1,0 +1,27 @@
+# Extra analysis (decisions.md X2): where do the speaker-attributed word errors
+# come from? Three nested scores on the same Whisper words:
+#   di_cpwer        MeetEval DI-cpWER (greedy): every output word may go to
+#                   whichever person minimises the error -> transcription only
+#   cpwer_oracle    words given to speakers by the reference turns (perfect
+#                   diarisation) with the one-speaker-per-word rule
+#   cpwer_pyannote  the same rule with pyannote 3.1's turns
+# so  transcription = di_cpwer,  word rule = cpwer_oracle - di_cpwer,
+#     diarisation = cpwer_pyannote - cpwer_oracle  (paired, per region).
+# tcpWER (MeetEval, time-constrained cpWER) is reported beside cpWER at the
+# collar used by the CHiME-8 meeting tasks.
+
+experiment: wer_decomposition_whisper_turbo
+
+frame_step: 0.001
+dataset: configs/data/ami.yaml
+words: configs/data/ami_words.yaml
+annotation: only_words
+partition: test
+
+conditions:
+  ihm_mix: {asr_dir: results/asr/whisper_turbo_cpu/ihm_mix/test, pyannote_dir: results/diarise/pyannote31_published/ihm_mix/test}
+  sdm: {asr_dir: results/asr/whisper_turbo_cpu/sdm/test, pyannote_dir: results/diarise/pyannote31_published/sdm/test}
+
+tcp_collar: 5.0
+bootstrap: {n_resamples: 10000, ci_level: 0.95, seed: 20261002}
+out_dir: results/wer_decomposition_whisper_turbo
