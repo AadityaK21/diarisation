@@ -1,0 +1,50 @@
+{
+  "experiment": "overlap_detection_sortformer_v21",
+  "config_hash": "e473be8f0d203588f2d2a7373f70ff29cfd3704ec304bf0ccc33734972ec6d09",
+  "config": {
+    "experiment": {
+      "experiment": "overlap_detection_sortformer_v21",
+      "dataset": "configs/data/ami.yaml",
+      "annotation": "only_words",
+      "partition": "test",
+      "count_cap": 3,
+      "systems": {
+        "sortformer_v21_ihm_mix": {
+          "hyp_dir": "results/diarise/sortformer_v21/ihm_mix/test"
+        },
+        "sortformer_v21_sdm": {
+          "hyp_dir": "results/diarise/sortformer_v21/sdm/test"
+        },
+        "sortformer_v21_dihard3pp_ihm_mix": {
+          "hyp_dir": "results/diarise/sortformer_v21_dihard3pp/ihm_mix/test"
+        },
+        "sortformer_v21_dihard3pp_sdm": {
+          "hyp_dir": "results/diarise/sortformer_v21_dihard3pp/sdm/test"
+        }
+      },
+      "bootstrap": {
+        "n_resamples": 10000,
+        "ci_level": 0.95,
+        "seed": 20261002
+      },
+      "out_dir": "results/overlap_detection_sortformer_v21"
+    }
+  },
+  "seed": 20261002,
+  "git": {
+    "commit": "f1bb4f481a5107fde988cf83af71ae7c31c7fb75",
+    "code_dirty": false
+  },
+  "versions": {
+    "python": "3.11.18",
+    "numpy": "1.26.4"
+  },
+  "argv": [
+    "scripts/overlap_detection.py",
+    "--config",
+    "configs/experiments/overlap_detection_sortformer_v21.yaml"
+  ],
+  "started_utc": "2026-11-08T23:18:24+00:00",
+  "wall_seconds": 0.514,
+  "n_rows": 64
+}
