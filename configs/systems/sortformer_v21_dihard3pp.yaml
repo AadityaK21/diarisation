@@ -1,0 +1,22 @@
+# Sensitivity variant of sortformer_v21: the same frame probabilities, with
+# the post-processing NVIDIA publishes for streaming Sortformer v2, optimised
+# on DIHARD III dev (no AMI data). NVIDIA publishes no setting for v2.1 or for
+# AMI; nothing here is tuned on AMI.
+# Source: github.com/NVIDIA-NeMo/Speech, main, examples/speaker_tasks/
+#   diarization/conf/post_processing/diar_streaming_sortformer_4spk-v2_dihard3-dev.yaml
+#   (fetched 2026-11-08, sha256 3c42e326f869f8b8f7d11f661c77d89d5373f2368eee74e0d4939314b94a784c)
+
+system: sortformer_v21_dihard3pp
+source_system: configs/systems/sortformer_v21.yaml
+postprocessing:
+  onset: 0.56
+  offset: 1.0
+  pad_onset: 0.063
+  pad_offset: 0.002
+  min_duration_on: 0.007
+  min_duration_off: 0.151
+unit_10ms_frame_count: 8      # 80 ms frames (the encoder's subsampling factor)
+
+conditions: [ihm_mix, sdm]
+partitions: [test]
+out_dir: results/diarise/sortformer_v21_dihard3pp
