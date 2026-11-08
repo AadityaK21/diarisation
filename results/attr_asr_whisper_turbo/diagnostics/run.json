@@ -1,6 +1,6 @@
 {
   "experiment": "attr_asr_whisper_turbo_diagnostics",
-  "config_hash": "282af08178759b77e000825f6bba8db9ad6c5c28e987bd596587dd9531648f52",
+  "config_hash": "e609bc6cbf42aa22f2969affd24c49dda944fb397a5f246cd5c7c680f35bef6a",
   "config": {
     "experiment": {
       "experiment": "attr_asr_whisper_turbo",
@@ -19,6 +19,16 @@
           "name": "pyannote31_ihm_mix",
           "asr_dir": "results/asr/whisper_turbo_cpu/ihm_mix/test",
           "hyp_dir": "results/diarise/pyannote31_published/ihm_mix/test"
+        },
+        {
+          "name": "oracle_diarisation_sdm",
+          "asr_dir": "results/asr/whisper_turbo_cpu/sdm/test",
+          "hyp_dir": "data/ami/only_words/rttm/test"
+        },
+        {
+          "name": "pyannote31_sdm",
+          "asr_dir": "results/asr/whisper_turbo_cpu/sdm/test",
+          "hyp_dir": "results/diarise/pyannote31_published/sdm/test"
         }
       ],
       "contrasts": [
@@ -47,7 +57,7 @@
   },
   "seed": 20261002,
   "git": {
-    "commit": "1c053fbb52a2695c740532e14c68f7b1d52e141d",
+    "commit": "005dac2f21cef1a79ad73efc7ca21d3a2c31ffa8",
     "code_dirty": false
   },
   "versions": {
@@ -58,12 +68,9 @@
     "whisper-normalizer": "0.0.10"
   },
   "argv": [
-    "scripts/asr_diagnostics.py",
-    "--runs",
-    "oracle_diarisation_ihm_mix",
-    "pyannote31_ihm_mix"
+    "scripts/asr_diagnostics.py"
   ],
-  "started_utc": "2026-11-08T16:45:29+00:00",
-  "wall_seconds": 15.974,
-  "meetings": 32
+  "started_utc": "2026-11-08T18:38:10+00:00",
+  "wall_seconds": 32.313,
+  "meetings": 64
 }

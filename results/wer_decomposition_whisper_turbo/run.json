@@ -1,6 +1,6 @@
 {
   "experiment": "wer_decomposition_whisper_turbo",
-  "config_hash": "395ddf2c7abf1433eea71d011d9926be6fc73fc531c08a9639ec89e041fd6355",
+  "config_hash": "c240f8a9ee5b05a57aaa9daac76f44fde301417abf69cca31e970af56a6bfb57",
   "config": {
     "experiment": {
       "experiment": "wer_decomposition_whisper_turbo",
@@ -13,6 +13,10 @@
         "ihm_mix": {
           "asr_dir": "results/asr/whisper_turbo_cpu/ihm_mix/test",
           "pyannote_dir": "results/diarise/pyannote31_published/ihm_mix/test"
+        },
+        "sdm": {
+          "asr_dir": "results/asr/whisper_turbo_cpu/sdm/test",
+          "pyannote_dir": "results/diarise/pyannote31_published/sdm/test"
         }
       },
       "tcp_collar": 5.0,
@@ -26,7 +30,7 @@
   },
   "seed": 20261002,
   "git": {
-    "commit": "ee47847d127f49141460d74620b8c203fedbe9aa",
+    "commit": "005dac2f21cef1a79ad73efc7ca21d3a2c31ffa8",
     "code_dirty": false
   },
   "versions": {
@@ -38,14 +42,30 @@
     "whisper-normalizer": "0.0.10"
   },
   "argv": [
-    "scripts/wer_decomposition.py",
-    "--conditions",
-    "ihm_mix"
+    "scripts/wer_decomposition.py"
   ],
-  "started_utc": "2026-11-08T17:23:40+00:00",
-  "wall_seconds": 94.433,
+  "started_utc": "2026-11-08T18:38:42+00:00",
+  "wall_seconds": 175.172,
   "meetings_included": {
     "ihm_mix": [
+      "IS1009a",
+      "IS1009b",
+      "IS1009c",
+      "IS1009d",
+      "ES2004a",
+      "ES2004b",
+      "ES2004c",
+      "ES2004d",
+      "TS3003a",
+      "TS3003b",
+      "TS3003c",
+      "TS3003d",
+      "EN2002a",
+      "EN2002b",
+      "EN2002c",
+      "EN2002d"
+    ],
+    "sdm": [
       "IS1009a",
       "IS1009b",
       "IS1009c",
@@ -80,6 +100,22 @@
     "ihm_mix/EN2002a": "oracle",
     "ihm_mix/EN2002b": "pyannote",
     "ihm_mix/EN2002c": "oracle",
-    "ihm_mix/EN2002d": "oracle"
+    "ihm_mix/EN2002d": "oracle",
+    "sdm/IS1009a": "oracle",
+    "sdm/IS1009b": "oracle",
+    "sdm/IS1009c": "oracle",
+    "sdm/IS1009d": "oracle",
+    "sdm/ES2004a": "oracle",
+    "sdm/ES2004b": "pyannote",
+    "sdm/ES2004c": "oracle",
+    "sdm/ES2004d": "oracle",
+    "sdm/TS3003a": "oracle",
+    "sdm/TS3003b": "oracle",
+    "sdm/TS3003c": "oracle",
+    "sdm/TS3003d": "oracle",
+    "sdm/EN2002a": "oracle",
+    "sdm/EN2002b": "oracle",
+    "sdm/EN2002c": "oracle",
+    "sdm/EN2002d": "oracle"
   }
 }
