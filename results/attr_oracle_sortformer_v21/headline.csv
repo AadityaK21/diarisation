@@ -1,0 +1,17 @@
+system,statistic,n_files,point,lo,hi,n_resamples,seed
+sortformer_v21_ihm_mix,share_of_words_in_overlap,16,0.245868,0.185444,0.299198,10000,20261002
+sortformer_v21_ihm_mix,share_of_errors_in_overlap_optimal,16,0.769422,0.606952,0.887918,10000,20261002
+sortformer_v21_ihm_mix,gap_majority_minus_optimal_all,16,-0.001497,-0.003605,0.000000,10000,20261002
+sortformer_v21_ihm_mix,gap_majority_minus_optimal_overlap,16,-0.001877,-0.004307,0.000000,10000,20261002
+sortformer_v21_ihm_mix,gap_majority_minus_optimal_single,16,-0.001373,-0.003782,0.000000,10000,20261002
+sortformer_v21_ihm_mix,gap_onetoone_minus_optimal_all,16,0.000000,0.000000,0.000000,10000,20261002
+sortformer_v21_ihm_mix,gap_onetoone_minus_optimal_single,16,0.000000,0.000000,0.000000,10000,20261002
+sortformer_v21_ihm_mix,gap_onetoone_minus_optimal_overlap,16,0.000000,0.000000,0.000000,10000,20261002
+sortformer_v21_sdm,share_of_words_in_overlap,16,0.245868,0.185444,0.299198,10000,20261002
+sortformer_v21_sdm,share_of_errors_in_overlap_optimal,16,0.685271,0.541491,0.812347,10000,20261002
+sortformer_v21_sdm,gap_majority_minus_optimal_all,16,-0.008995,-0.021279,0.000000,10000,20261002
+sortformer_v21_sdm,gap_majority_minus_optimal_overlap,16,-0.004396,-0.009530,0.000000,10000,20261002
+sortformer_v21_sdm,gap_majority_minus_optimal_single,16,-0.010494,-0.025300,0.000000,10000,20261002
+sortformer_v21_sdm,gap_onetoone_minus_optimal_all,16,0.000000,0.000000,0.000000,10000,20261002
+sortformer_v21_sdm,gap_onetoone_minus_optimal_single,16,0.000000,0.000000,0.000000,10000,20261002
+sortformer_v21_sdm,gap_onetoone_minus_optimal_overlap,16,0.000000,0.000000,0.000000,10000,20261002
