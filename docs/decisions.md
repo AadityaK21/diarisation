@@ -365,3 +365,13 @@ with exactly the turbo run's decoding settings, on CPU for a subset of test
 meetings (IS1009a, ES2004a; headset mix), compared with turbo on the same
 meetings. A subset check only: it bounds the size of the effect, it does not
 replace a full large-v3 run.
+
+**X7. Which talker pyannote shows when it shows one.** Sampled every 0.1 s
+inside two-speaker reference overlap; system speakers mapped to people with
+the optimal mapping; "louder" = higher headset energy in a 0.1 s window
+(`scripts/overlap_dominance.py`). When pyannote shows exactly one of the two
+talkers, it is the louder one 71.2% [68.8, 73.3] of the time on the headset
+mix and 66.3% [62.3, 69.8] on the distant mic. Whisper also loses the quieter
+talker (X3), so diarisation and transcription fail on the same person, which
+is consistent with diarisation adding only 1.0 point [-0.7, 2.1] of cpWER in
+overlap (X2).
