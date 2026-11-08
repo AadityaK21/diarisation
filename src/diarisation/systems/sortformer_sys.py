@@ -57,6 +57,6 @@ def diarise(model, wav_path: str, probs_path=None) -> List[Segment]:
         lines, preds = model.diarize(audio=[wav_path], batch_size=1, include_tensor_outputs=True)
     if probs_path is not None:
         p = preds[0].squeeze(0).float().numpy()
-        np.savez_compressed(probs_path, probs=p.astype(np.float16),
+        np.savez_compressed(probs_path, probs=p.astype(np.float32),
                             frame_s=np.float32(model._cfg.encoder.subsampling_factor * 0.01))
     return [_parse(s) for s in lines[0]]
