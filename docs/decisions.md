@@ -236,7 +236,10 @@ system equally.
 file (errors and reference length must match exactly, else the run aborts).
 The in-house version is needed to assign each error to a region: deletions
 and substitutions to the region of the reference word, insertions to the
-region at the output word's midpoint.
+region at the output word's midpoint. In 6b the "single" region means
+"outside overlap": an insertion whose midpoint falls in silence is counted
+there too (`RegionLookup` returns overlap for >= 2 active speakers, single
+otherwise).
 
 **W5. ASR run 1 failed; decoding guards restored for run 2.** Run 1 set a
 single `temperature: 0.0` for reproducibility. That switched off Whisper's
@@ -272,8 +275,9 @@ never below cpWER (the script aborts if it is). Headset-mix result: it equals
 cpWER to +0.01 points [+0.00, +0.04], while the many-to-one metric B is 2.09
 points lower [-3.20, -1.05] (5.84 lower in overlap). So the leniency of metric
 B comes entirely from many-to-one mapping, which forgives over-clustering:
-pyannote 3.1 outputs 4-9 speakers for meetings with 3-4 people (34 extra
-clusters over the 16 test meetings, headset mix). Fixing the mapping without
+pyannote 3.1 outputs 4-9 speakers for meetings with 3-4 people (96 system
+speakers for 63 people over the 16 test meetings, headset mix; 34 of them
+are mapped to a person who already has one). Fixing the mapping without
 a permutation search changes nothing. Paired cpWER contrasts (pyannote minus
 oracle diarisation, same ASR words) are in `contrasts.csv`.
 
