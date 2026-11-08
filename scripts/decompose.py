@@ -50,7 +50,7 @@ def job(a):
     rows, worst = [], 0.0
     for c in cfg["collars"]:
         for x in cfg["exclude_overlap"]:
-            fa = frame_arrays(ref, hyp, uem, c, x, cfg["frame_step"])
+            fa = frame_arrays(ref, hyp, uem, c, x, cfg["frame_step"], cfg.get("mapping_region", "all"))
             parts = decompose(fa)
             worst = max(worst, partition_residual(parts))
             for region in ("all",) + REGIONS:

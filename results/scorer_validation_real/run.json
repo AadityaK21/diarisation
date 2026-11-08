@@ -1,0 +1,65 @@
+{
+  "experiment": "scorer_validation_real",
+  "config_hash": "1c8169bddfa7b442c32a647d2fba093349ead2bbfadf3f92ca59ee6768cab37e",
+  "config": {
+    "experiment": "scorer_validation_real",
+    "frame_step": 0.001,
+    "tol_seconds": 0.001,
+    "collars": [
+      0.0,
+      0.25
+    ],
+    "exclude_overlap": [
+      false,
+      true
+    ],
+    "datasets": [
+      {
+        "config": "configs/data/ami.yaml",
+        "annotation": "only_words",
+        "partitions": [
+          "test"
+        ]
+      }
+    ],
+    "seed": 20261002,
+    "systems": {
+      "pyannote31pub_ihm_mix": {
+        "hyp_dir": "results/diarise/pyannote31_published/ihm_mix/test"
+      },
+      "pyannote31pub_sdm": {
+        "hyp_dir": "results/diarise/pyannote31_published/sdm/test"
+      },
+      "pyannote31_ihm_mix": {
+        "hyp_dir": "results/diarise/pyannote31/ihm_mix/test"
+      },
+      "pyannote31_sdm": {
+        "hyp_dir": "results/diarise/pyannote31/sdm/test"
+      }
+    },
+    "work_dir": "work/scorer_validation_real",
+    "out_dir": "results/scorer_validation_real"
+  },
+  "seed": 20261002,
+  "git": {
+    "commit": "9a5323115f0be3bad7a43e2a2bec1ce2b686566c",
+    "code_dirty": false
+  },
+  "versions": {
+    "python": "3.11.18",
+    "numpy": "1.26.4",
+    "scipy": "1.14.1",
+    "PyYAML": "6.0.3"
+  },
+  "argv": [
+    "scripts/validate_scorer.py",
+    "--config",
+    "configs/validation/scorer_real.yaml"
+  ],
+  "started_utc": "2026-11-08T11:41:23+00:00",
+  "wall_seconds": 11.099,
+  "n_comparisons": 132,
+  "max_abs_component_diff_s": 0.0,
+  "failing_groups": 0,
+  "tol_seconds": 0.001
+}

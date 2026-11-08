@@ -143,7 +143,11 @@ def _optimal_mapping(ref: Dict[str, np.ndarray], hyp: Dict[str, np.ndarray],
 
 
 def frame_arrays(ref_segs: Sequence[Segment], hyp_segs: Sequence[Segment], uem: Sequence[Region],
-                 collar: float, exclude_overlap: bool, step: float) -> FrameArrays:
+                 collar: float, exclude_overlap: bool, step: float,
+                 mapping_region: str = "all") -> FrameArrays:
+    """`mapping_region` = "all" (md-eval: every evaluated frame) or "single"
+    (only frames with exactly one reference speaker: the mapping is fixed on
+    unambiguous speech and then applied unchanged everywhere, overlap included)."""
     _check_self_overlap(ref_segs, "reference")
     _check_self_overlap(hyp_segs, "hypothesis")
 
@@ -159,7 +163,13 @@ def frame_arrays(ref_segs: Sequence[Segment], hyp_segs: Sequence[Segment], uem: 
     n_ref = sum((a.astype(np.int16) for a in ref.values()), zeros.copy())
     n_hyp = sum((a.astype(np.int16) for a in hyp.values()), zeros.copy())
 
-    mapping = _optimal_mapping(ref, hyp, weight)
+    if mapping_region == "all":
+        map_weight = weight
+    elif mapping_region == "single":
+        map_weight = np.where(n_ref == 1, weight, 0.0)
+    else:
+        raise ValueError(f"unknown mapping_region {mapping_region!r}")
+    mapping = _optimal_mapping(ref, hyp, map_weight)
     n_correct = zeros.copy()
     for r, h in mapping.items():
         n_correct += (ref[r] & hyp[h]).astype(np.int16)

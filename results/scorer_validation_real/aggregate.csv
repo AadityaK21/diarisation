@@ -1,0 +1,13 @@
+dataset,system,collar,exclude_overlap,n_files,pooled_der_ours,pooled_der_mdeval,max_abs_component_diff_s,off_grid,pass
+ami,pyannote31_sdm,0.000000,0,1,0.219300,0.219300,0.000000,0,1
+ami,pyannote31_sdm,0.000000,1,1,0.168802,0.168802,0.000000,0,1
+ami,pyannote31_sdm,0.250000,0,1,0.134881,0.134881,0.000000,0,1
+ami,pyannote31_sdm,0.250000,1,1,0.097828,0.097828,0.000000,0,1
+ami,pyannote31pub_ihm_mix,0.000000,0,16,0.187954,0.187954,0.000000,0,1
+ami,pyannote31pub_ihm_mix,0.000000,1,16,0.113723,0.113723,0.000000,0,1
+ami,pyannote31pub_ihm_mix,0.250000,0,16,0.122096,0.122096,0.000000,0,1
+ami,pyannote31pub_ihm_mix,0.250000,1,16,0.066557,0.066557,0.000000,0,1
+ami,pyannote31pub_sdm,0.000000,0,16,0.224455,0.224455,0.000000,0,1
+ami,pyannote31pub_sdm,0.000000,1,16,0.146192,0.146192,0.000000,0,1
+ami,pyannote31pub_sdm,0.250000,0,16,0.152135,0.152135,0.000000,0,1
+ami,pyannote31pub_sdm,0.250000,1,16,0.093738,0.093738,0.000000,0,1

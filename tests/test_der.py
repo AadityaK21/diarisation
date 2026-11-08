@@ -82,3 +82,21 @@ def test_off_grid_uem_end_is_exact_and_not_flagged():
     assert r.off_grid == 0
     r = score(ref, [], [(0.0004, 0.0007)], 0.0, False, STEP)   # inside one frame
     assert abs(r.scored_speaker_s - 0.0003) < 1e-12
+
+
+def test_mapping_fixed_on_single_speaker_frames():
+    # A speaks alone 0-10 as x. In the overlap 10-14 (A and B) the system
+    # outputs only y, and y is also B alone 14-15. Optimal mapping over all
+    # frames gives A->x, B->y either way here, so construct a case where the
+    # overlap would flip it: y covers A in 10-14 only, B alone 14-15 is z.
+    ref = [S(0, 14, "A"), S(10, 15, "B")]
+    hyp = [S(0, 10, "x"), S(10, 14, "y"), S(14, 15, "z")]
+    uem = [(0.0, 15.0)]
+    from diarisation.scoring.der import frame_arrays, components
+    opt = frame_arrays(ref, hyp, uem, 0.0, False, STEP, "all")
+    fix = frame_arrays(ref, hyp, uem, 0.0, False, STEP, "single")
+    # all-frame mapping: A->x (10 s) beats A->y (4 s); B->y (4 s) beats B->z (1 s)
+    assert opt.mapping == {"A": "x", "B": "y"}
+    # single-speaker frames only: A alone 0-10 -> x, B alone 14-15 -> z
+    assert fix.mapping == {"A": "x", "B": "z"}
+    assert components(fix).confusion_s > components(opt).confusion_s

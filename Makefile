@@ -2,9 +2,9 @@
 # references to final tables; audio download is separate because it is large.
 PY ?= python3
 
-.PHONY: all test prepare prepare-ami prepare-scotus overlap-stats validate-scorer decompose-synthetic diarise validate-scorer-real decompose-pyannote31 audio-ihm audio-sdm
+.PHONY: all test prepare prepare-ami prepare-scotus overlap-stats validate-scorer decompose-synthetic diarise validate-scorer-real decompose-pyannote31 compare-mappings audio-ihm audio-sdm
 
-all: test prepare overlap-stats validate-scorer decompose-synthetic validate-scorer-real decompose-pyannote31
+all: test prepare overlap-stats validate-scorer decompose-synthetic validate-scorer-real decompose-pyannote31 compare-mappings
 
 test:
 	$(PY) -m pytest -q
@@ -42,3 +42,7 @@ validate-scorer-real:
 
 decompose-pyannote31:
 	$(PY) scripts/decompose.py --config configs/experiments/decomp_pyannote31.yaml
+
+compare-mappings:
+	$(PY) scripts/decompose.py --config configs/experiments/decomp_pyannote31_singlemap.yaml
+	$(PY) scripts/compare_mappings.py
