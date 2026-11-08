@@ -157,3 +157,32 @@ worse in overlap than outside it. Synthetic check: `swap` (uniform confusion)
 loses nothing (-0.02 pp [-0.70, 0.66]); `exclusive` (perfect except in
 overlap) goes from 14.55% to 0.00%. The headline claim should be stated per
 system with this paired interval, not as a general offset.
+
+## Real system (step 5)
+
+**P1. Main results use the pyannote authors' published AMI test outputs.**
+`results/diarise/pyannote31_published/` (model card "reproducible_research",
+revision 84fd259). Our scorer gives 18.80% (IHM-Mix) and 22.45% (SDM) under
+Full, matching the model card's 18.8% and 22.4%; per meeting, our components
+agree with the authors' pyannote.metrics `.eval` within 0.042 s (0.005 DER
+points). md-eval agrees with our scorer on all 132 real-output comparisons
+(run 1c8169bddf).
+
+**P2. Our own run is a reproduction check, not the source of the numbers.**
+pyannote.audio 3.3.2 on CPU (env/constraints-pyannote31-cpu.txt) runs at
+RTF 0.78 on 4 cores, about 14 h for both test conditions. On IS1009a (SDM)
+our output scores 21.93% vs the published 23.01%, and the two outputs differ
+on 3.4% of speaker time (mostly cluster labels). Close, not identical:
+different library version and hardware. Remaining meetings run in the
+background and are added as they finish.
+
+**P3. Fixing the mapping on single-speaker frames changes almost nothing
+[Jensen].** Mapping changed in 1 of 32 file/condition pairs (TS3003a,
+IHM-Mix); pooled DER moves by 0.002 points (IHM) and 0.000 (SDM), and DER
+inside overlap by at most 0.006 points (`results/mapping_comparison/`). For
+this system, the permutation-invariant and fixed-mapping scores coincide at
+frame level, so the brief's expected headline gap does not appear here. The
+overlap error is missed speech (25.0% IHM, 27.5% SDM of overlap speaker time)
+and confusion (13.9%, 16.1%), not inconsistent labelling. Step 6 should
+therefore measure what happens to the MISSED speaker's words (credited to
+the speaker who was detected, or lost), rather than mapping instability.
