@@ -373,6 +373,13 @@ its block; one block with stop 0 takes its turn's times). DER is therefore
 for orientation only and the overlap split does not apply; the point is
 speaker attribution with 10 speakers, where a merged pair of people cannot be
 undone by a many-to-one mapping. Same pyannote and Whisper settings as AMI.
+Result (run 30d658beeb): pyannote finds 10 clusters, one per person (each
+94-98% one person); DER 9.93% Full (missed 7.43, false alarm 1.36,
+confusion 1.14) and 8.34% Fair, md-eval-checked; the reference marks all
+3,743 s as speech while the system marks 3,517 s, so the missed speech
+mostly reflects the reference. DI-cpWER 5.14%, cpWER 7.46% with the Oyez
+turns and 7.79% with pyannote; both fixed mappings equal cpWER, because
+with one cluster per person there is nothing for many-to-one to absorb.
 
 **X6. Effect of the turbo deviation (W1).** large-v3, the brief's model,
 with exactly the turbo run's decoding settings, on CPU for a subset of test
