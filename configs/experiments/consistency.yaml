@@ -1,0 +1,13 @@
+# Extra check (decisions.md X4): in how many of the 16 test meetings does each
+# headline effect hold? Exact two-sided sign test over meetings (ties dropped).
+# Reads only committed per-file CSVs; no new scoring.
+
+experiment: consistency
+
+sources:
+  der: results/decomp_pyannote31/per_file.csv
+  attribution: results/attr_oracle_pyannote31/per_file.csv
+  asr: results/attr_asr_whisper_turbo/per_file.csv
+  decomposition: results/wer_decomposition_whisper_turbo/per_file.csv
+
+out_dir: results/consistency

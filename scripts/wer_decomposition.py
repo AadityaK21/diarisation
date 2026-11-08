@@ -7,8 +7,7 @@ import argparse
 import csv
 import sys
 
-from meeteval.io.seglst import SegLST
-from meeteval.wer import cp_word_error_rate, greedy_di_cp_word_error_rate
+from meeteval.wer import cp_word_error_rate
 from meeteval.wer import time_constrained_minimum_permutation_word_error_rate as tcp_wer
 
 from diarisation.config import REPO_ROOT, load_yaml
@@ -17,7 +16,8 @@ from diarisation.io.rttm import read_rttm
 from diarisation.io.uem import read_uem
 from diarisation.runlog import RunLog
 from diarisation.scoring.attribution import assign
-from diarisation.scoring.wer import RegionLookup, Token, cp_assignment, score_assignment, tokens
+from diarisation.scoring.meeteval_bridge import di_streams, seglst
+from diarisation.scoring.wer import RegionLookup, cp_assignment, score_assignment, tokens
 from diarisation.stats.bootstrap import of_sums
 
 sys.path.insert(0, str(REPO_ROOT / "scripts"))
@@ -25,12 +25,6 @@ from attribution_asr import asr_words  # noqa: E402
 
 REGIONS = ("all", "single", "overlap")
 KEYS = ("n_ref", "sub", "del", "ins")
-
-
-def seglst(streams, uri):
-    """{speaker: [Token]} -> SegLST with one segment per token."""
-    return SegLST([{"session_id": uri, "speaker": spk, "start_time": t.start, "end_time": t.end, "words": t.text}
-                   for spk, toks in streams.items() for t in toks])
 
 
 def totals(acc):
@@ -82,25 +76,10 @@ def main() -> int:
                     hs.setdefault(lab if lab is not None else "__unassigned__", []).append((w.text, w.start, w.end))
                 labelled[run] = {k: tokens(v) for k, v in hs.items()}
 
-            # transcription only: DI-cpWER. MeetEval's greedy search starts from
-            # the cpWER assignment of the hypothesis labels, so run it from both
-            # labellings and keep the lower (both are upper bounds on DI-cpWER;
-            # starting from the oracle labels guarantees DI <= cpWER_oracle).
-            best = None
-            for run in ("oracle", "pyannote"):
-                hyp_sl = seglst(labelled[run], uri)
-                di = greedy_di_cp_word_error_rate(ref_sl, hyp_sl)
-                if best is None or di.errors < best[0].errors:
-                    best = (di, hyp_sl, run)
-            di, hyp_sl, di_start = best
-            _, reassigned = di.apply_assignment(ref_sl, hyp_sl)
-            di_streams = {}
-            for s in reassigned:
-                di_streams.setdefault(s["speaker"], []).append(Token(s["words"], s["start_time"], s["end_time"]))
-            # MeetEval orders each stream by time; tokens of one word share their
-            # times and keep their order (stable sort)
-            di_streams = {k: sorted(v, key=lambda t: (t.start, t.end)) for k, v in di_streams.items()}
-            acc = score_assignment(ref_streams, di_streams, {r: r for r in ref_streams}, region)
+            # transcription only: DI-cpWER from both labellings, lowest kept
+            di_s, di, di_start = di_streams(ref_streams, [("oracle", labelled["oracle"]),
+                                                          ("pyannote", labelled["pyannote"])], uri)
+            acc = score_assignment(ref_streams, di_s, {r: r for r in ref_streams}, region)
             ours = sum(a["sub"] + a["del"] + a["ins"] for a in acc.values())
             if ours != di.errors:
                 print(f"ABORT {cond} {uri}: DI-cpWER ours {ours} != MeetEval {di.errors}", file=sys.stderr)

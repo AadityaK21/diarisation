@@ -9,22 +9,12 @@ headsets worn by a speaker are fetched. Resumable, never inside the repository.
 
 import argparse
 import sys
-import xml.etree.ElementTree as ET
 
 from diarisation.config import REPO_ROOT, load_paths, load_yaml
-from diarisation.data.ami_words import ensure_archive
+from diarisation.data.ami_words import ensure_archive, headset_channels
 
 sys.path.insert(0, str(REPO_ROOT / "scripts"))
 from download_ami_audio import fetch  # noqa: E402
-
-
-def headset_channels(meetings_xml, uris):
-    """{uri: {global speaker id: channel}}"""
-    out = {}
-    for m in ET.parse(meetings_xml).getroot().iter("meeting"):
-        if m.get("observation") in uris:
-            out[m.get("observation")] = {s.get("global_name"): s.get("channel") for s in m.iter("speaker")}
-    return out
 
 
 def main() -> int:
@@ -38,11 +28,10 @@ def main() -> int:
     root = paths["audio_root"] / "amicorpus"
     if REPO_ROOT in root.resolve().parents or root.resolve() == REPO_ROOT:
         sys.exit(f"audio_root {root} is inside the repository; refusing.")
-    meetings_xml = ensure_archive(wcfg, paths["cache_root"]) / "corpusResources" / "meetings.xml"
     uris = []
     for part in args.partitions:
         uris += (REPO_ROOT / cfg["out_dir"] / "lists" / f"{part}.txt").read_text().split()
-    chans = headset_channels(meetings_xml, set(uris))
+    chans = headset_channels(ensure_archive(wcfg, paths["cache_root"]))
     failed = []
     for uri in uris:
         for spk, ch in sorted(chans[uri].items()):

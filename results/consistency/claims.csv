@@ -1,0 +1,16 @@
+claim,subject,n_meetings,n_holds,n_ties,p_sign_test,fails_in
+DER in overlap > DER in single-speaker speech,pyannote31_ihm_mix,16,16,0,3.05e-05,
+overlap share of DER errors > overlap share of scored time,pyannote31_ihm_mix,16,16,0,3.05e-05,
+DER in overlap > DER in single-speaker speech,pyannote31_sdm,16,16,0,3.05e-05,
+overlap share of DER errors > overlap share of scored time,pyannote31_sdm,16,16,0,3.05e-05,
+attribution error in overlap > in single-speaker speech,oracle_diarisation,16,16,0,3.05e-05,
+attribution error in overlap > in single-speaker speech,pyannote31_ihm_mix,16,16,0,3.05e-05,
+"attribution error, optimal mapping > majority (metric B)",pyannote31_ihm_mix,16,15,1,6.1e-05,
+attribution error in overlap > in single-speaker speech,pyannote31_sdm,16,16,0,3.05e-05,
+"attribution error, optimal mapping > majority (metric B)",pyannote31_sdm,16,15,1,6.1e-05,
+cpWER in overlap > outside overlap,oracle_diarisation_ihm_mix,16,16,0,3.05e-05,
+cpWER in overlap > outside overlap,pyannote31_ihm_mix,16,16,0,3.05e-05,
+cpWER > fixed many-to-one WER (metric B),pyannote31_ihm_mix,16,15,0,0.000519,TS3003a
+cpWER pyannote > cpWER perfect diarisation,pyannote31_ihm_mix,16,13,0,0.0213,ES2004b;ES2004c;TS3003c
+word-assignment part > diarisation part of cpWER,ihm_mix,16,16,0,3.05e-05,
+transcription-only error (DI-cpWER) in overlap > outside,ihm_mix,16,16,0,3.05e-05,

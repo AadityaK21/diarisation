@@ -1,0 +1,30 @@
+{
+  "experiment": "consistency",
+  "config_hash": "eba91011cdea7aa92d5fc704fa43313c6e468b1a7a79d8efc4dd6bba51fa8381",
+  "config": {
+    "experiment": {
+      "experiment": "consistency",
+      "sources": {
+        "der": "results/decomp_pyannote31/per_file.csv",
+        "attribution": "results/attr_oracle_pyannote31/per_file.csv",
+        "asr": "results/attr_asr_whisper_turbo/per_file.csv",
+        "decomposition": "results/wer_decomposition_whisper_turbo/per_file.csv"
+      },
+      "out_dir": "results/consistency"
+    }
+  },
+  "seed": null,
+  "git": {
+    "commit": "a574ee416be7d68384bec4ca2314690a53fdd2d2",
+    "code_dirty": true
+  },
+  "versions": {
+    "python": "3.11.18"
+  },
+  "argv": [
+    "scripts/consistency.py"
+  ],
+  "started_utc": "2026-11-08T17:31:19+00:00",
+  "wall_seconds": 0.005,
+  "n_claims": 15
+}

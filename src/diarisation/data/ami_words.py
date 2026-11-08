@@ -54,6 +54,14 @@ def agent_map(nxt_root: Path) -> Dict[str, Dict[str, str]]:
     return out
 
 
+def headset_channels(nxt_root: Path) -> Dict[str, Dict[str, str]]:
+    """{meeting: {global speaker id: headset channel}}; audio file <uri>.Headset-<channel>.wav"""
+    out: Dict[str, Dict[str, str]] = {}
+    for m in ET.parse(nxt_root / "corpusResources" / "meetings.xml").getroot().iter("meeting"):
+        out[m.get("observation")] = {s.get("global_name"): s.get("channel") for s in m.iter("speaker")}
+    return out
+
+
 def read_words(nxt_root: Path, meeting: str, agents: Dict[str, str]) -> List[Word]:
     words: List[Word] = []
     for letter, spk in sorted(agents.items()):
