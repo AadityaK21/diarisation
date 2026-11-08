@@ -9,12 +9,20 @@ attribution error in overlap > in single-speaker speech,pyannote31_ihm_mix,16,16
 attribution error in overlap > in single-speaker speech,pyannote31_sdm,16,16,0,3.05e-05,
 "attribution error, optimal mapping > majority (metric B)",pyannote31_sdm,16,15,1,6.1e-05,
 cpWER in overlap > outside overlap,oracle_diarisation_ihm_mix,16,16,0,3.05e-05,
+cpWER in overlap > outside overlap,oracle_diarisation_sdm,16,16,0,3.05e-05,
 cpWER in overlap > outside overlap,pyannote31_ihm_mix,16,16,0,3.05e-05,
 cpWER > fixed many-to-one WER (metric B),pyannote31_ihm_mix,16,15,0,0.000519,TS3003a
 cpWER pyannote > cpWER perfect diarisation,pyannote31_ihm_mix,16,13,0,0.0213,ES2004b;ES2004c;TS3003c
+cpWER in overlap > outside overlap,pyannote31_sdm,16,16,0,3.05e-05,
+cpWER > fixed many-to-one WER (metric B),pyannote31_sdm,16,15,0,0.000519,TS3003a
+cpWER pyannote > cpWER perfect diarisation,pyannote31_sdm,16,15,0,0.000519,TS3003a
 word-assignment part > diarisation part of cpWER,ihm_mix,16,16,0,3.05e-05,
 transcription-only error (DI-cpWER) in overlap > outside,ihm_mix,16,16,0,3.05e-05,
+word-assignment part > diarisation part of cpWER,sdm,16,13,0,0.0213,ES2004a;IS1009d;TS3003c
+transcription-only error (DI-cpWER) in overlap > outside,sdm,16,16,0,3.05e-05,
 Whisper deletes more overlapped words below 0 dB than above,ihm_mix,16,16,0,3.05e-05,
 Whisper deletes more overlapped words of the second talker than the first,ihm_mix,16,16,0,3.05e-05,
+Whisper deletes more overlapped words below 0 dB than above,sdm,16,14,0,0.00418,ES2004b;ES2004c
+Whisper deletes more overlapped words of the second talker than the first,sdm,16,16,0,3.05e-05,
 pyannote shows the louder of two talkers more often than the quieter,pyannote31_ihm_mix,16,16,0,3.05e-05,
 pyannote shows the louder of two talkers more often than the quieter,pyannote31_sdm,16,16,0,3.05e-05,

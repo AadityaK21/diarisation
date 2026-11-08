@@ -10,6 +10,65 @@ asr,ihm_mix,IS1009a,level,"[-5,0)",81,47,6
 asr,ihm_mix,IS1009a,level,"[-10,-5)",84,57,9
 asr,ihm_mix,IS1009a,level,"[5,10)",81,21,2
 asr,ihm_mix,IS1009a,level,"[-inf,-10)",52,45,2
+asr,ihm_mix,IS1009a,length|level,">2 words|[10,inf)",98,19,3
+asr,ihm_mix,IS1009a,length|level,">2 words|[0,5)",59,17,1
+asr,ihm_mix,IS1009a,length|level,">2 words|[-5,0)",71,40,5
+asr,ihm_mix,IS1009a,length|level,">2 words|[-10,-5)",66,45,6
+asr,ihm_mix,IS1009a,length|level,"1-2 words|[10,inf)",11,3,1
+asr,ihm_mix,IS1009a,length|level,">2 words|[5,10)",73,16,2
+asr,ihm_mix,IS1009a,length|level,"1-2 words|[-10,-5)",18,12,3
+asr,ihm_mix,IS1009a,length|level,"1-2 words|[-5,0)",10,7,1
+asr,ihm_mix,IS1009a,length|level,">2 words|[-inf,-10)",42,38,1
+asr,ihm_mix,IS1009a,length|level,"1-2 words|[5,10)",8,5,0
+asr,ihm_mix,IS1009a,length|level,"1-2 words|[0,5)",7,3,0
+asr,ihm_mix,IS1009a,length|level,"1-2 words|[-inf,-10)",10,7,1
+asr,ihm_mix,IS1009a,role|level,"first|[10,inf)",53,6,1
+asr,ihm_mix,IS1009a,role|level,"second|[0,5)",30,13,1
+asr,ihm_mix,IS1009a,role|level,"first|[-5,0)",29,14,2
+asr,ihm_mix,IS1009a,role|level,"first|[-10,-5)",24,12,3
+asr,ihm_mix,IS1009a,role|level,"first|[0,5)",36,7,0
+asr,ihm_mix,IS1009a,role|level,"second|[10,inf)",56,16,3
+asr,ihm_mix,IS1009a,role|level,"second|[-5,0)",52,33,4
+asr,ihm_mix,IS1009a,role|level,"first|[5,10)",51,6,1
+asr,ihm_mix,IS1009a,role|level,"second|[-10,-5)",60,45,6
+asr,ihm_mix,IS1009a,role|level,"second|[5,10)",30,15,1
+asr,ihm_mix,IS1009a,role|level,"first|[-inf,-10)",13,10,1
+asr,ihm_mix,IS1009a,role|level,"second|[-inf,-10)",39,35,1
+asr,sdm,IS1009a,all,all,473,207,45
+asr,sdm,IS1009a,role,first,206,53,15
+asr,sdm,IS1009a,role,second,267,154,30
+asr,sdm,IS1009a,length,>2 words,409,172,33
+asr,sdm,IS1009a,length,1-2 words,64,35,12
+asr,sdm,IS1009a,level,"[10,inf)",109,33,6
+asr,sdm,IS1009a,level,"[0,5)",66,19,6
+asr,sdm,IS1009a,level,"[-5,0)",81,42,13
+asr,sdm,IS1009a,level,"[-10,-5)",84,55,9
+asr,sdm,IS1009a,level,"[5,10)",81,21,5
+asr,sdm,IS1009a,level,"[-inf,-10)",52,37,6
+asr,sdm,IS1009a,length|level,">2 words|[10,inf)",98,29,3
+asr,sdm,IS1009a,length|level,">2 words|[0,5)",59,16,5
+asr,sdm,IS1009a,length|level,">2 words|[-5,0)",71,35,12
+asr,sdm,IS1009a,length|level,">2 words|[-10,-5)",66,44,6
+asr,sdm,IS1009a,length|level,"1-2 words|[10,inf)",11,4,3
+asr,sdm,IS1009a,length|level,">2 words|[5,10)",73,17,4
+asr,sdm,IS1009a,length|level,"1-2 words|[-10,-5)",18,11,3
+asr,sdm,IS1009a,length|level,"1-2 words|[-5,0)",10,7,1
+asr,sdm,IS1009a,length|level,">2 words|[-inf,-10)",42,31,3
+asr,sdm,IS1009a,length|level,"1-2 words|[5,10)",8,4,1
+asr,sdm,IS1009a,length|level,"1-2 words|[0,5)",7,3,1
+asr,sdm,IS1009a,length|level,"1-2 words|[-inf,-10)",10,6,3
+asr,sdm,IS1009a,role|level,"first|[10,inf)",53,11,1
+asr,sdm,IS1009a,role|level,"second|[0,5)",30,14,4
+asr,sdm,IS1009a,role|level,"first|[-5,0)",29,11,6
+asr,sdm,IS1009a,role|level,"first|[-10,-5)",24,13,1
+asr,sdm,IS1009a,role|level,"first|[0,5)",36,5,2
+asr,sdm,IS1009a,role|level,"second|[10,inf)",56,22,5
+asr,sdm,IS1009a,role|level,"second|[-5,0)",52,31,7
+asr,sdm,IS1009a,role|level,"first|[5,10)",51,5,3
+asr,sdm,IS1009a,role|level,"second|[-10,-5)",60,42,8
+asr,sdm,IS1009a,role|level,"second|[5,10)",30,16,2
+asr,sdm,IS1009a,role|level,"first|[-inf,-10)",13,8,2
+asr,sdm,IS1009a,role|level,"second|[-inf,-10)",39,29,4
 attribution,-,IS1009a,all,all,490,234,0
 attribution,-,IS1009a,role,second,279,173,0
 attribution,-,IS1009a,role,first,211,61,0
@@ -21,6 +80,30 @@ attribution,-,IS1009a,level,"[-5,0)",80,49,0
 attribution,-,IS1009a,level,"[-10,-5)",87,62,0
 attribution,-,IS1009a,level,"[5,10)",84,21,0
 attribution,-,IS1009a,level,"[-inf,-10)",53,30,0
+attribution,-,IS1009a,length|level,"1-2 words|[0,5)",8,6,0
+attribution,-,IS1009a,length|level,">2 words|[10,inf)",99,35,0
+attribution,-,IS1009a,length|level,"1-2 words|[10,inf)",18,10,0
+attribution,-,IS1009a,length|level,">2 words|[-5,0)",70,42,0
+attribution,-,IS1009a,length|level,">2 words|[0,5)",61,21,0
+attribution,-,IS1009a,length|level,">2 words|[-10,-5)",67,46,0
+attribution,-,IS1009a,length|level,"1-2 words|[5,10)",11,4,0
+attribution,-,IS1009a,length|level,">2 words|[5,10)",73,17,0
+attribution,-,IS1009a,length|level,"1-2 words|[-10,-5)",20,16,0
+attribution,-,IS1009a,length|level,"1-2 words|[-5,0)",10,7,0
+attribution,-,IS1009a,length|level,"1-2 words|[-inf,-10)",13,10,0
+attribution,-,IS1009a,length|level,">2 words|[-inf,-10)",40,20,0
+attribution,-,IS1009a,role|level,"second|[0,5)",31,19,0
+attribution,-,IS1009a,role|level,"first|[10,inf)",55,18,0
+attribution,-,IS1009a,role|level,"second|[10,inf)",62,27,0
+attribution,-,IS1009a,role|level,"first|[-5,0)",30,11,0
+attribution,-,IS1009a,role|level,"first|[0,5)",38,8,0
+attribution,-,IS1009a,role|level,"second|[-5,0)",50,38,0
+attribution,-,IS1009a,role|level,"first|[-10,-5)",25,10,0
+attribution,-,IS1009a,role|level,"second|[5,10)",34,13,0
+attribution,-,IS1009a,role|level,"first|[5,10)",50,8,0
+attribution,-,IS1009a,role|level,"second|[-10,-5)",62,52,0
+attribution,-,IS1009a,role|level,"second|[-inf,-10)",40,24,0
+attribution,-,IS1009a,role|level,"first|[-inf,-10)",13,6,0
 asr,ihm_mix,IS1009b,all,all,1063,469,47
 asr,ihm_mix,IS1009b,role,first,519,169,18
 asr,ihm_mix,IS1009b,role,second,544,300,29
@@ -32,6 +115,65 @@ asr,ihm_mix,IS1009b,level,"[-5,0)",167,90,10
 asr,ihm_mix,IS1009b,level,"[10,inf)",263,51,7
 asr,ihm_mix,IS1009b,level,"[-inf,-10)",179,134,9
 asr,ihm_mix,IS1009b,level,"[-10,-5)",154,100,9
+asr,ihm_mix,IS1009b,length|level,">2 words|[5,10)",145,29,6
+asr,ihm_mix,IS1009b,length|level,">2 words|[0,5)",126,42,6
+asr,ihm_mix,IS1009b,length|level,">2 words|[-5,0)",148,77,6
+asr,ihm_mix,IS1009b,length|level,">2 words|[10,inf)",246,45,6
+asr,ihm_mix,IS1009b,length|level,">2 words|[-inf,-10)",149,107,8
+asr,ihm_mix,IS1009b,length|level,"1-2 words|[0,5)",18,14,0
+asr,ihm_mix,IS1009b,length|level,"1-2 words|[5,10)",11,9,0
+asr,ihm_mix,IS1009b,length|level,"1-2 words|[10,inf)",17,6,1
+asr,ihm_mix,IS1009b,length|level,">2 words|[-10,-5)",127,75,8
+asr,ihm_mix,IS1009b,length|level,"1-2 words|[-5,0)",19,13,4
+asr,ihm_mix,IS1009b,length|level,"1-2 words|[-inf,-10)",30,27,1
+asr,ihm_mix,IS1009b,length|level,"1-2 words|[-10,-5)",27,25,1
+asr,ihm_mix,IS1009b,role|level,"first|[5,10)",86,14,3
+asr,ihm_mix,IS1009b,role|level,"first|[0,5)",64,13,2
+asr,ihm_mix,IS1009b,role|level,"second|[0,5)",80,43,4
+asr,ihm_mix,IS1009b,role|level,"second|[-5,0)",90,58,9
+asr,ihm_mix,IS1009b,role|level,"second|[10,inf)",117,34,4
+asr,ihm_mix,IS1009b,role|level,"second|[5,10)",70,24,3
+asr,ihm_mix,IS1009b,role|level,"first|[-5,0)",77,32,1
+asr,ihm_mix,IS1009b,role|level,"first|[10,inf)",146,17,3
+asr,ihm_mix,IS1009b,role|level,"first|[-inf,-10)",77,55,4
+asr,ihm_mix,IS1009b,role|level,"second|[-inf,-10)",102,79,5
+asr,ihm_mix,IS1009b,role|level,"second|[-10,-5)",85,62,4
+asr,ihm_mix,IS1009b,role|level,"first|[-10,-5)",69,38,5
+asr,sdm,IS1009b,all,all,1063,510,57
+asr,sdm,IS1009b,role,first,519,190,26
+asr,sdm,IS1009b,role,second,544,320,31
+asr,sdm,IS1009b,length,>2 words,941,412,46
+asr,sdm,IS1009b,length,1-2 words,122,98,11
+asr,sdm,IS1009b,level,"[5,10)",156,58,5
+asr,sdm,IS1009b,level,"[0,5)",144,69,6
+asr,sdm,IS1009b,level,"[-5,0)",167,91,15
+asr,sdm,IS1009b,level,"[10,inf)",263,66,11
+asr,sdm,IS1009b,level,"[-inf,-10)",179,132,11
+asr,sdm,IS1009b,level,"[-10,-5)",154,94,9
+asr,sdm,IS1009b,length|level,">2 words|[5,10)",145,49,5
+asr,sdm,IS1009b,length|level,">2 words|[0,5)",126,55,5
+asr,sdm,IS1009b,length|level,">2 words|[-5,0)",148,76,11
+asr,sdm,IS1009b,length|level,">2 words|[10,inf)",246,60,7
+asr,sdm,IS1009b,length|level,">2 words|[-inf,-10)",149,103,10
+asr,sdm,IS1009b,length|level,"1-2 words|[0,5)",18,14,1
+asr,sdm,IS1009b,length|level,"1-2 words|[5,10)",11,9,0
+asr,sdm,IS1009b,length|level,"1-2 words|[10,inf)",17,6,4
+asr,sdm,IS1009b,length|level,">2 words|[-10,-5)",127,69,8
+asr,sdm,IS1009b,length|level,"1-2 words|[-5,0)",19,15,4
+asr,sdm,IS1009b,length|level,"1-2 words|[-inf,-10)",30,29,1
+asr,sdm,IS1009b,length|level,"1-2 words|[-10,-5)",27,25,1
+asr,sdm,IS1009b,role|level,"first|[5,10)",86,25,3
+asr,sdm,IS1009b,role|level,"first|[0,5)",64,23,2
+asr,sdm,IS1009b,role|level,"second|[0,5)",80,46,4
+asr,sdm,IS1009b,role|level,"second|[-5,0)",90,57,11
+asr,sdm,IS1009b,role|level,"second|[10,inf)",117,43,8
+asr,sdm,IS1009b,role|level,"second|[5,10)",70,33,2
+asr,sdm,IS1009b,role|level,"first|[-5,0)",77,34,4
+asr,sdm,IS1009b,role|level,"first|[10,inf)",146,23,3
+asr,sdm,IS1009b,role|level,"first|[-inf,-10)",77,50,10
+asr,sdm,IS1009b,role|level,"second|[-inf,-10)",102,82,1
+asr,sdm,IS1009b,role|level,"second|[-10,-5)",85,59,5
+asr,sdm,IS1009b,role|level,"first|[-10,-5)",69,35,4
 attribution,-,IS1009b,all,all,1120,508,0
 attribution,-,IS1009b,role,first,517,247,0
 attribution,-,IS1009b,role,second,603,261,0
@@ -43,6 +185,30 @@ attribution,-,IS1009b,level,"[-5,0)",178,87,0
 attribution,-,IS1009b,level,"[-inf,-10)",184,90,0
 attribution,-,IS1009b,level,"[-10,-5)",156,73,0
 attribution,-,IS1009b,level,"[10,inf)",271,125,0
+attribution,-,IS1009b,length|level,">2 words|[5,10)",145,44,0
+attribution,-,IS1009b,length|level,"1-2 words|[0,5)",33,14,0
+attribution,-,IS1009b,length|level,"1-2 words|[5,10)",24,13,0
+attribution,-,IS1009b,length|level,">2 words|[0,5)",129,62,0
+attribution,-,IS1009b,length|level,">2 words|[-5,0)",145,68,0
+attribution,-,IS1009b,length|level,">2 words|[-inf,-10)",144,74,0
+attribution,-,IS1009b,length|level,"1-2 words|[-10,-5)",35,25,0
+attribution,-,IS1009b,length|level,">2 words|[10,inf)",235,106,0
+attribution,-,IS1009b,length|level,"1-2 words|[-inf,-10)",40,16,0
+attribution,-,IS1009b,length|level,"1-2 words|[-5,0)",33,19,0
+attribution,-,IS1009b,length|level,">2 words|[-10,-5)",121,48,0
+attribution,-,IS1009b,length|level,"1-2 words|[10,inf)",36,19,0
+attribution,-,IS1009b,role|level,"first|[5,10)",90,31,0
+attribution,-,IS1009b,role|level,"second|[0,5)",92,39,0
+attribution,-,IS1009b,role|level,"second|[5,10)",79,26,0
+attribution,-,IS1009b,role|level,"first|[0,5)",70,37,0
+attribution,-,IS1009b,role|level,"second|[-5,0)",103,47,0
+attribution,-,IS1009b,role|level,"second|[-inf,-10)",108,49,0
+attribution,-,IS1009b,role|level,"second|[-10,-5)",92,49,0
+attribution,-,IS1009b,role|level,"first|[10,inf)",142,74,0
+attribution,-,IS1009b,role|level,"first|[-5,0)",75,40,0
+attribution,-,IS1009b,role|level,"second|[10,inf)",129,51,0
+attribution,-,IS1009b,role|level,"first|[-inf,-10)",76,41,0
+attribution,-,IS1009b,role|level,"first|[-10,-5)",64,24,0
 asr,ihm_mix,IS1009c,all,all,373,132,31
 asr,ihm_mix,IS1009c,role,first,184,61,9
 asr,ihm_mix,IS1009c,role,second,189,71,22
@@ -54,6 +220,65 @@ asr,ihm_mix,IS1009c,level,"[-5,0)",61,31,4
 asr,ihm_mix,IS1009c,level,"[5,10)",56,11,6
 asr,ihm_mix,IS1009c,level,"[-10,-5)",54,32,6
 asr,ihm_mix,IS1009c,level,"[-inf,-10)",44,27,6
+asr,ihm_mix,IS1009c,length|level,">2 words|[0,5)",70,14,3
+asr,ihm_mix,IS1009c,length|level,">2 words|[10,inf)",68,12,1
+asr,ihm_mix,IS1009c,length|level,">2 words|[-5,0)",50,28,2
+asr,ihm_mix,IS1009c,length|level,">2 words|[5,10)",49,8,3
+asr,ihm_mix,IS1009c,length|level,"1-2 words|[-10,-5)",12,6,2
+asr,ihm_mix,IS1009c,length|level,">2 words|[-inf,-10)",35,20,5
+asr,ihm_mix,IS1009c,length|level,">2 words|[-10,-5)",42,26,4
+asr,ihm_mix,IS1009c,length|level,"1-2 words|[0,5)",11,5,3
+asr,ihm_mix,IS1009c,length|level,"1-2 words|[10,inf)",9,0,2
+asr,ihm_mix,IS1009c,length|level,"1-2 words|[-inf,-10)",9,7,1
+asr,ihm_mix,IS1009c,length|level,"1-2 words|[-5,0)",11,3,2
+asr,ihm_mix,IS1009c,length|level,"1-2 words|[5,10)",7,3,3
+asr,ihm_mix,IS1009c,role|level,"first|[0,5)",47,10,2
+asr,ihm_mix,IS1009c,role|level,"first|[10,inf)",33,4,0
+asr,ihm_mix,IS1009c,role|level,"first|[-5,0)",30,15,0
+asr,ihm_mix,IS1009c,role|level,"first|[5,10)",21,1,2
+asr,ihm_mix,IS1009c,role|level,"second|[5,10)",35,10,4
+asr,ihm_mix,IS1009c,role|level,"second|[-5,0)",31,16,4
+asr,ihm_mix,IS1009c,role|level,"first|[-10,-5)",32,18,3
+asr,ihm_mix,IS1009c,role|level,"first|[-inf,-10)",21,13,2
+asr,ihm_mix,IS1009c,role|level,"second|[-10,-5)",22,14,3
+asr,ihm_mix,IS1009c,role|level,"second|[-inf,-10)",23,14,4
+asr,ihm_mix,IS1009c,role|level,"second|[10,inf)",44,8,3
+asr,ihm_mix,IS1009c,role|level,"second|[0,5)",34,9,4
+asr,sdm,IS1009c,all,all,373,154,20
+asr,sdm,IS1009c,role,first,184,53,8
+asr,sdm,IS1009c,role,second,189,101,12
+asr,sdm,IS1009c,length,>2 words,314,115,15
+asr,sdm,IS1009c,length,1-2 words,59,39,5
+asr,sdm,IS1009c,level,"[0,5)",81,29,2
+asr,sdm,IS1009c,level,"[10,inf)",77,29,2
+asr,sdm,IS1009c,level,"[-5,0)",61,27,1
+asr,sdm,IS1009c,level,"[5,10)",56,18,3
+asr,sdm,IS1009c,level,"[-10,-5)",54,28,7
+asr,sdm,IS1009c,level,"[-inf,-10)",44,23,5
+asr,sdm,IS1009c,length|level,">2 words|[0,5)",70,19,2
+asr,sdm,IS1009c,length|level,">2 words|[10,inf)",68,26,0
+asr,sdm,IS1009c,length|level,">2 words|[-5,0)",50,22,0
+asr,sdm,IS1009c,length|level,">2 words|[5,10)",49,13,2
+asr,sdm,IS1009c,length|level,"1-2 words|[-10,-5)",12,7,1
+asr,sdm,IS1009c,length|level,">2 words|[-inf,-10)",35,14,5
+asr,sdm,IS1009c,length|level,">2 words|[-10,-5)",42,21,6
+asr,sdm,IS1009c,length|level,"1-2 words|[0,5)",11,10,0
+asr,sdm,IS1009c,length|level,"1-2 words|[10,inf)",9,3,2
+asr,sdm,IS1009c,length|level,"1-2 words|[-inf,-10)",9,9,0
+asr,sdm,IS1009c,length|level,"1-2 words|[-5,0)",11,5,1
+asr,sdm,IS1009c,length|level,"1-2 words|[5,10)",7,5,1
+asr,sdm,IS1009c,role|level,"first|[0,5)",47,10,1
+asr,sdm,IS1009c,role|level,"first|[10,inf)",33,10,0
+asr,sdm,IS1009c,role|level,"first|[-5,0)",30,9,0
+asr,sdm,IS1009c,role|level,"first|[5,10)",21,3,1
+asr,sdm,IS1009c,role|level,"second|[5,10)",35,15,2
+asr,sdm,IS1009c,role|level,"second|[-5,0)",31,18,1
+asr,sdm,IS1009c,role|level,"first|[-10,-5)",32,16,4
+asr,sdm,IS1009c,role|level,"first|[-inf,-10)",21,5,2
+asr,sdm,IS1009c,role|level,"second|[-10,-5)",22,12,3
+asr,sdm,IS1009c,role|level,"second|[-inf,-10)",23,18,3
+asr,sdm,IS1009c,role|level,"second|[10,inf)",44,19,2
+asr,sdm,IS1009c,role|level,"second|[0,5)",34,19,1
 attribution,-,IS1009c,all,all,422,187,0
 attribution,-,IS1009c,role,first,184,65,0
 attribution,-,IS1009c,role,second,238,122,0
@@ -65,6 +290,30 @@ attribution,-,IS1009c,level,"[-inf,-10)",46,13,0
 attribution,-,IS1009c,level,"[5,10)",62,32,0
 attribution,-,IS1009c,level,"[-5,0)",78,32,0
 attribution,-,IS1009c,level,"[-10,-5)",57,15,0
+attribution,-,IS1009c,length|level,">2 words|[0,5)",73,32,0
+attribution,-,IS1009c,length|level,"1-2 words|[10,inf)",20,11,0
+attribution,-,IS1009c,length|level,"1-2 words|[-inf,-10)",10,4,0
+attribution,-,IS1009c,length|level,">2 words|[10,inf)",66,43,0
+attribution,-,IS1009c,length|level,"1-2 words|[5,10)",15,5,0
+attribution,-,IS1009c,length|level,">2 words|[-5,0)",53,22,0
+attribution,-,IS1009c,length|level,">2 words|[5,10)",47,27,0
+attribution,-,IS1009c,length|level,">2 words|[-inf,-10)",36,9,0
+attribution,-,IS1009c,length|level,">2 words|[-10,-5)",40,11,0
+attribution,-,IS1009c,length|level,"1-2 words|[-10,-5)",17,4,0
+attribution,-,IS1009c,length|level,"1-2 words|[-5,0)",25,10,0
+attribution,-,IS1009c,length|level,"1-2 words|[0,5)",20,9,0
+attribution,-,IS1009c,role|level,"first|[0,5)",47,19,0
+attribution,-,IS1009c,role|level,"second|[10,inf)",53,38,0
+attribution,-,IS1009c,role|level,"second|[-inf,-10)",24,8,0
+attribution,-,IS1009c,role|level,"first|[10,inf)",33,16,0
+attribution,-,IS1009c,role|level,"second|[5,10)",42,26,0
+attribution,-,IS1009c,role|level,"first|[-5,0)",31,10,0
+attribution,-,IS1009c,role|level,"second|[0,5)",46,22,0
+attribution,-,IS1009c,role|level,"first|[5,10)",20,6,0
+attribution,-,IS1009c,role|level,"second|[-10,-5)",26,6,0
+attribution,-,IS1009c,role|level,"first|[-10,-5)",31,9,0
+attribution,-,IS1009c,role|level,"second|[-5,0)",47,22,0
+attribution,-,IS1009c,role|level,"first|[-inf,-10)",22,5,0
 asr,ihm_mix,IS1009d,all,all,812,332,46
 asr,ihm_mix,IS1009d,role,first,416,114,20
 asr,ihm_mix,IS1009d,role,second,396,218,26
@@ -76,6 +325,65 @@ asr,ihm_mix,IS1009d,level,"[10,inf)",216,46,4
 asr,ihm_mix,IS1009d,level,"[-inf,-10)",123,91,10
 asr,ihm_mix,IS1009d,level,"[-5,0)",103,45,8
 asr,ihm_mix,IS1009d,level,"[0,5)",116,51,10
+asr,ihm_mix,IS1009d,length|level,">2 words|[-10,-5)",79,42,9
+asr,ihm_mix,IS1009d,length|level,">2 words|[5,10)",123,28,0
+asr,ihm_mix,IS1009d,length|level,"1-2 words|[-10,-5)",36,21,5
+asr,ihm_mix,IS1009d,length|level,">2 words|[10,inf)",194,37,2
+asr,ihm_mix,IS1009d,length|level,">2 words|[-inf,-10)",80,54,7
+asr,ihm_mix,IS1009d,length|level,">2 words|[-5,0)",85,35,5
+asr,ihm_mix,IS1009d,length|level,"1-2 words|[0,5)",20,9,2
+asr,ihm_mix,IS1009d,length|level,"1-2 words|[-5,0)",18,10,3
+asr,ihm_mix,IS1009d,length|level,">2 words|[0,5)",96,42,8
+asr,ihm_mix,IS1009d,length|level,"1-2 words|[5,10)",16,8,0
+asr,ihm_mix,IS1009d,length|level,"1-2 words|[10,inf)",22,9,2
+asr,ihm_mix,IS1009d,length|level,"1-2 words|[-inf,-10)",43,37,3
+asr,ihm_mix,IS1009d,role|level,"first|[-10,-5)",50,21,8
+asr,ihm_mix,IS1009d,role|level,"second|[5,10)",60,25,0
+asr,ihm_mix,IS1009d,role|level,"second|[-10,-5)",65,42,6
+asr,ihm_mix,IS1009d,role|level,"first|[10,inf)",141,24,2
+asr,ihm_mix,IS1009d,role|level,"first|[-inf,-10)",37,26,4
+asr,ihm_mix,IS1009d,role|level,"first|[-5,0)",58,16,4
+asr,ihm_mix,IS1009d,role|level,"second|[0,5)",65,35,8
+asr,ihm_mix,IS1009d,role|level,"second|[-inf,-10)",86,65,6
+asr,ihm_mix,IS1009d,role|level,"second|[-5,0)",45,29,4
+asr,ihm_mix,IS1009d,role|level,"second|[10,inf)",75,22,2
+asr,ihm_mix,IS1009d,role|level,"first|[0,5)",51,16,2
+asr,ihm_mix,IS1009d,role|level,"first|[5,10)",79,11,0
+asr,sdm,IS1009d,all,all,812,323,55
+asr,sdm,IS1009d,role,first,416,103,20
+asr,sdm,IS1009d,role,second,396,220,35
+asr,sdm,IS1009d,length,>2 words,657,227,34
+asr,sdm,IS1009d,length,1-2 words,155,96,21
+asr,sdm,IS1009d,level,"[-10,-5)",115,61,8
+asr,sdm,IS1009d,level,"[5,10)",139,42,5
+asr,sdm,IS1009d,level,"[10,inf)",216,53,10
+asr,sdm,IS1009d,level,"[-inf,-10)",123,84,5
+asr,sdm,IS1009d,level,"[-5,0)",103,40,12
+asr,sdm,IS1009d,level,"[0,5)",116,43,15
+asr,sdm,IS1009d,length|level,">2 words|[-10,-5)",79,39,4
+asr,sdm,IS1009d,length|level,">2 words|[5,10)",123,34,3
+asr,sdm,IS1009d,length|level,"1-2 words|[-10,-5)",36,22,4
+asr,sdm,IS1009d,length|level,">2 words|[10,inf)",194,41,8
+asr,sdm,IS1009d,length|level,">2 words|[-inf,-10)",80,50,2
+asr,sdm,IS1009d,length|level,">2 words|[-5,0)",85,31,5
+asr,sdm,IS1009d,length|level,"1-2 words|[0,5)",20,11,3
+asr,sdm,IS1009d,length|level,"1-2 words|[-5,0)",18,9,7
+asr,sdm,IS1009d,length|level,">2 words|[0,5)",96,32,12
+asr,sdm,IS1009d,length|level,"1-2 words|[5,10)",16,8,2
+asr,sdm,IS1009d,length|level,"1-2 words|[10,inf)",22,12,2
+asr,sdm,IS1009d,length|level,"1-2 words|[-inf,-10)",43,34,3
+asr,sdm,IS1009d,role|level,"first|[-10,-5)",50,22,3
+asr,sdm,IS1009d,role|level,"second|[5,10)",60,23,4
+asr,sdm,IS1009d,role|level,"second|[-10,-5)",65,39,5
+asr,sdm,IS1009d,role|level,"first|[10,inf)",141,24,4
+asr,sdm,IS1009d,role|level,"first|[-inf,-10)",37,17,2
+asr,sdm,IS1009d,role|level,"first|[-5,0)",58,15,3
+asr,sdm,IS1009d,role|level,"second|[0,5)",65,37,8
+asr,sdm,IS1009d,role|level,"second|[-inf,-10)",86,67,3
+asr,sdm,IS1009d,role|level,"second|[-5,0)",45,25,9
+asr,sdm,IS1009d,role|level,"second|[10,inf)",75,29,6
+asr,sdm,IS1009d,role|level,"first|[0,5)",51,6,7
+asr,sdm,IS1009d,role|level,"first|[5,10)",79,19,1
 attribution,-,IS1009d,all,all,888,391,0
 attribution,-,IS1009d,role,first,415,163,0
 attribution,-,IS1009d,role,second,473,228,0
@@ -87,6 +395,30 @@ attribution,-,IS1009d,level,"[-10,-5)",126,44,0
 attribution,-,IS1009d,level,"[10,inf)",228,125,0
 attribution,-,IS1009d,level,"[5,10)",145,65,0
 attribution,-,IS1009d,level,"[-inf,-10)",132,55,0
+attribution,-,IS1009d,length|level,"1-2 words|[-5,0)",23,11,0
+attribution,-,IS1009d,length|level,"1-2 words|[0,5)",36,17,0
+attribution,-,IS1009d,length|level,">2 words|[-10,-5)",81,27,0
+attribution,-,IS1009d,length|level,"1-2 words|[10,inf)",41,24,0
+attribution,-,IS1009d,length|level,"1-2 words|[-10,-5)",45,17,0
+attribution,-,IS1009d,length|level,">2 words|[5,10)",116,51,0
+attribution,-,IS1009d,length|level,">2 words|[-5,0)",96,30,0
+attribution,-,IS1009d,length|level,">2 words|[0,5)",102,44,0
+attribution,-,IS1009d,length|level,">2 words|[10,inf)",187,101,0
+attribution,-,IS1009d,length|level,">2 words|[-inf,-10)",79,33,0
+attribution,-,IS1009d,length|level,"1-2 words|[5,10)",29,14,0
+attribution,-,IS1009d,length|level,"1-2 words|[-inf,-10)",53,22,0
+attribution,-,IS1009d,role|level,"first|[-5,0)",63,12,0
+attribution,-,IS1009d,role|level,"second|[0,5)",84,43,0
+attribution,-,IS1009d,role|level,"first|[-10,-5)",52,13,0
+attribution,-,IS1009d,role|level,"second|[10,inf)",92,51,0
+attribution,-,IS1009d,role|level,"second|[5,10)",71,32,0
+attribution,-,IS1009d,role|level,"second|[-5,0)",56,29,0
+attribution,-,IS1009d,role|level,"first|[5,10)",74,33,0
+attribution,-,IS1009d,role|level,"second|[-10,-5)",74,31,0
+attribution,-,IS1009d,role|level,"first|[0,5)",54,18,0
+attribution,-,IS1009d,role|level,"first|[-inf,-10)",36,13,0
+attribution,-,IS1009d,role|level,"first|[10,inf)",136,74,0
+attribution,-,IS1009d,role|level,"second|[-inf,-10)",96,42,0
 asr,ihm_mix,ES2004a,all,all,629,310,16
 asr,ihm_mix,ES2004a,role,second,281,194,8
 asr,ihm_mix,ES2004a,role,first,348,116,8
@@ -98,6 +430,65 @@ asr,ihm_mix,ES2004a,level,"[5,10)",66,29,2
 asr,ihm_mix,ES2004a,level,"[10,inf)",226,79,3
 asr,ihm_mix,ES2004a,level,"[-5,0)",77,38,4
 asr,ihm_mix,ES2004a,level,"[0,5)",75,37,1
+asr,ihm_mix,ES2004a,length|level,">2 words|[-inf,-10)",108,72,3
+asr,ihm_mix,ES2004a,length|level,">2 words|[-10,-5)",44,25,2
+asr,ihm_mix,ES2004a,length|level,">2 words|[5,10)",56,20,1
+asr,ihm_mix,ES2004a,length|level,">2 words|[10,inf)",205,60,2
+asr,ihm_mix,ES2004a,length|level,">2 words|[-5,0)",69,34,3
+asr,ihm_mix,ES2004a,length|level,"1-2 words|[-inf,-10)",25,23,1
+asr,ihm_mix,ES2004a,length|level,"1-2 words|[10,inf)",21,19,1
+asr,ihm_mix,ES2004a,length|level,">2 words|[0,5)",59,23,1
+asr,ihm_mix,ES2004a,length|level,"1-2 words|[-5,0)",8,4,1
+asr,ihm_mix,ES2004a,length|level,"1-2 words|[-10,-5)",8,7,0
+asr,ihm_mix,ES2004a,length|level,"1-2 words|[0,5)",16,14,0
+asr,ihm_mix,ES2004a,length|level,"1-2 words|[5,10)",10,9,1
+asr,ihm_mix,ES2004a,role|level,"second|[-inf,-10)",69,60,1
+asr,ihm_mix,ES2004a,role|level,"second|[-10,-5)",30,23,2
+asr,ihm_mix,ES2004a,role|level,"second|[5,10)",25,16,1
+asr,ihm_mix,ES2004a,role|level,"second|[10,inf)",88,48,2
+asr,ihm_mix,ES2004a,role|level,"second|[-5,0)",35,20,2
+asr,ihm_mix,ES2004a,role|level,"first|[0,5)",41,10,1
+asr,ihm_mix,ES2004a,role|level,"first|[10,inf)",138,31,1
+asr,ihm_mix,ES2004a,role|level,"first|[-inf,-10)",64,35,3
+asr,ihm_mix,ES2004a,role|level,"second|[0,5)",34,27,0
+asr,ihm_mix,ES2004a,role|level,"first|[-10,-5)",22,9,0
+asr,ihm_mix,ES2004a,role|level,"first|[-5,0)",42,18,2
+asr,ihm_mix,ES2004a,role|level,"first|[5,10)",41,13,1
+asr,sdm,ES2004a,all,all,629,323,34
+asr,sdm,ES2004a,role,second,281,180,16
+asr,sdm,ES2004a,role,first,348,143,18
+asr,sdm,ES2004a,length,>2 words,541,248,26
+asr,sdm,ES2004a,length,1-2 words,88,75,8
+asr,sdm,ES2004a,level,"[-inf,-10)",133,72,12
+asr,sdm,ES2004a,level,"[-10,-5)",52,24,6
+asr,sdm,ES2004a,level,"[5,10)",66,38,3
+asr,sdm,ES2004a,level,"[10,inf)",226,109,2
+asr,sdm,ES2004a,level,"[-5,0)",77,41,8
+asr,sdm,ES2004a,level,"[0,5)",75,39,3
+asr,sdm,ES2004a,length|level,">2 words|[-inf,-10)",108,52,9
+asr,sdm,ES2004a,length|level,">2 words|[-10,-5)",44,20,3
+asr,sdm,ES2004a,length|level,">2 words|[5,10)",56,29,2
+asr,sdm,ES2004a,length|level,">2 words|[10,inf)",205,89,2
+asr,sdm,ES2004a,length|level,">2 words|[-5,0)",69,34,7
+asr,sdm,ES2004a,length|level,"1-2 words|[-inf,-10)",25,20,3
+asr,sdm,ES2004a,length|level,"1-2 words|[10,inf)",21,20,0
+asr,sdm,ES2004a,length|level,">2 words|[0,5)",59,24,3
+asr,sdm,ES2004a,length|level,"1-2 words|[-5,0)",8,7,1
+asr,sdm,ES2004a,length|level,"1-2 words|[-10,-5)",8,4,3
+asr,sdm,ES2004a,length|level,"1-2 words|[0,5)",16,15,0
+asr,sdm,ES2004a,length|level,"1-2 words|[5,10)",10,9,1
+asr,sdm,ES2004a,role|level,"second|[-inf,-10)",69,50,6
+asr,sdm,ES2004a,role|level,"second|[-10,-5)",30,18,3
+asr,sdm,ES2004a,role|level,"second|[5,10)",25,16,1
+asr,sdm,ES2004a,role|level,"second|[10,inf)",88,47,0
+asr,sdm,ES2004a,role|level,"second|[-5,0)",35,24,4
+asr,sdm,ES2004a,role|level,"first|[0,5)",41,14,1
+asr,sdm,ES2004a,role|level,"first|[10,inf)",138,62,2
+asr,sdm,ES2004a,role|level,"first|[-inf,-10)",64,22,6
+asr,sdm,ES2004a,role|level,"second|[0,5)",34,25,2
+asr,sdm,ES2004a,role|level,"first|[-10,-5)",22,6,3
+asr,sdm,ES2004a,role|level,"first|[-5,0)",42,17,4
+asr,sdm,ES2004a,role|level,"first|[5,10)",41,22,2
 attribution,-,ES2004a,all,all,642,257,0
 attribution,-,ES2004a,role,first,329,98,0
 attribution,-,ES2004a,role,second,313,159,0
@@ -109,6 +500,30 @@ attribution,-,ES2004a,level,"[5,10)",66,23,0
 attribution,-,ES2004a,level,"[-5,0)",82,28,0
 attribution,-,ES2004a,level,"[0,5)",77,34,0
 attribution,-,ES2004a,level,"[-10,-5)",56,25,0
+attribution,-,ES2004a,length|level,">2 words|[10,inf)",190,78,0
+attribution,-,ES2004a,length|level,"1-2 words|[-inf,-10)",37,17,0
+attribution,-,ES2004a,length|level,">2 words|[5,10)",53,13,0
+attribution,-,ES2004a,length|level,">2 words|[-5,0)",69,21,0
+attribution,-,ES2004a,length|level,">2 words|[0,5)",56,23,0
+attribution,-,ES2004a,length|level,">2 words|[-inf,-10)",103,25,0
+attribution,-,ES2004a,length|level,">2 words|[-10,-5)",45,18,0
+attribution,-,ES2004a,length|level,"1-2 words|[10,inf)",31,27,0
+attribution,-,ES2004a,length|level,"1-2 words|[0,5)",21,11,0
+attribution,-,ES2004a,length|level,"1-2 words|[-5,0)",13,7,0
+attribution,-,ES2004a,length|level,"1-2 words|[-10,-5)",11,7,0
+attribution,-,ES2004a,length|level,"1-2 words|[5,10)",13,10,0
+attribution,-,ES2004a,role|level,"first|[10,inf)",127,49,0
+attribution,-,ES2004a,role|level,"second|[-inf,-10)",80,30,0
+attribution,-,ES2004a,role|level,"first|[5,10)",39,7,0
+attribution,-,ES2004a,role|level,"second|[-5,0)",38,16,0
+attribution,-,ES2004a,role|level,"first|[0,5)",36,12,0
+attribution,-,ES2004a,role|level,"second|[0,5)",41,22,0
+attribution,-,ES2004a,role|level,"second|[10,inf)",94,56,0
+attribution,-,ES2004a,role|level,"second|[-10,-5)",33,19,0
+attribution,-,ES2004a,role|level,"second|[5,10)",27,16,0
+attribution,-,ES2004a,role|level,"first|[-inf,-10)",60,12,0
+attribution,-,ES2004a,role|level,"first|[-5,0)",44,12,0
+attribution,-,ES2004a,role|level,"first|[-10,-5)",23,6,0
 asr,ihm_mix,ES2004b,all,all,1154,475,94
 asr,ihm_mix,ES2004b,role,second,583,280,55
 asr,ihm_mix,ES2004b,role,first,571,195,39
@@ -120,6 +535,65 @@ asr,ihm_mix,ES2004b,level,"[10,inf)",396,126,26
 asr,ihm_mix,ES2004b,level,"[0,5)",128,44,9
 asr,ihm_mix,ES2004b,level,"[-5,0)",106,55,6
 asr,ihm_mix,ES2004b,level,"[5,10)",124,48,10
+asr,ihm_mix,ES2004b,length|level,">2 words|[-10,-5)",115,48,4
+asr,ihm_mix,ES2004b,length|level,">2 words|[-inf,-10)",228,116,28
+asr,ihm_mix,ES2004b,length|level,"1-2 words|[-inf,-10)",39,23,8
+asr,ihm_mix,ES2004b,length|level,">2 words|[10,inf)",348,97,16
+asr,ihm_mix,ES2004b,length|level,">2 words|[0,5)",112,35,6
+asr,ihm_mix,ES2004b,length|level,">2 words|[-5,0)",94,46,4
+asr,ihm_mix,ES2004b,length|level,"1-2 words|[5,10)",17,13,2
+asr,ihm_mix,ES2004b,length|level,">2 words|[5,10)",107,35,8
+asr,ihm_mix,ES2004b,length|level,"1-2 words|[-10,-5)",18,15,3
+asr,ihm_mix,ES2004b,length|level,"1-2 words|[10,inf)",48,29,10
+asr,ihm_mix,ES2004b,length|level,"1-2 words|[0,5)",16,9,3
+asr,ihm_mix,ES2004b,length|level,"1-2 words|[-5,0)",12,9,2
+asr,ihm_mix,ES2004b,role|level,"second|[-10,-5)",66,40,5
+asr,ihm_mix,ES2004b,role|level,"second|[-inf,-10)",116,73,14
+asr,ihm_mix,ES2004b,role|level,"first|[-inf,-10)",151,66,22
+asr,ihm_mix,ES2004b,role|level,"first|[-10,-5)",67,23,2
+asr,ihm_mix,ES2004b,role|level,"first|[10,inf)",159,35,6
+asr,ihm_mix,ES2004b,role|level,"first|[0,5)",63,22,2
+asr,ihm_mix,ES2004b,role|level,"second|[0,5)",65,22,7
+asr,ihm_mix,ES2004b,role|level,"second|[10,inf)",237,91,20
+asr,ihm_mix,ES2004b,role|level,"second|[-5,0)",45,29,5
+asr,ihm_mix,ES2004b,role|level,"first|[-5,0)",61,26,1
+asr,ihm_mix,ES2004b,role|level,"second|[5,10)",54,25,4
+asr,ihm_mix,ES2004b,role|level,"first|[5,10)",70,23,6
+asr,sdm,ES2004b,all,all,1154,460,102
+asr,sdm,ES2004b,role,second,583,280,59
+asr,sdm,ES2004b,role,first,571,180,43
+asr,sdm,ES2004b,length,>2 words,1004,360,78
+asr,sdm,ES2004b,length,1-2 words,150,100,24
+asr,sdm,ES2004b,level,"[-10,-5)",133,41,10
+asr,sdm,ES2004b,level,"[-inf,-10)",267,97,28
+asr,sdm,ES2004b,level,"[10,inf)",396,161,39
+asr,sdm,ES2004b,level,"[0,5)",128,51,6
+asr,sdm,ES2004b,level,"[-5,0)",106,46,11
+asr,sdm,ES2004b,level,"[5,10)",124,64,8
+asr,sdm,ES2004b,length|level,">2 words|[-10,-5)",115,30,5
+asr,sdm,ES2004b,length|level,">2 words|[-inf,-10)",228,75,22
+asr,sdm,ES2004b,length|level,"1-2 words|[-inf,-10)",39,22,6
+asr,sdm,ES2004b,length|level,">2 words|[10,inf)",348,131,29
+asr,sdm,ES2004b,length|level,">2 words|[0,5)",112,38,5
+asr,sdm,ES2004b,length|level,">2 words|[-5,0)",94,36,11
+asr,sdm,ES2004b,length|level,"1-2 words|[5,10)",17,14,2
+asr,sdm,ES2004b,length|level,">2 words|[5,10)",107,50,6
+asr,sdm,ES2004b,length|level,"1-2 words|[-10,-5)",18,11,5
+asr,sdm,ES2004b,length|level,"1-2 words|[10,inf)",48,30,10
+asr,sdm,ES2004b,length|level,"1-2 words|[0,5)",16,13,1
+asr,sdm,ES2004b,length|level,"1-2 words|[-5,0)",12,10,0
+asr,sdm,ES2004b,role|level,"second|[-10,-5)",66,26,6
+asr,sdm,ES2004b,role|level,"second|[-inf,-10)",116,59,15
+asr,sdm,ES2004b,role|level,"first|[-inf,-10)",151,38,13
+asr,sdm,ES2004b,role|level,"first|[-10,-5)",67,15,4
+asr,sdm,ES2004b,role|level,"first|[10,inf)",159,56,13
+asr,sdm,ES2004b,role|level,"first|[0,5)",63,21,2
+asr,sdm,ES2004b,role|level,"second|[0,5)",65,30,4
+asr,sdm,ES2004b,role|level,"second|[10,inf)",237,105,26
+asr,sdm,ES2004b,role|level,"second|[-5,0)",45,26,4
+asr,sdm,ES2004b,role|level,"first|[-5,0)",61,20,7
+asr,sdm,ES2004b,role|level,"second|[5,10)",54,34,4
+asr,sdm,ES2004b,role|level,"first|[5,10)",70,30,4
 attribution,-,ES2004b,all,all,1193,540,0
 attribution,-,ES2004b,role,first,558,201,0
 attribution,-,ES2004b,role,second,635,339,0
@@ -131,6 +605,30 @@ attribution,-,ES2004b,level,"[-10,-5)",128,44,0
 attribution,-,ES2004b,level,"[-inf,-10)",273,90,0
 attribution,-,ES2004b,level,"[-5,0)",113,54,0
 attribution,-,ES2004b,level,"[0,5)",129,55,0
+attribution,-,ES2004b,length|level,">2 words|[10,inf)",345,174,0
+attribution,-,ES2004b,length|level,"1-2 words|[5,10)",25,14,0
+attribution,-,ES2004b,length|level,">2 words|[-10,-5)",104,31,0
+attribution,-,ES2004b,length|level,">2 words|[5,10)",106,49,0
+attribution,-,ES2004b,length|level,">2 words|[-inf,-10)",222,70,0
+attribution,-,ES2004b,length|level,">2 words|[-5,0)",93,41,0
+attribution,-,ES2004b,length|level,">2 words|[0,5)",106,41,0
+attribution,-,ES2004b,length|level,"1-2 words|[-inf,-10)",51,20,0
+attribution,-,ES2004b,length|level,"1-2 words|[-5,0)",20,13,0
+attribution,-,ES2004b,length|level,"1-2 words|[10,inf)",74,60,0
+attribution,-,ES2004b,length|level,"1-2 words|[-10,-5)",24,13,0
+attribution,-,ES2004b,length|level,"1-2 words|[0,5)",23,14,0
+attribution,-,ES2004b,role|level,"first|[10,inf)",158,65,0
+attribution,-,ES2004b,role|level,"second|[5,10)",62,31,0
+attribution,-,ES2004b,role|level,"second|[-10,-5)",67,22,0
+attribution,-,ES2004b,role|level,"first|[5,10)",69,32,0
+attribution,-,ES2004b,role|level,"second|[-inf,-10)",125,58,0
+attribution,-,ES2004b,role|level,"first|[-inf,-10)",148,32,0
+attribution,-,ES2004b,role|level,"second|[10,inf)",261,169,0
+attribution,-,ES2004b,role|level,"second|[-5,0)",50,28,0
+attribution,-,ES2004b,role|level,"first|[0,5)",59,24,0
+attribution,-,ES2004b,role|level,"first|[-10,-5)",61,22,0
+attribution,-,ES2004b,role|level,"second|[0,5)",70,31,0
+attribution,-,ES2004b,role|level,"first|[-5,0)",63,26,0
 asr,ihm_mix,ES2004c,all,all,1309,596,64
 asr,ihm_mix,ES2004c,role,first,630,251,31
 asr,ihm_mix,ES2004c,role,second,679,345,33
@@ -142,6 +640,65 @@ asr,ihm_mix,ES2004c,level,"[0,5)",149,66,8
 asr,ihm_mix,ES2004c,level,"[5,10)",149,61,5
 asr,ihm_mix,ES2004c,level,"[-inf,-10)",235,135,20
 asr,ihm_mix,ES2004c,level,"[10,inf)",443,164,15
+asr,ihm_mix,ES2004c,length|level,">2 words|[-5,0)",154,74,2
+asr,ihm_mix,ES2004c,length|level,">2 words|[-10,-5)",150,74,13
+asr,ihm_mix,ES2004c,length|level,">2 words|[0,5)",132,56,5
+asr,ihm_mix,ES2004c,length|level,">2 words|[5,10)",125,45,5
+asr,ihm_mix,ES2004c,length|level,">2 words|[-inf,-10)",208,114,15
+asr,ihm_mix,ES2004c,length|level,">2 words|[10,inf)",399,133,13
+asr,ihm_mix,ES2004c,length|level,"1-2 words|[0,5)",17,10,3
+asr,ihm_mix,ES2004c,length|level,"1-2 words|[-inf,-10)",27,21,5
+asr,ihm_mix,ES2004c,length|level,"1-2 words|[5,10)",24,16,0
+asr,ihm_mix,ES2004c,length|level,"1-2 words|[10,inf)",44,31,2
+asr,ihm_mix,ES2004c,length|level,"1-2 words|[-5,0)",11,10,0
+asr,ihm_mix,ES2004c,length|level,"1-2 words|[-10,-5)",18,12,1
+asr,ihm_mix,ES2004c,role|level,"first|[-5,0)",95,48,2
+asr,ihm_mix,ES2004c,role|level,"first|[-10,-5)",92,40,4
+asr,ihm_mix,ES2004c,role|level,"first|[0,5)",73,31,2
+asr,ihm_mix,ES2004c,role|level,"first|[5,10)",61,22,3
+asr,ihm_mix,ES2004c,role|level,"first|[-inf,-10)",136,60,14
+asr,ihm_mix,ES2004c,role|level,"first|[10,inf)",173,50,6
+asr,ihm_mix,ES2004c,role|level,"second|[0,5)",76,35,6
+asr,ihm_mix,ES2004c,role|level,"second|[-inf,-10)",99,75,6
+asr,ihm_mix,ES2004c,role|level,"second|[5,10)",88,39,2
+asr,ihm_mix,ES2004c,role|level,"second|[10,inf)",270,114,9
+asr,ihm_mix,ES2004c,role|level,"second|[-5,0)",70,36,0
+asr,ihm_mix,ES2004c,role|level,"second|[-10,-5)",76,46,10
+asr,sdm,ES2004c,all,all,1309,615,123
+asr,sdm,ES2004c,role,first,630,246,60
+asr,sdm,ES2004c,role,second,679,369,63
+asr,sdm,ES2004c,length,>2 words,1168,510,107
+asr,sdm,ES2004c,length,1-2 words,141,105,16
+asr,sdm,ES2004c,level,"[-5,0)",165,85,11
+asr,sdm,ES2004c,level,"[-10,-5)",168,79,16
+asr,sdm,ES2004c,level,"[0,5)",149,67,16
+asr,sdm,ES2004c,level,"[5,10)",149,72,15
+asr,sdm,ES2004c,level,"[-inf,-10)",235,100,42
+asr,sdm,ES2004c,level,"[10,inf)",443,212,23
+asr,sdm,ES2004c,length|level,">2 words|[-5,0)",154,76,10
+asr,sdm,ES2004c,length|level,">2 words|[-10,-5)",150,64,15
+asr,sdm,ES2004c,length|level,">2 words|[0,5)",132,57,13
+asr,sdm,ES2004c,length|level,">2 words|[5,10)",125,58,12
+asr,sdm,ES2004c,length|level,">2 words|[-inf,-10)",208,81,34
+asr,sdm,ES2004c,length|level,">2 words|[10,inf)",399,174,23
+asr,sdm,ES2004c,length|level,"1-2 words|[0,5)",17,10,3
+asr,sdm,ES2004c,length|level,"1-2 words|[-inf,-10)",27,19,8
+asr,sdm,ES2004c,length|level,"1-2 words|[5,10)",24,14,3
+asr,sdm,ES2004c,length|level,"1-2 words|[10,inf)",44,38,0
+asr,sdm,ES2004c,length|level,"1-2 words|[-5,0)",11,9,1
+asr,sdm,ES2004c,length|level,"1-2 words|[-10,-5)",18,15,1
+asr,sdm,ES2004c,role|level,"first|[-5,0)",95,46,7
+asr,sdm,ES2004c,role|level,"first|[-10,-5)",92,36,4
+asr,sdm,ES2004c,role|level,"first|[0,5)",73,30,6
+asr,sdm,ES2004c,role|level,"first|[5,10)",61,26,8
+asr,sdm,ES2004c,role|level,"first|[-inf,-10)",136,49,24
+asr,sdm,ES2004c,role|level,"first|[10,inf)",173,59,11
+asr,sdm,ES2004c,role|level,"second|[0,5)",76,37,10
+asr,sdm,ES2004c,role|level,"second|[-inf,-10)",99,51,18
+asr,sdm,ES2004c,role|level,"second|[5,10)",88,46,7
+asr,sdm,ES2004c,role|level,"second|[10,inf)",270,153,12
+asr,sdm,ES2004c,role|level,"second|[-5,0)",70,39,4
+asr,sdm,ES2004c,role|level,"second|[-10,-5)",76,43,12
 attribution,-,ES2004c,all,all,1323,579,0
 attribution,-,ES2004c,role,second,723,369,0
 attribution,-,ES2004c,role,first,600,210,0
@@ -153,6 +710,30 @@ attribution,-,ES2004c,level,"[10,inf)",443,257,0
 attribution,-,ES2004c,level,"[0,5)",148,75,0
 attribution,-,ES2004c,level,"[-10,-5)",168,52,0
 attribution,-,ES2004c,level,"[-inf,-10)",246,53,0
+attribution,-,ES2004c,length|level,"1-2 words|[5,10)",33,20,0
+attribution,-,ES2004c,length|level,">2 words|[-5,0)",146,45,0
+attribution,-,ES2004c,length|level,"1-2 words|[10,inf)",64,39,0
+attribution,-,ES2004c,length|level,"1-2 words|[0,5)",26,11,0
+attribution,-,ES2004c,length|level,">2 words|[-10,-5)",143,37,0
+attribution,-,ES2004c,length|level,">2 words|[0,5)",122,64,0
+attribution,-,ES2004c,length|level,">2 words|[5,10)",119,68,0
+attribution,-,ES2004c,length|level,"1-2 words|[-10,-5)",25,15,0
+attribution,-,ES2004c,length|level,">2 words|[-inf,-10)",204,39,0
+attribution,-,ES2004c,length|level,">2 words|[10,inf)",379,218,0
+attribution,-,ES2004c,length|level,"1-2 words|[-inf,-10)",42,14,0
+attribution,-,ES2004c,length|level,"1-2 words|[-5,0)",20,9,0
+attribution,-,ES2004c,role|level,"second|[5,10)",94,60,0
+attribution,-,ES2004c,role|level,"first|[-5,0)",89,28,0
+attribution,-,ES2004c,role|level,"second|[10,inf)",280,186,0
+attribution,-,ES2004c,role|level,"second|[0,5)",80,42,0
+attribution,-,ES2004c,role|level,"first|[-10,-5)",88,23,0
+attribution,-,ES2004c,role|level,"first|[0,5)",68,33,0
+attribution,-,ES2004c,role|level,"first|[5,10)",58,28,0
+attribution,-,ES2004c,role|level,"second|[-10,-5)",80,29,0
+attribution,-,ES2004c,role|level,"first|[-inf,-10)",134,27,0
+attribution,-,ES2004c,role|level,"first|[10,inf)",163,71,0
+attribution,-,ES2004c,role|level,"second|[-inf,-10)",112,26,0
+attribution,-,ES2004c,role|level,"second|[-5,0)",77,26,0
 asr,ihm_mix,ES2004d,all,all,1652,797,123
 asr,ihm_mix,ES2004d,role,first,721,270,43
 asr,ihm_mix,ES2004d,role,second,931,527,80
@@ -164,6 +745,65 @@ asr,ihm_mix,ES2004d,level,"[-5,0)",188,90,17
 asr,ihm_mix,ES2004d,level,"[10,inf)",539,218,26
 asr,ihm_mix,ES2004d,level,"[0,5)",184,86,15
 asr,ihm_mix,ES2004d,level,"[-10,-5)",181,85,19
+asr,ihm_mix,ES2004d,length|level,">2 words|[5,10)",156,80,7
+asr,ihm_mix,ES2004d,length|level,">2 words|[-inf,-10)",342,195,37
+asr,ihm_mix,ES2004d,length|level,">2 words|[-5,0)",172,78,16
+asr,ihm_mix,ES2004d,length|level,">2 words|[10,inf)",480,182,20
+asr,ihm_mix,ES2004d,length|level,">2 words|[0,5)",170,77,14
+asr,ihm_mix,ES2004d,length|level,"1-2 words|[-inf,-10)",34,26,1
+asr,ihm_mix,ES2004d,length|level,"1-2 words|[5,10)",28,17,1
+asr,ihm_mix,ES2004d,length|level,">2 words|[-10,-5)",176,80,19
+asr,ihm_mix,ES2004d,length|level,"1-2 words|[-5,0)",16,12,1
+asr,ihm_mix,ES2004d,length|level,"1-2 words|[0,5)",14,9,1
+asr,ihm_mix,ES2004d,length|level,"1-2 words|[10,inf)",59,36,6
+asr,ihm_mix,ES2004d,length|level,"1-2 words|[-10,-5)",5,5,0
+asr,ihm_mix,ES2004d,role|level,"first|[5,10)",72,29,2
+asr,ihm_mix,ES2004d,role|level,"first|[-inf,-10)",186,96,15
+asr,ihm_mix,ES2004d,role|level,"first|[-5,0)",86,29,7
+asr,ihm_mix,ES2004d,role|level,"first|[10,inf)",216,55,7
+asr,ihm_mix,ES2004d,role|level,"second|[0,5)",113,59,11
+asr,ihm_mix,ES2004d,role|level,"second|[-inf,-10)",190,125,23
+asr,ihm_mix,ES2004d,role|level,"second|[-5,0)",102,61,10
+asr,ihm_mix,ES2004d,role|level,"first|[0,5)",71,27,4
+asr,ihm_mix,ES2004d,role|level,"second|[5,10)",112,68,6
+asr,ihm_mix,ES2004d,role|level,"second|[10,inf)",323,163,19
+asr,ihm_mix,ES2004d,role|level,"second|[-10,-5)",91,51,11
+asr,ihm_mix,ES2004d,role|level,"first|[-10,-5)",90,34,8
+asr,sdm,ES2004d,all,all,1652,969,58
+asr,sdm,ES2004d,role,first,721,387,23
+asr,sdm,ES2004d,role,second,931,582,35
+asr,sdm,ES2004d,length,>2 words,1496,849,45
+asr,sdm,ES2004d,length,1-2 words,156,120,13
+asr,sdm,ES2004d,level,"[5,10)",184,119,3
+asr,sdm,ES2004d,level,"[-inf,-10)",376,233,17
+asr,sdm,ES2004d,level,"[-5,0)",188,114,4
+asr,sdm,ES2004d,level,"[10,inf)",539,300,10
+asr,sdm,ES2004d,level,"[0,5)",184,98,14
+asr,sdm,ES2004d,level,"[-10,-5)",181,105,10
+asr,sdm,ES2004d,length|level,">2 words|[5,10)",156,96,2
+asr,sdm,ES2004d,length|level,">2 words|[-inf,-10)",342,207,13
+asr,sdm,ES2004d,length|level,">2 words|[-5,0)",172,102,3
+asr,sdm,ES2004d,length|level,">2 words|[10,inf)",480,256,6
+asr,sdm,ES2004d,length|level,">2 words|[0,5)",170,86,12
+asr,sdm,ES2004d,length|level,"1-2 words|[-inf,-10)",34,26,4
+asr,sdm,ES2004d,length|level,"1-2 words|[5,10)",28,23,1
+asr,sdm,ES2004d,length|level,">2 words|[-10,-5)",176,102,9
+asr,sdm,ES2004d,length|level,"1-2 words|[-5,0)",16,12,1
+asr,sdm,ES2004d,length|level,"1-2 words|[0,5)",14,12,2
+asr,sdm,ES2004d,length|level,"1-2 words|[10,inf)",59,44,4
+asr,sdm,ES2004d,length|level,"1-2 words|[-10,-5)",5,3,1
+asr,sdm,ES2004d,role|level,"first|[5,10)",72,45,0
+asr,sdm,ES2004d,role|level,"first|[-inf,-10)",186,105,4
+asr,sdm,ES2004d,role|level,"first|[-5,0)",86,44,2
+asr,sdm,ES2004d,role|level,"first|[10,inf)",216,101,2
+asr,sdm,ES2004d,role|level,"second|[0,5)",113,57,5
+asr,sdm,ES2004d,role|level,"second|[-inf,-10)",190,128,13
+asr,sdm,ES2004d,role|level,"second|[-5,0)",102,70,2
+asr,sdm,ES2004d,role|level,"first|[0,5)",71,41,9
+asr,sdm,ES2004d,role|level,"second|[5,10)",112,74,3
+asr,sdm,ES2004d,role|level,"second|[10,inf)",323,199,8
+asr,sdm,ES2004d,role|level,"second|[-10,-5)",91,54,4
+asr,sdm,ES2004d,role|level,"first|[-10,-5)",90,51,6
 attribution,-,ES2004d,all,all,1611,717,0
 attribution,-,ES2004d,role,first,682,195,0
 attribution,-,ES2004d,role,second,929,522,0
@@ -175,6 +815,30 @@ attribution,-,ES2004d,level,"[-5,0)",180,74,0
 attribution,-,ES2004d,level,"[10,inf)",528,330,0
 attribution,-,ES2004d,level,"[-10,-5)",185,48,0
 attribution,-,ES2004d,level,"[0,5)",191,99,0
+attribution,-,ES2004d,length|level,">2 words|[5,10)",145,85,0
+attribution,-,ES2004d,length|level,"1-2 words|[5,10)",30,21,0
+attribution,-,ES2004d,length|level,">2 words|[-inf,-10)",312,45,0
+attribution,-,ES2004d,length|level,">2 words|[-5,0)",160,62,0
+attribution,-,ES2004d,length|level,">2 words|[10,inf)",464,280,0
+attribution,-,ES2004d,length|level,"1-2 words|[-10,-5)",16,9,0
+attribution,-,ES2004d,length|level,">2 words|[0,5)",168,83,0
+attribution,-,ES2004d,length|level,">2 words|[-10,-5)",169,39,0
+attribution,-,ES2004d,length|level,"1-2 words|[10,inf)",64,50,0
+attribution,-,ES2004d,length|level,"1-2 words|[-inf,-10)",40,15,0
+attribution,-,ES2004d,length|level,"1-2 words|[0,5)",23,16,0
+attribution,-,ES2004d,length|level,"1-2 words|[-5,0)",20,12,0
+attribution,-,ES2004d,role|level,"first|[5,10)",65,29,0
+attribution,-,ES2004d,role|level,"second|[5,10)",110,77,0
+attribution,-,ES2004d,role|level,"first|[-inf,-10)",172,14,0
+attribution,-,ES2004d,role|level,"first|[-5,0)",79,23,0
+attribution,-,ES2004d,role|level,"first|[10,inf)",208,92,0
+attribution,-,ES2004d,role|level,"second|[-10,-5)",100,37,0
+attribution,-,ES2004d,role|level,"second|[0,5)",118,73,0
+attribution,-,ES2004d,role|level,"second|[-inf,-10)",180,46,0
+attribution,-,ES2004d,role|level,"second|[10,inf)",320,238,0
+attribution,-,ES2004d,role|level,"first|[-10,-5)",85,11,0
+attribution,-,ES2004d,role|level,"first|[0,5)",73,26,0
+attribution,-,ES2004d,role|level,"second|[-5,0)",101,51,0
 asr,ihm_mix,TS3003a,all,all,229,94,17
 asr,ihm_mix,TS3003a,role,first,97,16,2
 asr,ihm_mix,TS3003a,role,second,132,78,15
@@ -186,6 +850,65 @@ asr,ihm_mix,TS3003a,level,"[-10,-5)",14,8,2
 asr,ihm_mix,TS3003a,level,"[0,5)",32,13,2
 asr,ihm_mix,TS3003a,level,"[-inf,-10)",39,27,7
 asr,ihm_mix,TS3003a,level,"[-5,0)",20,11,2
+asr,ihm_mix,TS3003a,length|level,">2 words|[10,inf)",69,8,3
+asr,ihm_mix,TS3003a,length|level,">2 words|[5,10)",26,7,0
+asr,ihm_mix,TS3003a,length|level,">2 words|[-10,-5)",8,5,0
+asr,ihm_mix,TS3003a,length|level,">2 words|[0,5)",29,12,1
+asr,ihm_mix,TS3003a,length|level,"1-2 words|[-10,-5)",6,3,2
+asr,ihm_mix,TS3003a,length|level,"1-2 words|[10,inf)",24,18,1
+asr,ihm_mix,TS3003a,length|level,">2 words|[-inf,-10)",15,14,0
+asr,ihm_mix,TS3003a,length|level,"1-2 words|[-5,0)",6,3,1
+asr,ihm_mix,TS3003a,length|level,"1-2 words|[0,5)",3,1,1
+asr,ihm_mix,TS3003a,length|level,"1-2 words|[5,10)",5,2,0
+asr,ihm_mix,TS3003a,length|level,"1-2 words|[-inf,-10)",24,13,7
+asr,ihm_mix,TS3003a,length|level,">2 words|[-5,0)",14,8,1
+asr,ihm_mix,TS3003a,role|level,"first|[10,inf)",52,3,1
+asr,ihm_mix,TS3003a,role|level,"first|[5,10)",16,2,0
+asr,ihm_mix,TS3003a,role|level,"first|[-10,-5)",3,0,0
+asr,ihm_mix,TS3003a,role|level,"first|[0,5)",12,3,0
+asr,ihm_mix,TS3003a,role|level,"second|[-10,-5)",11,8,2
+asr,ihm_mix,TS3003a,role|level,"second|[5,10)",15,7,0
+asr,ihm_mix,TS3003a,role|level,"second|[10,inf)",41,23,3
+asr,ihm_mix,TS3003a,role|level,"second|[0,5)",20,10,2
+asr,ihm_mix,TS3003a,role|level,"first|[-inf,-10)",5,4,0
+asr,ihm_mix,TS3003a,role|level,"second|[-5,0)",11,7,1
+asr,ihm_mix,TS3003a,role|level,"second|[-inf,-10)",34,23,7
+asr,ihm_mix,TS3003a,role|level,"first|[-5,0)",9,4,1
+asr,sdm,TS3003a,all,all,229,163,10
+asr,sdm,TS3003a,role,first,97,56,2
+asr,sdm,TS3003a,role,second,132,107,8
+asr,sdm,TS3003a,length,>2 words,161,111,3
+asr,sdm,TS3003a,length,1-2 words,68,52,7
+asr,sdm,TS3003a,level,"[10,inf)",93,57,2
+asr,sdm,TS3003a,level,"[5,10)",31,21,1
+asr,sdm,TS3003a,level,"[-10,-5)",14,12,1
+asr,sdm,TS3003a,level,"[0,5)",32,25,2
+asr,sdm,TS3003a,level,"[-inf,-10)",39,33,2
+asr,sdm,TS3003a,level,"[-5,0)",20,15,2
+asr,sdm,TS3003a,length|level,">2 words|[10,inf)",69,39,0
+asr,sdm,TS3003a,length|level,">2 words|[5,10)",26,18,0
+asr,sdm,TS3003a,length|level,">2 words|[-10,-5)",8,7,0
+asr,sdm,TS3003a,length|level,">2 words|[0,5)",29,22,2
+asr,sdm,TS3003a,length|level,"1-2 words|[-10,-5)",6,5,1
+asr,sdm,TS3003a,length|level,"1-2 words|[10,inf)",24,18,2
+asr,sdm,TS3003a,length|level,">2 words|[-inf,-10)",15,14,0
+asr,sdm,TS3003a,length|level,"1-2 words|[-5,0)",6,4,1
+asr,sdm,TS3003a,length|level,"1-2 words|[0,5)",3,3,0
+asr,sdm,TS3003a,length|level,"1-2 words|[5,10)",5,3,1
+asr,sdm,TS3003a,length|level,"1-2 words|[-inf,-10)",24,19,2
+asr,sdm,TS3003a,length|level,">2 words|[-5,0)",14,11,1
+asr,sdm,TS3003a,role|level,"first|[10,inf)",52,25,0
+asr,sdm,TS3003a,role|level,"first|[5,10)",16,11,0
+asr,sdm,TS3003a,role|level,"first|[-10,-5)",3,2,0
+asr,sdm,TS3003a,role|level,"first|[0,5)",12,9,1
+asr,sdm,TS3003a,role|level,"second|[-10,-5)",11,10,1
+asr,sdm,TS3003a,role|level,"second|[5,10)",15,10,1
+asr,sdm,TS3003a,role|level,"second|[10,inf)",41,32,2
+asr,sdm,TS3003a,role|level,"second|[0,5)",20,16,1
+asr,sdm,TS3003a,role|level,"first|[-inf,-10)",5,4,0
+asr,sdm,TS3003a,role|level,"second|[-5,0)",11,10,1
+asr,sdm,TS3003a,role|level,"second|[-inf,-10)",34,29,2
+asr,sdm,TS3003a,role|level,"first|[-5,0)",9,5,1
 attribution,-,TS3003a,all,all,227,126,0
 attribution,-,TS3003a,role,first,90,16,0
 attribution,-,TS3003a,role,second,137,110,0
@@ -197,6 +920,30 @@ attribution,-,TS3003a,level,"[-inf,-10)",40,35,0
 attribution,-,TS3003a,level,"[-5,0)",23,13,0
 attribution,-,TS3003a,level,"[5,10)",29,11,0
 attribution,-,TS3003a,level,"[-10,-5)",15,11,0
+attribution,-,TS3003a,length|level,">2 words|[10,inf)",62,16,0
+attribution,-,TS3003a,length|level,"1-2 words|[0,5)",3,3,0
+attribution,-,TS3003a,length|level,"1-2 words|[10,inf)",28,21,0
+attribution,-,TS3003a,length|level,"1-2 words|[-inf,-10)",26,24,0
+attribution,-,TS3003a,length|level,">2 words|[-5,0)",14,7,0
+attribution,-,TS3003a,length|level,">2 words|[-inf,-10)",14,11,0
+attribution,-,TS3003a,length|level,">2 words|[0,5)",27,16,0
+attribution,-,TS3003a,length|level,">2 words|[5,10)",25,7,0
+attribution,-,TS3003a,length|level,"1-2 words|[5,10)",4,4,0
+attribution,-,TS3003a,length|level,"1-2 words|[-10,-5)",8,6,0
+attribution,-,TS3003a,length|level,">2 words|[-10,-5)",7,5,0
+attribution,-,TS3003a,length|level,"1-2 words|[-5,0)",9,6,0
+attribution,-,TS3003a,role|level,"first|[10,inf)",46,3,0
+attribution,-,TS3003a,role|level,"second|[0,5)",18,15,0
+attribution,-,TS3003a,role|level,"second|[10,inf)",44,34,0
+attribution,-,TS3003a,role|level,"second|[-inf,-10)",35,33,0
+attribution,-,TS3003a,role|level,"second|[-5,0)",14,9,0
+attribution,-,TS3003a,role|level,"first|[5,10)",16,2,0
+attribution,-,TS3003a,role|level,"second|[5,10)",13,9,0
+attribution,-,TS3003a,role|level,"second|[-10,-5)",13,10,0
+attribution,-,TS3003a,role|level,"first|[-10,-5)",2,1,0
+attribution,-,TS3003a,role|level,"first|[0,5)",12,4,0
+attribution,-,TS3003a,role|level,"first|[-5,0)",9,4,0
+attribution,-,TS3003a,role|level,"first|[-inf,-10)",5,2,0
 asr,ihm_mix,TS3003b,all,all,436,177,41
 asr,ihm_mix,TS3003b,role,first,199,47,9
 asr,ihm_mix,TS3003b,role,second,237,130,32
@@ -208,6 +955,65 @@ asr,ihm_mix,TS3003b,level,"[0,5)",57,20,10
 asr,ihm_mix,TS3003b,level,"[-5,0)",59,31,9
 asr,ihm_mix,TS3003b,level,"[-10,-5)",59,28,9
 asr,ihm_mix,TS3003b,level,"[-inf,-10)",72,52,3
+asr,ihm_mix,TS3003b,length|level,">2 words|[10,inf)",108,19,1
+asr,ihm_mix,TS3003b,length|level,">2 words|[5,10)",56,19,3
+asr,ihm_mix,TS3003b,length|level,"1-2 words|[10,inf)",20,6,4
+asr,ihm_mix,TS3003b,length|level,">2 words|[0,5)",47,14,7
+asr,ihm_mix,TS3003b,length|level,">2 words|[-5,0)",39,21,3
+asr,ihm_mix,TS3003b,length|level,"1-2 words|[0,5)",10,6,3
+asr,ihm_mix,TS3003b,length|level,"1-2 words|[-10,-5)",16,6,7
+asr,ihm_mix,TS3003b,length|level,"1-2 words|[5,10)",5,2,2
+asr,ihm_mix,TS3003b,length|level,"1-2 words|[-5,0)",20,10,6
+asr,ihm_mix,TS3003b,length|level,">2 words|[-inf,-10)",46,34,0
+asr,ihm_mix,TS3003b,length|level,">2 words|[-10,-5)",43,22,2
+asr,ihm_mix,TS3003b,length|level,"1-2 words|[-inf,-10)",26,18,3
+asr,ihm_mix,TS3003b,role|level,"first|[10,inf)",74,7,0
+asr,ihm_mix,TS3003b,role|level,"first|[5,10)",38,10,2
+asr,ihm_mix,TS3003b,role|level,"second|[5,10)",23,11,3
+asr,ihm_mix,TS3003b,role|level,"second|[10,inf)",54,18,5
+asr,ihm_mix,TS3003b,role|level,"first|[0,5)",34,6,6
+asr,ihm_mix,TS3003b,role|level,"first|[-5,0)",22,10,1
+asr,ihm_mix,TS3003b,role|level,"second|[0,5)",23,14,4
+asr,ihm_mix,TS3003b,role|level,"second|[-10,-5)",43,21,9
+asr,ihm_mix,TS3003b,role|level,"second|[-5,0)",37,21,8
+asr,ihm_mix,TS3003b,role|level,"second|[-inf,-10)",57,45,3
+asr,ihm_mix,TS3003b,role|level,"first|[-10,-5)",16,7,0
+asr,ihm_mix,TS3003b,role|level,"first|[-inf,-10)",15,7,0
+asr,sdm,TS3003b,all,all,436,215,48
+asr,sdm,TS3003b,role,first,199,75,16
+asr,sdm,TS3003b,role,second,237,140,32
+asr,sdm,TS3003b,length,>2 words,339,150,29
+asr,sdm,TS3003b,length,1-2 words,97,65,19
+asr,sdm,TS3003b,level,"[10,inf)",128,38,11
+asr,sdm,TS3003b,level,"[5,10)",61,31,9
+asr,sdm,TS3003b,level,"[0,5)",57,28,9
+asr,sdm,TS3003b,level,"[-5,0)",59,36,7
+asr,sdm,TS3003b,level,"[-10,-5)",59,30,8
+asr,sdm,TS3003b,level,"[-inf,-10)",72,52,4
+asr,sdm,TS3003b,length|level,">2 words|[10,inf)",108,28,5
+asr,sdm,TS3003b,length|level,">2 words|[5,10)",56,27,8
+asr,sdm,TS3003b,length|level,"1-2 words|[10,inf)",20,10,6
+asr,sdm,TS3003b,length|level,">2 words|[0,5)",47,22,7
+asr,sdm,TS3003b,length|level,">2 words|[-5,0)",39,21,4
+asr,sdm,TS3003b,length|level,"1-2 words|[0,5)",10,6,2
+asr,sdm,TS3003b,length|level,"1-2 words|[-10,-5)",16,8,5
+asr,sdm,TS3003b,length|level,"1-2 words|[5,10)",5,4,1
+asr,sdm,TS3003b,length|level,"1-2 words|[-5,0)",20,15,3
+asr,sdm,TS3003b,length|level,">2 words|[-inf,-10)",46,30,2
+asr,sdm,TS3003b,length|level,">2 words|[-10,-5)",43,22,3
+asr,sdm,TS3003b,length|level,"1-2 words|[-inf,-10)",26,22,2
+asr,sdm,TS3003b,role|level,"first|[10,inf)",74,15,1
+asr,sdm,TS3003b,role|level,"first|[5,10)",38,16,5
+asr,sdm,TS3003b,role|level,"second|[5,10)",23,15,4
+asr,sdm,TS3003b,role|level,"second|[10,inf)",54,23,10
+asr,sdm,TS3003b,role|level,"first|[0,5)",34,16,6
+asr,sdm,TS3003b,role|level,"first|[-5,0)",22,11,2
+asr,sdm,TS3003b,role|level,"second|[0,5)",23,12,3
+asr,sdm,TS3003b,role|level,"second|[-10,-5)",43,21,6
+asr,sdm,TS3003b,role|level,"second|[-5,0)",37,25,5
+asr,sdm,TS3003b,role|level,"second|[-inf,-10)",57,44,4
+asr,sdm,TS3003b,role|level,"first|[-10,-5)",16,9,2
+asr,sdm,TS3003b,role|level,"first|[-inf,-10)",15,8,0
 attribution,-,TS3003b,all,all,450,220,0
 attribution,-,TS3003b,role,first,201,56,0
 attribution,-,TS3003b,role,second,249,164,0
@@ -219,6 +1025,30 @@ attribution,-,TS3003b,level,"[0,5)",56,22,0
 attribution,-,TS3003b,level,"[-5,0)",57,28,0
 attribution,-,TS3003b,level,"[-10,-5)",61,40,0
 attribution,-,TS3003b,level,"[-inf,-10)",78,69,0
+attribution,-,TS3003b,length|level,">2 words|[10,inf)",109,33,0
+attribution,-,TS3003b,length|level,"1-2 words|[10,inf)",25,13,0
+attribution,-,TS3003b,length|level,"1-2 words|[5,10)",6,2,0
+attribution,-,TS3003b,length|level,"1-2 words|[0,5)",11,5,0
+attribution,-,TS3003b,length|level,"1-2 words|[-5,0)",22,12,0
+attribution,-,TS3003b,length|level,"1-2 words|[-10,-5)",18,11,0
+attribution,-,TS3003b,length|level,">2 words|[5,10)",58,13,0
+attribution,-,TS3003b,length|level,"1-2 words|[-inf,-10)",37,31,0
+attribution,-,TS3003b,length|level,">2 words|[-10,-5)",43,29,0
+attribution,-,TS3003b,length|level,">2 words|[0,5)",45,17,0
+attribution,-,TS3003b,length|level,">2 words|[-5,0)",35,16,0
+attribution,-,TS3003b,length|level,">2 words|[-inf,-10)",41,38,0
+attribution,-,TS3003b,role|level,"first|[10,inf)",74,14,0
+attribution,-,TS3003b,role|level,"second|[10,inf)",60,32,0
+attribution,-,TS3003b,role|level,"second|[5,10)",23,8,0
+attribution,-,TS3003b,role|level,"second|[0,5)",23,11,0
+attribution,-,TS3003b,role|level,"second|[-5,0)",36,21,0
+attribution,-,TS3003b,role|level,"second|[-10,-5)",43,33,0
+attribution,-,TS3003b,role|level,"first|[5,10)",41,7,0
+attribution,-,TS3003b,role|level,"first|[-10,-5)",18,7,0
+attribution,-,TS3003b,role|level,"second|[-inf,-10)",64,59,0
+attribution,-,TS3003b,role|level,"first|[0,5)",33,11,0
+attribution,-,TS3003b,role|level,"first|[-5,0)",21,7,0
+attribution,-,TS3003b,role|level,"first|[-inf,-10)",14,10,0
 asr,ihm_mix,TS3003c,all,all,433,171,41
 asr,ihm_mix,TS3003c,role,second,233,103,28
 asr,ihm_mix,TS3003c,role,first,200,68,13
@@ -230,6 +1060,65 @@ asr,ihm_mix,TS3003c,level,"[0,5)",63,23,5
 asr,ihm_mix,TS3003c,level,"[-10,-5)",53,29,12
 asr,ihm_mix,TS3003c,level,"[-5,0)",58,30,9
 asr,ihm_mix,TS3003c,level,"[-inf,-10)",52,35,9
+asr,ihm_mix,TS3003c,length|level,"1-2 words|[10,inf)",22,8,3
+asr,ihm_mix,TS3003c,length|level,">2 words|[5,10)",57,12,2
+asr,ihm_mix,TS3003c,length|level,">2 words|[0,5)",58,21,3
+asr,ihm_mix,TS3003c,length|level,">2 words|[-10,-5)",34,17,7
+asr,ihm_mix,TS3003c,length|level,">2 words|[-5,0)",41,21,5
+asr,ihm_mix,TS3003c,length|level,">2 words|[-inf,-10)",33,23,3
+asr,ihm_mix,TS3003c,length|level,"1-2 words|[-5,0)",17,9,4
+asr,ihm_mix,TS3003c,length|level,">2 words|[10,inf)",123,33,1
+asr,ihm_mix,TS3003c,length|level,"1-2 words|[-10,-5)",19,12,5
+asr,ihm_mix,TS3003c,length|level,"1-2 words|[0,5)",5,2,2
+asr,ihm_mix,TS3003c,length|level,"1-2 words|[5,10)",5,1,0
+asr,ihm_mix,TS3003c,length|level,"1-2 words|[-inf,-10)",19,12,6
+asr,ihm_mix,TS3003c,role|level,"second|[10,inf)",80,29,3
+asr,ihm_mix,TS3003c,role|level,"first|[5,10)",37,8,1
+asr,ihm_mix,TS3003c,role|level,"first|[0,5)",38,14,2
+asr,ihm_mix,TS3003c,role|level,"first|[-10,-5)",21,13,3
+asr,ihm_mix,TS3003c,role|level,"first|[-5,0)",24,10,4
+asr,ihm_mix,TS3003c,role|level,"first|[-inf,-10)",15,11,2
+asr,ihm_mix,TS3003c,role|level,"second|[-5,0)",34,20,5
+asr,ihm_mix,TS3003c,role|level,"first|[10,inf)",65,12,1
+asr,ihm_mix,TS3003c,role|level,"second|[0,5)",25,9,3
+asr,ihm_mix,TS3003c,role|level,"second|[5,10)",25,5,1
+asr,ihm_mix,TS3003c,role|level,"second|[-10,-5)",32,16,9
+asr,ihm_mix,TS3003c,role|level,"second|[-inf,-10)",37,24,7
+asr,sdm,TS3003c,all,all,433,209,40
+asr,sdm,TS3003c,role,second,233,136,24
+asr,sdm,TS3003c,role,first,200,73,16
+asr,sdm,TS3003c,length,1-2 words,87,59,13
+asr,sdm,TS3003c,length,>2 words,346,150,27
+asr,sdm,TS3003c,level,"[10,inf)",145,48,12
+asr,sdm,TS3003c,level,"[5,10)",62,19,5
+asr,sdm,TS3003c,level,"[0,5)",63,30,2
+asr,sdm,TS3003c,level,"[-10,-5)",53,34,7
+asr,sdm,TS3003c,level,"[-5,0)",58,38,5
+asr,sdm,TS3003c,level,"[-inf,-10)",52,40,9
+asr,sdm,TS3003c,length|level,"1-2 words|[10,inf)",22,7,4
+asr,sdm,TS3003c,length|level,">2 words|[5,10)",57,18,3
+asr,sdm,TS3003c,length|level,">2 words|[0,5)",58,25,2
+asr,sdm,TS3003c,length|level,">2 words|[-10,-5)",34,18,5
+asr,sdm,TS3003c,length|level,">2 words|[-5,0)",41,23,3
+asr,sdm,TS3003c,length|level,">2 words|[-inf,-10)",33,25,6
+asr,sdm,TS3003c,length|level,"1-2 words|[-5,0)",17,15,2
+asr,sdm,TS3003c,length|level,">2 words|[10,inf)",123,41,8
+asr,sdm,TS3003c,length|level,"1-2 words|[-10,-5)",19,16,2
+asr,sdm,TS3003c,length|level,"1-2 words|[0,5)",5,5,0
+asr,sdm,TS3003c,length|level,"1-2 words|[5,10)",5,1,2
+asr,sdm,TS3003c,length|level,"1-2 words|[-inf,-10)",19,15,3
+asr,sdm,TS3003c,role|level,"second|[10,inf)",80,38,10
+asr,sdm,TS3003c,role|level,"first|[5,10)",37,9,3
+asr,sdm,TS3003c,role|level,"first|[0,5)",38,18,2
+asr,sdm,TS3003c,role|level,"first|[-10,-5)",21,14,1
+asr,sdm,TS3003c,role|level,"first|[-5,0)",24,11,4
+asr,sdm,TS3003c,role|level,"first|[-inf,-10)",15,11,4
+asr,sdm,TS3003c,role|level,"second|[-5,0)",34,27,1
+asr,sdm,TS3003c,role|level,"first|[10,inf)",65,10,2
+asr,sdm,TS3003c,role|level,"second|[0,5)",25,12,0
+asr,sdm,TS3003c,role|level,"second|[5,10)",25,10,2
+asr,sdm,TS3003c,role|level,"second|[-10,-5)",32,20,6
+asr,sdm,TS3003c,role|level,"second|[-inf,-10)",37,29,5
 attribution,-,TS3003c,all,all,447,194,0
 attribution,-,TS3003c,role,second,246,129,0
 attribution,-,TS3003c,role,first,201,65,0
@@ -241,6 +1130,30 @@ attribution,-,TS3003c,level,"[-10,-5)",55,35,0
 attribution,-,TS3003c,level,"[5,10)",61,11,0
 attribution,-,TS3003c,level,"[0,5)",62,19,0
 attribution,-,TS3003c,level,"[-5,0)",59,40,0
+attribution,-,TS3003c,length|level,"1-2 words|[10,inf)",27,12,0
+attribution,-,TS3003c,length|level,"1-2 words|[-inf,-10)",27,24,0
+attribution,-,TS3003c,length|level,">2 words|[-10,-5)",33,24,0
+attribution,-,TS3003c,length|level,">2 words|[-inf,-10)",37,30,0
+attribution,-,TS3003c,length|level,">2 words|[5,10)",55,8,0
+attribution,-,TS3003c,length|level,">2 words|[0,5)",56,18,0
+attribution,-,TS3003c,length|level,"1-2 words|[-5,0)",17,14,0
+attribution,-,TS3003c,length|level,">2 words|[-5,0)",42,26,0
+attribution,-,TS3003c,length|level,">2 words|[10,inf)",119,23,0
+attribution,-,TS3003c,length|level,"1-2 words|[-10,-5)",22,11,0
+attribution,-,TS3003c,length|level,"1-2 words|[0,5)",6,1,0
+attribution,-,TS3003c,length|level,"1-2 words|[5,10)",6,3,0
+attribution,-,TS3003c,role|level,"second|[10,inf)",82,26,0
+attribution,-,TS3003c,role|level,"second|[-inf,-10)",44,38,0
+attribution,-,TS3003c,role|level,"first|[-10,-5)",20,13,0
+attribution,-,TS3003c,role|level,"first|[-inf,-10)",20,16,0
+attribution,-,TS3003c,role|level,"first|[5,10)",35,5,0
+attribution,-,TS3003c,role|level,"first|[0,5)",36,8,0
+attribution,-,TS3003c,role|level,"second|[-5,0)",33,26,0
+attribution,-,TS3003c,role|level,"second|[0,5)",26,11,0
+attribution,-,TS3003c,role|level,"first|[-5,0)",26,14,0
+attribution,-,TS3003c,role|level,"second|[-10,-5)",35,22,0
+attribution,-,TS3003c,role|level,"first|[10,inf)",64,9,0
+attribution,-,TS3003c,role|level,"second|[5,10)",26,6,0
 asr,ihm_mix,TS3003d,all,all,1114,458,92
 asr,ihm_mix,TS3003d,role,second,643,324,58
 asr,ihm_mix,TS3003d,role,first,471,134,34
@@ -252,6 +1165,65 @@ asr,ihm_mix,TS3003d,level,"[-10,-5)",120,69,19
 asr,ihm_mix,TS3003d,level,"[5,10)",143,39,9
 asr,ihm_mix,TS3003d,level,"[0,5)",153,58,10
 asr,ihm_mix,TS3003d,level,"[-inf,-10)",174,123,21
+asr,ihm_mix,TS3003d,length|level,"1-2 words|[10,inf)",58,29,2
+asr,ihm_mix,TS3003d,length|level,">2 words|[-5,0)",137,70,8
+asr,ihm_mix,TS3003d,length|level,">2 words|[-10,-5)",88,52,11
+asr,ihm_mix,TS3003d,length|level,">2 words|[5,10)",126,29,4
+asr,ihm_mix,TS3003d,length|level,"1-2 words|[-10,-5)",32,17,8
+asr,ihm_mix,TS3003d,length|level,"1-2 words|[-5,0)",39,24,5
+asr,ihm_mix,TS3003d,length|level,">2 words|[10,inf)",290,46,18
+asr,ihm_mix,TS3003d,length|level,">2 words|[0,5)",134,47,7
+asr,ihm_mix,TS3003d,length|level,">2 words|[-inf,-10)",122,87,11
+asr,ihm_mix,TS3003d,length|level,"1-2 words|[0,5)",19,11,3
+asr,ihm_mix,TS3003d,length|level,"1-2 words|[5,10)",17,10,5
+asr,ihm_mix,TS3003d,length|level,"1-2 words|[-inf,-10)",52,36,10
+asr,ihm_mix,TS3003d,role|level,"second|[10,inf)",192,61,8
+asr,ihm_mix,TS3003d,role|level,"first|[-5,0)",67,33,4
+asr,ihm_mix,TS3003d,role|level,"first|[-10,-5)",44,19,7
+asr,ihm_mix,TS3003d,role|level,"first|[5,10)",77,17,2
+asr,ihm_mix,TS3003d,role|level,"second|[-10,-5)",76,50,12
+asr,ihm_mix,TS3003d,role|level,"second|[-5,0)",109,61,9
+asr,ihm_mix,TS3003d,role|level,"second|[5,10)",66,22,7
+asr,ihm_mix,TS3003d,role|level,"first|[0,5)",79,21,3
+asr,ihm_mix,TS3003d,role|level,"second|[-inf,-10)",126,93,15
+asr,ihm_mix,TS3003d,role|level,"second|[0,5)",74,37,7
+asr,ihm_mix,TS3003d,role|level,"first|[10,inf)",156,14,12
+asr,ihm_mix,TS3003d,role|level,"first|[-inf,-10)",48,30,6
+asr,sdm,TS3003d,all,all,1114,654,61
+asr,sdm,TS3003d,role,second,643,424,38
+asr,sdm,TS3003d,role,first,471,230,23
+asr,sdm,TS3003d,length,1-2 words,217,175,16
+asr,sdm,TS3003d,length,>2 words,897,479,45
+asr,sdm,TS3003d,level,"[10,inf)",348,179,15
+asr,sdm,TS3003d,level,"[-5,0)",176,115,7
+asr,sdm,TS3003d,level,"[-10,-5)",120,79,10
+asr,sdm,TS3003d,level,"[5,10)",143,72,10
+asr,sdm,TS3003d,level,"[0,5)",153,82,10
+asr,sdm,TS3003d,level,"[-inf,-10)",174,127,9
+asr,sdm,TS3003d,length|level,"1-2 words|[10,inf)",58,45,4
+asr,sdm,TS3003d,length|level,">2 words|[-5,0)",137,83,6
+asr,sdm,TS3003d,length|level,">2 words|[-10,-5)",88,55,5
+asr,sdm,TS3003d,length|level,">2 words|[5,10)",126,58,10
+asr,sdm,TS3003d,length|level,"1-2 words|[-10,-5)",32,24,5
+asr,sdm,TS3003d,length|level,"1-2 words|[-5,0)",39,32,1
+asr,sdm,TS3003d,length|level,">2 words|[10,inf)",290,134,11
+asr,sdm,TS3003d,length|level,">2 words|[0,5)",134,64,10
+asr,sdm,TS3003d,length|level,">2 words|[-inf,-10)",122,85,3
+asr,sdm,TS3003d,length|level,"1-2 words|[0,5)",19,18,0
+asr,sdm,TS3003d,length|level,"1-2 words|[5,10)",17,14,0
+asr,sdm,TS3003d,length|level,"1-2 words|[-inf,-10)",52,42,6
+asr,sdm,TS3003d,role|level,"second|[10,inf)",192,117,5
+asr,sdm,TS3003d,role|level,"first|[-5,0)",67,38,0
+asr,sdm,TS3003d,role|level,"first|[-10,-5)",44,26,4
+asr,sdm,TS3003d,role|level,"first|[5,10)",77,37,5
+asr,sdm,TS3003d,role|level,"second|[-10,-5)",76,53,6
+asr,sdm,TS3003d,role|level,"second|[-5,0)",109,77,7
+asr,sdm,TS3003d,role|level,"second|[5,10)",66,35,5
+asr,sdm,TS3003d,role|level,"first|[0,5)",79,36,3
+asr,sdm,TS3003d,role|level,"second|[-inf,-10)",126,96,8
+asr,sdm,TS3003d,role|level,"second|[0,5)",74,46,7
+asr,sdm,TS3003d,role|level,"first|[10,inf)",156,62,10
+asr,sdm,TS3003d,role|level,"first|[-inf,-10)",48,31,1
 attribution,-,TS3003d,all,all,1098,503,0
 attribution,-,TS3003d,role,second,641,378,0
 attribution,-,TS3003d,role,first,457,125,0
@@ -263,6 +1235,30 @@ attribution,-,TS3003d,level,"[-10,-5)",122,85,0
 attribution,-,TS3003d,level,"[5,10)",144,34,0
 attribution,-,TS3003d,level,"[-inf,-10)",182,140,0
 attribution,-,TS3003d,level,"[0,5)",147,62,0
+attribution,-,TS3003d,length|level,"1-2 words|[10,inf)",60,28,0
+attribution,-,TS3003d,length|level,"1-2 words|[-5,0)",43,29,0
+attribution,-,TS3003d,length|level,">2 words|[-5,0)",123,56,0
+attribution,-,TS3003d,length|level,">2 words|[-10,-5)",90,62,0
+attribution,-,TS3003d,length|level,">2 words|[5,10)",126,29,0
+attribution,-,TS3003d,length|level,"1-2 words|[-inf,-10)",60,49,0
+attribution,-,TS3003d,length|level,">2 words|[10,inf)",277,69,0
+attribution,-,TS3003d,length|level,">2 words|[0,5)",126,49,0
+attribution,-,TS3003d,length|level,"1-2 words|[-10,-5)",32,23,0
+attribution,-,TS3003d,length|level,">2 words|[-inf,-10)",122,91,0
+attribution,-,TS3003d,length|level,"1-2 words|[0,5)",21,13,0
+attribution,-,TS3003d,length|level,"1-2 words|[5,10)",18,5,0
+attribution,-,TS3003d,role|level,"second|[10,inf)",183,63,0
+attribution,-,TS3003d,role|level,"second|[-5,0)",106,68,0
+attribution,-,TS3003d,role|level,"first|[-5,0)",60,17,0
+attribution,-,TS3003d,role|level,"first|[-10,-5)",43,18,0
+attribution,-,TS3003d,role|level,"first|[5,10)",75,11,0
+attribution,-,TS3003d,role|level,"second|[-inf,-10)",133,110,0
+attribution,-,TS3003d,role|level,"first|[10,inf)",154,34,0
+attribution,-,TS3003d,role|level,"first|[0,5)",76,15,0
+attribution,-,TS3003d,role|level,"second|[-10,-5)",79,67,0
+attribution,-,TS3003d,role|level,"second|[0,5)",71,47,0
+attribution,-,TS3003d,role|level,"first|[-inf,-10)",49,30,0
+attribution,-,TS3003d,role|level,"second|[5,10)",69,23,0
 asr,ihm_mix,EN2002a,all,all,3166,1792,170
 asr,ihm_mix,EN2002a,role,first,1468,751,81
 asr,ihm_mix,EN2002a,role,second,1698,1041,89
@@ -274,6 +1270,65 @@ asr,ihm_mix,EN2002a,level,"[10,inf)",885,394,33
 asr,ihm_mix,EN2002a,level,"[5,10)",398,192,21
 asr,ihm_mix,EN2002a,level,"[-inf,-10)",442,341,22
 asr,ihm_mix,EN2002a,level,"[0,5)",525,283,27
+asr,ihm_mix,EN2002a,length|level,">2 words|[-10,-5)",360,226,31
+asr,ihm_mix,EN2002a,length|level,">2 words|[-5,0)",477,291,32
+asr,ihm_mix,EN2002a,length|level,">2 words|[10,inf)",821,344,28
+asr,ihm_mix,EN2002a,length|level,">2 words|[5,10)",367,165,18
+asr,ihm_mix,EN2002a,length|level,"1-2 words|[-inf,-10)",37,30,4
+asr,ihm_mix,EN2002a,length|level,"1-2 words|[5,10)",31,27,3
+asr,ihm_mix,EN2002a,length|level,">2 words|[0,5)",474,244,21
+asr,ihm_mix,EN2002a,length|level,"1-2 words|[-10,-5)",31,26,1
+asr,ihm_mix,EN2002a,length|level,"1-2 words|[-5,0)",48,39,3
+asr,ihm_mix,EN2002a,length|level,"1-2 words|[10,inf)",64,50,5
+asr,ihm_mix,EN2002a,length|level,">2 words|[-inf,-10)",405,311,18
+asr,ihm_mix,EN2002a,length|level,"1-2 words|[0,5)",51,39,6
+asr,ihm_mix,EN2002a,role|level,"first|[-10,-5)",210,122,21
+asr,ihm_mix,EN2002a,role|level,"first|[-5,0)",274,160,18
+asr,ihm_mix,EN2002a,role|level,"first|[10,inf)",364,134,8
+asr,ihm_mix,EN2002a,role|level,"second|[10,inf)",521,260,25
+asr,ihm_mix,EN2002a,role|level,"second|[5,10)",226,127,9
+asr,ihm_mix,EN2002a,role|level,"second|[-inf,-10)",212,170,11
+asr,ihm_mix,EN2002a,role|level,"first|[5,10)",172,65,12
+asr,ihm_mix,EN2002a,role|level,"second|[0,5)",307,184,16
+asr,ihm_mix,EN2002a,role|level,"second|[-10,-5)",181,130,11
+asr,ihm_mix,EN2002a,role|level,"second|[-5,0)",251,170,17
+asr,ihm_mix,EN2002a,role|level,"first|[0,5)",218,99,11
+asr,ihm_mix,EN2002a,role|level,"first|[-inf,-10)",230,171,11
+asr,sdm,EN2002a,all,all,3166,1822,162
+asr,sdm,EN2002a,role,first,1468,798,80
+asr,sdm,EN2002a,role,second,1698,1024,82
+asr,sdm,EN2002a,length,>2 words,2904,1602,150
+asr,sdm,EN2002a,length,1-2 words,262,220,12
+asr,sdm,EN2002a,level,"[-10,-5)",391,261,19
+asr,sdm,EN2002a,level,"[-5,0)",525,324,31
+asr,sdm,EN2002a,level,"[10,inf)",885,401,36
+asr,sdm,EN2002a,level,"[5,10)",398,201,25
+asr,sdm,EN2002a,level,"[-inf,-10)",442,344,16
+asr,sdm,EN2002a,level,"[0,5)",525,291,35
+asr,sdm,EN2002a,length|level,">2 words|[-10,-5)",360,234,18
+asr,sdm,EN2002a,length|level,">2 words|[-5,0)",477,285,30
+asr,sdm,EN2002a,length|level,">2 words|[10,inf)",821,347,33
+asr,sdm,EN2002a,length|level,">2 words|[5,10)",367,174,23
+asr,sdm,EN2002a,length|level,"1-2 words|[-inf,-10)",37,36,0
+asr,sdm,EN2002a,length|level,"1-2 words|[5,10)",31,27,2
+asr,sdm,EN2002a,length|level,">2 words|[0,5)",474,254,30
+asr,sdm,EN2002a,length|level,"1-2 words|[-10,-5)",31,27,1
+asr,sdm,EN2002a,length|level,"1-2 words|[-5,0)",48,39,1
+asr,sdm,EN2002a,length|level,"1-2 words|[10,inf)",64,54,3
+asr,sdm,EN2002a,length|level,">2 words|[-inf,-10)",405,308,16
+asr,sdm,EN2002a,length|level,"1-2 words|[0,5)",51,37,5
+asr,sdm,EN2002a,role|level,"first|[-10,-5)",210,127,12
+asr,sdm,EN2002a,role|level,"first|[-5,0)",274,171,17
+asr,sdm,EN2002a,role|level,"first|[10,inf)",364,146,15
+asr,sdm,EN2002a,role|level,"second|[10,inf)",521,255,21
+asr,sdm,EN2002a,role|level,"second|[5,10)",226,122,13
+asr,sdm,EN2002a,role|level,"second|[-inf,-10)",212,179,5
+asr,sdm,EN2002a,role|level,"first|[5,10)",172,79,12
+asr,sdm,EN2002a,role|level,"second|[0,5)",307,181,22
+asr,sdm,EN2002a,role|level,"second|[-10,-5)",181,134,7
+asr,sdm,EN2002a,role|level,"second|[-5,0)",251,153,14
+asr,sdm,EN2002a,role|level,"first|[0,5)",218,110,13
+asr,sdm,EN2002a,role|level,"first|[-inf,-10)",230,165,11
 attribution,-,EN2002a,all,all,3047,1438,0
 attribution,-,EN2002a,role,first,1396,593,0
 attribution,-,EN2002a,role,second,1651,845,0
@@ -285,6 +1340,30 @@ attribution,-,EN2002a,level,"[-5,0)",502,237,0
 attribution,-,EN2002a,level,"[0,5)",504,217,0
 attribution,-,EN2002a,level,"[-inf,-10)",442,287,0
 attribution,-,EN2002a,level,"[5,10)",374,146,0
+attribution,-,EN2002a,length|level,">2 words|[-10,-5)",347,192,0
+attribution,-,EN2002a,length|level,">2 words|[10,inf)",767,296,0
+attribution,-,EN2002a,length|level,">2 words|[-5,0)",447,215,0
+attribution,-,EN2002a,length|level,">2 words|[0,5)",449,197,0
+attribution,-,EN2002a,length|level,">2 words|[-inf,-10)",398,250,0
+attribution,-,EN2002a,length|level,">2 words|[5,10)",342,133,0
+attribution,-,EN2002a,length|level,"1-2 words|[-5,0)",55,22,0
+attribution,-,EN2002a,length|level,"1-2 words|[-inf,-10)",44,37,0
+attribution,-,EN2002a,length|level,"1-2 words|[5,10)",32,13,0
+attribution,-,EN2002a,length|level,"1-2 words|[10,inf)",76,41,0
+attribution,-,EN2002a,length|level,"1-2 words|[-10,-5)",35,22,0
+attribution,-,EN2002a,length|level,"1-2 words|[0,5)",55,20,0
+attribution,-,EN2002a,role|level,"first|[-10,-5)",200,95,0
+attribution,-,EN2002a,role|level,"second|[10,inf)",497,202,0
+attribution,-,EN2002a,role|level,"first|[-5,0)",256,111,0
+attribution,-,EN2002a,role|level,"second|[-5,0)",246,126,0
+attribution,-,EN2002a,role|level,"second|[0,5)",297,133,0
+attribution,-,EN2002a,role|level,"first|[10,inf)",346,135,0
+attribution,-,EN2002a,role|level,"second|[-inf,-10)",216,174,0
+attribution,-,EN2002a,role|level,"first|[-inf,-10)",226,113,0
+attribution,-,EN2002a,role|level,"second|[-10,-5)",182,119,0
+attribution,-,EN2002a,role|level,"second|[5,10)",213,91,0
+attribution,-,EN2002a,role|level,"first|[0,5)",207,84,0
+attribution,-,EN2002a,role|level,"first|[5,10)",161,55,0
 asr,ihm_mix,EN2002b,all,all,2263,1052,171
 asr,ihm_mix,EN2002b,role,second,1234,616,103
 asr,ihm_mix,EN2002b,role,first,1029,436,68
@@ -296,6 +1375,65 @@ asr,ihm_mix,EN2002b,level,"[5,10)",265,103,19
 asr,ihm_mix,EN2002b,level,"[-10,-5)",282,172,30
 asr,ihm_mix,EN2002b,level,"[-inf,-10)",245,154,25
 asr,ihm_mix,EN2002b,level,"[-5,0)",431,219,43
+asr,ihm_mix,EN2002b,length|level,"1-2 words|[10,inf)",44,26,4
+asr,ihm_mix,EN2002b,length|level,">2 words|[0,5)",415,197,22
+asr,ihm_mix,EN2002b,length|level,">2 words|[5,10)",249,94,15
+asr,ihm_mix,EN2002b,length|level,">2 words|[-10,-5)",261,161,23
+asr,ihm_mix,EN2002b,length|level,">2 words|[-inf,-10)",230,146,20
+asr,ihm_mix,EN2002b,length|level,">2 words|[-5,0)",400,200,35
+asr,ihm_mix,EN2002b,length|level,">2 words|[10,inf)",557,168,21
+asr,ihm_mix,EN2002b,length|level,"1-2 words|[-inf,-10)",15,8,5
+asr,ihm_mix,EN2002b,length|level,"1-2 words|[0,5)",24,13,7
+asr,ihm_mix,EN2002b,length|level,"1-2 words|[-5,0)",31,19,8
+asr,ihm_mix,EN2002b,length|level,"1-2 words|[5,10)",16,9,4
+asr,ihm_mix,EN2002b,length|level,"1-2 words|[-10,-5)",21,11,7
+asr,ihm_mix,EN2002b,role|level,"second|[10,inf)",363,137,15
+asr,ihm_mix,EN2002b,role|level,"first|[0,5)",226,102,7
+asr,ihm_mix,EN2002b,role|level,"first|[5,10)",124,44,8
+asr,ihm_mix,EN2002b,role|level,"first|[-10,-5)",124,67,12
+asr,ihm_mix,EN2002b,role|level,"first|[-inf,-10)",131,85,12
+asr,ihm_mix,EN2002b,role|level,"first|[-5,0)",186,81,19
+asr,ihm_mix,EN2002b,role|level,"first|[10,inf)",238,57,10
+asr,ihm_mix,EN2002b,role|level,"second|[0,5)",213,108,22
+asr,ihm_mix,EN2002b,role|level,"second|[-5,0)",245,138,24
+asr,ihm_mix,EN2002b,role|level,"second|[-10,-5)",158,105,18
+asr,ihm_mix,EN2002b,role|level,"second|[5,10)",141,59,11
+asr,ihm_mix,EN2002b,role|level,"second|[-inf,-10)",114,69,13
+asr,sdm,EN2002b,all,all,2263,1103,247
+asr,sdm,EN2002b,role,second,1234,650,141
+asr,sdm,EN2002b,role,first,1029,453,106
+asr,sdm,EN2002b,length,1-2 words,151,79,40
+asr,sdm,EN2002b,length,>2 words,2112,1024,207
+asr,sdm,EN2002b,level,"[10,inf)",601,229,53
+asr,sdm,EN2002b,level,"[0,5)",439,221,40
+asr,sdm,EN2002b,level,"[5,10)",265,117,32
+asr,sdm,EN2002b,level,"[-10,-5)",282,153,37
+asr,sdm,EN2002b,level,"[-inf,-10)",245,163,38
+asr,sdm,EN2002b,level,"[-5,0)",431,220,47
+asr,sdm,EN2002b,length|level,"1-2 words|[10,inf)",44,21,9
+asr,sdm,EN2002b,length|level,">2 words|[0,5)",415,209,34
+asr,sdm,EN2002b,length|level,">2 words|[5,10)",249,108,27
+asr,sdm,EN2002b,length|level,">2 words|[-10,-5)",261,140,32
+asr,sdm,EN2002b,length|level,">2 words|[-inf,-10)",230,156,30
+asr,sdm,EN2002b,length|level,">2 words|[-5,0)",400,203,40
+asr,sdm,EN2002b,length|level,">2 words|[10,inf)",557,208,44
+asr,sdm,EN2002b,length|level,"1-2 words|[-inf,-10)",15,7,8
+asr,sdm,EN2002b,length|level,"1-2 words|[0,5)",24,12,6
+asr,sdm,EN2002b,length|level,"1-2 words|[-5,0)",31,17,7
+asr,sdm,EN2002b,length|level,"1-2 words|[5,10)",16,9,5
+asr,sdm,EN2002b,length|level,"1-2 words|[-10,-5)",21,13,5
+asr,sdm,EN2002b,role|level,"second|[10,inf)",363,155,37
+asr,sdm,EN2002b,role|level,"first|[0,5)",226,105,19
+asr,sdm,EN2002b,role|level,"first|[5,10)",124,50,9
+asr,sdm,EN2002b,role|level,"first|[-10,-5)",124,53,22
+asr,sdm,EN2002b,role|level,"first|[-inf,-10)",131,82,19
+asr,sdm,EN2002b,role|level,"first|[-5,0)",186,89,21
+asr,sdm,EN2002b,role|level,"first|[10,inf)",238,74,16
+asr,sdm,EN2002b,role|level,"second|[0,5)",213,116,21
+asr,sdm,EN2002b,role|level,"second|[-5,0)",245,131,26
+asr,sdm,EN2002b,role|level,"second|[-10,-5)",158,100,15
+asr,sdm,EN2002b,role|level,"second|[5,10)",141,67,23
+asr,sdm,EN2002b,role|level,"second|[-inf,-10)",114,81,19
 attribution,-,EN2002b,all,all,2172,1020,0
 attribution,-,EN2002b,role,second,1197,585,0
 attribution,-,EN2002b,role,first,975,435,0
@@ -307,6 +1445,30 @@ attribution,-,EN2002b,level,"[0,5)",417,199,0
 attribution,-,EN2002b,level,"[-5,0)",422,189,0
 attribution,-,EN2002b,level,"[-10,-5)",269,111,0
 attribution,-,EN2002b,level,"[-inf,-10)",240,112,0
+attribution,-,EN2002b,length|level,"1-2 words|[10,inf)",46,23,0
+attribution,-,EN2002b,length|level,">2 words|[5,10)",239,125,0
+attribution,-,EN2002b,length|level,">2 words|[10,inf)",520,253,0
+attribution,-,EN2002b,length|level,">2 words|[0,5)",390,188,0
+attribution,-,EN2002b,length|level,">2 words|[-5,0)",384,172,0
+attribution,-,EN2002b,length|level,">2 words|[-10,-5)",244,94,0
+attribution,-,EN2002b,length|level,">2 words|[-inf,-10)",223,102,0
+attribution,-,EN2002b,length|level,"1-2 words|[-inf,-10)",17,10,0
+attribution,-,EN2002b,length|level,"1-2 words|[0,5)",27,11,0
+attribution,-,EN2002b,length|level,"1-2 words|[-5,0)",38,17,0
+attribution,-,EN2002b,length|level,"1-2 words|[5,10)",19,8,0
+attribution,-,EN2002b,length|level,"1-2 words|[-10,-5)",25,17,0
+attribution,-,EN2002b,role|level,"second|[10,inf)",349,170,0
+attribution,-,EN2002b,role|level,"second|[5,10)",139,69,0
+attribution,-,EN2002b,role|level,"first|[10,inf)",217,106,0
+attribution,-,EN2002b,role|level,"second|[0,5)",204,100,0
+attribution,-,EN2002b,role|level,"first|[-5,0)",184,74,0
+attribution,-,EN2002b,role|level,"first|[-10,-5)",113,37,0
+attribution,-,EN2002b,role|level,"first|[-inf,-10)",129,55,0
+attribution,-,EN2002b,role|level,"second|[-inf,-10)",111,57,0
+attribution,-,EN2002b,role|level,"first|[0,5)",213,99,0
+attribution,-,EN2002b,role|level,"second|[-10,-5)",156,74,0
+attribution,-,EN2002b,role|level,"second|[-5,0)",238,115,0
+attribution,-,EN2002b,role|level,"first|[5,10)",119,64,0
 asr,ihm_mix,EN2002c,all,all,3763,1757,305
 asr,ihm_mix,EN2002c,role,second,2009,1021,179
 asr,ihm_mix,EN2002c,role,first,1754,736,126
@@ -318,6 +1480,65 @@ asr,ihm_mix,EN2002c,level,"[5,10)",458,174,25
 asr,ihm_mix,EN2002c,level,"[-inf,-10)",428,273,57
 asr,ihm_mix,EN2002c,level,"[0,5)",556,252,54
 asr,ihm_mix,EN2002c,level,"[-5,0)",553,320,50
+asr,ihm_mix,EN2002c,length|level,">2 words|[-10,-5)",423,282,42
+asr,ihm_mix,EN2002c,length|level,"1-2 words|[10,inf)",57,33,11
+asr,ihm_mix,EN2002c,length|level,"1-2 words|[5,10)",13,7,0
+asr,ihm_mix,EN2002c,length|level,">2 words|[-inf,-10)",410,261,51
+asr,ihm_mix,EN2002c,length|level,">2 words|[5,10)",445,167,25
+asr,ihm_mix,EN2002c,length|level,">2 words|[0,5)",529,236,50
+asr,ihm_mix,EN2002c,length|level,">2 words|[-5,0)",514,296,42
+asr,ihm_mix,EN2002c,length|level,">2 words|[10,inf)",1254,394,63
+asr,ihm_mix,EN2002c,length|level,"1-2 words|[0,5)",27,16,4
+asr,ihm_mix,EN2002c,length|level,"1-2 words|[-10,-5)",34,29,3
+asr,ihm_mix,EN2002c,length|level,"1-2 words|[-5,0)",39,24,8
+asr,ihm_mix,EN2002c,length|level,"1-2 words|[-inf,-10)",18,12,6
+asr,ihm_mix,EN2002c,role|level,"second|[-10,-5)",207,146,28
+asr,ihm_mix,EN2002c,role|level,"first|[10,inf)",573,135,33
+asr,ihm_mix,EN2002c,role|level,"first|[5,10)",191,68,10
+asr,ihm_mix,EN2002c,role|level,"first|[-inf,-10)",218,134,23
+asr,ihm_mix,EN2002c,role|level,"first|[-10,-5)",250,165,17
+asr,ihm_mix,EN2002c,role|level,"first|[0,5)",244,93,18
+asr,ihm_mix,EN2002c,role|level,"first|[-5,0)",278,141,25
+asr,ihm_mix,EN2002c,role|level,"second|[5,10)",267,106,15
+asr,ihm_mix,EN2002c,role|level,"second|[10,inf)",738,292,41
+asr,ihm_mix,EN2002c,role|level,"second|[-5,0)",275,179,25
+asr,ihm_mix,EN2002c,role|level,"second|[0,5)",312,159,36
+asr,ihm_mix,EN2002c,role|level,"second|[-inf,-10)",210,139,34
+asr,sdm,EN2002c,all,all,3763,1894,329
+asr,sdm,EN2002c,role,second,2009,1141,154
+asr,sdm,EN2002c,role,first,1754,753,175
+asr,sdm,EN2002c,length,>2 words,3575,1750,310
+asr,sdm,EN2002c,length,1-2 words,188,144,19
+asr,sdm,EN2002c,level,"[-10,-5)",457,310,54
+asr,sdm,EN2002c,level,"[10,inf)",1311,501,80
+asr,sdm,EN2002c,level,"[5,10)",458,195,36
+asr,sdm,EN2002c,level,"[-inf,-10)",428,299,53
+asr,sdm,EN2002c,level,"[0,5)",556,267,51
+asr,sdm,EN2002c,level,"[-5,0)",553,322,55
+asr,sdm,EN2002c,length|level,">2 words|[-10,-5)",423,281,49
+asr,sdm,EN2002c,length|level,"1-2 words|[10,inf)",57,40,7
+asr,sdm,EN2002c,length|level,"1-2 words|[5,10)",13,8,3
+asr,sdm,EN2002c,length|level,">2 words|[-inf,-10)",410,283,52
+asr,sdm,EN2002c,length|level,">2 words|[5,10)",445,187,33
+asr,sdm,EN2002c,length|level,">2 words|[0,5)",529,249,48
+asr,sdm,EN2002c,length|level,">2 words|[-5,0)",514,289,55
+asr,sdm,EN2002c,length|level,">2 words|[10,inf)",1254,461,73
+asr,sdm,EN2002c,length|level,"1-2 words|[0,5)",27,18,3
+asr,sdm,EN2002c,length|level,"1-2 words|[-10,-5)",34,29,5
+asr,sdm,EN2002c,length|level,"1-2 words|[-5,0)",39,33,0
+asr,sdm,EN2002c,length|level,"1-2 words|[-inf,-10)",18,16,1
+asr,sdm,EN2002c,role|level,"second|[-10,-5)",207,152,28
+asr,sdm,EN2002c,role|level,"first|[10,inf)",573,158,39
+asr,sdm,EN2002c,role|level,"first|[5,10)",191,71,16
+asr,sdm,EN2002c,role|level,"first|[-inf,-10)",218,134,33
+asr,sdm,EN2002c,role|level,"first|[-10,-5)",250,158,26
+asr,sdm,EN2002c,role|level,"first|[0,5)",244,100,20
+asr,sdm,EN2002c,role|level,"first|[-5,0)",278,132,41
+asr,sdm,EN2002c,role|level,"second|[5,10)",267,124,20
+asr,sdm,EN2002c,role|level,"second|[10,inf)",738,343,41
+asr,sdm,EN2002c,role|level,"second|[-5,0)",275,190,14
+asr,sdm,EN2002c,role|level,"second|[0,5)",312,167,31
+asr,sdm,EN2002c,role|level,"second|[-inf,-10)",210,165,20
 attribution,-,EN2002c,all,all,3639,1778,0
 attribution,-,EN2002c,role,second,1963,1033,0
 attribution,-,EN2002c,role,first,1676,745,0
@@ -329,6 +1550,30 @@ attribution,-,EN2002c,level,"[-5,0)",533,263,0
 attribution,-,EN2002c,level,"[5,10)",431,210,0
 attribution,-,EN2002c,level,"[-inf,-10)",431,208,0
 attribution,-,EN2002c,level,"[0,5)",539,252,0
+attribution,-,EN2002c,length|level,"1-2 words|[10,inf)",71,44,0
+attribution,-,EN2002c,length|level,">2 words|[10,inf)",1185,578,0
+attribution,-,EN2002c,length|level,">2 words|[-10,-5)",409,201,0
+attribution,-,EN2002c,length|level,"1-2 words|[-10,-5)",40,22,0
+attribution,-,EN2002c,length|level,"1-2 words|[-5,0)",42,24,0
+attribution,-,EN2002c,length|level,"1-2 words|[5,10)",17,9,0
+attribution,-,EN2002c,length|level,">2 words|[5,10)",414,201,0
+attribution,-,EN2002c,length|level,">2 words|[-inf,-10)",405,188,0
+attribution,-,EN2002c,length|level,">2 words|[0,5)",506,236,0
+attribution,-,EN2002c,length|level,">2 words|[-5,0)",491,239,0
+attribution,-,EN2002c,length|level,"1-2 words|[0,5)",33,16,0
+attribution,-,EN2002c,length|level,"1-2 words|[-inf,-10)",26,20,0
+attribution,-,EN2002c,role|level,"second|[10,inf)",715,375,0
+attribution,-,EN2002c,role|level,"first|[10,inf)",541,247,0
+attribution,-,EN2002c,role|level,"second|[-10,-5)",209,112,0
+attribution,-,EN2002c,role|level,"second|[-5,0)",270,142,0
+attribution,-,EN2002c,role|level,"first|[5,10)",175,83,0
+attribution,-,EN2002c,role|level,"second|[5,10)",256,127,0
+attribution,-,EN2002c,role|level,"first|[-10,-5)",240,111,0
+attribution,-,EN2002c,role|level,"first|[-inf,-10)",215,82,0
+attribution,-,EN2002c,role|level,"first|[0,5)",242,101,0
+attribution,-,EN2002c,role|level,"first|[-5,0)",263,121,0
+attribution,-,EN2002c,role|level,"second|[0,5)",297,151,0
+attribution,-,EN2002c,role|level,"second|[-inf,-10)",216,126,0
 asr,ihm_mix,EN2002d,all,all,3236,1716,210
 asr,ihm_mix,EN2002d,role,first,1373,675,94
 asr,ihm_mix,EN2002d,role,second,1863,1041,116
@@ -340,6 +1585,65 @@ asr,ihm_mix,EN2002d,level,"[0,5)",505,277,28
 asr,ihm_mix,EN2002d,level,"[-5,0)",516,311,36
 asr,ihm_mix,EN2002d,level,"[-10,-5)",436,273,39
 asr,ihm_mix,EN2002d,level,"[-inf,-10)",387,219,37
+asr,ihm_mix,EN2002d,length|level,">2 words|[10,inf)",909,389,39
+asr,ihm_mix,EN2002d,length|level,">2 words|[5,10)",403,188,26
+asr,ihm_mix,EN2002d,length|level,">2 words|[0,5)",479,259,25
+asr,ihm_mix,EN2002d,length|level,"1-2 words|[0,5)",26,18,3
+asr,ihm_mix,EN2002d,length|level,">2 words|[-5,0)",475,280,28
+asr,ihm_mix,EN2002d,length|level,">2 words|[-10,-5)",404,248,37
+asr,ihm_mix,EN2002d,length|level,">2 words|[-inf,-10)",358,199,33
+asr,ihm_mix,EN2002d,length|level,"1-2 words|[5,10)",26,22,2
+asr,ihm_mix,EN2002d,length|level,"1-2 words|[-5,0)",41,31,8
+asr,ihm_mix,EN2002d,length|level,"1-2 words|[10,inf)",54,37,3
+asr,ihm_mix,EN2002d,length|level,"1-2 words|[-inf,-10)",29,20,4
+asr,ihm_mix,EN2002d,length|level,"1-2 words|[-10,-5)",32,25,2
+asr,ihm_mix,EN2002d,role|level,"first|[10,inf)",377,145,13
+asr,ihm_mix,EN2002d,role|level,"first|[5,10)",198,89,13
+asr,ihm_mix,EN2002d,role|level,"first|[0,5)",225,115,13
+asr,ihm_mix,EN2002d,role|level,"second|[0,5)",280,162,15
+asr,ihm_mix,EN2002d,role|level,"first|[-5,0)",229,140,18
+asr,ihm_mix,EN2002d,role|level,"first|[-10,-5)",175,93,18
+asr,ihm_mix,EN2002d,role|level,"second|[-5,0)",287,171,18
+asr,ihm_mix,EN2002d,role|level,"second|[10,inf)",586,281,29
+asr,ihm_mix,EN2002d,role|level,"second|[-inf,-10)",218,126,18
+asr,ihm_mix,EN2002d,role|level,"second|[-10,-5)",261,180,21
+asr,ihm_mix,EN2002d,role|level,"second|[5,10)",231,121,15
+asr,ihm_mix,EN2002d,role|level,"first|[-inf,-10)",169,93,19
+asr,sdm,EN2002d,all,all,3236,1783,295
+asr,sdm,EN2002d,role,first,1373,721,135
+asr,sdm,EN2002d,role,second,1863,1062,160
+asr,sdm,EN2002d,length,>2 words,3028,1634,263
+asr,sdm,EN2002d,length,1-2 words,208,149,32
+asr,sdm,EN2002d,level,"[10,inf)",963,484,53
+asr,sdm,EN2002d,level,"[5,10)",429,226,41
+asr,sdm,EN2002d,level,"[0,5)",505,277,42
+asr,sdm,EN2002d,level,"[-5,0)",516,295,64
+asr,sdm,EN2002d,level,"[-10,-5)",436,263,53
+asr,sdm,EN2002d,level,"[-inf,-10)",387,238,42
+asr,sdm,EN2002d,length|level,">2 words|[10,inf)",909,446,45
+asr,sdm,EN2002d,length|level,">2 words|[5,10)",403,207,36
+asr,sdm,EN2002d,length|level,">2 words|[0,5)",479,258,40
+asr,sdm,EN2002d,length|level,"1-2 words|[0,5)",26,19,2
+asr,sdm,EN2002d,length|level,">2 words|[-5,0)",475,269,56
+asr,sdm,EN2002d,length|level,">2 words|[-10,-5)",404,237,49
+asr,sdm,EN2002d,length|level,">2 words|[-inf,-10)",358,217,37
+asr,sdm,EN2002d,length|level,"1-2 words|[5,10)",26,19,5
+asr,sdm,EN2002d,length|level,"1-2 words|[-5,0)",41,26,8
+asr,sdm,EN2002d,length|level,"1-2 words|[10,inf)",54,38,8
+asr,sdm,EN2002d,length|level,"1-2 words|[-inf,-10)",29,21,5
+asr,sdm,EN2002d,length|level,"1-2 words|[-10,-5)",32,26,4
+asr,sdm,EN2002d,role|level,"first|[10,inf)",377,164,25
+asr,sdm,EN2002d,role|level,"first|[5,10)",198,99,20
+asr,sdm,EN2002d,role|level,"first|[0,5)",225,124,18
+asr,sdm,EN2002d,role|level,"second|[0,5)",280,153,24
+asr,sdm,EN2002d,role|level,"first|[-5,0)",229,131,28
+asr,sdm,EN2002d,role|level,"first|[-10,-5)",175,101,22
+asr,sdm,EN2002d,role|level,"second|[-5,0)",287,164,36
+asr,sdm,EN2002d,role|level,"second|[10,inf)",586,320,28
+asr,sdm,EN2002d,role|level,"second|[-inf,-10)",218,136,20
+asr,sdm,EN2002d,role|level,"second|[-10,-5)",261,162,31
+asr,sdm,EN2002d,role|level,"second|[5,10)",231,127,21
+asr,sdm,EN2002d,role|level,"first|[-inf,-10)",169,102,22
 attribution,-,EN2002d,all,all,3071,1621,0
 attribution,-,EN2002d,role,second,1776,933,0
 attribution,-,EN2002d,role,first,1295,688,0
@@ -351,3 +1655,27 @@ attribution,-,EN2002d,level,"[-10,-5)",423,206,0
 attribution,-,EN2002d,level,"[-5,0)",505,252,0
 attribution,-,EN2002d,level,"[0,5)",475,268,0
 attribution,-,EN2002d,level,"[-inf,-10)",375,187,0
+attribution,-,EN2002d,length|level,">2 words|[5,10)",368,192,0
+attribution,-,EN2002d,length|level,">2 words|[10,inf)",839,482,0
+attribution,-,EN2002d,length|level,">2 words|[-10,-5)",386,188,0
+attribution,-,EN2002d,length|level,">2 words|[-5,0)",458,235,0
+attribution,-,EN2002d,length|level,">2 words|[0,5)",445,249,0
+attribution,-,EN2002d,length|level,"1-2 words|[-5,0)",47,17,0
+attribution,-,EN2002d,length|level,"1-2 words|[0,5)",30,19,0
+attribution,-,EN2002d,length|level,">2 words|[-inf,-10)",338,174,0
+attribution,-,EN2002d,length|level,"1-2 words|[-inf,-10)",37,13,0
+attribution,-,EN2002d,length|level,"1-2 words|[10,inf)",60,23,0
+attribution,-,EN2002d,length|level,"1-2 words|[5,10)",26,11,0
+attribution,-,EN2002d,length|level,"1-2 words|[-10,-5)",37,18,0
+attribution,-,EN2002d,role|level,"second|[5,10)",217,119,0
+attribution,-,EN2002d,role|level,"second|[10,inf)",552,289,0
+attribution,-,EN2002d,role|level,"first|[10,inf)",347,216,0
+attribution,-,EN2002d,role|level,"second|[-10,-5)",252,128,0
+attribution,-,EN2002d,role|level,"first|[5,10)",177,84,0
+attribution,-,EN2002d,role|level,"second|[-5,0)",279,133,0
+attribution,-,EN2002d,role|level,"first|[0,5)",211,122,0
+attribution,-,EN2002d,role|level,"first|[-5,0)",226,119,0
+attribution,-,EN2002d,role|level,"second|[0,5)",264,146,0
+attribution,-,EN2002d,role|level,"first|[-10,-5)",171,78,0
+attribution,-,EN2002d,role|level,"second|[-inf,-10)",212,118,0
+attribution,-,EN2002d,role|level,"first|[-inf,-10)",163,69,0

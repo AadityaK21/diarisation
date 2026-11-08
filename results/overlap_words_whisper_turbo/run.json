@@ -1,6 +1,6 @@
 {
   "experiment": "overlap_words_whisper_turbo",
-  "config_hash": "be097ffc48589d112ed2fd87fb35cee377b971455dc667e90847c25ba964f26c",
+  "config_hash": "11d3573afa2caa74bd1d14d244d1e8aef2d2b3eeaa9f6c35becef26fa7f96d50",
   "config": {
     "experiment": {
       "experiment": "overlap_words_whisper_turbo",
@@ -12,6 +12,10 @@
         "ihm_mix": {
           "asr_dir": "results/asr/whisper_turbo_cpu/ihm_mix/test",
           "pyannote_dir": "results/diarise/pyannote31_published/ihm_mix/test"
+        },
+        "sdm": {
+          "asr_dir": "results/asr/whisper_turbo_cpu/sdm/test",
+          "pyannote_dir": "results/diarise/pyannote31_published/sdm/test"
         }
       },
       "short_turn_max_words": 2,
@@ -33,7 +37,7 @@
   },
   "seed": 20261002,
   "git": {
-    "commit": "f7b53daf2519e00dab7127725a3433c2f49dc76a",
+    "commit": "2e6113f2a25cf67ec012e2487c3c1f99f99c6de4",
     "code_dirty": false
   },
   "versions": {
@@ -46,12 +50,10 @@
     "whisper-normalizer": "0.0.10"
   },
   "argv": [
-    "scripts/overlap_words.py",
-    "--conditions",
-    "ihm_mix"
+    "scripts/overlap_words.py"
   ],
-  "started_utc": "2026-11-08T17:37:04+00:00",
-  "wall_seconds": 125.074,
+  "started_utc": "2026-11-08T18:41:48+00:00",
+  "wall_seconds": 179.702,
   "missing_audio": [],
   "single_speaker_word_level_db_p10_p50_p90": [
     6.17,

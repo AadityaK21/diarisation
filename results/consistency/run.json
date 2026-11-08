@@ -17,7 +17,7 @@
   },
   "seed": null,
   "git": {
-    "commit": "44900f65af75f467202658f7d1bf049ba2916b77",
+    "commit": "2e6113f2a25cf67ec012e2487c3c1f99f99c6de4",
     "code_dirty": false
   },
   "versions": {
@@ -26,7 +26,7 @@
   "argv": [
     "scripts/consistency.py"
   ],
-  "started_utc": "2026-11-08T18:00:39+00:00",
-  "wall_seconds": 0.006,
-  "n_claims": 19
+  "started_utc": "2026-11-08T18:44:48+00:00",
+  "wall_seconds": 0.013,
+  "n_claims": 27
 }
