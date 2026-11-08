@@ -5,6 +5,9 @@
 #   fixed  = the brief's metric B at transcript level: system speakers mapped
 #            once by majority overlap on single-speaker frames (many-to-one),
 #            no search over permutations
+#   fixed1to1 = extra variant (not in the brief): system speakers mapped once,
+#            one-to-one, by maximum overlap on single-speaker frames; extra
+#            system speakers count as insertions. Never below cpWER.
 # The oracle-diarisation rows give the same ASR words to speakers using the
 # reference RTTM, isolating the cost of diarisation from ASR and the
 # one-speaker-per-word rule.
@@ -22,6 +25,13 @@ runs:
   - {name: pyannote31_ihm_mix, asr_dir: results/asr/whisper_turbo_cpu/ihm_mix/test, hyp_dir: results/diarise/pyannote31_published/ihm_mix/test}
   - {name: oracle_diarisation_sdm, asr_dir: results/asr/whisper_turbo_cpu/sdm/test, hyp_dir: data/ami/only_words/rttm/test}
   - {name: pyannote31_sdm, asr_dir: results/asr/whisper_turbo_cpu/sdm/test, hyp_dir: results/diarise/pyannote31_published/sdm/test}
+
+# Paired cpWER differences (a - b) over the same meetings: the cost of
+# diarisation on top of ASR and the word-assignment rule.
+contrasts:
+  - [pyannote31_ihm_mix, oracle_diarisation_ihm_mix]
+  - [pyannote31_sdm, oracle_diarisation_sdm]
+  - [oracle_diarisation_sdm, oracle_diarisation_ihm_mix]
 
 # Our cpWER must equal MeetEval's on every file (errors and reference length).
 validate_against_meeteval: true

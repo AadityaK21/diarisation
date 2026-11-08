@@ -101,15 +101,22 @@ def assign(words: Sequence[Word], hyp: Sequence[Segment]) -> List[Optional[str]]
 
 def mappings(ref: Sequence[Segment], hyp: Sequence[Segment], uem: Sequence[Region],
              step: float) -> Dict[str, Dict[str, str]]:
-    """{'optimal': {hyp: ref}, 'majority_single': {hyp: ref}}"""
+    """{'optimal': {hyp: ref}, 'majority_single': {hyp: ref}, 'onetoone_single': {hyp: ref}}
+
+    optimal          one-to-one, maximises overlap over all scored frames (md-eval)
+    majority_single  many-to-one, each system speaker to the person it overlaps
+                     most in single-speaker frames (the brief's metric B)
+    onetoone_single  one-to-one, maximises overlap in single-speaker frames only
+    """
     opt = {h: r for r, h in frame_arrays(ref, hyp, uem, 0.0, False, step, "all").mapping.items()}
+    one = {h: r for r, h in frame_arrays(ref, hyp, uem, 0.0, False, step, "single").mapping.items()}
     ov = overlap_seconds(ref, hyp, uem, step, "single")
     maj: Dict[str, str] = {}
     for h in sorted({s.speaker for s in hyp}):
         cand = [(sec, r) for (r, hh), sec in ov.items() if hh == h and sec > 0]
         if cand:
             maj[h] = max(cand, key=lambda x: (x[0], x[1]))[1]
-    return {"optimal": opt, "majority_single": maj}
+    return {"optimal": opt, "majority_single": maj, "onetoone_single": one}
 
 
 def score_words(words: Sequence[Word], ref: Sequence[Segment], hyp: Sequence[Segment],

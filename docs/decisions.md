@@ -253,6 +253,29 @@ test WER; the only check on test data was that TS3003b no longer loops.
 `transcribe.py` now records the longest same-word run per meeting
 (`longest_repeat` in timing.csv) so a loop cannot pass unnoticed.
 
+**W6. AMI acronyms are joined before normalisation.** AMI spells acronyms
+letter by letter (`L_C_D_`, `T_V_`, `X_M_L_`); Whisper writes `LCD`. Left
+alone, each acronym is two or three reference tokens against one output
+token. On the test set that is 377 words, 889 tokens (1.0 % of reference
+tokens). `join_spelled` removes the underscores before Whisper's normaliser,
+for reference and output alike. Effect on headset-mix oracle-diarisation
+cpWER: 32.07 % -> 31.47 %. Multi-word numbers ("twenty five" vs "25") are not
+joined (per-word normalisation, W3); about 0.1 % of output tokens are affected.
+
+**W7. Extra 6b variant: one-to-one fixed mapping [Jensen].** Not in the
+brief. System speakers are mapped once, one-to-one, by maximum overlap on
+single-speaker frames; extra system speakers count as insertions. It separates
+the two things metric B changes relative to cpWER: (i) no search over
+permutations, (ii) many-to-one instead of one-to-one. By construction it is
+never below cpWER (the script aborts if it is). Headset-mix result: it equals
+cpWER to +0.01 points [+0.00, +0.04], while the many-to-one metric B is 2.09
+points lower [-3.20, -1.05] (5.84 lower in overlap). So the leniency of metric
+B comes entirely from many-to-one mapping, which forgives over-clustering:
+pyannote 3.1 outputs 4-9 speakers for meetings with 3-4 people (34 extra
+clusters over the 16 test meetings, headset mix). Fixing the mapping without
+a permutation search changes nothing. Paired cpWER contrasts (pyannote minus
+oracle diarisation, same ASR words) are in `contrasts.csv`.
+
 **A5. The coin-flip result is robust to the tie-break.** Overlapped-word
 attribution error with perfect diarisation: 48.1% (label order, default),
 52.1% (credit the speaker whose turn started first), 38.6% (credit the one

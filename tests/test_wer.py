@@ -25,3 +25,12 @@ def test_merge_by_mapping_many_to_one():
     H = {"s1": [T("a", 1)], "s2": [T("b", 0.5)], "s3": [T("z", 3)]}
     m = merge_by_mapping(H, {"s1": "A", "s2": "A"})
     assert [t.text for t in m["ref:A"]] == ["b", "a"] and "unmapped:s3" in m
+
+
+def test_ami_spelled_acronyms_are_joined():
+    from diarisation.scoring.wer import join_spelled
+    assert join_spelled("L_C_D_") == "LCD"
+    assert join_spelled("T_V_s") == "TVs"
+    assert join_spelled("A_") == "A"
+    assert join_spelled("don't") == "don't" and join_spelled("snake_case_") == "snake_case_"
+    assert [t.text for t in tokens([("L_C_D_", 0.0, 1.0)])] == [t.text for t in tokens([("LCD", 0.0, 1.0)])] == ["lcd"]

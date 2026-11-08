@@ -7,6 +7,10 @@ each keeping the word's timing. Per-word normalisation does not join number
 words ("twenty five" -> "20 5" vs "25"); the effect is the same for every
 system compared here and is noted in docs/decisions.md.
 
+Before the normaliser, AMI's letter-by-letter acronym spelling is joined
+("L_C_D_" -> "LCD", "T_V_s" -> "TVs"), the form Whisper writes; otherwise
+each acronym costs two or three errors (decisions.md W6).
+
 Errors under a stream assignment are counted with Levenshtein edit operations
 per matched (reference speaker, system stream) pair:
   substitution, deletion -> region of the reference token
@@ -18,6 +22,7 @@ all insertions.
 
 from __future__ import annotations
 
+import re
 from bisect import bisect_right
 from collections import defaultdict
 from dataclasses import dataclass
@@ -49,12 +54,20 @@ class Token:
     end: float
 
 
+_AMI_SPELLED = re.compile(r"(?:[A-Za-z]_)+[A-Za-z]*")
+
+
+def join_spelled(word: str) -> str:
+    """AMI spells acronyms letter by letter with underscores: L_C_D_ -> LCD."""
+    return word.replace("_", "") if _AMI_SPELLED.fullmatch(word) else word
+
+
 def tokens(words: Sequence[Tuple[str, float, float]]) -> List[Token]:
     """[(word, start, end)] -> normalised tokens, time-ordered."""
     n = normaliser()
     out = []
     for w, s, e in sorted(words, key=lambda x: (x[1], x[2])):
-        for t in n(w).split():
+        for t in n(join_spelled(w)).split():
             out.append(Token(t, s, e))
     return out
 
