@@ -186,3 +186,30 @@ overlap error is missed speech (25.0% IHM, 27.5% SDM of overlap speaker time)
 and confusion (13.9%, 16.1%), not inconsistent labelling. Step 6 should
 therefore measure what happens to the MISSED speaker's words (credited to
 the speaker who was detected, or lost), rather than mapping instability.
+
+## Attribution with reference words (step 6a)
+
+**A1. Reference words come from the AMI manual annotations 1.6.2** (NXT, CC BY
+4.0, sha256 pinned in configs/data/ami_words.yaml): `<w>` elements without
+punctuation, speaker ids via corpusResources/meetings.xml. 99.998% of test
+word midpoints fall inside their own speaker's only_words RTTM turns.
+
+**A2. Word -> speaker = the system speaker overlapping the word most**, as the
+brief specifies; no nearest-turn fallback (a word with no system speech is
+reported as unassigned). A word is "in overlap" when >= 2 reference speakers
+are active at its midpoint. Ties in overlap duration go to the label sorting
+first, which is what any one-speaker-per-word rule must do in some way.
+
+**A3. The one-speaker-per-word rule is itself a large error source [Jensen].**
+With the reference RTTM as the "system", 48.1% [46.2, 49.9] of overlapped
+words are credited to the other talker: a coin flip. This bounds every
+timestamp-based word attribution (WhisperX-style) on AMI at about 11.8% of
+all words before any diarisation error (run 837370d52e).
+
+**A4. The brief's metric B is more lenient than the permutation-invariant
+score, not stricter [Jensen].** Majority mapping on single-speaker frames is
+many-to-one, so it absorbs clusters that split one person (the "unmapped"
+outcome under the one-to-one mapping: 3.2% of words IHM, 5.1% SDM). Overall
+attribution error is 1.4 points (IHM) and 2.4 points (SDM) LOWER under
+metric B; in overlap 4.0 and 5.8 points lower. Reported as measured; the
+claim that a fixed mapping reveals hidden error is not supported here.

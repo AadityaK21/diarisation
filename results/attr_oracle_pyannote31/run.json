@@ -1,0 +1,94 @@
+{
+  "experiment": "attr_oracle_pyannote31",
+  "config_hash": "837370d52eb9ff7767454fe7fb68388d5751bd81a9954ce2adf97788a51ac558",
+  "config": {
+    "experiment": {
+      "experiment": "attr_oracle_pyannote31",
+      "frame_step": 0.001,
+      "dataset": "configs/data/ami.yaml",
+      "words": "configs/data/ami_words.yaml",
+      "annotation": "only_words",
+      "partition": "test",
+      "systems": {
+        "oracle_diarisation": {
+          "hyp_dir": "data/ami/only_words/rttm/test"
+        },
+        "pyannote31_ihm_mix": {
+          "hyp_dir": "results/diarise/pyannote31_published/ihm_mix/test"
+        },
+        "pyannote31_sdm": {
+          "hyp_dir": "results/diarise/pyannote31_published/sdm/test"
+        }
+      },
+      "mappings": [
+        "optimal",
+        "majority_single"
+      ],
+      "bootstrap": {
+        "n_resamples": 10000,
+        "ci_level": 0.95,
+        "seed": 20261002
+      },
+      "out_dir": "results/attr_oracle_pyannote31"
+    },
+    "dataset": {
+      "name": "ami",
+      "source": {
+        "repo": "https://github.com/pyannote/AMI-diarization-setup",
+        "commit": "67c2d539286e89f68952d5dcf83912bd9f01dfae"
+      },
+      "annotations": [
+        "only_words",
+        "word_and_vocalsounds"
+      ],
+      "primary_annotation": "only_words",
+      "partitions": [
+        "train",
+        "dev",
+        "test"
+      ],
+      "expected_meetings": {
+        "train": 136,
+        "dev": 18,
+        "test": 16
+      },
+      "conditions": {
+        "ihm_mix": "Mix-Headset",
+        "sdm": "Array1-01"
+      },
+      "audio_url": "https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus/{uri}/audio/{uri}.{stream}.wav",
+      "out_dir": "data/ami"
+    },
+    "words": {
+      "name": "ami_words",
+      "source": {
+        "url": "https://groups.inf.ed.ac.uk/ami/AMICorpusAnnotations/ami_public_manual_1.6.2.zip",
+        "sha256": "b56e5babb2496b8795deeeda7e71178d7fbc9963f94276cf2a3f4b56ebbc9f9d",
+        "licence": "CC BY 4.0"
+      },
+      "partitions": [
+        "dev",
+        "test"
+      ],
+      "lists_from": "configs/data/ami.yaml",
+      "out_dir": "data/ami/words"
+    }
+  },
+  "seed": 20261002,
+  "git": {
+    "commit": "04b8ca1802398394b06e56d4b0fd469eedbc5f98",
+    "code_dirty": false
+  },
+  "versions": {
+    "python": "3.11.18",
+    "numpy": "1.26.4",
+    "scipy": "1.14.1",
+    "PyYAML": "6.0.3"
+  },
+  "argv": [
+    "scripts/attribution_oracle.py"
+  ],
+  "started_utc": "2026-11-08T12:11:13+00:00",
+  "wall_seconds": 19.174,
+  "n_rows": 288
+}
