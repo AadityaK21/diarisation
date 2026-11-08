@@ -2,9 +2,9 @@
 # references to final tables; audio download is separate because it is large.
 PY ?= python3
 
-.PHONY: all test prepare prepare-ami prepare-scotus overlap-stats validate-scorer decompose-synthetic diarise validate-scorer-real decompose-pyannote31 compare-mappings prepare-words attribution-oracle attribution-asr audio-ihm audio-sdm
+.PHONY: all test prepare prepare-ami prepare-scotus overlap-stats validate-scorer decompose-synthetic diarise validate-scorer-real decompose-pyannote31 compare-mappings prepare-words attribution-oracle attribution-asr audio-ihm audio-sdm audio-headsets audio-scotus transcribe asr-diagnostics overlap-detection wer-decomposition overlap-words consistency scotus extra
 
-all: test prepare overlap-stats validate-scorer decompose-synthetic validate-scorer-real decompose-pyannote31 compare-mappings attribution-oracle
+all: test prepare overlap-stats validate-scorer decompose-synthetic validate-scorer-real decompose-pyannote31 compare-mappings attribution-oracle attribution-asr asr-diagnostics overlap-detection wer-decomposition consistency
 
 test:
 	$(PY) -m pytest -q
@@ -55,3 +55,40 @@ attribution-oracle:
 
 attribution-asr:
 	$(PY) scripts/attribution_asr.py
+
+# Step 6b ASR (CPU, hours; needs audio). Outputs are committed, so the scoring
+# targets below run without audio.
+transcribe:
+	$(PY) scripts/transcribe.py --config configs/systems/whisper_turbo_cpu.yaml
+
+asr-diagnostics:
+	$(PY) scripts/asr_diagnostics.py
+
+# Extra analyses (docs/decisions.md X1-X6)
+overlap-detection:
+	$(PY) scripts/overlap_detection.py
+
+wer-decomposition:
+	$(PY) scripts/wer_decomposition.py
+
+consistency:
+	$(PY) scripts/consistency.py
+
+# needs the individual headset channels (audio-headsets)
+audio-headsets:
+	$(PY) scripts/download_ami_headsets.py --partitions test
+
+overlap-words:
+	$(PY) scripts/overlap_words.py
+
+# Supreme Court set through the pipeline (audio-scotus first; diarise and
+# transcribe run on CPU)
+audio-scotus:
+	$(PY) scripts/prepare_scotus_audio.py
+
+scotus:
+	$(PY) scripts/diarise.py --config configs/systems/pyannote31.yaml --dataset configs/data/scotus_oyez.yaml --conditions oyez --partitions all
+	$(PY) scripts/transcribe.py --config configs/systems/whisper_turbo_cpu.yaml --dataset configs/data/scotus_oyez.yaml --conditions oyez --partitions all
+	$(PY) scripts/scotus_eval.py
+
+extra: overlap-detection wer-decomposition overlap-words consistency
