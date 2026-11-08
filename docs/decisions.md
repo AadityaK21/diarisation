@@ -379,3 +379,17 @@ mix and 66.3% [62.3, 69.8] on the distant mic. Whisper also loses the quieter
 talker (X3), so diarisation and transcription fail on the same person, which
 is consistent with diarisation adding only 1.0 point [-0.7, 2.1] of cpWER in
 overlap (X2).
+
+**X8. WhisperX forced alignment (the brief's alignment step, W2).** The
+words of the turbo run are re-timed with WhisperX's wav2vec2 CTC alignment
+(whisperx 3.8.6, `WAV2VEC2_ASR_BASE_960H`; `scripts/align_whisperx.py`);
+text and word order are unchanged (checked). Only WhisperX's alignment
+module is used, installed without its dependencies in its own environment,
+because the full package pins torch 2.8 and pyannote.audio 4. WhisperX aligns
+inside Whisper's segments; the word files do not keep faster-whisper's
+segments, so words are regrouped at gaps longer than 1 s (segments at most
+30 s), which is how the alignment windows are formed here. NLTK's
+sentence data (punkt_tab) was fetched from the NLTK data repository by hand,
+since NLTK's downloader refuses to run through this environment's proxy.
+The decomposition (X2) is then recomputed on both timings
+(`configs/experiments/wer_decomposition_wxalign.yaml`).
