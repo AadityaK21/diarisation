@@ -205,3 +205,27 @@ def components(fa: FrameArrays, mask: np.ndarray | None = None) -> DERResult:
 
 def score(ref_segs, hyp_segs, uem, collar: float, exclude_overlap: bool, step: float) -> DERResult:
     return components(frame_arrays(ref_segs, hyp_segs, uem, collar, exclude_overlap, step))
+
+
+def overlap_seconds(ref_segs: Sequence[Segment], hyp_segs: Sequence[Segment], uem: Sequence[Region],
+                    step: float, region: str = "all") -> Dict[Tuple[str, str], float]:
+    """Seconds each (ref, hyp) pair is active together inside the UEM.
+
+    region "all" = every evaluated frame; "single" = frames with exactly one
+    reference speaker. Same grid and UEM weighting as `frame_arrays`.
+    """
+    end = max([e for _, e in uem] + [s.end for s in ref_segs] + [s.end for s in hyp_segs] + [0.0])
+    grid = _Grid(step, int(np.ceil(end / step - GRID_TOL)) + 1)
+    weight = _uem_weight(uem, step, grid.n)
+    ref, hyp = _activity(ref_segs, grid), _activity(hyp_segs, grid)
+    if region == "single":
+        n_ref = sum((a.astype(np.int16) for a in ref.values()), np.zeros(grid.n, dtype=np.int16))
+        weight = np.where(n_ref == 1, weight, 0.0)
+    elif region != "all":
+        raise ValueError(f"unknown region {region!r}")
+    out = {}
+    for r, ra in ref.items():
+        rw = np.where(ra, weight, 0.0)
+        for h, ha in hyp.items():
+            out[(r, h)] = float(rw[ha].sum()) * step
+    return out

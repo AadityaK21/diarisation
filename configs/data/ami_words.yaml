@@ -1,0 +1,14 @@
+# AMI word-level reference (manual annotations 1.6.2, NXT format), used only
+# for the speaker-attribution metrics. The diarisation reference stays the
+# BUT/pyannote RTTM, which was itself derived from these same words.
+
+name: ami_words
+source:
+  url: https://groups.inf.ed.ac.uk/ami/AMICorpusAnnotations/ami_public_manual_1.6.2.zip
+  sha256: b56e5babb2496b8795deeeda7e71178d7fbc9963f94276cf2a3f4b56ebbc9f9d
+  licence: CC BY 4.0
+partitions: [dev, test]
+# <w> elements only; punctuation (punc="true"), vocal sounds, disfluency
+# markers and gaps are not words.
+lists_from: configs/data/ami.yaml
+out_dir: data/ami/words
