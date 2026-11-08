@@ -1,0 +1,4 @@
+a,b,region,n_files,cpwer_a_minus_b,lo,hi
+pyannote31_ihm_mix,oracle_diarisation_ihm_mix,all,16,0.019689,0.011479,0.027277
+pyannote31_ihm_mix,oracle_diarisation_ihm_mix,single,16,0.022825,0.015393,0.030306
+pyannote31_ihm_mix,oracle_diarisation_ihm_mix,overlap,16,0.010133,-0.006588,0.020762

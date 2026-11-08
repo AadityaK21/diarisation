@@ -1,0 +1,5 @@
+run,region,n_files,n_ref,n_hyp,hyp_per_ref,hyp_per_ref_lo,hyp_per_ref_hi
+oracle_diarisation_ihm_mix,single,16,67338,61479,0.912991,0.892496,0.933173
+oracle_diarisation_ihm_mix,overlap,16,22105,10271,0.464646,0.443044,0.487115
+pyannote31_ihm_mix,single,16,67338,61479,0.912991,0.892496,0.933173
+pyannote31_ihm_mix,overlap,16,22105,10271,0.464646,0.443044,0.487115

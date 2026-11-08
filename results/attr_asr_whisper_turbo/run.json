@@ -1,6 +1,6 @@
 {
   "experiment": "attr_asr_whisper_turbo",
-  "config_hash": "039e2fdfb1b39306f654deab73688ad915366e0f2ae66e0f83c398b3d687d40d",
+  "config_hash": "f75b79f11d86eb223f9295f52cc8b79d501a384d2d6cbb9db4233a81ff41fc4b",
   "config": {
     "experiment": {
       "experiment": "attr_asr_whisper_turbo",
@@ -19,17 +19,21 @@
           "name": "pyannote31_ihm_mix",
           "asr_dir": "results/asr/whisper_turbo_cpu/ihm_mix/test",
           "hyp_dir": "results/diarise/pyannote31_published/ihm_mix/test"
-        },
-        {
-          "name": "oracle_diarisation_sdm",
-          "asr_dir": "results/asr/whisper_turbo_cpu/sdm/test",
-          "hyp_dir": "data/ami/only_words/rttm/test"
-        },
-        {
-          "name": "pyannote31_sdm",
-          "asr_dir": "results/asr/whisper_turbo_cpu/sdm/test",
-          "hyp_dir": "results/diarise/pyannote31_published/sdm/test"
         }
+      ],
+      "contrasts": [
+        [
+          "pyannote31_ihm_mix",
+          "oracle_diarisation_ihm_mix"
+        ],
+        [
+          "pyannote31_sdm",
+          "oracle_diarisation_sdm"
+        ],
+        [
+          "oracle_diarisation_sdm",
+          "oracle_diarisation_ihm_mix"
+        ]
       ],
       "validate_against_meeteval": true,
       "bootstrap": {
@@ -42,8 +46,8 @@
   },
   "seed": 20261002,
   "git": {
-    "commit": "f300a9c481c931f3610a39d5f0ac25b14f5b3102",
-    "code_dirty": true
+    "commit": "1c053fbb52a2695c740532e14c68f7b1d52e141d",
+    "code_dirty": false
   },
   "versions": {
     "python": "3.11.18",
@@ -54,19 +58,50 @@
     "whisper-normalizer": "0.0.10"
   },
   "argv": [
-    "scripts/attribution_asr.py"
+    "scripts/attribution_asr.py",
+    "--runs",
+    "oracle_diarisation_ihm_mix",
+    "pyannote31_ihm_mix"
   ],
-  "started_utc": "2026-11-08T12:25:39+00:00",
-  "wall_seconds": 0.866,
+  "started_utc": "2026-11-08T16:44:51+00:00",
+  "wall_seconds": 37.834,
   "meetings_included": {
     "oracle_diarisation_ihm_mix": [
-      "IS1009a"
+      "IS1009a",
+      "IS1009b",
+      "IS1009c",
+      "IS1009d",
+      "ES2004a",
+      "ES2004b",
+      "ES2004c",
+      "ES2004d",
+      "TS3003a",
+      "TS3003b",
+      "TS3003c",
+      "TS3003d",
+      "EN2002a",
+      "EN2002b",
+      "EN2002c",
+      "EN2002d"
     ],
     "pyannote31_ihm_mix": [
-      "IS1009a"
-    ],
-    "oracle_diarisation_sdm": [],
-    "pyannote31_sdm": []
+      "IS1009a",
+      "IS1009b",
+      "IS1009c",
+      "IS1009d",
+      "ES2004a",
+      "ES2004b",
+      "ES2004c",
+      "ES2004d",
+      "TS3003a",
+      "TS3003b",
+      "TS3003c",
+      "TS3003d",
+      "EN2002a",
+      "EN2002b",
+      "EN2002c",
+      "EN2002d"
+    ]
   },
   "cpwer_vs_meeteval_max_abs_diff": 0
 }

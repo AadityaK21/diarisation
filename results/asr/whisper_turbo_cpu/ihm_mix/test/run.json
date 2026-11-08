@@ -1,0 +1,48 @@
+{
+  "experiment": "asr_whisper_turbo_cpu",
+  "config": {
+    "system": "whisper_turbo_cpu",
+    "model": "large-v3-turbo",
+    "device": "cpu",
+    "compute_type": "int8",
+    "cpu_threads": 4,
+    "language": "en",
+    "beam_size": 5,
+    "temperature": [
+      0.0,
+      0.2,
+      0.4,
+      0.6,
+      0.8,
+      1.0
+    ],
+    "compression_ratio_threshold": 2.4,
+    "log_prob_threshold": -1.0,
+    "no_speech_threshold": 0.6,
+    "condition_on_previous_text": false,
+    "vad_filter": true,
+    "word_timestamps": true,
+    "seed": 20261002,
+    "dataset": "configs/data/ami.yaml",
+    "conditions": [
+      "ihm_mix",
+      "sdm"
+    ],
+    "partitions": [
+      "test"
+    ],
+    "out_dir": "results/asr/whisper_turbo_cpu"
+  },
+  "condition": "ihm_mix",
+  "partition": "test",
+  "git_commit": "e9536d98c27e5649e9a99e0a1b240b0694d52d27",
+  "seed": 20261002,
+  "n_files": 16,
+  "versions": {
+    "python": "3.11.18",
+    "faster-whisper": "1.1.1",
+    "ctranslate2": "4.8.5"
+  },
+  "finished_utc": "2026-11-08T16:36:27+00:00",
+  "wall_seconds_total": 6961.1
+}
