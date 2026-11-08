@@ -179,7 +179,9 @@ background and are added as they finish; `scripts/reproduction_check.py`
 meetings are done. With IS1009a and IS1009b (SDM; run 5152011043): pooled
 Full DER 16.84% ours vs 16.81% published, and the outputs differ on 2.4% of
 the published speaker time, 2.0 points of it speaker confusion (cluster
-labels), 0.2 missed and 0.2 false alarm. Timing is not clean from IS1009b on:
+labels), 0.2 missed and 0.2 false alarm. With IS1009c added (3 meetings):
+14.81% ours vs 14.70% published, outputs differing on 1.95% of speaker time
+(1.6 points confusion). Timing is not clean from IS1009b on:
 the run shared the 4 cores with other jobs (and was paused while the
 alignment of X8 finished), so wall times in its timing.csv are upper bounds.
 

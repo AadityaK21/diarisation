@@ -12,7 +12,7 @@ Audio Analysis Lab, Aalborg University (October–November 2026).
 | 2 | AMI + Supreme Court reference prep, per-meeting overlap table | done (`results/overlap_stats/`) |
 | 3 | Frame-level scorer validated against md-eval.pl | done (`results/scorer_validation/`) |
 | 4 | Overlap-conditioned decomposition | done on synthetic systems (`results/decomp_synthetic/`) |
-| 5 | pyannote 3.1 baseline, full grid on AMI test | done on published outputs (`results/decomp_pyannote31/`); own CPU reproduction running, 2/16 SDM meetings scored (`results/reproduction_pyannote31/`) |
+| 5 | pyannote 3.1 baseline, full grid on AMI test | done on published outputs (`results/decomp_pyannote31/`); own CPU reproduction running, 3/16 SDM meetings scored (`results/reproduction_pyannote31/`) |
 | 6a | Word attribution with true words, fixed vs optimal mapping | done (`results/attr_oracle_pyannote31/`) |
 | 6b | Whisper ASR, cpWER vs fixed mappings by region (MeetEval-checked) | done (`results/attr_asr_whisper_turbo/`) |
 
