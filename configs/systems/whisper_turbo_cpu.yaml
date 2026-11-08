@@ -1,0 +1,26 @@
+# Step 6b ASR. DEVIATION FROM THE BRIEF: the brief asks for large-v3
+# (int8_float16 on an 8 GB GPU). This machine has no GPU; large-v3 int8 on
+# 4 CPU cores runs at 1.61x real time (about 15 h per condition), so the CPU
+# run uses large-v3-turbo (0.40x real time). On a GPU set model: large-v3,
+# device: cuda, compute_type: int8_float16 and rerun.
+#
+# Word timestamps: faster-whisper's built-in cross-attention alignment (the
+# same DTW method as openai-whisper / whisper-timestamped). WhisperX forced
+# alignment is NOT used in this run.
+
+system: whisper_turbo_cpu
+model: large-v3-turbo
+device: cpu
+compute_type: int8
+cpu_threads: 4
+language: en
+beam_size: 5
+temperature: 0.0        # no sampling fallback: reproducible
+vad_filter: true        # Silero VAD inside faster-whisper, avoids hallucination on silence
+word_timestamps: true
+seed: 20261002
+
+dataset: configs/data/ami.yaml
+conditions: [ihm_mix, sdm]
+partitions: [test]
+out_dir: results/asr/whisper_turbo_cpu   # <out_dir>/<condition>/<partition>/<uri>.words.tsv
