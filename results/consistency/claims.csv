@@ -14,3 +14,7 @@ cpWER > fixed many-to-one WER (metric B),pyannote31_ihm_mix,16,15,0,0.000519,TS3
 cpWER pyannote > cpWER perfect diarisation,pyannote31_ihm_mix,16,13,0,0.0213,ES2004b;ES2004c;TS3003c
 word-assignment part > diarisation part of cpWER,ihm_mix,16,16,0,3.05e-05,
 transcription-only error (DI-cpWER) in overlap > outside,ihm_mix,16,16,0,3.05e-05,
+Whisper deletes more overlapped words below 0 dB than above,ihm_mix,16,16,0,3.05e-05,
+Whisper deletes more overlapped words of the second talker than the first,ihm_mix,16,16,0,3.05e-05,
+pyannote shows the louder of two talkers more often than the quieter,pyannote31_ihm_mix,16,16,0,3.05e-05,
+pyannote shows the louder of two talkers more often than the quieter,pyannote31_sdm,16,16,0,3.05e-05,
