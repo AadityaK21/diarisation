@@ -237,6 +237,22 @@ The in-house version is needed to assign each error to a region: deletions
 and substitutions to the region of the reference word, insertions to the
 region at the output word's midpoint.
 
+**W5. ASR run 1 failed; decoding guards restored for run 2.** Run 1 set a
+single `temperature: 0.0` for reproducibility. That switched off Whisper's
+temperature fallback, which re-decodes a window whose output is too
+repetitive (compression ratio > 2.4), and with `condition_on_previous_text`
+true a loop carried from window to window: TS3003b came out as "Uh." 830
+times over 27 minutes, TS3003a had two "Um." loops and no output after
+1476 s. Caught by inspecting the outputs before any result was reported; run 1
+is kept in `results/asr/whisper_turbo_cpu_run1_failed/` and is not used. Run 2
+uses the library defaults (temperatures 0.0-1.0 in steps of 0.2,
+compression-ratio 2.4, log-prob -1.0, no-speech 0.6) plus
+`condition_on_previous_text: false` (WhisperX's default), with the fallback
+sampler seeded. The settings were chosen from those defaults, not tuned on
+test WER; the only check on test data was that TS3003b no longer loops.
+`transcribe.py` now records the longest same-word run per meeting
+(`longest_repeat` in timing.csv) so a loop cannot pass unnoticed.
+
 **A5. The coin-flip result is robust to the tie-break.** Overlapped-word
 attribution error with perfect diarisation: 48.1% (label order, default),
 52.1% (credit the speaker whose turn started first), 38.6% (credit the one

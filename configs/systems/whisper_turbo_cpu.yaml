@@ -15,7 +15,18 @@ compute_type: int8
 cpu_threads: 4
 language: en
 beam_size: 5
-temperature: 0.0        # no sampling fallback: reproducible
+# Decoding guards against repetition loops (decisions.md W5). Run 1 used a
+# single temperature 0.0, which switched the fallback off and produced a
+# 27-minute "Uh." loop on TS3003b (results/asr/whisper_turbo_cpu_run1_failed).
+# temperature list, compression_ratio_threshold, log_prob_threshold and
+# no_speech_threshold are faster-whisper's (= openai-whisper's) defaults;
+# condition_on_previous_text: false is WhisperX's default, so a loop cannot
+# carry into the next 30 s window. Fallback sampling is seeded with `seed`.
+temperature: [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
+compression_ratio_threshold: 2.4
+log_prob_threshold: -1.0
+no_speech_threshold: 0.6
+condition_on_previous_text: false
 vad_filter: true        # Silero VAD inside faster-whisper, avoids hallucination on silence
 word_timestamps: true
 seed: 20261002
