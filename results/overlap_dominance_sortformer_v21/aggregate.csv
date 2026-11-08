@@ -1,0 +1,9 @@
+system,statistic,n_files,n_samples,point,lo,hi
+sortformer_v21_ihm_mix,shown_is_louder_given_one_of_pair,16,32265,0.872018,0.849981,0.890903
+sortformer_v21_ihm_mix,both_shown,16,32265,0.405765,0.368233,0.456780
+sortformer_v21_ihm_mix,one_shown_of_pair,16,32265,0.463753,0.429139,0.493629
+sortformer_v21_ihm_mix,other_or_none_shown,16,32265,0.130482,0.108156,0.147878
+sortformer_v21_sdm,shown_is_louder_given_one_of_pair,16,32265,0.845447,0.808893,0.875927
+sortformer_v21_sdm,both_shown,16,32265,0.386270,0.350835,0.436748
+sortformer_v21_sdm,one_shown_of_pair,16,32265,0.465241,0.426670,0.497587
+sortformer_v21_sdm,other_or_none_shown,16,32265,0.148489,0.126286,0.170434
