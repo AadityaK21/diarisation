@@ -1,0 +1,12 @@
+# venv-align: WhisperX alignment only (scripts/align_whisperx.py)
+#   pip install torch==2.5.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cpu
+#   pip install -r env/requirements-align-cpu.txt
+#   pip install whisperx==3.8.6 --no-deps
+# NLTK sentence data (punkt_tab) from raw.githubusercontent.com/nltk/nltk_data
+# (packages/tokenizers/punkt_tab.zip, sha256 e57f6418...0106) into ~/nltk_data/tokenizers/
+numpy<2
+transformers>=4.48,<4.50
+nltk==3.10.4
+pandas
+pyyaml
+typing_extensions

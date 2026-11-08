@@ -1,0 +1,23 @@
+# Brief's alignment step (decisions.md W2 / X8): WhisperX forced alignment
+# (wav2vec2 CTC, WAV2VEC2_ASR_BASE_960H for English) applied to the words of
+# the whisper_turbo_cpu run, which keep their text; only the timings change.
+# WhisperX aligns within Whisper's segments; the word files do not keep
+# faster-whisper's segments, so words are regrouped into segments at gaps.
+# Runs in its own environment (env/requirements-align-cpu.txt): whisperx is
+# installed without its dependencies, because only its alignment module is
+# used and the full package pins torch 2.8 / pyannote.audio 4.
+
+system: whisperx_align
+whisperx_version: 3.8.6
+language: en
+device: cpu
+cpu_threads: 4
+interpolate_method: nearest
+segment_max_gap: 1.0       # s; a longer silence between words starts a new segment
+segment_max_len: 30.0      # s; Whisper's own window length
+
+dataset: configs/data/ami.yaml
+input_dir: results/asr/whisper_turbo_cpu          # <input_dir>/<condition>/<partition>/<uri>.words.tsv
+conditions: [ihm_mix]
+partitions: [test]
+out_dir: results/asr/whisper_turbo_cpu_wxalign
