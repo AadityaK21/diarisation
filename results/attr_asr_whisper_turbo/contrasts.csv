@@ -2,3 +2,9 @@ a,b,region,n_files,cpwer_a_minus_b,lo,hi
 pyannote31_ihm_mix,oracle_diarisation_ihm_mix,all,16,0.019689,0.011479,0.027277
 pyannote31_ihm_mix,oracle_diarisation_ihm_mix,single,16,0.022825,0.015393,0.030306
 pyannote31_ihm_mix,oracle_diarisation_ihm_mix,overlap,16,0.010133,-0.006588,0.020762
+pyannote31_sdm,oracle_diarisation_sdm,all,16,0.035408,0.024975,0.046564
+pyannote31_sdm,oracle_diarisation_sdm,single,16,0.034260,0.025215,0.044835
+pyannote31_sdm,oracle_diarisation_sdm,overlap,16,0.038905,0.016567,0.057094
+oracle_diarisation_sdm,oracle_diarisation_ihm_mix,all,16,0.047796,0.028896,0.071609
+oracle_diarisation_sdm,oracle_diarisation_ihm_mix,single,16,0.061169,0.039419,0.087910
+oracle_diarisation_sdm,oracle_diarisation_ihm_mix,overlap,16,0.007057,-0.005550,0.021268

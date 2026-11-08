@@ -1,6 +1,6 @@
 {
   "experiment": "attr_asr_whisper_turbo",
-  "config_hash": "f75b79f11d86eb223f9295f52cc8b79d501a384d2d6cbb9db4233a81ff41fc4b",
+  "config_hash": "4ba44f1424dd66030a63973235b11c47aef743e59dd58b174ffb7794c71f2351",
   "config": {
     "experiment": {
       "experiment": "attr_asr_whisper_turbo",
@@ -19,6 +19,16 @@
           "name": "pyannote31_ihm_mix",
           "asr_dir": "results/asr/whisper_turbo_cpu/ihm_mix/test",
           "hyp_dir": "results/diarise/pyannote31_published/ihm_mix/test"
+        },
+        {
+          "name": "oracle_diarisation_sdm",
+          "asr_dir": "results/asr/whisper_turbo_cpu/sdm/test",
+          "hyp_dir": "data/ami/only_words/rttm/test"
+        },
+        {
+          "name": "pyannote31_sdm",
+          "asr_dir": "results/asr/whisper_turbo_cpu/sdm/test",
+          "hyp_dir": "results/diarise/pyannote31_published/sdm/test"
         }
       ],
       "contrasts": [
@@ -46,7 +56,7 @@
   },
   "seed": 20261002,
   "git": {
-    "commit": "1c053fbb52a2695c740532e14c68f7b1d52e141d",
+    "commit": "347e95c6c3207366eb49637fd87fee09aef556de",
     "code_dirty": false
   },
   "versions": {
@@ -58,13 +68,10 @@
     "whisper-normalizer": "0.0.10"
   },
   "argv": [
-    "scripts/attribution_asr.py",
-    "--runs",
-    "oracle_diarisation_ihm_mix",
-    "pyannote31_ihm_mix"
+    "scripts/attribution_asr.py"
   ],
-  "started_utc": "2026-11-08T16:44:51+00:00",
-  "wall_seconds": 37.834,
+  "started_utc": "2026-11-08T18:36:39+00:00",
+  "wall_seconds": 76.902,
   "meetings_included": {
     "oracle_diarisation_ihm_mix": [
       "IS1009a",
@@ -85,6 +92,42 @@
       "EN2002d"
     ],
     "pyannote31_ihm_mix": [
+      "IS1009a",
+      "IS1009b",
+      "IS1009c",
+      "IS1009d",
+      "ES2004a",
+      "ES2004b",
+      "ES2004c",
+      "ES2004d",
+      "TS3003a",
+      "TS3003b",
+      "TS3003c",
+      "TS3003d",
+      "EN2002a",
+      "EN2002b",
+      "EN2002c",
+      "EN2002d"
+    ],
+    "oracle_diarisation_sdm": [
+      "IS1009a",
+      "IS1009b",
+      "IS1009c",
+      "IS1009d",
+      "ES2004a",
+      "ES2004b",
+      "ES2004c",
+      "ES2004d",
+      "TS3003a",
+      "TS3003b",
+      "TS3003c",
+      "TS3003d",
+      "EN2002a",
+      "EN2002b",
+      "EN2002c",
+      "EN2002d"
+    ],
+    "pyannote31_sdm": [
       "IS1009a",
       "IS1009b",
       "IS1009c",
