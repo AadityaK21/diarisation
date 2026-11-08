@@ -16,12 +16,13 @@ dependencies = [
 
 [project.optional-dependencies]
 # Step 5. pyannote/speaker-diarization-3.1 is gated on Hugging Face.
-diar = ["pyannote.audio>=3.1"]
+diar = ["pyannote.audio>=3.1,<4", "soundfile>=0.12"]
 # Step 5, optional second baseline. Heavy install; the repo runs without it.
 nemo = ["nemo_toolkit[asr]"]
 # Step 6.
 asr = ["faster-whisper>=1.1.0", "whisperx"]
 dev = ["pytest>=7"]
+# Exact CPU environment used for step 5 lives in env/constraints-pyannote31-cpu.txt
 
 [tool.setuptools.packages.find]
 where = ["src"]

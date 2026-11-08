@@ -2,9 +2,9 @@
 # references to final tables; audio download is separate because it is large.
 PY ?= python3
 
-.PHONY: all test prepare prepare-ami prepare-scotus overlap-stats validate-scorer decompose-synthetic audio-ihm audio-sdm
+.PHONY: all test prepare prepare-ami prepare-scotus overlap-stats validate-scorer decompose-synthetic diarise validate-scorer-real decompose-pyannote31 audio-ihm audio-sdm
 
-all: test prepare overlap-stats validate-scorer decompose-synthetic
+all: test prepare overlap-stats validate-scorer decompose-synthetic validate-scorer-real decompose-pyannote31
 
 test:
 	$(PY) -m pytest -q
@@ -32,3 +32,13 @@ validate-scorer:
 
 decompose-synthetic:
 	$(PY) scripts/decompose.py --config configs/experiments/decomp_synthetic.yaml
+
+# Step 5. HF_TOKEN must be set (or injected by a proxy) and the model terms accepted.
+diarise:
+	$(PY) scripts/diarise.py --config configs/systems/pyannote31.yaml
+
+validate-scorer-real:
+	$(PY) scripts/validate_scorer.py --config configs/validation/scorer_real.yaml
+
+decompose-pyannote31:
+	$(PY) scripts/decompose.py --config configs/experiments/decomp_pyannote31.yaml

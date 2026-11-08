@@ -1,0 +1,25 @@
+# Versions contemporary with pyannote.audio 3.3.2 (Sept 2024). Newer majors of
+# the pyannote.* helpers and huggingface_hub>=0.26 change APIs that 3.3.2 uses.
+# Install:  pip install "pyannote.audio==3.3.2" -c env/constraints-pyannote31-cpu.txt \
+#             --extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.5.1
+torchaudio==2.5.1
+numpy==1.26.4
+huggingface_hub==0.25.2
+pyannote.core==5.0.0
+pyannote.database==5.1.0
+pyannote.metrics==3.2.1
+pyannote.pipeline==3.0.1
+lightning==2.4.0
+pytorch-lightning==2.4.0
+torchmetrics==1.4.2
+speechbrain==1.0.1
+asteroid-filterbanks==0.4.0
+torch_audiomentations==0.11.1
+pytorch-metric-learning==2.6.0
+scikit-learn==1.5.2
+scipy==1.14.1
+pandas==2.2.3
+omegaconf==2.3.0
+optuna==4.0.0
+soundfile==0.12.1

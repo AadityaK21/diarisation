@@ -1,0 +1,55 @@
+{
+  "experiment": "diarise_pyannote31",
+  "config_hash": "abeac1dc1474fad2dec4d565cca820c70eddcb2e6df02194813143183a9773ef",
+  "config": {
+    "system": {
+      "system": "pyannote31",
+      "model": "pyannote/speaker-diarization-3.1",
+      "expect_pyannote_major": 3,
+      "device": "auto",
+      "cpu_threads": 4,
+      "seed": 20261002,
+      "rttm_decimals": 3,
+      "dataset": "configs/data/ami.yaml",
+      "conditions": [
+        "ihm_mix",
+        "sdm"
+      ],
+      "partitions": [
+        "test"
+      ],
+      "out_dir": "results/diarise/pyannote31"
+    },
+    "condition": "sdm",
+    "partition": "test"
+  },
+  "seed": 20261002,
+  "git": {
+    "commit": "d5187d489926621c8d7f540f0367e8ef12cb9a2f",
+    "code_dirty": true
+  },
+  "versions": {
+    "python": "3.11.18",
+    "pyannote.audio": "3.3.2",
+    "torch": "2.5.1+cpu",
+    "torchaudio": "2.5.1+cpu",
+    "numpy": "1.26.4",
+    "scipy": "1.14.1"
+  },
+  "argv": [
+    "scripts/diarise.py",
+    "--config",
+    "configs/systems/pyannote31.yaml",
+    "--conditions",
+    "sdm",
+    "--limit",
+    "1"
+  ],
+  "started_utc": "2026-11-08T11:30:04+00:00",
+  "wall_seconds": 652.937,
+  "model": "pyannote/speaker-diarization-3.1",
+  "model_revision": "84fd25912480287da0247647c3d2b4853cb3ee5d",
+  "device": "cpu",
+  "n_files": 1,
+  "cpu_max_rss_mb": 2409.9
+}

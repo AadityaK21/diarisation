@@ -70,9 +70,15 @@ def main() -> int:
             ref = read_rttm(ref_p)[uri]
             uem = read_uem(uem_p)[uri]
             for system, params in cfg["systems"].items():
-                hyp = perturb.make(system, params or {}, ref, uem, cfg["seed"], uri)
-                hyp_p = work / name / system / f"{uri}.rttm"
-                write_rttm(hyp_p, uri, hyp)
+                if params and "hyp_dir" in params:
+                    # A real system's output, scored as written.
+                    hyp_p = REPO_ROOT / params["hyp_dir"] / f"{uri}.rttm"
+                    if not hyp_p.exists():
+                        continue
+                else:
+                    hyp = perturb.make(system, params or {}, ref, uem, cfg["seed"], uri)
+                    hyp_p = work / name / system / f"{uri}.rttm"
+                    write_rttm(hyp_p, uri, hyp)
                 jobs.append((name, part, uri, ref_p, uem_p, system, hyp_p,
                              cfg["collars"], cfg["exclude_overlap"], cfg["frame_step"]))
     print(f"{len(jobs)} file x system jobs, {len(jobs) * len(cfg['collars']) * len(cfg['exclude_overlap'])} comparisons")

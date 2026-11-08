@@ -1,0 +1,27 @@
+# Step 5 re-check: our scorer vs md-eval-22.pl on REAL system output
+# (pyannote 3.1 on AMI test, both microphone conditions): the authors'
+# published outputs and our own run.
+# Same pre-registered criterion as configs/validation/scorer.yaml:
+# every component within 0.001 s of md-eval, zero off-grid boundaries.
+
+experiment: scorer_validation_real
+
+frame_step: 0.001
+tol_seconds: 0.001
+collars: [0.0, 0.25]
+exclude_overlap: [false, true]
+
+datasets:
+  - {config: configs/data/ami.yaml, annotation: only_words, partitions: [test]}
+
+seed: 20261002
+systems:
+  # Authors' published outputs (see results/diarise/pyannote31_published/README.md)
+  pyannote31pub_ihm_mix: {hyp_dir: results/diarise/pyannote31_published/ihm_mix/test}
+  pyannote31pub_sdm: {hyp_dir: results/diarise/pyannote31_published/sdm/test}
+  # Our own run (files present so far are scored; missing ones are skipped)
+  pyannote31_ihm_mix: {hyp_dir: results/diarise/pyannote31/ihm_mix/test}
+  pyannote31_sdm: {hyp_dir: results/diarise/pyannote31/sdm/test}
+
+work_dir: work/scorer_validation_real
+out_dir: results/scorer_validation_real

@@ -1,0 +1,22 @@
+# Step 5 baseline: pyannote/speaker-diarization-3.1, run as published.
+# No oracle speaker count, no tuning: the published pipeline and its
+# published hyperparameters, so the numbers are comparable to the model card.
+
+system: pyannote31
+model: pyannote/speaker-diarization-3.1
+# pyannote.audio 3.x, as the brief specifies (4.x changes the default model).
+expect_pyannote_major: 3
+
+device: auto            # cuda if available, else cpu
+cpu_threads: 4
+seed: 20261002
+
+# Times are written at millisecond precision so md-eval and our scorer read
+# identical boundaries (rounding moves a boundary by at most 0.5 ms).
+rttm_decimals: 3
+
+dataset: configs/data/ami.yaml
+conditions: [ihm_mix, sdm]
+partitions: [test]
+
+out_dir: results/diarise/pyannote31     # <out_dir>/<condition>/<partition>/<uri>.rttm
