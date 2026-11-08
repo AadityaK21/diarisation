@@ -1,0 +1,18 @@
+# Overlap detection (X1) for NeMo Sortformer, which can output up to 4
+# speakers per frame (pyannote 3.1: at most 2). Same measures as
+# overlap_detection_pyannote31.yaml.
+
+experiment: overlap_detection_sortformer_v21
+dataset: configs/data/ami.yaml
+annotation: only_words
+partition: test
+count_cap: 3            # counts >= 3 are pooled as "3+"
+
+systems:
+  sortformer_v21_ihm_mix: {hyp_dir: results/diarise/sortformer_v21/ihm_mix/test}
+  sortformer_v21_sdm: {hyp_dir: results/diarise/sortformer_v21/sdm/test}
+  sortformer_v21_dihard3pp_ihm_mix: {hyp_dir: results/diarise/sortformer_v21_dihard3pp/ihm_mix/test}
+  sortformer_v21_dihard3pp_sdm: {hyp_dir: results/diarise/sortformer_v21_dihard3pp/sdm/test}
+
+bootstrap: {n_resamples: 10000, ci_level: 0.95, seed: 20261002}
+out_dir: results/overlap_detection_sortformer_v21

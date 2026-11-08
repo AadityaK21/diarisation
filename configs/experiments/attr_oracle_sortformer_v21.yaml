@@ -1,0 +1,20 @@
+# Step 6a with NeMo Sortformer as the diarisation: true words, true times,
+# each word to the system speaker overlapping it most; the same three
+# mappings as attr_oracle_pyannote31.yaml.
+
+experiment: attr_oracle_sortformer_v21
+
+frame_step: 0.001
+dataset: configs/data/ami.yaml
+words: configs/data/ami_words.yaml
+annotation: only_words
+partition: test
+
+systems:
+  sortformer_v21_ihm_mix: {hyp_dir: results/diarise/sortformer_v21/ihm_mix/test}
+  sortformer_v21_sdm: {hyp_dir: results/diarise/sortformer_v21/sdm/test}
+
+mappings: [optimal, majority_single, onetoone_single]
+
+bootstrap: {n_resamples: 10000, ci_level: 0.95, seed: 20261002}
+out_dir: results/attr_oracle_sortformer_v21

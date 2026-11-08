@@ -1,0 +1,22 @@
+# X7 for NeMo Sortformer: when two reference speakers overlap and Sortformer
+# shows only one, is it the louder one? Sampled every `hop` seconds
+# inside two-speaker reference overlap; "louder" = higher headset energy in a
+# `window` around the sample; system speakers mapped to people with the
+# optimal (md-eval) mapping.
+
+experiment: overlap_dominance_sortformer_v21
+
+frame_step: 0.001
+dataset: configs/data/ami.yaml
+words: configs/data/ami_words.yaml
+annotation: only_words
+partition: test
+hop: 0.1
+window: 0.1
+
+systems:
+  sortformer_v21_ihm_mix: {hyp_dir: results/diarise/sortformer_v21/ihm_mix/test}
+  sortformer_v21_sdm: {hyp_dir: results/diarise/sortformer_v21/sdm/test}
+
+bootstrap: {n_resamples: 10000, ci_level: 0.95, seed: 20261002}
+out_dir: results/overlap_dominance_sortformer_v21

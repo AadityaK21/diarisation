@@ -1,0 +1,33 @@
+# NeMo streaming Sortformer (decisions S1): the step-5 overlap-conditioned
+# decomposition, with the published pyannote 3.1 outputs alongside so that
+# scripts/compare_systems.py can pair the two systems meeting by meeting.
+# sortformer_v21 = the model's default post-processing (the main variant);
+# sortformer_v21_dihard3pp = NVIDIA's published DIHARD III setting (sensitivity).
+
+experiment: decomp_sortformer_v21
+
+frame_step: 0.001
+collars: [0.0, 0.25]
+exclude_overlap: [false, true]
+
+datasets:
+  - {config: configs/data/ami.yaml, annotation: only_words, partitions: [test]}
+
+systems:
+  pyannote31_ihm_mix: {hyp_dir: results/diarise/pyannote31_published/ihm_mix/test}
+  pyannote31_sdm: {hyp_dir: results/diarise/pyannote31_published/sdm/test}
+  sortformer_v21_ihm_mix: {hyp_dir: results/diarise/sortformer_v21/ihm_mix/test}
+  sortformer_v21_sdm: {hyp_dir: results/diarise/sortformer_v21/sdm/test}
+  sortformer_v21_dihard3pp_ihm_mix: {hyp_dir: results/diarise/sortformer_v21_dihard3pp/ihm_mix/test}
+  sortformer_v21_dihard3pp_sdm: {hyp_dir: results/diarise/sortformer_v21_dihard3pp/sdm/test}
+
+conventions:
+  full: {collar: 0.0, exclude_overlap: false}
+  fair: {collar: 0.25, exclude_overlap: false}
+  forgiving: {collar: 0.25, exclude_overlap: true}
+  collar0_no_overlap: {collar: 0.0, exclude_overlap: true}
+
+bootstrap: {n_resamples: 10000, ci_level: 0.95, seed: 20261002}
+partition_tol_seconds: 1.0e-6
+
+out_dir: results/decomp_sortformer_v21
