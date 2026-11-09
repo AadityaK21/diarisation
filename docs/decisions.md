@@ -235,8 +235,9 @@ large-v3-turbo runs at 0.32-0.40x. The CPU run uses large-v3-turbo; on the
 (the method of openai-whisper and whisper-timestamped), not WhisperX forced
 alignment. The brief names WhisperX or whisper-timestamped. WhisperX forced
 alignment was later run on all 16 headset-mix meetings as a check (X8); it
-changes the decomposition by less than half a point, so the main results keep
-Whisper's own timestamps.
+changes each part of the decomposition by less than half a point over all
+words and by at most 1.2 points in overlap (the diarisation part there goes
+from 1.0 to 2.2 points), so the main results keep Whisper's own timestamps.
 
 **W3. Text normalisation.** Whisper's EnglishTextNormalizer, applied per word
 to reference and output alike (fillers removed, contractions expanded).
@@ -342,7 +343,7 @@ counts are checked against MeetEval's totals on every file. tcpWER
 (arXiv:2307.11394). Headset mix, pyannote: 33.4% cpWER = 24.2 transcription
 + 7.3 word assignment + 2.0 diarisation; in overlap 78.1 = 54.5 + 22.6 + 1.0.
 The word-assignment part exceeds the diarisation part in 16 of 16 meetings.
-Distant mic: 39.8 = 29.9 + 6.3 + 3.5; in overlap 81.7 = 59.2 + 18.5 + 3.9;
+Distant mic: 39.8 = 29.9 + 6.3 + 3.5; in overlap 81.6 = 59.2 + 18.5 + 3.9;
 word assignment exceeds diarisation in 13 of 16 meetings (sign test p=0.02).
 tcpWER (5 s) is 1.1 (headset) and 1.2 (distant) points above cpWER.
 
@@ -491,7 +492,7 @@ clustering + MSDD pipeline as NeMo's current diariser; flag if the brief meant
 MSDD. Frame probabilities are saved, so NVIDIA's published post-processing for
 this model family (tuned on DIHARD III dev; none exists for AMI) is applied as
 a sensitivity variant: it changes speaker time by about 2%, lowers Full DER
-by 1.1-1.6 points in every region and changes cpWER by less than 0.5. RTF 0.03-0.04 on 4 cores; 4 speakers found in
+by 1.1-1.5 points overall (0.7-1.6 by region) and changes cpWER by less than 0.5. RTF 0.03-0.04 on 4 cores; 4 speakers found in
 every meeting. Not run on the Supreme Court argument (10 speakers > 4).
 
 Against the brief's reference (only_words), Full DER is 29.42% [26.09, 32.46]
