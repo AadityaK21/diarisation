@@ -17,3 +17,11 @@ __pycache__/
 build/
 dist/
 work/
+
+# LaTeX build files (report/)
+*.aux
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+report/*.log
+report/*.out

@@ -2,7 +2,7 @@
 # references to final tables; audio download is separate because it is large.
 PY ?= python3
 
-.PHONY: all test prepare prepare-ami prepare-scotus overlap-stats validate-scorer decompose-synthetic diarise validate-scorer-real decompose-pyannote31 compare-mappings prepare-words attribution-oracle attribution-asr audio-ihm audio-sdm audio-headsets audio-scotus transcribe asr-diagnostics overlap-detection wer-decomposition overlap-words consistency scotus reproduction-check sortformer sortformer-eval fa-reference extra
+.PHONY: all test prepare prepare-ami prepare-scotus overlap-stats validate-scorer decompose-synthetic diarise validate-scorer-real decompose-pyannote31 compare-mappings prepare-words attribution-oracle attribution-asr audio-ihm audio-sdm audio-headsets audio-scotus transcribe asr-diagnostics overlap-detection wer-decomposition overlap-words consistency scotus reproduction-check sortformer sortformer-eval fa-reference extra report
 
 all: test prepare overlap-stats validate-scorer decompose-synthetic validate-scorer-real decompose-pyannote31 compare-mappings attribution-oracle attribution-asr asr-diagnostics overlap-detection wer-decomposition consistency
 
@@ -121,3 +121,9 @@ fa-reference:
 	$(PY) scripts/wer_decomposition.py --config configs/experiments/wer_decomposition_fa_regions.yaml
 
 extra: overlap-detection wer-decomposition overlap-words consistency
+
+# The LaTeX report for Prof. Jensen: figures redrawn from the committed result
+# CSVs (needs matplotlib in $(PY)), then pdflatex via latexmk.
+report:
+	$(PY) report/make_figures.py
+	cd report && latexmk -pdf -interaction=nonstopmode -halt-on-error jensen_report.tex

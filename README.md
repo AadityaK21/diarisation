@@ -56,6 +56,7 @@ scripts/      one entry point per Makefile target
 data/         committed references: RTTM, UEM, lists, MANIFEST with sha256
 results/<experiment>/   per_file.csv -> aggregate.csv, plus run.json
 docs/decisions.md       every convention choice and why
+report/       LaTeX progress report (jensen_report.tex/.pdf); `make report` redraws its figures and builds it
 ```
 
 Aggregates are always computed from `per_file.csv`, never separately, so any
